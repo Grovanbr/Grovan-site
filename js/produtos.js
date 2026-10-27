@@ -25,13 +25,13 @@
 
 const produtos = [
   {
-    nome: "Nome do produto de casa",
-    loja: "Shopee",
-    categoria: "Casa",
-    link: "#",
-    imagem: "",
-    preco: 39.90,
-    precoAntigo: 79.90,
+    nome: "Secret Boom Box Gloss Labial Com Chaveiro De Ursinho Sortido",
+    loja: "Mercado Livre",
+    categoria: "Beleza",
+    link: "https://meli.la/251SmGp",
+    imagem: "https://http2.mlstatic.com/D_NQ_NP_606455-MLB117287382722_102026-O.webp",
+    preco: 137.34,
+    precoAntigo: 144.99,
     destaque: true
   },
   {
@@ -61,7 +61,7 @@ const produtos = [
     link: "#",
     imagem: "",
     preco: 24.90,
-    precoAntigo: 0,
+    precoAntigo: 0.00,
     destaque: false
   },
   {

@@ -6,32 +6,26 @@
   <title>Grovan | Informática, Planilhas e Achados</title>
   <meta name="description" content="Serviços de informática, planilhas, consultoria e achados para casa, cozinha e tecnologia.">
 
-  <!-- Ícone da aba do navegador -->
   <link rel="icon" href="img/grovan-perfil-icone.png">
-
-  <!-- Fontes da marca -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
-
-  <!-- Nosso CSS -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- ===== Cabeçalho ===== -->
+  <!-- ===== Cabeçalho (igual em todas as páginas) ===== -->
   <header class="cabecalho">
     <div class="container cabecalho-conteudo">
-      <a href="#inicio">
+      <a href="index.html">
         <img src="img/grovan-logo.png" alt="Grovan" class="logo">
       </a>
-
       <nav class="menu" aria-label="Menu principal">
-        <a href="#servicos">Serviços</a>
-        <a href="#planilhas">Planilhas</a>
-        <a href="#achados">Achados</a>
-        <a href="#sobre">Sobre</a>
-        <a href="#contato">Contato</a>
+        <a href="index.html#servicos">Serviços</a>
+        <a href="planilhas.html">Planilhas</a>
+        <a href="achados.html">Achados</a>
+        <a href="index.html#sobre">Sobre</a>
+        <a href="index.html#contato">Contato</a>
       </nav>
     </div>
   </header>
@@ -48,7 +42,6 @@
           sua vida e fazer seu negócio crescer. Tudo com atendimento próximo e sem enrolação.
         </p>
         <div class="botoes">
-        
           <a href="https://wa.me/5511945426510" target="_blank" rel="noopener" class="botao botao-principal">Fale no WhatsApp</a>
           <a href="#servicos" class="botao botao-secundario">Ver serviços</a>
         </div>
@@ -72,7 +65,6 @@
             <h3>Formatação e instalação</h3>
             <p>Formatação, instalação do Windows, programas e drivers. Seu computador como novo.</p>
           </article>
-
           <article class="card">
             <div class="card-icone" aria-hidden="true">
               <svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></svg>
@@ -80,7 +72,6 @@
             <h3>Manutenção e limpeza</h3>
             <p>Limpeza, troca de peças e otimização para o computador voltar a ficar rápido.</p>
           </article>
-
           <article class="card">
             <div class="card-icone" aria-hidden="true">
               <svg viewBox="0 0 24 24"><path d="M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0M12 19.5h.01"/></svg>
@@ -88,7 +79,6 @@
             <h3>Suporte e configuração</h3>
             <p>Configuração de impressoras, Wi-Fi, e-mail e programas. Atendimento presencial ou remoto.</p>
           </article>
-
           <article class="card">
             <div class="card-icone" aria-hidden="true">
               <svg viewBox="0 0 24 24"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/></svg>
@@ -100,7 +90,60 @@
       </div>
     </section>
 
-    <!-- ===== Planilhas e Projetos ===== -->
+    <!-- ===== Como funciona ===== -->
+    <section class="secao secao-clara">
+      <div class="container">
+        <span class="etiqueta">Como funciona</span>
+        <h2>Simples do começo ao fim</h2>
+        <p class="secao-texto">Do primeiro contato até o problema resolvido, você sabe exatamente o que está acontecendo.</p>
+
+        <ol class="passos">
+          <li class="passo">
+            <span class="passo-numero">1</span>
+            <h3>Você chama</h3>
+            <p>Conte pelo WhatsApp o que está acontecendo ou o que você precisa.</p>
+          </li>
+          <li class="passo">
+            <span class="passo-numero">2</span>
+            <h3>A gente explica</h3>
+            <p>Você recebe o diagnóstico, o que vai ser feito, o prazo e o valor, antes de começar.</p>
+          </li>
+          <li class="passo">
+            <span class="passo-numero">3</span>
+            <h3>Resolvido</h3>
+            <p>Fazemos o serviço, presencial ou remoto, e você acompanha cada etapa.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== Diferenciais ===== -->
+    <section class="secao">
+      <div class="container">
+        <span class="etiqueta">Por que a Grovan</span>
+        <h2>Atendimento de quem se importa</h2>
+        <div class="diferenciais">
+          <div class="diferencial">
+            <h3>Sem surpresa no preço</h3>
+            <p>O valor é combinado antes. Nada de cobrança escondida no final.</p>
+          </div>
+          <div class="diferencial">
+            <h3>Explicação clara</h3>
+            <p>Você entende o que foi feito, sem termos técnicos complicados.</p>
+          </div>
+          <div class="diferencial">
+            <h3>Presencial ou remoto</h3>
+            <p>Atendemos do jeito mais prático para você.</p>
+          </div>
+          <div class="diferencial">
+            <h3>Resposta rápida</h3>
+            <p>Chamou no WhatsApp, a gente responde o quanto antes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Planilhas e Projetos (cada card leva para a página de planilhas) ===== -->
     <section id="planilhas" class="secao secao-escura">
       <div class="container">
         <span class="etiqueta etiqueta-clara">Planilhas e Projetos</span>
@@ -110,29 +153,28 @@
         </p>
 
         <div class="cards">
-          <article class="card card-escuro">
+          <a href="planilhas.html" class="card card-escuro card-link">
             <h3>Controle financeiro</h3>
             <p>Entradas, saídas e fluxo de caixa do mês em uma visão simples.</p>
-            <!-- TROQUE o # pelo link do produto na Hotmart -->
-            <a href="#" target="_blank" rel="noopener" class="link-seta">Ver na Hotmart →</a>
-          </article>
+            <span class="link-seta">Ver planilhas →</span>
+          </a>
 
-          <article class="card card-escuro">
+          <a href="planilhas.html" class="card card-escuro card-link">
             <h3>Estoque e precificação</h3>
             <p>Controle o que entra e sai e descubra o preço certo de cada produto.</p>
-            <a href="#" target="_blank" rel="noopener" class="link-seta">Ver na Hotmart →</a>
-          </article>
+            <span class="link-seta">Ver planilhas →</span>
+          </a>
 
-          <article class="card card-escuro">
+          <a href="planilhas.html" class="card card-escuro card-link">
             <h3>Projetos e consultoria</h3>
             <p>Modelos completos e orientação personalizada para organizar seus processos.</p>
-            <a href="#" target="_blank" rel="noopener" class="link-seta">Ver na Hotmart →</a>
-          </article>
+            <span class="link-seta">Ver planilhas →</span>
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- ===== Achados ===== -->
+    <!-- ===== Achados (cada card leva para a categoria na página de achados) ===== -->
     <section id="achados" class="secao">
       <div class="container">
         <span class="etiqueta">Achados</span>
@@ -142,7 +184,7 @@
         </p>
 
         <div class="cards">
-          <a href="#" target="_blank" rel="noopener" class="card card-link">
+          <a href="achados.html#casa" class="card card-link">
             <div class="card-icone" aria-hidden="true">
               <svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7M5 10v10h14V10"/></svg>
             </div>
@@ -151,7 +193,7 @@
             <span class="link-seta">Ver achados →</span>
           </a>
 
-          <a href="#" target="_blank" rel="noopener" class="card card-link">
+          <a href="achados.html#cozinha" class="card card-link">
             <div class="card-icone" aria-hidden="true">
               <svg viewBox="0 0 24 24"><path d="M6 3v8a3 3 0 0 0 6 0V3M9 3v18M17 3c-2 2-2 6 0 8v10"/></svg>
             </div>
@@ -160,7 +202,7 @@
             <span class="link-seta">Ver achados →</span>
           </a>
 
-          <a href="#" target="_blank" rel="noopener" class="card card-link">
+          <a href="achados.html#tecnologia" class="card card-link">
             <div class="card-icone" aria-hidden="true">
               <svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>
             </div>
@@ -204,22 +246,18 @@
 
     <!-- ===== Contato ===== -->
     <section id="contato" class="secao">
-      <div class="container contato">
+      <div class="container">
         <span class="etiqueta">Contato</span>
         <h2>Vamos conversar?</h2>
-        <p class="secao-texto">
-          Conte o que você precisa. A gente responde rápido e sem compromisso.
-        </p>
-
+        <p class="secao-texto">Conte o que você precisa. A gente responde rápido e sem compromisso.</p>
         <div class="contato-opcoes">
           <a href="https://wa.me/5511945426510" target="_blank" rel="noopener" class="contato-item">
             <span class="contato-titulo">WhatsApp</span>
             <span>Atendimento rápido</span>
           </a>
-          <!-- TROQUE grovanbr pelo seu @ do Instagram -->
-          <a href="https://instagram.com/grovan.oficial" target="_blank" rel="noopener" class="contato-item">
+          <a href="https://instagram.com/grovanbr" target="_blank" rel="noopener" class="contato-item">
             <span class="contato-titulo">Instagram</span>
-            <span>@grovan.oficial</span>
+            <span>@grovanbr</span>
           </a>
           <a href="mailto:contato@grovan.com.br" class="contato-item">
             <span class="contato-titulo">E-mail</span>
@@ -231,16 +269,21 @@
 
   </main>
 
-  <!-- ===== Rodapé ===== -->
+  <!-- ===== Rodapé (igual em todas as páginas) ===== -->
   <footer class="rodape">
     <div class="container rodape-conteudo">
       <img src="img/grovan-logo.png" alt="Grovan" class="logo">
       <p>Achou, resolveu, cresceu.</p>
+      <nav class="rodape-links" aria-label="Links do rodapé">
+        <a href="index.html">Início</a>
+        <a href="planilhas.html">Planilhas</a>
+        <a href="achados.html">Achados</a>
+        <a href="index.html#contato">Contato</a>
+      </nav>
       <p class="rodape-copy">© 2026 Grovan. Todos os direitos reservados.</p>
     </div>
   </footer>
 
-  <!-- ===== Botão flutuante de contato ===== -->
   <a href="https://wa.me/5511945426510" target="_blank" rel="noopener" class="botao-flutuante" aria-label="Fale no WhatsApp">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H10l-5 4v-4H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z"/></svg>
   </a>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Achados | Grovan</title>
-  <meta name="description" content="Achados da Grovan: produtos selecionados para casa, cozinha e tecnologia, de lojas de confiança.">
+  <meta name="description" content="Achados da Grovan: ofertas selecionadas de casa, cozinha e tecnologia em lojas de confiança.">
 
   <link rel="icon" href="img/grovan-perfil-icone.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,161 +28,98 @@
         <a href="index.html#contato">Contato</a>
       </nav>
     </div>
+
+    <!-- Barra de busca e categorias -->
+    <div class="barra-achados">
+      <div class="container">
+        <form id="form-busca" class="busca" role="search">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+          <label for="busca" class="visualmente-oculto">Buscar produtos</label>
+          <input id="busca" type="search" placeholder="Busque por air fryer, fone, organizador...">
+        </form>
+        <div id="pilulas" class="pilulas" aria-label="Categorias"></div>
+      </div>
+    </div>
   </header>
 
   <main>
 
-    <!-- ===== Topo da página ===== -->
-    <section class="pagina-topo">
-      <div class="container">
-        <span class="etiqueta">Achados</span>
-        <h1>Coisas boas para o seu dia a dia</h1>
-        <p class="inicio-texto">
-          Produtos selecionados em lojas de confiança. Só indicamos o que realmente vale a pena.
-        </p>
-        <nav class="categorias" aria-label="Categorias">
-          <a href="#casa" class="categoria">Casa</a>
-          <a href="#cozinha" class="categoria">Cozinha</a>
-          <a href="#tecnologia" class="categoria">Tecnologia</a>
-        </nav>
-      </div>
-    </section>
-
-    <!--
-      =====================================================================
-      COMO ADICIONAR UM PRODUTO
-      1. Copie um bloco inteiro, do <a href=... até o </a> correspondente.
-      2. Cole dentro da categoria certa (Casa, Cozinha ou Tecnologia).
-      3. Troque:
-         - o href="#" pelo seu link de afiliado
-         - o nome da loja (Shopee, Mercado Livre, Amazon...)
-         - o nome e a descrição do produto
-      4. Para remover um produto, apague o bloco inteiro.
-      =====================================================================
-    -->
-
-    <!-- ===== Casa ===== -->
-    <section id="casa" class="secao categoria-secao">
-      <div class="container">
-        <h2>Casa</h2>
-        <div class="produtos">
-
-          <a href="#" target="_blank" rel="noopener sponsored" class="produto">
-            <div class="produto-imagem" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7M5 10v10h14V10"/></svg>
-            </div>
-            <span class="produto-loja">Shopee</span>
-            <h3>Nome do produto</h3>
-            <p>Uma frase curta dizendo por que esse produto vale a pena.</p>
-            <span class="produto-botao">Ver na loja →</span>
-          </a>
-
-          <a href="#" target="_blank" rel="noopener sponsored" class="produto">
-            <div class="produto-imagem" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7M5 10v10h14V10"/></svg>
-            </div>
-            <span class="produto-loja">Mercado Livre</span>
-            <h3>Nome do produto</h3>
-            <p>Uma frase curta dizendo por que esse produto vale a pena.</p>
-            <span class="produto-botao">Ver na loja →</span>
-          </a>
-
-          <a href="#" target="_blank" rel="noopener sponsored" class="produto">
-            <div class="produto-imagem" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7M5 10v10h14V10"/></svg>
-            </div>
-            <span class="produto-loja">Amazon</span>
-            <h3>Nome do produto</h3>
-            <p>Uma frase curta dizendo por que esse produto vale a pena.</p>
-            <span class="produto-botao">Ver na loja →</span>
-          </a>
-
+    <!-- ===== Topo ===== -->
+    <section class="achados-topo">
+      <div class="container achados-topo-conteudo">
+        <div>
+          <span class="etiqueta">Curadoria Grovan</span>
+          <h1>Os melhores <span class="destaque-texto">achados</span> em um só lugar</h1>
+          <p class="inicio-texto">
+            Ofertas de casa, cozinha e tecnologia selecionadas para você.
+            Clique no produto e compre direto na loja parceira.
+          </p>
+          <div class="botoes">
+            <a href="#destaques" class="botao botao-principal">Ver ofertas</a>
+            <a href="#categorias" class="botao botao-secundario">Categorias</a>
+          </div>
         </div>
+        <dl class="numeros">
+          <div><dt>Produtos</dt><dd id="total-produtos">0</dd></div>
+          <div><dt>Lojas parceiras</dt><dd id="total-lojas">0</dd></div>
+        </dl>
       </div>
     </section>
 
-    <!-- ===== Cozinha ===== -->
-    <section id="cozinha" class="secao categoria-secao secao-clara">
+    <!-- ===== Categorias ===== -->
+    <section id="categorias" class="secao-compacta">
       <div class="container">
-        <h2>Cozinha</h2>
-        <div class="produtos">
+        <h2 class="titulo-bloco">Navegue por categoria</h2>
+        <div id="blocos-categoria" class="blocos-categoria"></div>
+      </div>
+    </section>
 
-          <a href="#" target="_blank" rel="noopener sponsored" class="produto">
-            <div class="produto-imagem" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M6 3v8a3 3 0 0 0 6 0V3M9 3v18M17 3c-2 2-2 6 0 8v10"/></svg>
+    <!-- ===== Destaques ===== -->
+    <section id="destaques" class="secao-compacta">
+      <div class="container">
+        <span class="etiqueta">Hoje</span>
+        <h2 class="titulo-bloco">Ofertas em destaque</h2>
+        <div id="grade-destaques" class="grade-ofertas"></div>
+      </div>
+    </section>
+
+    <!-- ===== Todos os achados ===== -->
+    <section id="todos" class="secao-compacta">
+      <div class="container">
+        <h2 class="titulo-bloco">Todos os achados</h2>
+
+        <div class="catalogo">
+          <!-- Filtros -->
+          <aside class="filtros" aria-label="Filtros">
+            <fieldset id="filtro-categorias">
+              <legend>Categoria</legend>
+            </fieldset>
+            <fieldset id="filtro-lojas">
+              <legend>Loja</legend>
+            </fieldset>
+            <button type="button" id="limpar-filtros" class="limpar">Limpar filtros</button>
+          </aside>
+
+          <!-- Lista -->
+          <div class="catalogo-lista">
+            <div class="catalogo-barra">
+              <p id="contador" class="contador"></p>
+              <div class="catalogo-acoes">
+                <button type="button" id="botao-favoritos" class="botao-favoritos" aria-pressed="false">♥ Meus favoritos</button>
+                <label for="ordem" class="visualmente-oculto">Ordenar</label>
+                <select id="ordem">
+                  <option value="relevancia">Relevância</option>
+                  <option value="desconto">Maior desconto</option>
+                  <option value="menor-preco">Menor preço</option>
+                  <option value="maior-preco">Maior preço</option>
+                </select>
+              </div>
             </div>
-            <span class="produto-loja">Shopee</span>
-            <h3>Nome do produto</h3>
-            <p>Uma frase curta dizendo por que esse produto vale a pena.</p>
-            <span class="produto-botao">Ver na loja →</span>
-          </a>
-
-          <a href="#" target="_blank" rel="noopener sponsored" class="produto">
-            <div class="produto-imagem" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M6 3v8a3 3 0 0 0 6 0V3M9 3v18M17 3c-2 2-2 6 0 8v10"/></svg>
-            </div>
-            <span class="produto-loja">Mercado Livre</span>
-            <h3>Nome do produto</h3>
-            <p>Uma frase curta dizendo por que esse produto vale a pena.</p>
-            <span class="produto-botao">Ver na loja →</span>
-          </a>
-
-          <a href="#" target="_blank" rel="noopener sponsored" class="produto">
-            <div class="produto-imagem" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M6 3v8a3 3 0 0 0 6 0V3M9 3v18M17 3c-2 2-2 6 0 8v10"/></svg>
-            </div>
-            <span class="produto-loja">Amazon</span>
-            <h3>Nome do produto</h3>
-            <p>Uma frase curta dizendo por que esse produto vale a pena.</p>
-            <span class="produto-botao">Ver na loja →</span>
-          </a>
-
+            <div id="grade-todos" class="grade-ofertas"></div>
+            <p id="sem-resultado" class="sem-resultado" hidden>Nenhum produto encontrado. Tente outra busca ou limpe os filtros.</p>
+          </div>
         </div>
-      </div>
-    </section>
 
-    <!-- ===== Tecnologia ===== -->
-    <section id="tecnologia" class="secao categoria-secao">
-      <div class="container">
-        <h2>Tecnologia</h2>
-        <div class="produtos">
-
-          <a href="#" target="_blank" rel="noopener sponsored" class="produto">
-            <div class="produto-imagem" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>
-            </div>
-            <span class="produto-loja">Shopee</span>
-            <h3>Nome do produto</h3>
-            <p>Uma frase curta dizendo por que esse produto vale a pena.</p>
-            <span class="produto-botao">Ver na loja →</span>
-          </a>
-
-          <a href="#" target="_blank" rel="noopener sponsored" class="produto">
-            <div class="produto-imagem" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>
-            </div>
-            <span class="produto-loja">Mercado Livre</span>
-            <h3>Nome do produto</h3>
-            <p>Uma frase curta dizendo por que esse produto vale a pena.</p>
-            <span class="produto-botao">Ver na loja →</span>
-          </a>
-
-          <a href="#" target="_blank" rel="noopener sponsored" class="produto">
-            <div class="produto-imagem" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>
-            </div>
-            <span class="produto-loja">Amazon</span>
-            <h3>Nome do produto</h3>
-            <p>Uma frase curta dizendo por que esse produto vale a pena.</p>
-            <span class="produto-botao">Ver na loja →</span>
-          </a>
-
-        </div>
-      </div>
-    </section>
-
-    <section class="secao-aviso">
-      <div class="container">
         <p class="aviso">
           Os links desta página são de afiliado: se você comprar por eles, a Grovan recebe uma pequena comissão,
           sem nenhum custo extra para você. Preços e disponibilidade podem mudar a qualquer momento na loja.
@@ -210,6 +147,10 @@
   <a href="https://wa.me/5511945426510" target="_blank" rel="noopener" class="botao-flutuante" aria-label="Fale no WhatsApp">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H10l-5 4v-4H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z"/></svg>
   </a>
+
+  <!-- Lista de produtos e o código que monta a página -->
+  <script src="js/produtos.js"></script>
+  <script src="js/achados.js"></script>
 
 </body>
 </html>

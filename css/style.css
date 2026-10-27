@@ -9,6 +9,10 @@
   --grafite: #14171A;      /* Texto principal */
   --cinza: #4A524D;        /* Texto secundário */
   --borda: #E2E2DA;        /* Bordas suaves */
+  --superficie: #FFFFFF;   /* Fundo dos cards */
+  --verde-texto: #0F3D2E;  /* Títulos e textos em verde */
+  --sobre-verde: #F6F5F0;  /* Texto em cima de fundo verde */
+  --texto-claro: #CFE0D6;  /* Texto suave em cima de fundo verde */
 
   --fonte-titulo: 'Sora', sans-serif;
   --fonte-texto: 'Inter', sans-serif;
@@ -35,7 +39,7 @@ body {
 
 h1, h2, h3 {
   font-family: var(--fonte-titulo);
-  color: var(--verde);
+  color: var(--verde-texto);
   line-height: 1.2;
 }
 
@@ -91,7 +95,7 @@ a {
 }
 
 .menu a:hover {
-  color: var(--verde);
+  color: var(--verde-texto);
 }
 
 /* ===== Início ===== */
@@ -143,12 +147,12 @@ a {
 
 .botao-principal {
   background: var(--verde);
-  color: var(--areia);
+  color: var(--sobre-verde);
 }
 
 .botao-secundario {
-  border: 2px solid var(--verde);
-  color: var(--verde);
+  border: 2px solid var(--verde-texto);
+  color: var(--verde-texto);
 }
 
 /* ===== Seções (padrão) ===== */
@@ -174,11 +178,11 @@ a {
 }
 
 .secao-escura h2 {
-  color: var(--areia);
+  color: var(--sobre-verde);
 }
 
 .secao-escura .secao-texto {
-  color: #CFE0D6;
+  color: var(--texto-claro);
 }
 
 .etiqueta-clara {
@@ -199,7 +203,7 @@ a {
 
 .card {
   display: block;
-  background: #FFFFFF;
+  background: var(--superficie);
   border: 1px solid var(--borda);
   border-radius: 20px;
   padding: 28px;
@@ -248,11 +252,11 @@ a {
 }
 
 .card-escuro h3 {
-  color: var(--areia);
+  color: var(--sobre-verde);
 }
 
 .card-escuro p {
-  color: #CFE0D6;
+  color: var(--texto-claro);
 }
 
 .card-escuro .link-seta {
@@ -264,7 +268,7 @@ a {
   display: inline-block;
   margin-top: 16px;
   font-weight: 600;
-  color: var(--verde);
+  color: var(--verde-texto);
 }
 
 .card-link:hover .link-seta {
@@ -300,13 +304,13 @@ a {
 
 .valores li {
   padding: 14px 20px;
-  background: #FFFFFF;
+  background: var(--superficie);
   border-radius: 14px;
   border-left: 4px solid var(--broto);
 }
 
 .valores strong {
-  color: var(--verde);
+  color: var(--verde-texto);
 }
 
 /* ===== Contato ===== */
@@ -322,14 +326,14 @@ a {
   gap: 4px;
   padding: 24px;
   border-radius: 20px;
-  background: #FFFFFF;
+  background: var(--superficie);
   border: 1px solid var(--borda);
   color: var(--cinza);
   transition: border-color 0.2s, transform 0.2s;
 }
 
 .contato-item:hover {
-  border-color: var(--verde);
+  border-color: var(--verde-texto);
   transform: translateY(-2px);
 }
 
@@ -337,13 +341,13 @@ a {
   font-family: var(--fonte-titulo);
   font-weight: 700;
   font-size: 20px;
-  color: var(--verde);
+  color: var(--verde-texto);
 }
 
 /* ===== Rodapé ===== */
 .rodape {
   background: var(--verde);
-  color: #CFE0D6;
+  color: var(--texto-claro);
   padding-block: 48px;
 }
 
@@ -394,7 +398,7 @@ a {
 
 /* ===== Link do menu da página atual ===== */
 .menu a.ativo {
-  color: var(--verde);
+  color: var(--verde-texto);
   font-weight: 600;
 }
 
@@ -407,7 +411,7 @@ a {
 }
 
 .passo {
-  background: #FFFFFF;
+  background: var(--superficie);
   border-radius: 20px;
   padding: 28px;
 }
@@ -420,7 +424,7 @@ a {
   height: 40px;
   border-radius: 50%;
   background: var(--broto);
-  color: var(--verde);
+  color: var(--verde-texto);
   font-family: var(--fonte-titulo);
   font-weight: 800;
   margin-bottom: 16px;
@@ -477,13 +481,13 @@ a {
 }
 
 .destaque h2 {
-  color: var(--areia);
+  color: var(--sobre-verde);
   font-size: clamp(24px, 3vw, 32px);
   margin-bottom: 10px;
 }
 
 .destaque p {
-  color: #CFE0D6;
+  color: var(--texto-claro);
 }
 
 .destaque .link-seta {
@@ -511,15 +515,15 @@ a {
 .categoria {
   padding: 10px 20px;
   border-radius: 999px;
-  border: 2px solid var(--verde);
-  color: var(--verde);
+  border: 2px solid var(--verde-texto);
+  color: var(--verde-texto);
   font-weight: 600;
   transition: background 0.2s, color 0.2s;
 }
 
 .categoria:hover {
   background: var(--verde);
-  color: var(--areia);
+  color: var(--sobre-verde);
 }
 
 /* ===== Página Achados: produtos ===== */
@@ -536,7 +540,7 @@ a {
 .produto {
   display: flex;
   flex-direction: column;
-  background: #FFFFFF;
+  background: var(--superficie);
   border: 1px solid var(--borda);
   border-radius: 20px;
   padding: 20px;
@@ -602,7 +606,7 @@ a {
   padding: 10px 16px;
   border-radius: 999px;
   background: var(--verde);
-  color: var(--areia);
+  color: var(--sobre-verde);
   font-weight: 600;
   text-align: center;
 }
@@ -621,7 +625,7 @@ a {
 .plano {
   display: flex;
   flex-direction: column;
-  background: #FFFFFF;
+  background: var(--superficie);
   border: 1px solid var(--borda);
   border-radius: 24px;
   padding: 32px;
@@ -654,7 +658,7 @@ a {
   font-family: var(--fonte-titulo);
   font-size: 28px;
   font-weight: 800;
-  color: var(--verde) !important;
+  color: var(--verde-texto) !important;
   margin-bottom: 16px;
 }
 
@@ -677,7 +681,7 @@ a {
 
 .botao-claro {
   background: var(--broto);
-  color: var(--verde);
+  color: var(--verde-texto);
 }
 
 /* Perguntas frequentes */
@@ -689,7 +693,7 @@ a {
 }
 
 .faq details {
-  background: #FFFFFF;
+  background: var(--superficie);
   border: 1px solid var(--borda);
   border-radius: 16px;
   padding: 18px 22px;
@@ -697,7 +701,7 @@ a {
 
 .faq summary {
   font-weight: 600;
-  color: var(--verde);
+  color: var(--verde-texto);
   cursor: pointer;
 }
 
@@ -743,7 +747,7 @@ a {
   display: flex;
   align-items: center;
   gap: 10px;
-  background: #FFFFFF;
+  background: var(--superficie);
   border: 1px solid var(--borda);
   border-radius: 999px;
   padding: 10px 18px;
@@ -751,7 +755,7 @@ a {
 }
 
 .busca:focus-within {
-  border-color: var(--verde);
+  border-color: var(--verde-texto);
 }
 
 .busca svg {
@@ -787,15 +791,15 @@ a {
   padding: 6px 16px;
   border-radius: 999px;
   border: 1px solid var(--borda);
-  background: #FFFFFF;
+  background: var(--superficie);
   color: var(--cinza);
   cursor: pointer;
 }
 
 .pilula[aria-pressed="true"] {
   background: var(--verde);
-  border-color: var(--verde);
-  color: var(--areia);
+  border-color: var(--verde-texto);
+  color: var(--sobre-verde);
 }
 
 /* Topo da página */
@@ -827,7 +831,7 @@ a {
 }
 
 .numeros div {
-  background: #FFFFFF;
+  background: var(--superficie);
   border: 1px solid var(--borda);
   border-radius: 18px;
   padding: 16px 24px;
@@ -843,7 +847,7 @@ a {
   font-family: var(--fonte-titulo);
   font-size: 32px;
   font-weight: 800;
-  color: var(--verde);
+  color: var(--verde-texto);
 }
 
 /* Seções mais curtas do catálogo */
@@ -871,17 +875,17 @@ a {
   padding: 20px 12px;
   border-radius: 18px;
   border: 1px solid var(--borda);
-  background: #FFFFFF;
+  background: var(--superficie);
   font: inherit;
   font-weight: 600;
-  color: var(--verde);
+  color: var(--verde-texto);
   cursor: pointer;
   transition: transform 0.2s, border-color 0.2s;
 }
 
 .bloco-categoria:hover {
   transform: translateY(-3px);
-  border-color: var(--verde);
+  border-color: var(--verde-texto);
 }
 
 .bloco-categoria small {
@@ -919,7 +923,7 @@ a {
 .oferta {
   display: flex;
   flex-direction: column;
-  background: #FFFFFF;
+  background: var(--superficie);
   border: 1px solid var(--borda);
   border-radius: 18px;
   overflow: hidden;
@@ -973,8 +977,8 @@ a {
   position: absolute;
   bottom: 10px;
   left: 10px;
-  background: rgba(255, 255, 255, 0.92);
-  color: var(--verde);
+  background: var(--superficie);
+  color: var(--verde-texto);
   font-size: 12px;
   font-weight: 600;
   padding: 3px 10px;
@@ -989,7 +993,7 @@ a {
   height: 36px;
   border-radius: 50%;
   border: none;
-  background: #FFFFFF;
+  background: var(--superficie);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1052,7 +1056,7 @@ a {
 .oferta-preco {
   font-family: var(--fonte-titulo);
   font-size: 22px;
-  color: var(--verde);
+  color: var(--verde-texto);
 }
 
 .oferta-botao {
@@ -1060,7 +1064,7 @@ a {
   padding: 10px 16px;
   border-radius: 999px;
   background: var(--verde);
-  color: var(--areia);
+  color: var(--sobre-verde);
   font-weight: 600;
   text-align: center;
   transition: background 0.2s;
@@ -1081,7 +1085,7 @@ a {
 .filtros {
   flex: 1 1 200px;
   max-width: 240px;
-  background: #FFFFFF;
+  background: var(--superficie);
   border: 1px solid var(--borda);
   border-radius: 18px;
   padding: 20px;
@@ -1100,7 +1104,7 @@ a {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: var(--verde);
+  color: var(--verde-texto);
   margin-bottom: 8px;
 }
 
@@ -1113,15 +1117,15 @@ a {
 }
 
 .filtro-opcao input {
-  accent-color: var(--verde);
+  accent-color: var(--verde-texto);
 }
 
 .limpar {
   font: inherit;
   font-weight: 600;
-  color: var(--verde);
+  color: var(--verde-texto);
   background: none;
-  border: 2px solid var(--verde);
+  border: 2px solid var(--verde-texto);
   border-radius: 999px;
   padding: 8px;
   cursor: pointer;
@@ -1156,21 +1160,21 @@ a {
   padding: 8px 14px;
   border-radius: 999px;
   border: 1px solid var(--borda);
-  background: #FFFFFF;
-  color: var(--verde);
+  background: var(--superficie);
+  color: var(--verde-texto);
   cursor: pointer;
 }
 
 .botao-favoritos[aria-pressed="true"] {
   background: var(--verde);
-  color: var(--areia);
+  color: var(--sobre-verde);
 }
 
 .sem-resultado {
   padding: 40px;
   text-align: center;
   color: var(--cinza);
-  background: #FFFFFF;
+  background: var(--superficie);
   border-radius: 18px;
 }
 
@@ -1211,4 +1215,106 @@ a {
   .secao {
     padding-block: 64px;
   }
+}
+
+/* ===================================================== */
+/* ===== Tema escuro ==================================== */
+/* ===================================================== */
+/* O site troca as cores só mudando as variáveis.
+   O atributo data-tema="escuro" é colocado no <html> pelo botão de tema. */
+:root[data-tema="escuro"] {
+  --areia: #0F1613;          /* Fundo da página */
+  --areia-escura: #141E1A;   /* Fundo alternativo */
+  --superficie: #19251F;     /* Cards */
+  --borda: #2A3832;
+  --grafite: #E6ECE8;        /* Texto principal */
+  --cinza: #A9B7AF;          /* Texto secundário */
+  --verde-texto: #E3EFE6;    /* Títulos ficam claros */
+  --broto-escuro: #B8E35A;   /* Destaques ficam verde-limão */
+  --verde: #12442F;          /* Fundos verdes um pouco mais vivos */
+  --verde-medio: #1E5B42;
+  color-scheme: dark;
+}
+
+/* Botão principal: verde-limão no escuro, para continuar se destacando */
+:root[data-tema="escuro"] .botao-principal,
+:root[data-tema="escuro"] .produto-botao,
+:root[data-tema="escuro"] .oferta-botao {
+  background: var(--broto);
+  color: #0F3D2E;
+}
+
+:root[data-tema="escuro"] .oferta-botao:hover {
+  background: #C9EE77;
+}
+
+/* Sombras mais fortes no escuro */
+:root[data-tema="escuro"] .card:hover,
+:root[data-tema="escuro"] .produto:hover,
+:root[data-tema="escuro"] .oferta:hover {
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== Logo: versão para cada tema ===== */
+.logo-tema-escuro { display: none; }
+:root[data-tema="escuro"] .logo-tema-claro { display: none; }
+:root[data-tema="escuro"] .logo-tema-escuro { display: block; }
+
+/* ===== Botão de trocar o tema ===== */
+.cabecalho-direita {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.botao-tema {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--borda);
+  background: var(--superficie);
+  color: var(--verde-texto);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+
+.botao-tema:hover {
+  transform: rotate(15deg);
+}
+
+.botao-tema svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Mostra a lua no tema claro e o sol no tema escuro */
+.icone-sol { display: none; }
+:root[data-tema="escuro"] .icone-sol { display: block; }
+:root[data-tema="escuro"] .icone-lua { display: none; }
+
+/* Transição suave na troca de tema */
+body, .cabecalho, .card, .produto, .oferta, .contato-item, .filtros, .plano, .passo {
+  transition: background-color 0.25s, color 0.25s, border-color 0.25s;
+}
+
+/* Ícones desenhados com linha verde ficam claros no tema escuro */
+:root[data-tema="escuro"] .oferta-imagem > svg,
+:root[data-tema="escuro"] .produto-imagem svg,
+:root[data-tema="escuro"] .oferta-favorito svg {
+  stroke: var(--verde-texto);
+}
+
+:root[data-tema="escuro"] .oferta-favorito[aria-pressed="true"] svg {
+  fill: var(--broto);
+  stroke: var(--broto);
 }

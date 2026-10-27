@@ -84,4 +84,24 @@ const produtos = [
     precoAntigo: 99.90,
     destaque: true
   },
+  {
+    nome: "Escovas Para Maquiagem Multicolor Kit 8 Peças Pincel Macio Sortida",
+    loja: "Mercado Livre",
+    categoria: "Beleza",
+    link: "https://meli.la/1uWXStd",
+    imagem: "https://http2.mlstatic.com/D_NQ_NP_683755-MLB112552959736_062026-O.webp",
+    preco: 27.42,
+    precoAntigo: 42.84,
+    destaque: true
+  },
+  {
+    nome: "Guarda Chuva Grande Reforçado Contra Vento Cabe Na Bolsa",
+    loja: "Mercado Livre",
+    categoria: "Guarda-chuva",
+    link: "https://meli.la/1QaP3Rj",
+    imagem: "https://http2.mlstatic.com/D_NQ_NP_970861-MLB89352137022_082025-O.webp",
+    preco: 26.24,
+    precoAntigo: 36.90,
+    destaque: true
+  },
 ];

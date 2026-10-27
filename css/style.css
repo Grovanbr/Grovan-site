@@ -50,3 +50,98 @@ a {
   width: min(1100px, 100% - 40px);
   margin-inline: auto;
 }
+/* ===== Cabeçalho ===== */
+.cabecalho {
+  position: sticky;   /* Fica fixo no topo ao rolar */
+  top: 0;
+  background: var(--areia);
+  border-bottom: 1px solid #E2E2DA;
+  z-index: 10;
+}
+
+.cabecalho-conteudo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding-block: 16px;
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.menu a {
+  font-weight: 500;
+  color: var(--cinza);
+  transition: color 0.2s;
+}
+
+.menu a:hover {
+  color: var(--verde);
+}
+
+/* ===== Seção inicial ===== */
+.inicio {
+  padding-block: 96px;
+}
+
+.etiqueta {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--broto-escuro);
+  margin-bottom: 16px;
+}
+
+.inicio h1 {
+  font-size: clamp(36px, 6vw, 64px); /* Diminui sozinho no celular */
+  max-width: 800px;
+  margin-bottom: 20px;
+}
+
+.inicio-texto {
+  font-size: 19px;
+  color: var(--cinza);
+  max-width: 640px;
+  margin-bottom: 32px;
+}
+
+/* ===== Botões ===== */
+.botoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.botao {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-weight: 600;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.botao:hover {
+  transform: translateY(-2px);
+}
+
+.botao-principal {
+  background: var(--verde);
+  color: var(--areia);
+}
+
+.botao-secundario {
+  border: 2px solid var(--verde);
+  color: var(--verde);
+}

@@ -84,4 +84,14 @@ const produtos = [
     precoAntigo: 99.90,
     destaque: true
   },
+  {
+    nome: "Secret Boom Box Gloss Labial Com Chaveiro De Ursinho Sortido Surpresa Blind Box Lacrada",
+    loja: "Mercado Livre",
+    categoria: "Casa",
+    link: "https://meli.la/1J5psfu",
+    imagem: "https://http2.mlstatic.com/D_NQ_NP_849806-MLB114054669571_072026-O.webp",
+    preco: 0.00,
+    precoAntigo: 138.00,
+    destaque: true
+  },
 ];

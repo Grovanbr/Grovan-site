@@ -1,0 +1,52 @@
+/* ===== Cores e fontes da marca ===== */
+:root {
+  --verde: #0F3D2E;        /* Verde Grovan */
+  --broto: #B8E35A;        /* Verde-limão de destaque */
+  --broto-escuro: #7DB52E; /* Destaque sobre fundo claro */
+  --areia: #F6F5F0;        /* Fundo claro */
+  --grafite: #14171A;      /* Texto principal */
+  --cinza: #4A524D;        /* Texto secundário */
+
+  --fonte-titulo: 'Sora', sans-serif;
+  --fonte-texto: 'Inter', sans-serif;
+}
+
+/* ===== Base ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth; /* Rolagem suave ao clicar no menu */
+}
+
+body {
+  font-family: var(--fonte-texto);
+  color: var(--grafite);
+  background: var(--areia);
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: var(--fonte-titulo);
+  color: var(--verde);
+  line-height: 1.2;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Largura máxima do conteúdo */
+.container {
+  width: min(1100px, 100% - 40px);
+  margin-inline: auto;
+}

@@ -26,11 +26,11 @@ const banners = [
   },
   {
     "tipo": "produto",
-    "nome": "Outro produto de tecnologia"
+    "nome": "Guarda Chuva Grande Reforçado Contra Vento Cabe Na Bolsa"
   },
   {
     "tipo": "produto",
-    "nome": "Guarda Chuva Grande Reforçado Contra Vento Cabe Na Bolsa"
+    "nome": "Outro produto de tecnologia"
   },
   {
     "tipo": "produto",

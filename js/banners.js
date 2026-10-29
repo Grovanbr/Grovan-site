@@ -26,10 +26,6 @@ const banners = [
   },
   {
     "tipo": "produto",
-    "nome": "Nome do produto de tecnologia"
-  },
-  {
-    "tipo": "produto",
     "nome": "Nome do produto de cozinha"
   },
   {

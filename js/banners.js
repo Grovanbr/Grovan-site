@@ -14,11 +14,11 @@ const configBanner = {"segundos": 5};
 const banners = [
   {
     "tipo": "produto",
-    "nome": "Nome do produto de cozinha"
+    "nome": "Nome do produto de tecnologia"
   },
   {
     "tipo": "produto",
-    "nome": "Nome do produto de tecnologia"
+    "nome": "Nome do produto de cozinha"
   },
   {
     "tipo": "produto",

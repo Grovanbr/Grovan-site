@@ -369,33 +369,6 @@ a {
   opacity: 0.8;
 }
 
-/* ===== Botão flutuante ===== */
-.botao-flutuante {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  width: 58px;
-  height: 58px;
-  border-radius: 50%;
-  background: var(--verde);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 8px 24px rgba(15, 61, 46, 0.3);
-  transition: transform 0.2s;
-  z-index: 20;
-}
-
-.botao-flutuante:hover {
-  transform: scale(1.08);
-}
-
-.botao-flutuante svg {
-  width: 26px;
-  height: 26px;
-  fill: var(--broto);
-}
-
 /* ===== Link do menu da página atual ===== */
 .menu a.ativo {
   color: var(--verde-texto);
@@ -1317,4 +1290,499 @@ body, .cabecalho, .card, .produto, .oferta, .contato-item, .filtros, .plano, .pa
 :root[data-tema="escuro"] .oferta-favorito[aria-pressed="true"] svg {
   fill: var(--broto);
   stroke: var(--broto);
+}
+
+/* ===================================================== */
+/* ===== Botão do WhatsApp (fixo no canto) ============== */
+/* ===================================================== */
+.botao-whatsapp {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 20px 14px 16px;
+  border-radius: 999px;
+  background: #25D366;         /* Verde do WhatsApp: a pessoa reconhece na hora */
+  color: #06301B;
+  font-weight: 600;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.botao-whatsapp:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.28);
+}
+
+.botao-whatsapp svg {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linejoin: round;
+}
+
+.botao-whatsapp .whats-fone {
+  fill: currentColor;
+  stroke: none;
+}
+
+/* No celular vira só um círculo com o ícone */
+@media (max-width: 600px) {
+  .botao-whatsapp {
+    padding: 0;
+    width: 58px;
+    height: 58px;
+    justify-content: center;
+  }
+
+  .botao-whatsapp-texto {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+  .botao-whatsapp svg {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* ===================================================== */
+/* ===== Banner rotativo (página Achados) =============== */
+/* ===================================================== */
+/* Tamanho: 1100 x 380 no computador (proporção perto de 3:1),
+   e no celular a foto fica em cima e o texto embaixo. */
+.banner-area {
+  padding-top: 24px;
+}
+
+.banner {
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 78% 50%, rgba(184, 227, 90, 0.28), transparent 55%),
+    var(--verde);
+  color: var(--sobre-verde);
+}
+
+.banner-janela {
+  overflow: hidden;
+}
+
+.banner-trilho {
+  display: flex;
+  transition: transform 0.6s ease;
+}
+
+.banner-slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  aspect-ratio: 3 / 1;   /* Mesmo formato da arte de 1200 x 400. Se o texto não couber, cresce sozinho */
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  align-items: center;
+  gap: 32px;
+  padding: 36px 80px 60px;
+}
+
+.banner-selo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  color: var(--texto-claro);
+  margin-bottom: 12px;
+}
+
+.banner-pct {
+  background: var(--broto);
+  color: #0F3D2E;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-family: var(--fonte-titulo);
+  font-weight: 800;
+}
+
+.banner-nome {
+  color: var(--sobre-verde);
+  font-size: clamp(24px, 3.2vw, 36px);
+  margin-bottom: 12px;
+  /* No máximo 3 linhas; o resto vira "..." */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.banner-precos {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+
+.banner-precos s {
+  color: var(--texto-claro);
+  opacity: 0.85;
+}
+
+.banner-precos strong {
+  font-family: var(--fonte-titulo);
+  font-size: clamp(28px, 3.4vw, 40px);
+  color: var(--broto);
+}
+
+.banner-botao {
+  background: var(--broto);
+  color: #0F3D2E;
+}
+
+.banner-botao:hover {
+  background: #C9EE77;
+}
+
+/* Foto do produto num quadro branco (as fotos das lojas têm fundo branco) */
+.banner-foto {
+  justify-self: center;
+  width: min(100%, 260px, 22vw);
+  aspect-ratio: 1;
+  background: #FFFFFF;
+  border-radius: 24px;
+  padding: 16px;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  transform: rotate(-2deg);
+}
+
+.banner-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.banner-foto svg {
+  width: 45%;
+  fill: none;
+  stroke: #0F3D2E;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Setas */
+.banner-seta {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.banner-seta:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.banner-anterior { left: 18px; }
+.banner-proximo { right: 18px; }
+
+.banner-seta svg,
+.banner-pausa svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Bolinhas e pausa */
+.banner-controles {
+  position: absolute;
+  right: 24px;
+  bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.banner-pontos {
+  display: flex;
+  gap: 8px;
+}
+
+.banner-ponto {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  border: 0;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: width 0.3s, background 0.3s;
+}
+
+.banner-ponto[aria-current="true"] {
+  width: 28px;
+  background: var(--broto);
+}
+
+.banner-pausa {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: transparent;
+  color: #FFFFFF;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.banner-pausa svg { width: 14px; height: 14px; }
+.banner-pausa .icone-play { display: none; fill: currentColor; }
+.banner-pausa[aria-pressed="true"] .icone-play { display: block; }
+.banner-pausa[aria-pressed="true"] .icone-pausa { display: none; }
+
+.banner-unico .banner-seta,
+.banner-unico .banner-controles {
+  display: none;
+}
+
+.banner :focus-visible {
+  outline: 3px solid var(--broto);
+  outline-offset: 2px;
+}
+
+:root[data-tema="escuro"] .banner {
+  border: 1px solid var(--borda);
+}
+
+/* Celular: foto em cima, texto embaixo, sem setas (arrasta com o dedo) */
+@media (max-width: 700px) {
+  .banner { border-radius: 22px; }
+
+  /* No celular, todos os banners em pé (4:5), igual à arte de 1080 x 1350 */
+  .banner-slide {
+    grid-template-columns: 1fr;
+    aspect-ratio: 4 / 5;
+    align-content: start;
+    gap: 12px;
+    padding: 18px 22px 66px;
+  }
+
+  .banner-foto {
+    order: -1;
+    width: 128px;
+  }
+
+  .banner-selo {
+    margin-bottom: 8px;
+  }
+
+  .banner-nome {
+    font-size: 22px;
+    -webkit-line-clamp: 2;
+    margin-bottom: 8px;
+  }
+
+  .banner-precos {
+    margin-bottom: 12px;
+  }
+
+  .banner-precos strong {
+    font-size: 26px;
+  }
+
+  .banner-botao {
+    padding: 11px 22px;
+  }
+
+  .banner-seta { display: none; }
+
+  .banner-controles {
+    right: auto;
+    left: 16px;
+    bottom: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .banner-trilho { transition: none; }
+}
+
+/* Banner com arte própria: a imagem ocupa o banner inteiro */
+.banner-slide-arte {
+  position: relative;
+  padding: 0;
+  display: block;
+  background: var(--verde);
+}
+
+.banner-slide-arte picture,
+.banner-slide-arte img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.banner-slide-arte img {
+  object-fit: cover;
+}
+
+/* Bolinhas legíveis em cima de qualquer imagem */
+.banner-controles {
+  background: rgba(0, 0, 0, 0.28);
+  padding: 6px 8px 6px 12px;
+  border-radius: 999px;
+}
+
+@media (max-width: 700px) {
+  /* Sem imagem de celular: mostra a do computador inteira */
+  .banner-slide-arte.sem-celular img {
+    object-fit: contain;
+  }
+}
+
+/* ===================================================== */
+/* ===== Página Contato ================================= */
+/* ===================================================== */
+.contato-grade {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  align-items: start;
+}
+
+.contato-canais {
+  display: grid;
+  gap: 16px;
+}
+
+.contato-icone {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--areia-escura);
+  display: grid;
+  place-items: center;
+  margin-bottom: 8px;
+}
+
+.contato-icone svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: var(--verde-texto);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.contato-item-whats .contato-icone {
+  background: #25D366;
+}
+
+.contato-item-whats .contato-icone svg {
+  stroke: #06301B;
+}
+
+.contato-detalhe {
+  font-size: 14px;
+}
+
+.form-contato {
+  background: var(--superficie);
+  border: 1px solid var(--borda);
+  border-radius: 24px;
+  padding: 32px;
+  display: grid;
+  gap: 16px;
+}
+
+.form-contato h2 {
+  font-size: 26px;
+}
+
+.ajuda-form {
+  color: var(--cinza);
+  margin-top: -8px;
+}
+
+.campo-form {
+  display: grid;
+  gap: 6px;
+  font-weight: 600;
+  color: var(--verde-texto);
+}
+
+.campo-form input,
+.campo-form select,
+.campo-form textarea {
+  font: inherit;
+  font-weight: 400;
+  color: var(--grafite);
+  background: var(--areia);
+  border: 1px solid var(--borda);
+  border-radius: 12px;
+  padding: 12px 14px;
+  width: 100%;
+}
+
+.campo-form textarea {
+  resize: vertical;
+}
+
+.campo-form input:focus,
+.campo-form select:focus,
+.campo-form textarea:focus {
+  outline: 2px solid var(--broto-escuro);
+  outline-offset: 1px;
+}
+
+.form-contato .botao {
+  font: inherit;
+  font-weight: 600;
+  border: 0;
+  cursor: pointer;
+  justify-self: start;
+}
+
+/* ===== Página Sobre: chamada final ===== */
+.chamada {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.chamada .secao-texto {
+  margin-bottom: 0;
+}
+
+/* Espaço no fim da página para o botão do WhatsApp não cobrir o rodapé */
+.rodape {
+  padding-bottom: 96px;
 }

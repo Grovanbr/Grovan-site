@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Grovan | Informática, Planilhas e Achados</title>
-  <meta name="description" content="Serviços de informática, planilhas, consultoria e achados para casa, cozinha e tecnologia.">
+  <title>Grovan | Achados com desconto em lojas de confiança</title>
+  <meta name="description" content="Achados da Grovan: ofertas selecionadas de casa, cozinha e tecnologia em lojas de confiança.">
 
   <!-- Aplica o tema salvo antes de desenhar a página (evita piscar) -->
   <script>
@@ -31,11 +31,9 @@
       </a>
       <div class="cabecalho-direita">
         <nav class="menu" aria-label="Menu principal">
-          <a href="./#servicos">Serviços</a>
-          <a href="planilhas/">Planilhas</a>
-          <a href="achados/">Achados</a>
-          <a href="./#sobre">Sobre</a>
-          <a href="./#contato">Contato</a>
+          <a href="./" class="ativo" aria-current="page">Achados</a>
+          <a href="sobre/">Sobre</a>
+          <a href="contato/">Contato</a>
         </nav>
         <button type="button" class="botao-tema" aria-label="Mudar para o tema escuro" aria-pressed="false">
           <svg class="icone-lua" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
@@ -43,242 +41,95 @@
         </button>
       </div>
     </div>
+
+    <!-- Barra de busca e categorias -->
+    <div class="barra-achados">
+      <div class="container">
+        <form id="form-busca" class="busca" role="search">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+          <label for="busca" class="visualmente-oculto">Buscar produtos</label>
+          <input id="busca" type="search" placeholder="Busque por air fryer, fone, organizador...">
+        </form>
+        <div id="pilulas" class="pilulas" aria-label="Categorias"></div>
+      </div>
+    </div>
   </header>
 
   <main>
 
-    <!-- ===== Início ===== -->
-    <section id="inicio" class="inicio">
+    <!-- ===== Banner rotativo (mostra os produtos marcados como destaque) ===== -->
+    <section class="banner-area" aria-label="Ofertas em destaque">
       <div class="container">
-        <span class="etiqueta">Informática · Planilhas · Achados</span>
-        <h1>Achou, resolveu, cresceu.</h1>
-        <p class="inicio-texto">
-          Serviços de informática, planilhas prontas e consultoria para facilitar
-          sua vida e fazer seu negócio crescer. Tudo com atendimento próximo e sem enrolação.
-        </p>
-        <div class="botoes">
-          <a href="https://wa.me/5511945426510" target="_blank" rel="noopener" class="botao botao-principal">Fale no WhatsApp</a>
-          <a href="#servicos" class="botao botao-secundario">Ver serviços</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== Serviços ===== -->
-    <section id="servicos" class="secao">
-      <div class="container">
-        <span class="etiqueta">Serviços</span>
-        <h2>Informática que resolve</h2>
-        <p class="secao-texto">
-          Cuidamos do seu computador e da sua tecnologia para você não perder tempo com problema.
-        </p>
-
-        <div class="cards">
-          <article class="card">
-            <div class="card-icone" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>
-            </div>
-            <h3>Formatação e instalação</h3>
-            <p>Formatação, instalação do Windows, programas e drivers. Seu computador como novo.</p>
-          </article>
-          <article class="card">
-            <div class="card-icone" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></svg>
-            </div>
-            <h3>Manutenção e limpeza</h3>
-            <p>Limpeza, troca de peças e otimização para o computador voltar a ficar rápido.</p>
-          </article>
-          <article class="card">
-            <div class="card-icone" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0M12 19.5h.01"/></svg>
-            </div>
-            <h3>Suporte e configuração</h3>
-            <p>Configuração de impressoras, Wi-Fi, e-mail e programas. Atendimento presencial ou remoto.</p>
-          </article>
-          <article class="card">
-            <div class="card-icone" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/></svg>
-            </div>
-            <h3>Consultoria</h3>
-            <p>Organização financeira, processos e ferramentas para o seu negócio funcionar melhor.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== Como funciona ===== -->
-    <section class="secao secao-clara">
-      <div class="container">
-        <span class="etiqueta">Como funciona</span>
-        <h2>Simples do começo ao fim</h2>
-        <p class="secao-texto">Do primeiro contato até o problema resolvido, você sabe exatamente o que está acontecendo.</p>
-
-        <ol class="passos">
-          <li class="passo">
-            <span class="passo-numero">1</span>
-            <h3>Você chama</h3>
-            <p>Conte pelo WhatsApp o que está acontecendo ou o que você precisa.</p>
-          </li>
-          <li class="passo">
-            <span class="passo-numero">2</span>
-            <h3>A gente explica</h3>
-            <p>Você recebe o diagnóstico, o que vai ser feito, o prazo e o valor, antes de começar.</p>
-          </li>
-          <li class="passo">
-            <span class="passo-numero">3</span>
-            <h3>Resolvido</h3>
-            <p>Fazemos o serviço, presencial ou remoto, e você acompanha cada etapa.</p>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- ===== Diferenciais ===== -->
-    <section class="secao">
-      <div class="container">
-        <span class="etiqueta">Por que a Grovan</span>
-        <h2>Atendimento de quem se importa</h2>
-        <div class="diferenciais">
-          <div class="diferencial">
-            <h3>Sem surpresa no preço</h3>
-            <p>O valor é combinado antes. Nada de cobrança escondida no final.</p>
+        <div id="banner" class="banner" aria-roledescription="carrossel" hidden>
+          <div class="banner-janela">
+            <div id="banner-trilho" class="banner-trilho" aria-live="off"></div>
           </div>
-          <div class="diferencial">
-            <h3>Explicação clara</h3>
-            <p>Você entende o que foi feito, sem termos técnicos complicados.</p>
-          </div>
-          <div class="diferencial">
-            <h3>Presencial ou remoto</h3>
-            <p>Atendemos do jeito mais prático para você.</p>
-          </div>
-          <div class="diferencial">
-            <h3>Resposta rápida</h3>
-            <p>Chamou no WhatsApp, a gente responde o quanto antes.</p>
+          <button type="button" class="banner-seta banner-anterior" aria-label="Oferta anterior">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+          </button>
+          <button type="button" class="banner-seta banner-proximo" aria-label="Próxima oferta">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+          </button>
+          <div class="banner-controles">
+            <div id="banner-pontos" class="banner-pontos"></div>
+            <button type="button" id="banner-pausa" class="banner-pausa" aria-label="Pausar o banner" aria-pressed="false">
+              <svg class="icone-pausa" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6v12M15 6v12"/></svg>
+              <svg class="icone-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5l11 7-11 7z"/></svg>
+            </button>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== Planilhas e Projetos (cada card leva para a página de planilhas) ===== -->
-    <section id="planilhas" class="secao secao-escura">
+    <!-- ===== Categorias ===== -->
+    <section id="categorias" class="secao-compacta">
       <div class="container">
-        <span class="etiqueta etiqueta-clara">Planilhas e Projetos</span>
-        <h2>Organize seu negócio sem começar do zero</h2>
-        <p class="secao-texto">
-          Planilhas prontas e projetos completos, fáceis de usar e com instruções claras.
-        </p>
-
-        <div class="cards">
-          <a href="planilhas/" class="card card-escuro card-link">
-            <h3>Controle financeiro</h3>
-            <p>Entradas, saídas e fluxo de caixa do mês em uma visão simples.</p>
-            <span class="link-seta">Ver planilhas →</span>
-          </a>
-
-          <a href="planilhas/" class="card card-escuro card-link">
-            <h3>Estoque e precificação</h3>
-            <p>Controle o que entra e sai e descubra o preço certo de cada produto.</p>
-            <span class="link-seta">Ver planilhas →</span>
-          </a>
-
-          <a href="planilhas/" class="card card-escuro card-link">
-            <h3>Projetos e consultoria</h3>
-            <p>Modelos completos e orientação personalizada para organizar seus processos.</p>
-            <span class="link-seta">Ver planilhas →</span>
-          </a>
-        </div>
+        <h2 class="titulo-bloco">Navegue por categoria</h2>
+        <div id="blocos-categoria" class="blocos-categoria"></div>
       </div>
     </section>
 
-    <!-- ===== Achados (cada card leva para a categoria na página de achados) ===== -->
-    <section id="achados" class="secao">
+    <!-- ===== Todos os achados ===== -->
+    <section id="todos" class="secao-compacta">
       <div class="container">
-        <span class="etiqueta">Achados</span>
-        <h2>Coisas boas para o seu dia a dia</h2>
-        <p class="secao-texto">
-          Produtos selecionados de lojas de confiança. Só indicamos o que vale a pena.
-        </p>
+        <h1 class="titulo-bloco">Todos os achados</h1>
 
-        <div class="cards">
-          <a href="achados/#casa" class="card card-link">
-            <div class="card-icone" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7M5 10v10h14V10"/></svg>
-            </div>
-            <h3>Casa</h3>
-            <p>Organização, decoração e itens que facilitam a rotina.</p>
-            <span class="link-seta">Ver achados →</span>
-          </a>
+        <div class="catalogo">
+          <!-- Filtros -->
+          <aside class="filtros" aria-label="Filtros">
+            <fieldset id="filtro-categorias">
+              <legend>Categoria</legend>
+            </fieldset>
+            <fieldset id="filtro-lojas">
+              <legend>Loja</legend>
+            </fieldset>
+            <button type="button" id="limpar-filtros" class="limpar">Limpar filtros</button>
+          </aside>
 
-          <a href="achados/#cozinha" class="card card-link">
-            <div class="card-icone" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M6 3v8a3 3 0 0 0 6 0V3M9 3v18M17 3c-2 2-2 6 0 8v10"/></svg>
+          <!-- Lista -->
+          <div class="catalogo-lista">
+            <div class="catalogo-barra">
+              <p id="contador" class="contador"></p>
+              <div class="catalogo-acoes">
+                <button type="button" id="botao-favoritos" class="botao-favoritos" aria-pressed="false">♥ Meus favoritos</button>
+                <label for="ordem" class="visualmente-oculto">Ordenar</label>
+                <select id="ordem">
+                  <option value="relevancia">Relevância</option>
+                  <option value="desconto">Maior desconto</option>
+                  <option value="menor-preco">Menor preço</option>
+                  <option value="maior-preco">Maior preço</option>
+                </select>
+              </div>
             </div>
-            <h3>Cozinha</h3>
-            <p>Utensílios práticos e eletroportáteis que valem o investimento.</p>
-            <span class="link-seta">Ver achados →</span>
-          </a>
-
-          <a href="achados/#tecnologia" class="card card-link">
-            <div class="card-icone" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>
-            </div>
-            <h3>Tecnologia</h3>
-            <p>Acessórios, periféricos e eletrônicos com bom custo-benefício.</p>
-            <span class="link-seta">Ver achados →</span>
-          </a>
+            <div id="grade-todos" class="grade-ofertas"></div>
+            <p id="sem-resultado" class="sem-resultado" hidden>Nenhum produto encontrado. Tente outra busca ou limpe os filtros.</p>
+          </div>
         </div>
 
         <p class="aviso">
-          Alguns links são de afiliado: se você comprar por eles, a Grovan recebe uma pequena comissão,
-          sem nenhum custo extra para você.
+          Os links desta página são de afiliado: se você comprar por eles, a Grovan recebe uma pequena comissão,
+          sem nenhum custo extra para você. Preços e disponibilidade podem mudar a qualquer momento na loja.
         </p>
-      </div>
-    </section>
-
-    <!-- ===== Sobre ===== -->
-    <section id="sobre" class="secao secao-clara">
-      <div class="container sobre">
-        <div>
-          <span class="etiqueta">Sobre</span>
-          <h2>Uma empresa nova, feita para facilitar</h2>
-        </div>
-        <div class="sobre-texto">
-          <p>
-            A Grovan é uma empresa jovem, que acabou de começar e já sabe aonde quer chegar.
-            Nascemos com um propósito simples: facilitar o dia a dia de quem compra e de quem empreende.
-          </p>
-          <p>
-            Acreditamos em atendimento próximo, indicação honesta e solução sem enrolação.
-            Estamos crescendo, e queremos crescer junto com você.
-          </p>
-          <ul class="valores">
-            <li><strong>Honestidade</strong> no que indicamos</li>
-            <li><strong>Clareza</strong> no que explicamos</li>
-            <li><strong>Compromisso</strong> com o que entregamos</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== Contato ===== -->
-    <section id="contato" class="secao">
-      <div class="container">
-        <span class="etiqueta">Contato</span>
-        <h2>Vamos conversar?</h2>
-        <p class="secao-texto">Conte o que você precisa. A gente responde rápido e sem compromisso.</p>
-        <div class="contato-opcoes">
-          <a href="https://wa.me/5511945426510" target="_blank" rel="noopener" class="contato-item">
-            <span class="contato-titulo">WhatsApp</span>
-            <span>Atendimento rápido</span>
-          </a>
-          <a href="https://instagram.com/grovanbr" target="_blank" rel="noopener" class="contato-item">
-            <span class="contato-titulo">Instagram</span>
-            <span>@grovanbr</span>
-          </a>
-          <a href="mailto:contato@grovan.com.br" class="contato-item">
-            <span class="contato-titulo">E-mail</span>
-            <span>contato@grovan.com.br</span>
-          </a>
-        </div>
       </div>
     </section>
 
@@ -290,19 +141,24 @@
       <img src="img/grovan-logo.png" alt="Grovan" class="logo">
       <p>Achou, resolveu, cresceu.</p>
       <nav class="rodape-links" aria-label="Links do rodapé">
-        <a href="./">Início</a>
+        <a href="./">Achados</a>
+        <a href="sobre/">Sobre</a>
         <a href="planilhas/">Planilhas</a>
-        <a href="achados/">Achados</a>
-        <a href="./#contato">Contato</a>
+        <a href="contato/">Contato</a>
       </nav>
       <p class="rodape-copy">© 2026 Grovan. Todos os direitos reservados.</p>
     </div>
   </footer>
 
-  <a href="https://wa.me/5511945426510" target="_blank" rel="noopener" class="botao-flutuante" aria-label="Fale no WhatsApp">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H10l-5 4v-4H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z"/></svg>
+  <!-- ===== Botão do WhatsApp (fica fixo no canto da tela) ===== -->
+  <a href="https://wa.me/5511945426510?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Grovan!" target="_blank" rel="noopener" class="botao-whatsapp" aria-label="Fale com a Grovan no WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z"/><path class="whats-fone" d="M9.2 7.8c.3 0 .5 0 .7.5l.7 1.6c.1.3 0 .5-.1.7l-.5.6c-.1.2-.2.3 0 .6.5.9 1.3 1.7 2.2 2.2.3.2.5.1.6 0l.6-.7c.2-.2.4-.2.6-.1l1.6.8c.3.1.4.3.4.5 0 .9-.7 1.7-1.6 1.8-1 .1-2.4-.3-4-1.7-1.5-1.3-2.3-2.8-2.4-3.9-.1-1 .5-2 1.2-2.9z"/></svg>
+    <span class="botao-whatsapp-texto">Fale no WhatsApp</span>
   </a>
 
+  <script src="js/produtos.js"></script>
+  <script src="js/banners.js"></script>
+  <script src="js/achados.js"></script>
   <script src="js/tema.js"></script>
 
 </body>

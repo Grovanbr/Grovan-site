@@ -221,11 +221,6 @@ function produtosFiltrados() {
 
 // ===== Redesenha a página com o filtro atual =====
 function atualizarTudo() {
-  // Destaques
-  const destaques = document.getElementById("grade-destaques");
-  destaques.innerHTML = "";
-  produtos.filter(p => p.destaque).slice(0, 4).forEach(p => destaques.appendChild(cardProduto(p)));
-
   // Todos os achados
   const lista = produtosFiltrados();
   const grade = document.getElementById("grade-todos");
@@ -277,12 +272,10 @@ document.getElementById("limpar-filtros").addEventListener("click", () => {
 });
 
 // ===== Início =====
-document.getElementById("total-produtos").textContent = produtos.length;
-document.getElementById("total-lojas").textContent = lojas.length;
 montarBlocosCategoria();
 montarFiltrosLaterais();
 
-// Se veio da página inicial (ex.: achados.html#cozinha), já abre na categoria
+// Se veio de um link com categoria (ex.: grovan.com.br/#cozinha), já abre nela
 const doLink = semAcento(decodeURIComponent(location.hash.replace("#", "")));
 const categoriaDoLink = categorias.find(c => semAcento(c) === doLink);
 if (categoriaDoLink) filtro.categoria = categoriaDoLink;
@@ -292,3 +285,197 @@ atualizarTudo();
 if (categoriaDoLink) {
   document.getElementById("todos").scrollIntoView();
 }
+
+// =====================================================================
+// ===== Banner rotativo ===============================================
+// =====================================================================
+// A ordem, o tempo e os banners com imagem vêm do banners.js (tela Banners do painel).
+// Produtos com estrela (destaque) que não estão na lista entram no final.
+(function () {
+  const banner = document.getElementById("banner");
+  if (!banner) return;
+
+  const temArquivo = typeof banners !== "undefined" && Array.isArray(banners);
+  const ajustes = typeof configBanner !== "undefined" ? configBanner : {};
+  const segundos = Math.min(15, Math.max(3, Number(ajustes.segundos) || 5));
+
+  // Monta a fila
+  const destaques = produtos.filter(p => p.destaque);
+  const usados = new Set();
+  let fila = [];
+  if (temArquivo) {
+    banners.forEach(item => {
+      if (item.tipo === "produto") {
+        const produto = destaques.find(p => p.nome === item.nome);
+        if (produto && !usados.has(produto.nome)) {
+          usados.add(produto.nome);
+          fila.push({ produto });
+        }
+      } else if (item.tipo === "imagem" && item.ativo !== false && item.imagem) {
+        fila.push({ arte: item });
+      }
+    });
+  }
+  destaques.forEach(p => { if (!usados.has(p.nome)) fila.push({ produto: p }); });
+  // Sem o banners.js (site antigo), usa os primeiros produtos para não ficar vazio
+  if (!temArquivo && fila.length === 0) fila = produtos.slice(0, 5).map(p => ({ produto: p }));
+  if (fila.length === 0) return; // nada marcado: o banner não aparece
+
+  const trilho = document.getElementById("banner-trilho");
+  const pontos = document.getElementById("banner-pontos");
+  const botaoPausa = document.getElementById("banner-pausa");
+
+  function ehLinkDeFora(link) {
+    return /^https?:\/\//i.test(link);
+  }
+
+  // Slide de um produto
+  function slideProduto(produto, i) {
+    const slide = criar("article", "banner-slide");
+    const texto = criar("div", "banner-texto");
+    const pct = desconto(produto);
+    const selo = criar("p", "banner-selo");
+    if (pct > 0) selo.appendChild(criar("span", "banner-pct", "-" + pct + "%"));
+    selo.appendChild(criar("span", "", "Achado na " + produto.loja));
+    texto.appendChild(selo);
+    texto.appendChild(criar("h2", "banner-nome", produto.nome));
+
+    const precos = criar("p", "banner-precos");
+    if (pct > 0) precos.appendChild(criar("s", "", formatarPreco(produto.precoAntigo)));
+    precos.appendChild(criar("strong", "", formatarPreco(produto.preco)));
+    texto.appendChild(precos);
+
+    const botao = criar("a", "botao banner-botao", "Ver oferta →");
+    botao.href = produto.link;
+    botao.target = "_blank";
+    botao.rel = "noopener sponsored";
+    texto.appendChild(botao);
+
+    const foto = criar("div", "banner-foto");
+    if (produto.imagem) {
+      const img = document.createElement("img");
+      img.src = produto.imagem;
+      img.alt = "";
+      if (i > 0) img.loading = "lazy";
+      foto.appendChild(img);
+    } else {
+      foto.innerHTML = svgIcone(produto.categoria);
+    }
+    slide.appendChild(texto);
+    slide.appendChild(foto);
+    return slide;
+  }
+
+  // Slide com arte própria (imagem do computador e, se tiver, do celular)
+  function slideArte(arte, i) {
+    const slide = criar(arte.link ? "a" : "div", "banner-slide banner-slide-arte");
+    if (!arte.imagemCelular) slide.classList.add("sem-celular");
+    if (arte.link) {
+      slide.href = arte.link;
+      if (ehLinkDeFora(arte.link)) {
+        slide.target = "_blank";
+        slide.rel = "noopener";
+      }
+    }
+    const figura = document.createElement("picture");
+    if (arte.imagemCelular) {
+      const fonte = document.createElement("source");
+      fonte.media = "(max-width: 700px)";
+      fonte.srcset = arte.imagemCelular;
+      figura.appendChild(fonte);
+    }
+    const img = document.createElement("img");
+    img.src = arte.imagem;
+    img.alt = arte.titulo || "Banner Grovan";
+    if (i > 0) img.loading = "lazy";
+    figura.appendChild(img);
+    slide.appendChild(figura);
+    return slide;
+  }
+
+  fila.forEach((item, i) => {
+    const slide = item.produto ? slideProduto(item.produto, i) : slideArte(item.arte, i);
+    slide.setAttribute("aria-roledescription", "slide");
+    slide.setAttribute("aria-label", (i + 1) + " de " + fila.length);
+    trilho.appendChild(slide);
+
+    const ponto = criar("button", "banner-ponto");
+    ponto.type = "button";
+    ponto.setAttribute("aria-label", "Ver banner " + (i + 1));
+    ponto.addEventListener("click", () => { irPara(i); reiniciar(); });
+    pontos.appendChild(ponto);
+  });
+
+  banner.hidden = false;
+  const slides = trilho.children;
+  let atual = 0;
+  let relogio = null;
+  let pausadoPeloUsuario = false;
+  let pausadoPeloMouse = false;
+
+  function irPara(i) {
+    atual = (i + fila.length) % fila.length;
+    trilho.style.transform = "translateX(" + (-100 * atual) + "%)";
+    [...slides].forEach((s, n) => {
+      const visivel = n === atual;
+      s.setAttribute("aria-hidden", visivel ? "false" : "true");
+      // Só o slide visível pode receber o foco do teclado
+      const links = s.matches("a") ? [s] : [...s.querySelectorAll("a")];
+      links.forEach(a => (a.tabIndex = visivel ? 0 : -1));
+    });
+    [...pontos.children].forEach((p, n) => p.setAttribute("aria-current", n === atual ? "true" : "false"));
+  }
+
+  function parar() {
+    clearInterval(relogio);
+    relogio = null;
+  }
+
+  function reiniciar() {
+    parar();
+    if (fila.length > 1 && !pausadoPeloUsuario && !pausadoPeloMouse) {
+      relogio = setInterval(() => irPara(atual + 1), segundos * 1000);
+    }
+  }
+
+  // Setas
+  banner.querySelector(".banner-anterior").addEventListener("click", () => { irPara(atual - 1); reiniciar(); });
+  banner.querySelector(".banner-proximo").addEventListener("click", () => { irPara(atual + 1); reiniciar(); });
+
+  // Botão de pausar
+  botaoPausa.addEventListener("click", () => {
+    pausadoPeloUsuario = !pausadoPeloUsuario;
+    botaoPausa.setAttribute("aria-pressed", pausadoPeloUsuario ? "true" : "false");
+    botaoPausa.setAttribute("aria-label", pausadoPeloUsuario ? "Continuar o banner" : "Pausar o banner");
+    reiniciar();
+  });
+
+  // Para enquanto o mouse ou o teclado está no banner
+  banner.addEventListener("mouseenter", () => { pausadoPeloMouse = true; reiniciar(); });
+  banner.addEventListener("mouseleave", () => { pausadoPeloMouse = false; reiniciar(); });
+  banner.addEventListener("focusin", () => { pausadoPeloMouse = true; reiniciar(); });
+  banner.addEventListener("focusout", () => { pausadoPeloMouse = false; reiniciar(); });
+
+  // Arrastar com o dedo no celular
+  let inicioX = null;
+  trilho.addEventListener("touchstart", e => { inicioX = e.touches[0].clientX; }, { passive: true });
+  trilho.addEventListener("touchend", e => {
+    if (inicioX === null) return;
+    const diferenca = e.changedTouches[0].clientX - inicioX;
+    if (Math.abs(diferenca) > 40) { irPara(atual + (diferenca < 0 ? 1 : -1)); reiniciar(); }
+    inicioX = null;
+  });
+
+  // Com um banner só, esconde setas e bolinhas
+  if (fila.length === 1) banner.classList.add("banner-unico");
+
+  // Quem pediu menos movimento no aparelho começa com o banner parado
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    pausadoPeloUsuario = true;
+    botaoPausa.setAttribute("aria-pressed", "true");
+    botaoPausa.setAttribute("aria-label", "Continuar o banner");
+  }
+
+  irPara(0);
+  reiniciar();
+})();

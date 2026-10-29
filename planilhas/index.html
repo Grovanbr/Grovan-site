@@ -22,7 +22,7 @@
 </head>
 <body>
 
-  <!-- ===== Cabeçalho ===== -->
+  <!-- ===== Cabeçalho (igual em todas as páginas) ===== -->
   <header class="cabecalho">
     <div class="container cabecalho-conteudo">
       <a href="../">
@@ -31,11 +31,9 @@
       </a>
       <div class="cabecalho-direita">
         <nav class="menu" aria-label="Menu principal">
-          <a href="../#servicos">Serviços</a>
-          <a href="../planilhas/" class="ativo">Planilhas</a>
-          <a href="../achados/">Achados</a>
-          <a href="../#sobre">Sobre</a>
-          <a href="../#contato">Contato</a>
+          <a href="../">Achados</a>
+          <a href="../sobre/">Sobre</a>
+          <a href="../contato/">Contato</a>
         </nav>
         <button type="button" class="botao-tema" aria-label="Mudar para o tema escuro" aria-pressed="false">
           <svg class="icone-lua" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
@@ -159,23 +157,25 @@
 
   </main>
 
-  <!-- ===== Rodapé ===== -->
+  <!-- ===== Rodapé (igual em todas as páginas) ===== -->
   <footer class="rodape">
     <div class="container rodape-conteudo">
       <img src="../img/grovan-logo.png" alt="Grovan" class="logo">
       <p>Achou, resolveu, cresceu.</p>
       <nav class="rodape-links" aria-label="Links do rodapé">
-        <a href="../">Início</a>
+        <a href="../">Achados</a>
+        <a href="../sobre/">Sobre</a>
         <a href="../planilhas/">Planilhas</a>
-        <a href="../achados/">Achados</a>
-        <a href="../#contato">Contato</a>
+        <a href="../contato/">Contato</a>
       </nav>
       <p class="rodape-copy">© 2026 Grovan. Todos os direitos reservados.</p>
     </div>
   </footer>
 
-  <a href="https://wa.me/5511945426510" target="_blank" rel="noopener" class="botao-flutuante" aria-label="Fale no WhatsApp">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H10l-5 4v-4H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z"/></svg>
+  <!-- ===== Botão do WhatsApp (fica fixo no canto da tela) ===== -->
+  <a href="https://wa.me/5511945426510?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Grovan!" target="_blank" rel="noopener" class="botao-whatsapp" aria-label="Fale com a Grovan no WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z"/><path class="whats-fone" d="M9.2 7.8c.3 0 .5 0 .7.5l.7 1.6c.1.3 0 .5-.1.7l-.5.6c-.1.2-.2.3 0 .6.5.9 1.3 1.7 2.2 2.2.3.2.5.1.6 0l.6-.7c.2-.2.4-.2.6-.1l1.6.8c.3.1.4.3.4.5 0 .9-.7 1.7-1.6 1.8-1 .1-2.4-.3-4-1.7-1.5-1.3-2.3-2.8-2.4-3.9-.1-1 .5-2 1.2-2.9z"/></svg>
+    <span class="botao-whatsapp-texto">Fale no WhatsApp</span>
   </a>
 
   <script src="../js/tema.js"></script>

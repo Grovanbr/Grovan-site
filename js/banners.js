@@ -30,10 +30,10 @@ const banners = [
   },
   {
     "tipo": "produto",
-    "nome": "Outro produto de tecnologia"
+    "nome": "Escovas Para Maquiagem Multicolor Kit 8 Peças Pincel Macio Sortida"
   },
   {
     "tipo": "produto",
-    "nome": "Escovas Para Maquiagem Multicolor Kit 8 Peças Pincel Macio Sortida"
+    "nome": "Outro produto de tecnologia"
   }
 ];

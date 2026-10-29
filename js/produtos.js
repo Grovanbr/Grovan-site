@@ -52,7 +52,7 @@ const produtos = [
     imagem: "",
     preco: 149.90,
     precoAntigo: 199.90,
-    destaque: true
+    destaque: false
   },
   {
     nome: "Outro produto de casa",

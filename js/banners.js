@@ -22,11 +22,11 @@ const banners = [
   },
   {
     "tipo": "produto",
-    "nome": "Nome do produto de cozinha"
+    "nome": "Guarda Chuva Grande Reforçado Contra Vento Cabe Na Bolsa"
   },
   {
     "tipo": "produto",
-    "nome": "Guarda Chuva Grande Reforçado Contra Vento Cabe Na Bolsa"
+    "nome": "Nome do produto de cozinha"
   },
   {
     "tipo": "produto",

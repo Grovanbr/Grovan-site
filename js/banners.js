@@ -11,4 +11,29 @@
 
 const configBanner = {"segundos": 5};
 
-const banners = [];
+const banners = [
+  {
+    "tipo": "produto",
+    "nome": "Nome do produto de cozinha"
+  },
+  {
+    "tipo": "produto",
+    "nome": "Secret Boom Box Gloss Labial Com Chaveiro De Ursinho Sortido"
+  },
+  {
+    "tipo": "produto",
+    "nome": "Nome do produto de tecnologia"
+  },
+  {
+    "tipo": "produto",
+    "nome": "Outro produto de tecnologia"
+  },
+  {
+    "tipo": "produto",
+    "nome": "Escovas Para Maquiagem Multicolor Kit 8 Peças Pincel Macio Sortida"
+  },
+  {
+    "tipo": "produto",
+    "nome": "Guarda Chuva Grande Reforçado Contra Vento Cabe Na Bolsa"
+  }
+];

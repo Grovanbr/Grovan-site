@@ -30,10 +30,10 @@ const banners = [
   },
   {
     "tipo": "produto",
-    "nome": "Escovas Para Maquiagem Multicolor Kit 8 Peças Pincel Macio Sortida"
+    "nome": "Guarda Chuva Grande Reforçado Contra Vento Cabe Na Bolsa"
   },
   {
     "tipo": "produto",
-    "nome": "Guarda Chuva Grande Reforçado Contra Vento Cabe Na Bolsa"
+    "nome": "Escovas Para Maquiagem Multicolor Kit 8 Peças Pincel Macio Sortida"
   }
 ];

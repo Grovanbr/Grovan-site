@@ -14,11 +14,11 @@ const configBanner = {"segundos": 5};
 const banners = [
   {
     "tipo": "produto",
-    "nome": "Nome do produto de tecnologia"
+    "nome": "Secret Boom Box Gloss Labial Com Chaveiro De Ursinho Sortido"
   },
   {
     "tipo": "produto",
-    "nome": "Secret Boom Box Gloss Labial Com Chaveiro De Ursinho Sortido"
+    "nome": "Nome do produto de tecnologia"
   },
   {
     "tipo": "produto",

@@ -31,5 +31,9 @@ const banners = [
   {
     "tipo": "produto",
     "nome": "Outro produto de tecnologia"
+  },
+  {
+    "tipo": "produto",
+    "nome": "Outro produto de casa"
   }
 ];

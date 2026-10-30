@@ -62,7 +62,7 @@ const produtos = [
     imagem: "",
     preco: 24.90,
     precoAntigo: 0.00,
-    destaque: false
+    destaque: true
   },
   {
     nome: "Outro produto de cozinha",

@@ -1,0 +1,113 @@
+{
+ "geradoEm": "2026-11-10 20:52",
+ "itens": [
+  {
+   "nome": "Secret Boom Box Gloss Labial Com Chaveiro De Ursinho Sortido",
+   "link": "https://meli.la/251SmGp",
+   "loja": "Mercado Livre",
+   "precoAtual": 137.34,
+   "conferencia": {
+    "status": "erro",
+    "texto": "A loja não mostrou o preço."
+   },
+   "alternativas": []
+  },
+  {
+   "nome": "Nome do produto de cozinha",
+   "link": "#",
+   "loja": "Mercado Livre",
+   "precoAtual": 89.9,
+   "conferencia": {
+    "status": "erro",
+    "texto": "Não consegui abrir o link (MissingSchema). Preencha os campos manualmente."
+   },
+   "alternativas": []
+  },
+  {
+   "nome": "Nome do produto de tecnologia",
+   "link": "#",
+   "loja": "Amazon",
+   "precoAtual": 149.9,
+   "conferencia": {
+    "status": "erro",
+    "texto": "Não consegui abrir o link (MissingSchema). Preencha os campos manualmente."
+   },
+   "alternativas": []
+  },
+  {
+   "nome": "Outro produto de casa",
+   "link": "#",
+   "loja": "Mercado Livre",
+   "precoAtual": 24.9,
+   "conferencia": {
+    "status": "erro",
+    "texto": "Não consegui abrir o link (MissingSchema). Preencha os campos manualmente."
+   },
+   "alternativas": [
+    {
+     "loja": "Shopee",
+     "shopee": "567892622.58210593201",
+     "nome": "Características do produto Características principais Marca Casa das Peças Rp Número de peça 300 Outros Tipo de veículo",
+     "preco": 18.0,
+     "precoAntigo": null,
+     "imagem": "https://cf.shopee.com.br/file/br-11134207-820le-mo6vk72o7b4068",
+     "link": "https://s.shopee.com.br/1qdVRr1HFg",
+     "linkProduto": "https://shopee.com.br/product/567892622/58210593201",
+     "afiliado": true,
+     "vendedor": "IMPÉRIO DA CAMIONETE",
+     "comissao": 11.0,
+     "vendas": 0,
+     "semelhanca": 67,
+     "economia": 6.9
+    }
+   ]
+  },
+  {
+   "nome": "Outro produto de cozinha",
+   "link": "#",
+   "loja": "Shopee",
+   "precoAtual": 19.9,
+   "conferencia": {
+    "status": "erro",
+    "texto": "Não consegui abrir o link (MissingSchema). Preencha os campos manualmente."
+   },
+   "alternativas": []
+  },
+  {
+   "nome": "Outro produto de tecnologia",
+   "link": "#",
+   "loja": "Shopee",
+   "precoAtual": 59.9,
+   "conferencia": {
+    "status": "erro",
+    "texto": "Não consegui abrir o link (MissingSchema). Preencha os campos manualmente."
+   },
+   "alternativas": []
+  },
+  {
+   "nome": "Escovas Para Maquiagem Multicolor Kit 8 Peças Pincel Macio Sortida",
+   "link": "https://meli.la/1uWXStd",
+   "loja": "Mercado Livre",
+   "precoAtual": 27.42,
+   "conferencia": {
+    "status": "erro",
+    "texto": "A loja não mostrou o preço."
+   },
+   "alternativas": []
+  },
+  {
+   "nome": "Guarda Chuva Grande Reforçado Contra Vento Cabe Na Bolsa",
+   "link": "https://meli.la/1QaP3Rj",
+   "loja": "Mercado Livre",
+   "precoAtual": 26.24,
+   "conferencia": {
+    "status": "erro",
+    "texto": "A loja não mostrou o preço."
+   },
+   "alternativas": []
+  }
+ ],
+ "avisos": [
+  "Shopee: A API da Shopee está instável agora. Tente de novo em alguns minutos."
+ ]
+}

@@ -1,0 +1,51 @@
+# Procura ofertas dos produtos da página Achados todo dia.
+# O resultado fica em .github/ofertas/ofertas.json e aparece na tela Ofertas do painel.
+name: Procurar ofertas
+
+on:
+  schedule:
+    - cron: "17 11 * * *"   # todo dia às 8h17 (horário de Brasília)
+  workflow_dispatch:          # botão "Run workflow" na aba Actions
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ofertas
+  cancel-in-progress: false
+
+jobs:
+  procurar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar dependências
+        run: pip install requests beautifulsoup4
+
+      - name: Procurar ofertas
+        env:
+          SHOPEE_APP_ID: ${{ secrets.SHOPEE_APP_ID }}
+          SHOPEE_SEGREDO: ${{ secrets.SHOPEE_SEGREDO }}
+        run: python .github/ofertas/procurar.py
+
+      - name: Guardar o resultado
+        run: |
+          git config user.name "Ofertas Grovan"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .github/ofertas/ofertas.json
+          if git diff --cached --quiet; then
+            echo "Nada mudou."
+            exit 0
+          fi
+          git commit -m "Ofertas: procura diária"
+          for tentativa in 1 2 3; do
+            git pull --rebase && git push && exit 0
+            sleep 10
+          done
+          exit 1

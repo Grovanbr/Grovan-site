@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-11-10 21:29",
+ "geradoEm": "2026-11-10 21:37",
  "itens": [
   {
    "nome": "Secret Boom Box Gloss Labial Com Chaveiro De Ursinho Sortido",
@@ -9,61 +9,6 @@
    "conferencia": {
     "status": "erro",
     "texto": "A loja não mostrou o preço."
-   },
-   "alternativas": []
-  },
-  {
-   "nome": "Nome do produto de cozinha",
-   "link": "#",
-   "loja": "Mercado Livre",
-   "precoAtual": 89.9,
-   "conferencia": {
-    "status": "erro",
-    "texto": "Não consegui abrir o link (MissingSchema). Preencha os campos manualmente."
-   },
-   "alternativas": []
-  },
-  {
-   "nome": "Nome do produto de tecnologia",
-   "link": "#",
-   "loja": "Amazon",
-   "precoAtual": 149.9,
-   "conferencia": {
-    "status": "erro",
-    "texto": "Não consegui abrir o link (MissingSchema). Preencha os campos manualmente."
-   },
-   "alternativas": []
-  },
-  {
-   "nome": "Outro produto de casa",
-   "link": "#",
-   "loja": "Mercado Livre",
-   "precoAtual": 24.9,
-   "conferencia": {
-    "status": "erro",
-    "texto": "Não consegui abrir o link (MissingSchema). Preencha os campos manualmente."
-   },
-   "alternativas": []
-  },
-  {
-   "nome": "Outro produto de cozinha",
-   "link": "#",
-   "loja": "Shopee",
-   "precoAtual": 19.9,
-   "conferencia": {
-    "status": "erro",
-    "texto": "Não consegui abrir o link (MissingSchema). Preencha os campos manualmente."
-   },
-   "alternativas": []
-  },
-  {
-   "nome": "Outro produto de tecnologia",
-   "link": "#",
-   "loja": "Shopee",
-   "precoAtual": 59.9,
-   "conferencia": {
-    "status": "erro",
-    "texto": "Não consegui abrir o link (MissingSchema). Preencha os campos manualmente."
    },
    "alternativas": []
   },
@@ -87,10 +32,59 @@
     "status": "erro",
     "texto": "A loja não mostrou o preço."
    },
-   "alternativas": []
+   "alternativas": [
+    {
+     "loja": "Shopee",
+     "shopee": "448628081.19455451486",
+     "nome": "Guarda Chuva Grande Reforçado Contra Vento Cabe Na Bolsa | 1023D",
+     "preco": 22.9,
+     "precoAntigo": null,
+     "imagem": "https://cf.shopee.com.br/file/sg-11134201-22100-l9d7cwr2esiv24",
+     "link": "https://s.shopee.com.br/1BrJaaIBt",
+     "linkProduto": "https://shopee.com.br/product/448628081/19455451486",
+     "afiliado": true,
+     "vendedor": "",
+     "comissao": 0.0,
+     "vendas": 0,
+     "semelhanca": 100,
+     "economia": 3.34
+    },
+    {
+     "loja": "Shopee",
+     "shopee": "1023651899.21697151780",
+     "nome": "Guarda Chuva Grande Reforçado Contra Vento Cabe Na Bolsa Colorido Liso Sombrinha Com Proteção Solar",
+     "preco": 23.9,
+     "precoAntigo": null,
+     "imagem": "https://cf.shopee.com.br/file/br-11134207-7r98o-maim3vv36g7j99",
+     "link": "https://s.shopee.com.br/8pnFpp2fGO",
+     "linkProduto": "https://shopee.com.br/product/1023651899/21697151780",
+     "afiliado": true,
+     "vendedor": "",
+     "comissao": 0.0,
+     "vendas": 0,
+     "semelhanca": 100,
+     "economia": 2.34
+    },
+    {
+     "loja": "Shopee",
+     "shopee": "1023651899.21699244701",
+     "nome": "Guarda Chuva Grande Reforçado Contra Vento Cabe Na Bolsa Colorido Liso Sombrinha Com Proteção Solar",
+     "preco": 23.9,
+     "precoAntigo": null,
+     "imagem": "https://cf.shopee.com.br/file/br-11134207-81z1k-mihxe82r2goxc9",
+     "link": "https://s.shopee.com.br/8fTpdW3IbN",
+     "linkProduto": "https://shopee.com.br/product/1023651899/21699244701",
+     "afiliado": true,
+     "vendedor": "",
+     "comissao": 0.0,
+     "vendas": 0,
+     "semelhanca": 100,
+     "economia": 2.34
+    }
+   ]
   }
  ],
  "avisos": [
-  "Shopee: A API da Shopee está instável agora. Tente de novo em alguns minutos."
+  "Shopee: A API da Shopee está instável agora. Tente de novo em alguns minutos. Detalhe da Shopee: System Error"
  ]
 }

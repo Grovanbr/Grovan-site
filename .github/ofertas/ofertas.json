@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-11-11 13:01",
+ "geradoEm": "2026-11-11 17:10",
  "itens": [
   {
    "nome": "Secret Boom Box Gloss Labial Com Chaveiro De Ursinho Sortido",
@@ -40,13 +40,17 @@
    "loja": "Shopee",
    "precoAtual": 85.9,
    "conferencia": {
-    "status": "igual",
-    "preco": 85.9
+    "status": "subiu",
+    "preco": 88.9,
+    "precoAntigo": null,
+    "imagem": "https://cf.shopee.com.br/file/br-11134207-820lh-msn53tgvj952b7",
+    "aplicado": true,
+    "precoAnterior": 85.9
    },
    "alternativas": []
   },
   {
-   "nome": "Principia Kit Limpeza E Hidratação Ch-01 + Ol-01 + Gl-02 Todo Tipo De Pele Dia/noite - R$ 100,55",
+   "nome": "Principia Kit Limpeza E Hidratação Ch-01 + Ol-01 + Gl-02 Todo Tipo De Pele Dia/noite",
    "link": "https://meli.la/1ikSs3S",
    "loja": "Mercado Livre",
    "precoAtual": 95.55,
@@ -62,8 +66,11 @@
    "loja": "Mercado Livre",
    "precoAtual": 15.43,
    "conferencia": {
-    "status": "erro",
-    "texto": "A loja não deixou ler os dados automaticamente. Preencha os campos manualmente."
+    "status": "subiu",
+    "preco": 33.27,
+    "precoAntigo": 47.1,
+    "imagem": "https://http2.mlstatic.com/D_NQ_NP_756821-MLA86791313939_062025-F.webp",
+    "revisar": true
    },
    "alternativas": []
   },
@@ -80,8 +87,14 @@
   }
  ],
  "avisos": [
-  "A Shopee não respondeu na busca de 2 de 7 produtos (Escovas Para Maquiagem Multicolor Kit 8 Peças Pincel Macio Sortida, NIVEA Loção Deo-Hidratante Soft Milk 400ml, Hidratação Profunda 72h, Hialurônico Puro, Corporal, Pele Seca). Esses produtos são procurados de novo na próxima procura. Motivo: A API da Shopee está instável agora. Tente de novo em alguns minutos. Detalhe da Shopee: System Error"
+  "A Shopee não respondeu na busca de 2 de 7 produtos (Escovas Para Maquiagem Multicolor Kit 8 Peças Pincel Macio Sortida, Kit 100 Bolas de Natal com Estrela ou Kit 50 Enfeite Árvore Vermelha Dourada Mista Fosca Glitter). Esses produtos são procurados de novo na próxima procura. Motivo: A API da Shopee está instável agora. Tente de novo em alguns minutos. Detalhe da Shopee: System Error"
  ],
- "precosAtualizados": [],
+ "precosAtualizados": [
+  {
+   "nome": "Árvore de Natal 1,50cm 400 Galhos Pinheiro Verde Resistente Desmontável Pé de Ferro e Plástico",
+   "de": 85.9,
+   "para": 88.9
+  }
+ ],
  "trocasAutomaticas": []
 }

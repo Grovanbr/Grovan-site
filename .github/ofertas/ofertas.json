@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-11-10 20:52",
+ "geradoEm": "2026-11-10 21:29",
  "itens": [
   {
    "nome": "Secret Boom Box Gloss Labial Com Chaveiro De Ursinho Sortido",
@@ -43,24 +43,7 @@
     "status": "erro",
     "texto": "Não consegui abrir o link (MissingSchema). Preencha os campos manualmente."
    },
-   "alternativas": [
-    {
-     "loja": "Shopee",
-     "shopee": "567892622.58210593201",
-     "nome": "Características do produto Características principais Marca Casa das Peças Rp Número de peça 300 Outros Tipo de veículo",
-     "preco": 18.0,
-     "precoAntigo": null,
-     "imagem": "https://cf.shopee.com.br/file/br-11134207-820le-mo6vk72o7b4068",
-     "link": "https://s.shopee.com.br/1qdVRr1HFg",
-     "linkProduto": "https://shopee.com.br/product/567892622/58210593201",
-     "afiliado": true,
-     "vendedor": "IMPÉRIO DA CAMIONETE",
-     "comissao": 11.0,
-     "vendas": 0,
-     "semelhanca": 67,
-     "economia": 6.9
-    }
-   ]
+   "alternativas": []
   },
   {
    "nome": "Outro produto de cozinha",

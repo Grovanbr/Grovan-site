@@ -1,10 +1,11 @@
-# Procura ofertas dos produtos da página Achados todo dia.
+# Procura ofertas dos produtos da página Achados 4 vezes por dia
+# e atualiza o preço do site conforme o preço promocional do anúncio.
 # O resultado fica em .github/ofertas/ofertas.json e aparece na tela Ofertas do painel.
 name: Procurar ofertas
 
 on:
   schedule:
-    - cron: "17 11 * * *"   # todo dia às 8h17 (horário de Brasília)
+    - cron: "17 11,15,19,23 * * *"   # 8h17, 12h17, 16h17 e 20h17 (horário de Brasília)
   workflow_dispatch:          # botão "Run workflow" na aba Actions
 
 permissions:
@@ -38,12 +39,12 @@ jobs:
         run: |
           git config user.name "Ofertas Grovan"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add .github/ofertas/ofertas.json
+          git add .github/ofertas/ofertas.json js/produtos.js
           if git diff --cached --quiet; then
             echo "Nada mudou."
             exit 0
           fi
-          git commit -m "Ofertas: procura diária"
+          git commit -m "Ofertas: preços conforme os anúncios"
           for tentativa in 1 2 3; do
             git pull --rebase && git push && exit 0
             sleep 10

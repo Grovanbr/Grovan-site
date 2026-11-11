@@ -292,3 +292,40 @@ def resumo(relatorio, produtos, ignorados=()):
 
 def contar_novidades(cartoes):
     return sum(1 for c in cartoes if c["alternativas"] or (c["conferencia"] and c["conferencia"]["status"] != "erro"))
+
+
+# ---------------------------------------------------------------------
+# Preço acompanha o anúncio sozinho
+# ---------------------------------------------------------------------
+VARIACAO_MAXIMA_AUTOMATICA = 50  # % - acima disso, pede para conferir (pode ser erro de leitura)
+
+
+def aplicar_precos(produtos, relatorio, ignorados=()):
+    """Atualiza o preço (promocional) e o preço riscado dos produtos conforme o anúncio.
+    Mexe na lista 'produtos' e marca no relatório o que foi aplicado. Devolve a lista de mudanças."""
+    ignorados = set(ignorados)
+    por_link = {p.get("link"): p for p in produtos}
+    mudancas = []
+    for item in (relatorio or {}).get("itens", []):
+        conf = item.get("conferencia") or {}
+        produto = por_link.get(item.get("link"))
+        if not produto or conf.get("status") not in ("baixou", "subiu") or not conf.get("preco"):
+            continue
+        if chave_preco_mantido(produto["link"], conf["preco"]) in ignorados:
+            continue  # você escolheu manter esse preço
+        anterior = float(produto.get("preco") or 0)
+        novo = float(conf["preco"])
+        riscado_no_site = float(produto.get("precoAntigo") or 0)
+        # Promoção acabou: o preço voltou para o valor riscado que já estava no site -> atualiza sempre
+        promocao_acabou = riscado_no_site and novo <= riscado_no_site * 1.05
+        if anterior and not promocao_acabou and abs(novo - anterior) / anterior * 100 > VARIACAO_MAXIMA_AUTOMATICA:
+            conf["revisar"] = True  # mudança muito grande: fica para você decidir
+            continue
+        antigo = float(conf.get("precoAntigo") or 0)
+        produto["preco"] = novo
+        produto["precoAntigo"] = antigo if antigo > novo else 0  # promoção acabou: tira o riscado
+        conf["aplicado"] = True
+        conf["precoAnterior"] = anterior
+        mudancas.append({"nome": produto["nome"], "de": anterior, "para": novo})
+    relatorio["precosAtualizados"] = mudancas
+    return mudancas

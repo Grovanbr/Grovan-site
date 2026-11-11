@@ -22,7 +22,7 @@ config = {
     "shopee_segredo": os.environ.get("SHOPEE_SEGREDO", "").strip(),
 }
 
-_, produtos = nucleo.ler_produtos(RAIZ)
+cabecalho, produtos = nucleo.ler_produtos(RAIZ)
 
 arquivo_ignorados = RAIZ / ofertas.CAMINHO_IGNORADOS
 ignorados = json.loads(arquivo_ignorados.read_text(encoding="utf-8")) if arquivo_ignorados.exists() else []
@@ -35,6 +35,13 @@ def progresso(atual, total, nome):
 relatorio = ofertas.procurar_tudo(produtos, config, ignorados, progresso=progresso, pausa=2.0)
 if not config["shopee_app_id"]:
     relatorio["avisos"].append("A procura diária está sem as chaves da Shopee: cadastre SHOPEE_APP_ID e SHOPEE_SEGREDO nos secrets do repositório.")
+
+# Preço acompanha o anúncio: atualiza o js/produtos.js do site
+mudancas = ofertas.aplicar_precos(produtos, relatorio, ignorados)
+if mudancas:
+    nucleo.gravar_produtos(RAIZ, cabecalho, produtos)
+    for m in mudancas:
+        print(f"Preço atualizado: {m['nome']}: {m['de']:.2f} -> {m['para']:.2f}")
 
 saida = RAIZ / ofertas.CAMINHO_OFERTAS
 saida.parent.mkdir(parents=True, exist_ok=True)

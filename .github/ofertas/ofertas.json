@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-11-11 17:10",
+ "geradoEm": "2026-11-11 20:57",
  "itens": [
   {
    "nome": "Secret Boom Box Gloss Labial Com Chaveiro De Ursinho Sortido",
@@ -38,14 +38,10 @@
    "nome": "Árvore de Natal 1,50cm 400 Galhos Pinheiro Verde Resistente Desmontável Pé de Ferro e Plástico",
    "link": "https://s.shopee.com.br/8AXZ3P2GAs",
    "loja": "Shopee",
-   "precoAtual": 85.9,
+   "precoAtual": 88.9,
    "conferencia": {
-    "status": "subiu",
-    "preco": 88.9,
-    "precoAntigo": null,
-    "imagem": "https://cf.shopee.com.br/file/br-11134207-820lh-msn53tgvj952b7",
-    "aplicado": true,
-    "precoAnterior": 85.9
+    "status": "igual",
+    "preco": 88.9
    },
    "alternativas": []
   },
@@ -86,15 +82,7 @@
    "alternativas": []
   }
  ],
- "avisos": [
-  "A Shopee não respondeu na busca de 2 de 7 produtos (Escovas Para Maquiagem Multicolor Kit 8 Peças Pincel Macio Sortida, Kit 100 Bolas de Natal com Estrela ou Kit 50 Enfeite Árvore Vermelha Dourada Mista Fosca Glitter). Esses produtos são procurados de novo na próxima procura. Motivo: A API da Shopee está instável agora. Tente de novo em alguns minutos. Detalhe da Shopee: System Error"
- ],
- "precosAtualizados": [
-  {
-   "nome": "Árvore de Natal 1,50cm 400 Galhos Pinheiro Verde Resistente Desmontável Pé de Ferro e Plástico",
-   "de": 85.9,
-   "para": 88.9
-  }
- ],
+ "avisos": [],
+ "precosAtualizados": [],
  "trocasAutomaticas": []
 }

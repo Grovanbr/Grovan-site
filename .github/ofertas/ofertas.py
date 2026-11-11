@@ -117,7 +117,7 @@ def procurar_na_shopee(termo, config, limite=20):
             "nome": item.get("productName") or "",
             "preco": preco,
             "precoAntigo": round(preco / (1 - desconto / 100), 2) if 0 < desconto < 100 else None,
-            "imagem": item.get("imageUrl") or "",
+            "imagem": nucleo.melhorar_imagem(item.get("imageUrl") or ""),
             "link": item.get("offerLink") or item.get("productLink") or "",
             "linkProduto": item.get("productLink") or "",
             "afiliado": bool(item.get("offerLink")),
@@ -152,7 +152,7 @@ def procurar_no_mercado_livre(termo, limite=20):
             "nome": item.get("title") or "",
             "preco": float(preco),
             "precoAntigo": float(antigo) if antigo and antigo > preco else None,
-            "imagem": (item.get("thumbnail") or "").replace("http://", "https://").replace("-I.jpg", "-O.jpg"),
+            "imagem": nucleo.melhorar_imagem(item.get("thumbnail") or ""),
             "link": item.get("permalink") or "",
             "linkProduto": item.get("permalink") or "",
             "afiliado": False,  # precisa gerar o link de afiliado no portal do ML
@@ -329,3 +329,45 @@ def aplicar_precos(produtos, relatorio, ignorados=()):
         mudancas.append({"nome": produto["nome"], "de": anterior, "para": novo})
     relatorio["precosAtualizados"] = mudancas
     return mudancas
+
+
+# ---------------------------------------------------------------------
+# Troca automática do link (só Shopee) quando a promoção acaba
+# ---------------------------------------------------------------------
+SEMELHANCA_TROCA_AUTOMATICA = 95  # % - nome praticamente igual
+
+
+def aplicar_trocas(produtos, relatorio, config, ignorados=()):
+    """Se o preço do anúncio subiu (promoção acabou) e existe o MESMO produto mais barato na Shopee,
+    já com o seu link de afiliado, troca o link sozinho. Guarda como era para poder desfazer."""
+    ignorados = set(ignorados)
+    por_link = {p.get("link"): p for p in produtos}
+    trocas = []
+    for item in (relatorio or {}).get("itens", []):
+        conf = item.get("conferencia") or {}
+        produto = por_link.get(item.get("link"))
+        if not produto or conf.get("status") != "subiu":
+            continue
+        preco_agora = float(produto.get("preco") or 0)  # já com o preço novo (sem promoção)
+        candidatas = [a for a in item.get("alternativas", [])
+                      if a.get("loja") == "Shopee" and a.get("afiliado")
+                      and (a.get("semelhanca") or 0) >= SEMELHANCA_TROCA_AUTOMATICA
+                      and a["link"] not in ignorados and vale_a_pena(a["preco"], preco_agora)]
+        if not candidatas:
+            continue
+        melhor = min(candidatas, key=lambda a: a["preco"])
+        antes = dict(produto)
+        link = nucleo.gerar_link_afiliado_shopee(melhor.get("linkProduto"), config) or melhor["link"]
+        produto.update({
+            "link": link,
+            "loja": "Shopee",
+            "preco": melhor["preco"],
+            "precoAntigo": melhor["precoAntigo"] if (melhor.get("precoAntigo") or 0) > melhor["preco"] else 0,
+            "imagem": melhor.get("imagem") or produto.get("imagem", ""),
+            "shopee": melhor.get("shopee", ""),
+        })
+        trocas.append({"nome": produto["nome"], "antes": antes, "depois": dict(produto),
+                       "sugestao": melhor["link"], "quando": agora_brasil()})
+        por_link[link] = produto
+    relatorio["trocasAutomaticas"] = trocas
+    return trocas

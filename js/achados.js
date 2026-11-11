@@ -78,6 +78,8 @@ function cardProduto(produto) {
     img.src = produto.imagem;
     img.alt = produto.nome;
     img.loading = "lazy";
+    // Se a foto não carregar, mostra o ícone da categoria no lugar
+    img.onerror = () => { img.remove(); imagem.insertAdjacentHTML("afterbegin", svgIcone(produto.categoria)); };
     imagem.appendChild(img);
   } else {
     imagem.innerHTML = svgIcone(produto.categoria);

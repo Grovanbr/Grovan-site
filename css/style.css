@@ -911,16 +911,25 @@ a {
 .oferta-imagem {
   position: relative;
   aspect-ratio: 1 / 1;
-  background: var(--areia-escura);
+  min-height: 0;          /* não deixa uma foto alta esticar o card */
+  overflow: hidden;
+  background: #FFFFFF;    /* as fotos das lojas têm fundo branco */
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+/* Todas as fotos do mesmo tamanho: a foto inteira, centralizada, sem cortar */
 .oferta-imagem img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  position: absolute;
+  inset: 12px;
+  width: calc(100% - 24px);
+  height: calc(100% - 24px);
+  object-fit: contain;
+}
+
+.oferta-imagem:has(> svg) {
+  background: var(--areia-escura);
 }
 
 .oferta-imagem > svg {
@@ -956,6 +965,8 @@ a {
   font-weight: 600;
   padding: 3px 10px;
   border-radius: 999px;
+  border: 1px solid var(--borda);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
 }
 
 .oferta-favorito {

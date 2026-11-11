@@ -7,6 +7,7 @@ import base64
 import hashlib
 import json
 import re
+import unicodedata
 import subprocess
 import time
 from pathlib import Path
@@ -147,16 +148,24 @@ def ler_dados_da_pagina(html):
         or valor_texto(".basisPrice .a-offscreen", ".a-text-price .a-offscreen", '[data-testid="price-original"]', ".old-price", "del")
     )
 
-    # O preço atual é o promocional; se não achar na tela, usa o oficial
-    dados["preco"] = preco_promocional or preco_estruturado
+    # Vitrine do ML (link meli.la) coloca o preço no título: "Nome do produto - R$ 16,40"
+    preco_titulo = None
+    if dados["nome"]:
+        achado = re.search(r"\s*[-–|]\s*R\$\s*([\d.]+,\d{2}|[\d.]+)\s*$", dados["nome"])
+        if achado:
+            preco_titulo = texto_para_numero(achado.group(1))
+            dados["nome"] = dados["nome"][: achado.start()].strip()
+
+    # O preço atual é o promocional; se não achar na tela, usa o do título e depois o oficial
+    dados["preco"] = preco_promocional or preco_titulo or preco_estruturado
     dados["precoAntigo"] = preco_riscado
     # Se o preço oficial for maior que o promocional e não houver preço riscado, ele vira o "antes"
     if not dados["precoAntigo"] and preco_estruturado and dados["preco"] and preco_estruturado > dados["preco"]:
         dados["precoAntigo"] = preco_estruturado
-    # Preço antigo só faz sentido se for maior que o atual
-    if dados["precoAntigo"] and dados["preco"] and dados["precoAntigo"] <= dados["preco"]:
+    # Preço antigo só faz sentido se for maior que o atual (e se houver preço atual)
+    if dados["precoAntigo"] and (not dados["preco"] or dados["precoAntigo"] <= dados["preco"]):
         dados["precoAntigo"] = None
-    dados["precoPromocional"] = bool(preco_promocional)
+    dados["precoPromocional"] = bool(preco_promocional or preco_titulo)
 
     if dados["nome"]:
         dados["nome"] = re.split(r"\s+[|\-–]\s+(Mercado Livre|Shopee|Amazon)", dados["nome"])[0].strip()
@@ -281,7 +290,7 @@ def buscar_na_api_shopee(loja_id, item_id, config):
         antigo = round(preco / (1 - desconto / 100), 2)
     return {
         "nome": item.get("productName"),
-        "imagem": item.get("imageUrl"),
+        "imagem": melhorar_imagem(item.get("imageUrl")),
         "preco": preco,
         "precoAntigo": antigo,
         "precoPromocional": bool(antigo),
@@ -315,28 +324,71 @@ def testar_api_shopee(config):
     return True, "API da Shopee funcionando!" + (f" Exemplo: {nos[0]['productName'][:60]}" if nos else "")
 
 
-def ler_produto_mercado_livre(url, html):
-    """Links de afiliado do ML abrem uma vitrine. Acha o código do anúncio (MLB...) e lê a página do produto."""
-    texto = requests.utils.unquote(url) + " " + (html or "")[:400000]
+def _parecido(nome_a, nome_b):
+    """0 a 1: quanto das palavras de nome_a aparecem em nome_b."""
+    limpar = lambda t: set(re.findall(r"[a-z0-9]{3,}", unicodedata.normalize("NFD", (t or "").lower()).encode("ascii", "ignore").decode()))
+    a, b = limpar(nome_a), limpar(nome_b)
+    return len(a & b) / len(a) if a else 0.0
+
+
+def ler_produto_mercado_livre(url, html, nome_esperado=None):
+    """Links de afiliado do ML (meli.la, /sec/) abrem uma vitrine que pode ter vários produtos.
+    Acha os códigos dos anúncios (MLB...), abre a página de cada um e fica com o que tem o mesmo nome."""
+    texto = requests.utils.unquote(url) + " " + (html or "")[:600000]
     enderecos = []
-    catalogo = re.search(r"/p/(MLB\d{6,})", texto)
-    if catalogo:
-        enderecos.append(f"https://www.mercadolivre.com.br/p/{catalogo.group(1)}")
-    anuncio = re.search(r"MLB-?(\d{6,})", texto)
-    if anuncio:
-        enderecos.append(f"https://produto.mercadolivre.com.br/MLB-{anuncio.group(1)}")
+    for codigo in re.findall(r"/p/(MLB\d{6,})", texto):
+        enderecos.append(f"https://www.mercadolivre.com.br/p/{codigo}")
+    for codigo in re.findall(r"MLB-?(\d{6,})", texto):
+        enderecos.append(f"https://produto.mercadolivre.com.br/MLB-{codigo}")
+    vistos = []
     for endereco in enderecos:
-        if endereco == url:
-            continue
+        if endereco not in vistos and endereco != url:
+            vistos.append(endereco)
+    for endereco in vistos[:8]:
         try:
             resposta = requests.get(endereco, headers=CABECALHOS, timeout=20)
         except requests.RequestException:
             continue
-        if resposta.status_code == 200:
-            dados = ler_dados_da_pagina(resposta.text)
-            if dados.get("preco"):
-                return dados
+        if resposta.status_code != 200:
+            continue
+        dados = ler_dados_da_pagina(resposta.text)
+        if not dados.get("preco"):
+            continue
+        if nome_esperado and _parecido(nome_esperado, dados.get("nome")) < 0.6:
+            continue  # é outro produto da vitrine
+        return dados
     return None
+
+
+def melhorar_imagem(url):
+    """Troca a miniatura pela foto grande da mesma imagem (Mercado Livre, Shopee e Amazon)."""
+    if not url:
+        return url
+    url = url.strip().replace("http://", "https://", 1)
+    if "mlstatic.com" in url:
+        # -I, -V, -W, -E, -R são miniaturas; -O é a foto grande
+        url = re.sub(r"-[IVWER]\.(jpe?g|png|webp)$", r"-O.\1", url)
+    elif "susercontent.com" in url or "shopee" in url:
+        url = re.sub(r"_tn$", "", url)  # _tn = miniatura
+    elif "media-amazon.com" in url or "images-amazon.com" in url:
+        url = re.sub(r"\._[A-Z]{2}[A-Za-z0-9_,]*_\.(jpe?g|png|webp)$", r"._AC_SL1000_.\1", url)
+    return url
+
+
+def limpar_nome(nome):
+    """Tira o preço que algumas lojas colocam no fim do nome ("... - R$ 16,40")."""
+    return re.sub(r"\s*[-–|]\s*R\$\s*[\d.,]+\s*$", "", nome or "").strip()
+
+
+def padronizar_produtos(produtos):
+    """Deixa fotos e nomes no padrão. Devolve quantos produtos mudaram."""
+    mudou = 0
+    for p in produtos:
+        imagem, nome = melhorar_imagem(p.get("imagem", "")), limpar_nome(p.get("nome", ""))
+        if imagem != p.get("imagem", "") or (nome and nome != p.get("nome")):
+            p["imagem"], p["nome"] = imagem, nome or p.get("nome")
+            mudou += 1
+    return mudou
 
 
 def buscar_anuncio(link, config):
@@ -392,8 +444,13 @@ def buscar_anuncio(link, config):
         if loja_final == "Shopee":
             return buscar_anuncio(resposta.url, config) | {"link": link}
         dados = ler_dados_da_pagina(resposta.text)
-        if not dados.get("preco") and resultado["loja"] == "Mercado Livre":
-            dados = ler_produto_mercado_livre(resposta.url, resposta.text) or dados
+        vitrine = "/social/" in resposta.url or "meli.la" in link or "/sec/" in link
+        if resultado["loja"] == "Mercado Livre" and (vitrine or not dados.get("preco")):
+            # A página do anúncio tem o preço promocional exato (o da vitrine pode estar desatualizado)
+            do_anuncio = ler_produto_mercado_livre(resposta.url, resposta.text, dados.get("nome"))
+            if do_anuncio:
+                do_anuncio["imagem"] = do_anuncio.get("imagem") or dados.get("imagem")
+                dados = do_anuncio
         resultado.update({k: v for k, v in dados.items() if v})
     except requests.RequestException as erro:
         resultado["aviso"] = f"Não consegui abrir o link ({erro.__class__.__name__}). Preencha os campos manualmente."
@@ -401,6 +458,7 @@ def buscar_anuncio(link, config):
 
     if not any(resultado.get(c) for c in ("nome", "imagem", "preco")):
         resultado["aviso"] = "A loja não deixou ler os dados automaticamente. Preencha os campos manualmente."
+    resultado["imagem"] = melhorar_imagem(resultado.get("imagem"))
     return resultado
 
 

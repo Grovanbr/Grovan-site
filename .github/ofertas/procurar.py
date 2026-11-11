@@ -38,10 +38,14 @@ if not config["shopee_app_id"]:
 
 # Preço acompanha o anúncio: atualiza o js/produtos.js do site
 mudancas = ofertas.aplicar_precos(produtos, relatorio, ignorados)
-if mudancas:
+trocas = ofertas.aplicar_trocas(produtos, relatorio, config, ignorados)
+padronizados = nucleo.padronizar_produtos(produtos)  # fotos grandes e nomes sem preço
+if mudancas or trocas or padronizados:
     nucleo.gravar_produtos(RAIZ, cabecalho, produtos)
-    for m in mudancas:
-        print(f"Preço atualizado: {m['nome']}: {m['de']:.2f} -> {m['para']:.2f}")
+for m in mudancas:
+    print(f"Preço atualizado: {m['nome']}: {m['de']:.2f} -> {m['para']:.2f}")
+for t in trocas:
+    print(f"Troca automática: {t['nome']}: {t['antes']['link']} -> {t['depois']['link']}")
 
 saida = RAIZ / ofertas.CAMINHO_OFERTAS
 saida.parent.mkdir(parents=True, exist_ok=True)

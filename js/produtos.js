@@ -65,16 +65,6 @@ const produtos = [
     destaque: true
   },
   {
-    nome: "Outro produto de cozinha",
-    loja: "Shopee",
-    categoria: "Cozinha",
-    link: "#",
-    imagem: "",
-    preco: 19.90,
-    precoAntigo: 34.90,
-    destaque: false
-  },
-  {
     nome: "Escovas Para Maquiagem Multicolor Kit 8 Peças Pincel Macio Sortida",
     loja: "Mercado Livre",
     categoria: "Beleza",

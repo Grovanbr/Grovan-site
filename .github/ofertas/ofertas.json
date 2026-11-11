@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-11-10 21:48",
+ "geradoEm": "2026-11-11 09:05",
  "itens": [
   {
    "nome": "Secret Boom Box Gloss Labial Com Chaveiro De Ursinho Sortido",
@@ -33,7 +33,32 @@
     "preco": 22.9
    },
    "alternativas": []
+  },
+  {
+   "nome": "Árvore de Natal 1,50cm 400 Galhos Pinheiro Verde Resistente Desmontável Pé de Ferro e Plástico",
+   "link": "https://s.shopee.com.br/8AXZ3P2GAs",
+   "loja": "Shopee",
+   "precoAtual": 85.9,
+   "conferencia": {
+    "status": "igual",
+    "preco": 85.9
+   },
+   "alternativas": []
+  },
+  {
+   "nome": "Principia Kit Limpeza E Hidratação Ch-01 + Ol-01 + Gl-02 Todo Tipo De Pele Dia/noite - R$ 100,55",
+   "link": "https://meli.la/1ikSs3S",
+   "loja": "Mercado Livre",
+   "precoAtual": 95.84,
+   "conferencia": {
+    "status": "erro",
+    "texto": "A loja não mostrou o preço."
+   },
+   "alternativas": []
   }
  ],
- "avisos": []
+ "avisos": [
+  "A Shopee não respondeu na busca de 1 de 5 produtos (Árvore de Natal 1,50cm 400 Galhos Pinheiro Verde Resistente Desmontável Pé de Ferro e Plástico). Esses produtos são procurados de novo na próxima procura. Motivo: A API da Shopee está instável agora. Tente de novo em alguns minutos. Detalhe da Shopee: System Error"
+ ],
+ "precosAtualizados": []
 }

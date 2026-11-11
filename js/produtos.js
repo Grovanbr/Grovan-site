@@ -105,4 +105,15 @@ const produtos = [
     destaque: true,
     shopee: "448628081.19455451486"
   },
+  {
+    nome: "Árvore de Natal 1,50cm 400 Galhos Pinheiro Verde Resistente Desmontável Pé de Ferro e Plástico",
+    loja: "Shopee",
+    categoria: "Artigos de Festa",
+    link: "https://s.shopee.com.br/8AXZ3P2GAs",
+    imagem: "https://cf.shopee.com.br/file/br-11134207-820lh-msn53tgvj952b7",
+    preco: 85.90,
+    precoAntigo: 0.00,
+    destaque: false,
+    shopee: "1475886431.57717240116"
+  },
 ];

@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-11-11 09:05",
+ "geradoEm": "2026-11-11 10:41",
  "itens": [
   {
    "nome": "Secret Boom Box Gloss Labial Com Chaveiro De Ursinho Sortido",
@@ -7,8 +7,12 @@
    "loja": "Mercado Livre",
    "precoAtual": 137.34,
    "conferencia": {
-    "status": "erro",
-    "texto": "A loja não mostrou o preço."
+    "status": "subiu",
+    "preco": 141.99,
+    "precoAntigo": 197.49,
+    "imagem": "https://http2.mlstatic.com/D_NQ_NP_606455-MLB117287382722_102026-P.webp",
+    "aplicado": true,
+    "precoAnterior": 137.34
    },
    "alternativas": []
   },
@@ -18,8 +22,12 @@
    "loja": "Mercado Livre",
    "precoAtual": 27.42,
    "conferencia": {
-    "status": "erro",
-    "texto": "A loja não mostrou o preço."
+    "status": "baixou",
+    "preco": 26.72,
+    "precoAntigo": 42.84,
+    "imagem": "https://http2.mlstatic.com/D_NQ_NP_683755-MLB112552959736_062026-P.webp",
+    "aplicado": true,
+    "precoAnterior": 27.42
    },
    "alternativas": []
   },
@@ -51,14 +59,55 @@
    "loja": "Mercado Livre",
    "precoAtual": 95.84,
    "conferencia": {
-    "status": "erro",
-    "texto": "A loja não mostrou o preço."
+    "status": "baixou",
+    "preco": 95.55,
+    "precoAntigo": 147.0,
+    "imagem": "https://http2.mlstatic.com/D_NQ_NP_609209-MLA94364515810_102025-P.webp",
+    "aplicado": true,
+    "precoAnterior": 95.84
+   },
+   "alternativas": []
+  },
+  {
+   "nome": "NIVEA Loção Deo-Hidratante Soft Milk 400ml, Hidratação Profunda 72h, Hialurônico Puro, Corporal, Pele Seca",
+   "link": "https://meli.la/2Mg6D1e",
+   "loja": "Mercado Livre",
+   "precoAtual": 18.71,
+   "conferencia": {
+    "status": "baixou",
+    "preco": 15.43,
+    "precoAntigo": 26.99,
+    "imagem": "https://http2.mlstatic.com/D_NQ_NP_756821-MLA86791313939_062025-P.webp",
+    "aplicado": true,
+    "precoAnterior": 18.71
    },
    "alternativas": []
   }
  ],
  "avisos": [
-  "A Shopee não respondeu na busca de 1 de 5 produtos (Árvore de Natal 1,50cm 400 Galhos Pinheiro Verde Resistente Desmontável Pé de Ferro e Plástico). Esses produtos são procurados de novo na próxima procura. Motivo: A API da Shopee está instável agora. Tente de novo em alguns minutos. Detalhe da Shopee: System Error"
+  "A Shopee não respondeu na busca de 1 de 6 produtos (Guarda Chuva Grande Reforçado Contra Vento Cabe Na Bolsa). Esses produtos são procurados de novo na próxima procura. Motivo: A API da Shopee está instável agora. Tente de novo em alguns minutos. Detalhe da Shopee: System Error"
  ],
- "precosAtualizados": []
+ "precosAtualizados": [
+  {
+   "nome": "Secret Boom Box Gloss Labial Com Chaveiro De Ursinho Sortido",
+   "de": 137.34,
+   "para": 141.99
+  },
+  {
+   "nome": "Escovas Para Maquiagem Multicolor Kit 8 Peças Pincel Macio Sortida",
+   "de": 27.42,
+   "para": 26.72
+  },
+  {
+   "nome": "Principia Kit Limpeza E Hidratação Ch-01 + Ol-01 + Gl-02 Todo Tipo De Pele Dia/noite - R$ 100,55",
+   "de": 95.84,
+   "para": 95.55
+  },
+  {
+   "nome": "NIVEA Loção Deo-Hidratante Soft Milk 400ml, Hidratação Profunda 72h, Hialurônico Puro, Corporal, Pele Seca",
+   "de": 18.71,
+   "para": 15.43
+  }
+ ],
+ "trocasAutomaticas": []
 }

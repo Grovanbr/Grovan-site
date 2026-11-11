@@ -202,10 +202,15 @@ def procurar_alternativas(produto, config, ignorados=()):
     if not termo:
         return [], []
     candidatos, avisos = [], []
-    try:
-        candidatos += procurar_na_shopee(termo, config)
-    except nucleo.ErroShopee as erro:
-        avisos.append(f"Shopee: {erro}")
+    for tentativa in range(3):
+        try:
+            candidatos += procurar_na_shopee(termo, config)
+            break
+        except nucleo.ErroShopee as erro:
+            if tentativa == 2:
+                avisos.append(str(erro))
+            else:
+                time.sleep(3 * (tentativa + 1))  # a Shopee costuma voltar depois de alguns segundos
     candidatos += procurar_no_mercado_livre(termo)
 
     preco_atual = float(produto.get("preco") or 0)
@@ -229,14 +234,16 @@ def procurar_alternativas(produto, config, ignorados=()):
 
 def procurar_tudo(produtos, config, ignorados=(), progresso=None, pausa=1.0):
     """Procura ofertas para todos os produtos. Devolve o relatório para gravar em ofertas.json."""
-    itens, avisos_gerais = [], set()
+    itens, falhas_shopee, motivo = [], [], ""
     produtos = [p for p in produtos if str(p.get("link", "")).lower().startswith(("http://", "https://"))]
     for numero, produto in enumerate(produtos, start=1):
         if progresso:
             progresso(numero, len(produtos), produto["nome"])
         preco = conferir_preco(produto, config)
         alternativas, avisos = procurar_alternativas(produto, config, set(ignorados))
-        avisos_gerais.update(avisos)
+        if avisos:
+            falhas_shopee.append(produto["nome"])
+            motivo = avisos[0]
         itens.append({
             "nome": produto["nome"],
             "link": produto["link"],
@@ -246,7 +253,14 @@ def procurar_tudo(produtos, config, ignorados=(), progresso=None, pausa=1.0):
             "alternativas": alternativas,
         })
         time.sleep(pausa)  # não sobrecarregar as lojas
-    return {"geradoEm": agora_brasil(), "itens": itens, "avisos": sorted(avisos_gerais)}
+    avisos_gerais = []
+    if falhas_shopee:
+        avisos_gerais.append(
+            f"A Shopee não respondeu na busca de {len(falhas_shopee)} de {len(itens)} produtos "
+            f"({', '.join(falhas_shopee[:3])}{'...' if len(falhas_shopee) > 3 else ''}). "
+            f"Esses produtos são procurados de novo na próxima procura. Motivo: {motivo}"
+        )
+    return {"geradoEm": agora_brasil(), "itens": itens, "avisos": avisos_gerais}
 
 
 def chave_preco_mantido(link, preco):

@@ -35,56 +35,6 @@ const produtos = [
     destaque: true
   },
   {
-    nome: "Nome do produto de cozinha",
-    loja: "Mercado Livre",
-    categoria: "Cozinha",
-    link: "#",
-    imagem: "",
-    preco: 89.90,
-    precoAntigo: 129.90,
-    destaque: true
-  },
-  {
-    nome: "Nome do produto de tecnologia",
-    loja: "Amazon",
-    categoria: "Tecnologia",
-    link: "#",
-    imagem: "",
-    preco: 149.90,
-    precoAntigo: 199.90,
-    destaque: false
-  },
-  {
-    nome: "Outro produto de casa",
-    loja: "Mercado Livre",
-    categoria: "Casa",
-    link: "#",
-    imagem: "",
-    preco: 24.90,
-    precoAntigo: 0.00,
-    destaque: true
-  },
-  {
-    nome: "Outro produto de cozinha",
-    loja: "Shopee",
-    categoria: "Cozinha",
-    link: "#",
-    imagem: "",
-    preco: 19.90,
-    precoAntigo: 34.90,
-    destaque: false
-  },
-  {
-    nome: "Outro produto de tecnologia",
-    loja: "Shopee",
-    categoria: "Tecnologia",
-    link: "#",
-    imagem: "",
-    preco: 59.90,
-    precoAntigo: 99.90,
-    destaque: true
-  },
-  {
     nome: "Escovas Para Maquiagem Multicolor Kit 8 Peças Pincel Macio Sortida",
     loja: "Mercado Livre",
     categoria: "Beleza",
@@ -104,5 +54,26 @@ const produtos = [
     precoAntigo: 0.00,
     destaque: true,
     shopee: "448628081.19455451486"
+  },
+  {
+    nome: "Árvore de Natal 1,50cm 400 Galhos Pinheiro Verde Resistente Desmontável Pé de Ferro e Plástico",
+    loja: "Shopee",
+    categoria: "Artigos de Festa",
+    link: "https://s.shopee.com.br/8AXZ3P2GAs",
+    imagem: "https://cf.shopee.com.br/file/br-11134207-820lh-msn53tgvj952b7",
+    preco: 85.90,
+    precoAntigo: 0.00,
+    destaque: true,
+    shopee: "1475886431.57717240116"
+  },
+  {
+    nome: "Principia Kit Limpeza E Hidratação Ch-01 + Ol-01 + Gl-02 Todo Tipo De Pele Dia/noite - R$ 100,55",
+    loja: "Mercado Livre",
+    categoria: "Beleza",
+    link: "https://meli.la/1ikSs3S",
+    imagem: "https://http2.mlstatic.com/D_NQ_NP_609209-MLA94364515810_102025-P.webp",
+    preco: 95.84,
+    precoAntigo: 147.00,
+    destaque: true
   },
 ];

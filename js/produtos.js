@@ -75,16 +75,6 @@ const produtos = [
     destaque: false
   },
   {
-    nome: "Outro produto de tecnologia",
-    loja: "Shopee",
-    categoria: "Tecnologia",
-    link: "#",
-    imagem: "",
-    preco: 59.90,
-    precoAntigo: 99.90,
-    destaque: true
-  },
-  {
     nome: "Escovas Para Maquiagem Multicolor Kit 8 Peças Pincel Macio Sortida",
     loja: "Mercado Livre",
     categoria: "Beleza",

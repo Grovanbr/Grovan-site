@@ -366,8 +366,8 @@ def melhorar_imagem(url):
         return url
     url = url.strip().replace("http://", "https://", 1)
     if "mlstatic.com" in url:
-        # -I, -V, -W, -E, -R são miniaturas; -O é a foto grande
-        url = re.sub(r"-[IVWER]\.(jpe?g|png|webp)$", r"-O.\1", url)
+        # -I, -V, -W, -E, -R, -P e -O são tamanhos menores; -F é a foto grande (1200 px)
+        url = re.sub(r"-[IVWERPO]\.(jpe?g|png|webp)$", r"-F.\1", url)
     elif "susercontent.com" in url or "shopee" in url:
         url = re.sub(r"_tn$", "", url)  # _tn = miniatura
     elif "media-amazon.com" in url or "images-amazon.com" in url:

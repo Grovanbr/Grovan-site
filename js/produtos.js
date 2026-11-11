@@ -29,7 +29,7 @@ const produtos = [
     loja: "Mercado Livre",
     categoria: "Beleza",
     link: "https://meli.la/251SmGp",
-    imagem: "https://http2.mlstatic.com/D_NQ_NP_606455-MLB117287382722_102026-O.webp",
+    imagem: "https://http2.mlstatic.com/D_NQ_NP_606455-MLB117287382722_102026-F.webp",
     preco: 141.99,
     precoAntigo: 197.49,
     destaque: true
@@ -39,7 +39,7 @@ const produtos = [
     loja: "Mercado Livre",
     categoria: "Beleza",
     link: "https://meli.la/1uWXStd",
-    imagem: "https://http2.mlstatic.com/D_NQ_NP_683755-MLB112552959736_062026-O.webp",
+    imagem: "https://http2.mlstatic.com/D_NQ_NP_683755-MLB112552959736_062026-F.webp",
     preco: 26.72,
     precoAntigo: 42.84,
     destaque: true
@@ -67,11 +67,11 @@ const produtos = [
     shopee: "1475886431.57717240116"
   },
   {
-    nome: "Principia Kit Limpeza E Hidratação Ch-01 + Ol-01 + Gl-02 Todo Tipo De Pele Dia/noite - R$ 100,55",
+    nome: "Principia Kit Limpeza E Hidratação Ch-01 + Ol-01 + Gl-02 Todo Tipo De Pele Dia/noite",
     loja: "Mercado Livre",
     categoria: "Beleza",
     link: "https://meli.la/1ikSs3S",
-    imagem: "https://http2.mlstatic.com/D_NQ_NP_609209-MLA94364515810_102025-P.webp",
+    imagem: "https://http2.mlstatic.com/D_NQ_NP_609209-MLA94364515810_102025-F.webp",
     preco: 95.55,
     precoAntigo: 147.00,
     destaque: true
@@ -81,7 +81,7 @@ const produtos = [
     loja: "Mercado Livre",
     categoria: "Beleza",
     link: "https://meli.la/2Mg6D1e",
-    imagem: "https://http2.mlstatic.com/D_NQ_NP_756821-MLA86791313939_062025-P.webp",
+    imagem: "https://http2.mlstatic.com/D_NQ_NP_756821-MLA86791313939_062025-F.webp",
     preco: 15.43,
     precoAntigo: 26.99,
     destaque: false

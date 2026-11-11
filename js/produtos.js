@@ -76,4 +76,14 @@ const produtos = [
     precoAntigo: 147.00,
     destaque: true
   },
+  {
+    nome: "NIVEA Loção Deo-Hidratante Soft Milk 400ml, Hidratação Profunda 72h, Hialurônico Puro, Corporal, Pele Seca",
+    loja: "Mercado Livre",
+    categoria: "Beleza",
+    link: "https://meli.la/2Mg6D1e",
+    imagem: "https://http2.mlstatic.com/D_NQ_NP_756821-MLA86791313939_062025-P.webp",
+    preco: 18.71,
+    precoAntigo: 26.99,
+    destaque: false
+  },
 ];

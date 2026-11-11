@@ -45,16 +45,6 @@ const produtos = [
     destaque: true
   },
   {
-    nome: "Nome do produto de tecnologia",
-    loja: "Amazon",
-    categoria: "Tecnologia",
-    link: "#",
-    imagem: "",
-    preco: 149.90,
-    precoAntigo: 199.90,
-    destaque: false
-  },
-  {
     nome: "Outro produto de casa",
     loja: "Mercado Livre",
     categoria: "Casa",

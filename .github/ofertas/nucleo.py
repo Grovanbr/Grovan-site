@@ -252,7 +252,10 @@ def consultar_api_shopee(consulta, config):
             codigo = int(codigo)
         except (TypeError, ValueError):
             pass
-        texto = ERROS_SHOPEE.get(codigo) or f"A Shopee respondeu: {extra.get('message') or erros[0].get('message')} (código {codigo})."
+        original = extra.get("message") or erros[0].get("message") or ""
+        texto = ERROS_SHOPEE.get(codigo) or f"A Shopee respondeu: {original} (código {codigo})."
+        if codigo == 10000 and original:
+            texto += f" Detalhe da Shopee: {original}"
         if dados.get("data") is None or not any((dados.get("data") or {}).values()):
             raise ErroShopee(texto)
     return dados.get("data") or {}
@@ -312,9 +315,36 @@ def testar_api_shopee(config):
     return True, "API da Shopee funcionando!" + (f" Exemplo: {nos[0]['productName'][:60]}" if nos else "")
 
 
+def ler_produto_mercado_livre(url, html):
+    """Links de afiliado do ML abrem uma vitrine. Acha o código do anúncio (MLB...) e lê a página do produto."""
+    texto = requests.utils.unquote(url) + " " + (html or "")[:400000]
+    enderecos = []
+    catalogo = re.search(r"/p/(MLB\d{6,})", texto)
+    if catalogo:
+        enderecos.append(f"https://www.mercadolivre.com.br/p/{catalogo.group(1)}")
+    anuncio = re.search(r"MLB-?(\d{6,})", texto)
+    if anuncio:
+        enderecos.append(f"https://produto.mercadolivre.com.br/MLB-{anuncio.group(1)}")
+    for endereco in enderecos:
+        if endereco == url:
+            continue
+        try:
+            resposta = requests.get(endereco, headers=CABECALHOS, timeout=20)
+        except requests.RequestException:
+            continue
+        if resposta.status_code == 200:
+            dados = ler_dados_da_pagina(resposta.text)
+            if dados.get("preco"):
+                return dados
+    return None
+
+
 def buscar_anuncio(link, config):
     """Lê um anúncio e devolve um dicionário com loja, nome, imagem, preços e aviso."""
     loja = descobrir_loja(link)
+    if not str(link or "").lower().startswith(("http://", "https://")):
+        return {"loja": loja, "nome": None, "imagem": None, "preco": None, "precoAntigo": None, "precoPromocional": False,
+                "link": link, "shopee": "", "aviso": "Esse produto está sem link de anúncio."}
     resultado = {"loja": loja, "nome": None, "imagem": None, "preco": None, "precoAntigo": None, "precoPromocional": False,
                  "link": link, "shopee": "", "aviso": ""}
 
@@ -362,6 +392,8 @@ def buscar_anuncio(link, config):
         if loja_final == "Shopee":
             return buscar_anuncio(resposta.url, config) | {"link": link}
         dados = ler_dados_da_pagina(resposta.text)
+        if not dados.get("preco") and resultado["loja"] == "Mercado Livre":
+            dados = ler_produto_mercado_livre(resposta.url, resposta.text) or dados
         resultado.update({k: v for k, v in dados.items() if v})
     except requests.RequestException as erro:
         resultado["aviso"] = f"Não consegui abrir o link ({erro.__class__.__name__}). Preencha os campos manualmente."

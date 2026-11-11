@@ -82,12 +82,22 @@ def procurar_na_shopee(termo, config, limite=20):
     if not (config.get("shopee_app_id") and config.get("shopee_segredo")):
         return []
     termo = termo.replace("\\", " ").replace('"', " ")
-    consulta = (
-        '{ productOfferV2(keyword: "%s", sortType: 1, limit: %d) { nodes '
+    consultas = [
+        '{ productOfferV2(keyword: "%s", limit: %d) { nodes '
         "{ itemId shopId productName imageUrl priceMin priceDiscountRate offerLink productLink "
-        "shopName commissionRate sales ratingStar } } }" % (termo, limite)
-    )
-    dados = nucleo.consultar_api_shopee(consulta, config)
+        "shopName commissionRate sales } } }" % (termo, limite),
+        # Plano B: só o essencial (a API às vezes recusa alguns campos)
+        '{ productOfferV2(keyword: "%s", limit: %d) { nodes '
+        "{ itemId shopId productName imageUrl priceMin offerLink productLink } } }" % (termo, limite),
+    ]
+    for numero, consulta in enumerate(consultas):
+        try:
+            dados = nucleo.consultar_api_shopee(consulta, config)
+            break
+        except nucleo.ErroShopee:
+            if numero == len(consultas) - 1:
+                raise
+            time.sleep(1)
     resultado = []
     for item in (dados.get("productOfferV2") or {}).get("nodes") or []:
         preco = nucleo.texto_para_numero(item.get("priceMin"))
@@ -220,6 +230,7 @@ def procurar_alternativas(produto, config, ignorados=()):
 def procurar_tudo(produtos, config, ignorados=(), progresso=None, pausa=1.0):
     """Procura ofertas para todos os produtos. Devolve o relatório para gravar em ofertas.json."""
     itens, avisos_gerais = [], set()
+    produtos = [p for p in produtos if str(p.get("link", "")).lower().startswith(("http://", "https://"))]
     for numero, produto in enumerate(produtos, start=1):
         if progresso:
             progresso(numero, len(produtos), produto["nome"])

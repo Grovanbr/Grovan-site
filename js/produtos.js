@@ -83,7 +83,7 @@ const produtos = [
     imagem: "https://cf.shopee.com.br/file/br-11134207-820lh-msn53tgvj952b7",
     preco: 85.90,
     precoAntigo: 0.00,
-    destaque: false,
+    destaque: true,
     shopee: "1475886431.57717240116"
   },
 ];

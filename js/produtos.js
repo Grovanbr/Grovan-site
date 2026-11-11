@@ -96,12 +96,13 @@ const produtos = [
   },
   {
     nome: "Guarda Chuva Grande Reforçado Contra Vento Cabe Na Bolsa",
-    loja: "Mercado Livre",
+    loja: "Shopee",
     categoria: "Guarda-chuva",
-    link: "https://meli.la/1QaP3Rj",
-    imagem: "https://http2.mlstatic.com/D_NQ_NP_970861-MLB89352137022_082025-O.webp",
-    preco: 26.24,
-    precoAntigo: 36.90,
-    destaque: true
+    link: "https://s.shopee.com.br/9AQ6EZtUvK",
+    imagem: "https://cf.shopee.com.br/file/sg-11134201-22100-l9d7cwr2esiv24",
+    preco: 22.90,
+    precoAntigo: 0.00,
+    destaque: true,
+    shopee: "448628081.19455451486"
   },
 ];

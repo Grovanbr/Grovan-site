@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-11-12 09:08",
+ "geradoEm": "2026-11-12 13:15",
  "itens": [
   {
    "nome": "Secret Boom Box Gloss Labial Com Chaveiro De Ursinho Sortido",
@@ -49,14 +49,10 @@
    "nome": "Principia Kit Limpeza E Hidratação Ch-01 + Ol-01 + Gl-02 Todo Tipo De Pele Dia/noite",
    "link": "https://meli.la/1ikSs3S",
    "loja": "Mercado Livre",
-   "precoAtual": 95.55,
+   "precoAtual": 107.31,
    "conferencia": {
-    "status": "subiu",
-    "preco": 107.31,
-    "precoAntigo": 147.0,
-    "imagem": "https://http2.mlstatic.com/D_NQ_NP_609209-MLA94364515810_102025-F.webp",
-    "aplicado": true,
-    "precoAnterior": 95.55
+    "status": "igual",
+    "preco": 107.31
    },
    "alternativas": []
   },
@@ -86,13 +82,9 @@
    "alternativas": []
   }
  ],
- "avisos": [],
- "precosAtualizados": [
-  {
-   "nome": "Principia Kit Limpeza E Hidratação Ch-01 + Ol-01 + Gl-02 Todo Tipo De Pele Dia/noite",
-   "de": 95.55,
-   "para": 107.31
-  }
+ "avisos": [
+  "A Shopee não respondeu na busca de 1 de 7 produtos (NIVEA Loção Deo-Hidratante Soft Milk 400ml, Hidratação Profunda 72h, Hialurônico Puro, Corporal, Pele Seca). Esses produtos são procurados de novo na próxima procura. Motivo: A API da Shopee está instável agora. Tente de novo em alguns minutos. Detalhe da Shopee: System Error"
  ],
+ "precosAtualizados": [],
  "trocasAutomaticas": []
 }

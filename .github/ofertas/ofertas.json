@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-11-11 20:57",
+ "geradoEm": "2026-11-12 09:08",
  "itens": [
   {
    "nome": "Secret Boom Box Gloss Labial Com Chaveiro De Ursinho Sortido",
@@ -51,8 +51,12 @@
    "loja": "Mercado Livre",
    "precoAtual": 95.55,
    "conferencia": {
-    "status": "igual",
-    "preco": 95.55
+    "status": "subiu",
+    "preco": 107.31,
+    "precoAntigo": 147.0,
+    "imagem": "https://http2.mlstatic.com/D_NQ_NP_609209-MLA94364515810_102025-F.webp",
+    "aplicado": true,
+    "precoAnterior": 95.55
    },
    "alternativas": []
   },
@@ -83,6 +87,12 @@
   }
  ],
  "avisos": [],
- "precosAtualizados": [],
+ "precosAtualizados": [
+  {
+   "nome": "Principia Kit Limpeza E Hidratação Ch-01 + Ol-01 + Gl-02 Todo Tipo De Pele Dia/noite",
+   "de": 95.55,
+   "para": 107.31
+  }
+ ],
  "trocasAutomaticas": []
 }

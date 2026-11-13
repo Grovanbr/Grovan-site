@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-11-13 17:04",
+ "geradoEm": "2026-11-13 20:51",
  "itens": [
   {
    "nome": "Secret Boom Box Gloss Labial Com Chaveiro De Ursinho Sortido",
@@ -68,8 +68,12 @@
    "loja": "Mercado Livre",
    "precoAtual": 98.73,
    "conferencia": {
-    "status": "igual",
-    "preco": 98.73
+    "status": "baixou",
+    "preco": 96.58,
+    "precoAntigo": 147.0,
+    "imagem": "https://http2.mlstatic.com/D_NQ_NP_609209-MLA94364515810_102025-F.webp",
+    "aplicado": true,
+    "precoAnterior": 98.73
    },
    "alternativas": []
   },
@@ -100,8 +104,14 @@
   }
  ],
  "avisos": [
-  "A Shopee não respondeu na busca de 3 de 7 produtos (Guarda Chuva Grande Reforçado Contra Vento Cabe Na Bolsa, NIVEA Loção Deo-Hidratante Soft Milk 400ml, Hidratação Profunda 72h, Hialurônico Puro, Corporal, Pele Seca, Kit 100 Bolas de Natal com Estrela ou Kit 50 Enfeite Árvore Vermelha Dourada Mista Fosca Glitter). Esses produtos são procurados de novo na próxima procura. Motivo: A API da Shopee está instável agora. Tente de novo em alguns minutos. Detalhe da Shopee: System Error"
+  "A Shopee não respondeu na busca de 1 de 7 produtos (Guarda Chuva Grande Reforçado Contra Vento Cabe Na Bolsa). Esses produtos são procurados de novo na próxima procura. Motivo: A API da Shopee está instável agora. Tente de novo em alguns minutos. Detalhe da Shopee: System Error"
  ],
- "precosAtualizados": [],
+ "precosAtualizados": [
+  {
+   "nome": "Principia Kit Limpeza E Hidratação Ch-01 + Ol-01 + Gl-02 Todo Tipo De Pele Dia/noite",
+   "de": 98.73,
+   "para": 96.58
+  }
+ ],
  "trocasAutomaticas": []
 }

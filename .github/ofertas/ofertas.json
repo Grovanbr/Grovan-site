@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-11-13 13:00",
+ "geradoEm": "2026-11-13 17:04",
  "itens": [
   {
    "nome": "Secret Boom Box Gloss Labial Com Chaveiro De Ursinho Sortido",
@@ -54,8 +54,8 @@
      "link": "https://s.shopee.com.br/AUvY21Y3YN",
      "linkProduto": "https://shopee.com.br/product/280716196/58272875543",
      "afiliado": true,
-     "vendedor": "",
-     "comissao": 0.0,
+     "vendedor": "WMSHOP 10",
+     "comissao": 7.0,
      "vendas": 0,
      "semelhanca": 100,
      "economia": 12.57
@@ -66,14 +66,10 @@
    "nome": "Principia Kit Limpeza E Hidratação Ch-01 + Ol-01 + Gl-02 Todo Tipo De Pele Dia/noite",
    "link": "https://meli.la/1ikSs3S",
    "loja": "Mercado Livre",
-   "precoAtual": 107.31,
+   "precoAtual": 98.73,
    "conferencia": {
-    "status": "baixou",
-    "preco": 98.73,
-    "precoAntigo": 147.0,
-    "imagem": "https://http2.mlstatic.com/D_NQ_NP_609209-MLA94364515810_102025-F.webp",
-    "aplicado": true,
-    "precoAnterior": 107.31
+    "status": "igual",
+    "preco": 98.73
    },
    "alternativas": []
   },
@@ -85,7 +81,7 @@
    "conferencia": {
     "status": "subiu",
     "preco": 39.69,
-    "precoAntigo": 49.99,
+    "precoAntigo": null,
     "imagem": "https://http2.mlstatic.com/D_NQ_NP_756821-MLA86791313939_062025-F.webp",
     "revisar": true
    },
@@ -104,14 +100,8 @@
   }
  ],
  "avisos": [
-  "A Shopee não respondeu na busca de 1 de 7 produtos (Kit 100 Bolas de Natal com Estrela ou Kit 50 Enfeite Árvore Vermelha Dourada Mista Fosca Glitter). Esses produtos são procurados de novo na próxima procura. Motivo: A API da Shopee está instável agora. Tente de novo em alguns minutos. Detalhe da Shopee: System Error"
+  "A Shopee não respondeu na busca de 3 de 7 produtos (Guarda Chuva Grande Reforçado Contra Vento Cabe Na Bolsa, NIVEA Loção Deo-Hidratante Soft Milk 400ml, Hidratação Profunda 72h, Hialurônico Puro, Corporal, Pele Seca, Kit 100 Bolas de Natal com Estrela ou Kit 50 Enfeite Árvore Vermelha Dourada Mista Fosca Glitter). Esses produtos são procurados de novo na próxima procura. Motivo: A API da Shopee está instável agora. Tente de novo em alguns minutos. Detalhe da Shopee: System Error"
  ],
- "precosAtualizados": [
-  {
-   "nome": "Principia Kit Limpeza E Hidratação Ch-01 + Ol-01 + Gl-02 Todo Tipo De Pele Dia/noite",
-   "de": 107.31,
-   "para": 98.73
-  }
- ],
+ "precosAtualizados": [],
  "trocasAutomaticas": []
 }

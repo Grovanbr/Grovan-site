@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-11-13 09:05",
+ "geradoEm": "2026-11-13 13:00",
  "itens": [
   {
    "nome": "Secret Boom Box Gloss Labial Com Chaveiro De Ursinho Sortido",
@@ -43,7 +43,24 @@
     "status": "igual",
     "preco": 88.9
    },
-   "alternativas": []
+   "alternativas": [
+    {
+     "loja": "Shopee",
+     "shopee": "280716196.58272875543",
+     "nome": "Árvore de Natal 1,50cm 400 Galhos Pinheiro Verde Resistente Desmontável Pé de Ferro e Plástico",
+     "preco": 76.33,
+     "precoAntigo": null,
+     "imagem": "https://cf.shopee.com.br/file/sg-11134201-8257t-mvfeehgl1dl4e1",
+     "link": "https://s.shopee.com.br/AUvY21Y3YN",
+     "linkProduto": "https://shopee.com.br/product/280716196/58272875543",
+     "afiliado": true,
+     "vendedor": "",
+     "comissao": 0.0,
+     "vendas": 0,
+     "semelhanca": 100,
+     "economia": 12.57
+    }
+   ]
   },
   {
    "nome": "Principia Kit Limpeza E Hidratação Ch-01 + Ol-01 + Gl-02 Todo Tipo De Pele Dia/noite",
@@ -51,8 +68,12 @@
    "loja": "Mercado Livre",
    "precoAtual": 107.31,
    "conferencia": {
-    "status": "igual",
-    "preco": 107.31
+    "status": "baixou",
+    "preco": 98.73,
+    "precoAntigo": 147.0,
+    "imagem": "https://http2.mlstatic.com/D_NQ_NP_609209-MLA94364515810_102025-F.webp",
+    "aplicado": true,
+    "precoAnterior": 107.31
    },
    "alternativas": []
   },
@@ -63,8 +84,8 @@
    "precoAtual": 15.43,
    "conferencia": {
     "status": "subiu",
-    "preco": 35.09,
-    "precoAntigo": null,
+    "preco": 39.69,
+    "precoAntigo": 49.99,
     "imagem": "https://http2.mlstatic.com/D_NQ_NP_756821-MLA86791313939_062025-F.webp",
     "revisar": true
    },
@@ -83,8 +104,14 @@
   }
  ],
  "avisos": [
-  "A Shopee não respondeu na busca de 1 de 7 produtos (Árvore de Natal 1,50cm 400 Galhos Pinheiro Verde Resistente Desmontável Pé de Ferro e Plástico). Esses produtos são procurados de novo na próxima procura. Motivo: A API da Shopee está instável agora. Tente de novo em alguns minutos. Detalhe da Shopee: System Error"
+  "A Shopee não respondeu na busca de 1 de 7 produtos (Kit 100 Bolas de Natal com Estrela ou Kit 50 Enfeite Árvore Vermelha Dourada Mista Fosca Glitter). Esses produtos são procurados de novo na próxima procura. Motivo: A API da Shopee está instável agora. Tente de novo em alguns minutos. Detalhe da Shopee: System Error"
  ],
- "precosAtualizados": [],
+ "precosAtualizados": [
+  {
+   "nome": "Principia Kit Limpeza E Hidratação Ch-01 + Ol-01 + Gl-02 Todo Tipo De Pele Dia/noite",
+   "de": 107.31,
+   "para": 98.73
+  }
+ ],
  "trocasAutomaticas": []
 }

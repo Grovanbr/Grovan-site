@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-11-12 20:54",
+ "geradoEm": "2026-11-13 09:05",
  "itens": [
   {
    "nome": "Secret Boom Box Gloss Labial Com Chaveiro De Ursinho Sortido",
@@ -82,7 +82,9 @@
    "alternativas": []
   }
  ],
- "avisos": [],
+ "avisos": [
+  "A Shopee não respondeu na busca de 1 de 7 produtos (Árvore de Natal 1,50cm 400 Galhos Pinheiro Verde Resistente Desmontável Pé de Ferro e Plástico). Esses produtos são procurados de novo na próxima procura. Motivo: A API da Shopee está instável agora. Tente de novo em alguns minutos. Detalhe da Shopee: System Error"
+ ],
  "precosAtualizados": [],
  "trocasAutomaticas": []
 }

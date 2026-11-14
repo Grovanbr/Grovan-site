@@ -230,6 +230,8 @@ const S={porte:null,empresa:null,step:"cnpj",sel:{},nome:"",contato:""};
 const rate=s=>mround(s.base*MULT[S.porte],5);
 const valor=s=>{const m=(s.cat==="Fiscal e impostos"||s.cat==="Foto e vídeo")?10:100;return Math.round(s.horas*rate(s)/m)*m};
 const $=q=>document.querySelector(q);
+const WHATS="5511945426510";
+function linkZap(txt){return "https://wa.me/"+WHATS+"?text="+encodeURIComponent(txt)}
 const feed=$("#feed");
 function esc(t){return t.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
 function scroll(){const m=$("#main");m.scrollTop=m.scrollHeight}
@@ -281,10 +283,13 @@ async function recebeDoc(nome,doc){
 }
 async function pedeDescricao(){S.step="descricao";await bot(`<p>Me conta com as suas palavras o que você precisa. Pode ser bem simples, tipo "quero vender meus produtos pela internet".</p>`);$("#txt").focus()}
 async function recebeDescricao(t){
+  S.desc=t;
   const low=t.toLowerCase();const ids=new Set();KEYS.forEach(([re,arr])=>{if(re.test(low))arr.forEach(i=>ids.add(i))});
   if(!ids.size){
     S.step="livre";
-    const el=await bot(`<p>Entendi. Esse pedido não está entre os serviços do catálogo, então eu já encaminhei pro <strong>Cristian</strong> analisar.</p><p>Ele responde por aqui mesmo, com o valor e o prazo. Você também recebe um aviso no WhatsApp ou no e-mail.</p>`,1200);
+    const msg=`Olá, Cristian! Preciso de um serviço pela Grovan Soluções.\n\nEmpresa: ${S.empresa||""}\nCNPJ/CPF: ${S.doc||""}\n\nO que preciso: ${t}`;
+    const el=await bot(`<p>Entendi. Esse pedido é sob medida, então quem responde é o <strong>Cristian</strong>, com valor e prazo.</p><p>Toque no botão abaixo pra enviar o seu pedido pra ele pelo WhatsApp, já escrito.</p>
+      <p><a class="chip pri" style="text-decoration:none" href="${linkZap(msg)}" target="_blank" rel="noopener">Enviar pelo WhatsApp</a></p>`,1000);
     chips(el,[{t:"Ver os serviços do catálogo",fn:abrirCatalogo}]);return;
   }
   S.sel={};ids.forEach(i=>S.sel[i]=1);S.step="livre";
@@ -336,10 +341,12 @@ async function pedeContato(){
   el.querySelector("#fc").addEventListener("submit",async e=>{
     e.preventDefault();const n=$("#fc-nome").value.trim(),c=$("#fc-cont").value.trim();if(!n||!c)return;
     e.target.querySelectorAll("input,button").forEach(x=>x.disabled=true);S.nome=n;S.contato=c;me(`${n} · ${c}`);
-    const num="SOL-"+new Date().getFullYear()+"-"+String(Math.floor(Math.random()*900)+100);
-    await bot(`<p>Pronto, ${esc(n.split(" ")[0])}! Sua solicitação <strong>${num}</strong> foi enviada.</p>
-      <p>O Cristian vai revisar e você recebe aqui a proposta confirmada, com o link de pagamento por Pix, cartão ou boleto.</p>
-      <p>Guarde este link: é por ele que você acompanha o andamento do serviço até a entrega.</p>`,1200);
+    const t=totais();
+    const linhas=t.it.map(x=>`• ${x.s.nome}: ${x.s.comb?"a combinar":brl(x.v)+(x.s.cob==="Mensal"?"/mês":"")}`).join("\n");
+    const msg=`Olá, Cristian! Quero um orçamento pela Grovan Soluções.\n\nEmpresa: ${S.empresa||""}\nCNPJ/CPF: ${S.doc||""}\nContato: ${n} · ${c}\n${S.desc?`\nO que preciso: ${S.desc}\n`:""}\nServiços escolhidos:\n${linhas}${t.unico?`\n\nTotal estimado: ${brl(t.unico)}`:""}${t.mensal?`\nMensal: ${brl(t.mensal)}/mês`:""}`;
+    const el2=await bot(`<p>Pronto, ${esc(n.split(" ")[0])}! Agora é só tocar no botão abaixo: a conversa abre no WhatsApp do Cristian com o seu orçamento já escrito, e você só aperta enviar.</p>
+      <p><a class="chip pri" style="text-decoration:none" href="${linkZap(msg)}" target="_blank" rel="noopener">Enviar pelo WhatsApp</a></p>
+      <p class="fine">Se o botão não abrir, chame no (11) 94542-6510.</p>`,800);
   });
 }
 // --------- entrada de texto
@@ -347,7 +354,7 @@ async function enviar(){
   const v=$("#txt").value.trim();if(!v)return;$("#txt").value="";autosize();me(v);
   if(S.step==="cnpj"){await bot(`<p>Antes, preenche o nome e o CNPJ ou CPF logo acima, por favor.</p>`);return}
   if(S.step==="descricao")return recebeDescricao(v);
-  if(/menor pre[çc]o|desconto|mei|mais barato|outro porte|tabela/i.test(v)){await bot(`<p>Os valores são definidos pela análise do seu cadastro. Pra conversar sobre condições, eu já avisei o Cristian e ele te responde por aqui.</p>`);return}
+  if(/menor pre[çc]o|desconto|mei|mais barato|outro porte|tabela/i.test(v)){await bot(`<p>Os valores são definidos pela análise do seu cadastro. Pra conversar sobre condições, fale direto com o Cristian:</p><p><a class="chip pri" style="text-decoration:none" href="${linkZap("Olá, Cristian! Quero conversar sobre as condições do meu orçamento. Empresa: "+(S.empresa||""))}" target="_blank" rel="noopener">Falar no WhatsApp</a></p>`);return}
   S.step="descricao";return recebeDescricao(v);
 }
 function autosize(){const t=$("#txt");t.style.height="46px";t.style.height=Math.min(t.scrollHeight,140)+"px"}

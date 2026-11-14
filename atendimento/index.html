@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Grovan Soluções</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Layout: app de conversa em tela cheia — cabeçalho da marca, conversa rolando, campo de mensagem fixo embaixo; catálogo abre por cima */
+:root{
+  --bg:#F6F5F0; --surface:#FFFFFF; --sunk:#ECEBE3; --line:#E2E2DA;
+  --fg:#14171A; --muted:#5A635E; --brand:#0F3D2E; --brand-fg:#F6F5F0; --sprout:#B8E35A; --sprout-ink:#1F3A0E;
+  --mine:#0F3D2E; --mine-fg:#F6F5F0; --ok:#2F6B4F;
+  --f-display:"Sora",system-ui,sans-serif; --f-body:"Inter",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0C1411; --surface:#14201B; --sunk:#1B2A23; --line:#26372F;
+  --fg:#EEF1EC; --muted:#A3B0A9; --brand:#0F3D2E; --brand-fg:#F6F5F0; --sprout:#B8E35A; --sprout-ink:#1F3A0E;
+  --mine:#B8E35A; --mine-fg:#14171A; --ok:#8FD3A9; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0C1411; --surface:#14201B; --sunk:#1B2A23; --line:#26372F;
+  --fg:#EEF1EC; --muted:#A3B0A9; --brand:#0F3D2E; --brand-fg:#F6F5F0; --sprout:#B8E35A; --sprout-ink:#1F3A0E;
+  --mine:#B8E35A; --mine-fg:#14171A; --ok:#8FD3A9; color-scheme:dark}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{background:var(--bg);color:var(--fg);font:15px/1.5 var(--f-body)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--brand)}
+.app{height:100%;display:flex;flex-direction:column}
+header{background:var(--brand);color:var(--brand-fg);padding-block:12px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.hin{max-width:760px;margin:0 auto;display:flex;align-items:center;gap:12px}
+.logo{display:flex;align-items:center;gap:8px;font:700 22px var(--f-display);letter-spacing:-.5px}
+.hin .tag{font-size:12.5px;color:#CFE0D6;margin-left:2px}
+.sp{flex:1}
+.iconbtn{width:44px;height:44px;border-radius:12px;border:1px solid rgba(246,245,240,.25);background:transparent;color:var(--brand-fg);display:grid;place-items:center;cursor:pointer}
+.iconbtn:hover{background:rgba(246,245,240,.1)}
+.iconbtn:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--sprout);outline-offset:2px}
+main{flex:1;overflow-y:auto;padding-block:20px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.feed{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
+.msg{display:flex;gap:10px;align-items:flex-end;max-width:88%}
+.msg.me{align-self:flex-end;flex-direction:row-reverse}
+.av{flex:none;width:32px;height:32px;border-radius:10px;background:var(--brand);display:grid;place-items:center}
+.bub{background:var(--surface);border:1px solid var(--line);border-radius:16px 16px 16px 4px;padding:11px 14px;min-width:0;overflow-wrap:anywhere}
+.me .bub{background:var(--mine);color:var(--mine-fg);border-color:transparent;border-radius:16px 16px 4px 16px}
+.bub p{margin:0}.bub p+p{margin-top:6px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.chip{font:600 14px var(--f-body);padding:10px 14px;min-height:44px;border-radius:12px;border:1.5px solid var(--brand);background:transparent;color:var(--fg);cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+:root[data-theme="dark"] .chip{border-color:var(--sprout)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .chip{border-color:var(--sprout)}}
+.chip.pri{background:var(--brand);color:var(--brand-fg);border-color:var(--brand)}
+.chip:hover{filter:brightness(1.05)}
+.chip[disabled]{opacity:.45;cursor:default}
+.idcard{display:flex;gap:10px;align-items:center;background:var(--sunk);border-radius:12px;padding:10px 12px;margin-top:8px}
+.badge{display:inline-block;font:600 12px var(--f-body);padding:3px 10px;border-radius:99px;background:var(--sprout);color:var(--sprout-ink)}
+.quote{margin-top:10px;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.quote .row{display:flex;justify-content:space-between;gap:12px;padding:9px 12px;border-top:1px solid var(--line)}
+.quote .row:first-child{border-top:0}
+.quote .row small{display:block;color:var(--muted);font-size:12px}
+.quote .v{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:600}
+.quote .tot{background:var(--sunk);font-weight:700}
+.quote .tot .v{font:700 17px var(--f-display)}
+.fine{font-size:12px;color:var(--muted);margin-top:8px}
+.typing span{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--muted);margin:0 2px;animation:b 1s infinite}
+.typing span:nth-child(2){animation-delay:.15s}.typing span:nth-child(3){animation-delay:.3s}
+@keyframes b{0%,60%,100%{opacity:.3;transform:none}30%{opacity:1;transform:translateY(-3px)}}
+footer.composer{border-top:1px solid var(--line);background:var(--surface);padding-block:10px calc(10px + env(safe-area-inset-bottom,0px));padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.cin{max-width:760px;margin:0 auto;display:flex;gap:8px}
+.cin textarea{flex:1;min-width:0;resize:none;font:inherit;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:11px 12px;height:46px;max-height:140px}
+.send{width:46px;height:46px;border-radius:12px;border:0;background:var(--brand);color:var(--brand-fg);display:grid;place-items:center;cursor:pointer}
+.send[disabled]{opacity:.4;cursor:default}
+.form{display:grid;gap:8px;margin-top:10px}
+.form label{font-size:12px;font-weight:600;color:var(--muted)}
+.form input{font:inherit;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px 12px;width:100%}
+/* catálogo */
+.sheet{position:fixed;inset:0;z-index:20;background:var(--bg);display:flex;flex-direction:column}
+.sheet header .hin{gap:8px}
+.sheet h2{font:700 18px var(--f-display);margin:0}
+.cat{max-width:760px;margin:0 auto 18px}
+.cat h3{font:600 12px var(--f-body);letter-spacing:.12em;text-transform:uppercase;color:var(--ok);margin:4px 0 8px}
+.svc{display:grid;grid-template-columns:28px minmax(0,1fr) auto;gap:12px;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px;margin-bottom:8px;cursor:pointer}
+.svc.on{border-color:var(--brand);box-shadow:0 0 0 1px var(--brand) inset}
+:root[data-theme="dark"] .svc.on{border-color:var(--sprout);box-shadow:0 0 0 1px var(--sprout) inset}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .svc.on{border-color:var(--sprout);box-shadow:0 0 0 1px var(--sprout) inset}}
+.svc input{width:20px;height:20px;margin-top:2px;accent-color:var(--brand)}
+.svc .nm{font-weight:600}
+.svc .ds{color:var(--muted);font-size:13px}
+.svc .meta{display:flex;flex-wrap:wrap;gap:6px 12px;margin-top:6px;font-size:12.5px;color:var(--muted)}
+.svc .meta b{color:var(--fg);font-weight:600}
+.svc .pr{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:700}
+.svc .pr small{display:block;font-weight:400;color:var(--muted);font-size:12px}
+.qty{display:inline-flex;align-items:center;gap:6px;margin-top:8px}
+.qty button{width:32px;height:32px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--fg);cursor:pointer;font-weight:700}
+.sheetfoot{border-top:1px solid var(--line);background:var(--surface);padding-block:12px calc(12px + env(safe-area-inset-bottom,0px));padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.sfin{max-width:760px;margin:0 auto;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.sfin .sum{flex:1;min-width:0}
+.sfin .sum b{font:700 18px var(--f-display);font-variant-numeric:tabular-nums}
+.demo{max-width:760px;margin:0 auto 4px;font-size:12px;color:var(--muted);text-align:center}
+@media (prefers-reduced-motion:reduce){.typing span{animation:none}}
+</style>
+</head>
+<body>
+
+
+<div class="app">
+  <header>
+    <div class="hin">
+      <div class="logo">
+        <svg width="30" height="30" viewBox="0 0 100 100" aria-hidden="true"><path d="M74 26 A34 34 0 1 0 84 50 L58 50" fill="none" stroke="#F6F5F0" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/><path d="M74 26 C77 12 88 6 97 4 C95 17 88 25 74 26 Z" fill="#B8E35A"/></svg>
+        grovan <span class="tag">Soluções</span>
+      </div>
+      <div class="sp"></div>
+      <button class="iconbtn" id="tema" aria-label="Alternar modo claro e escuro"></button>
+    </div>
+  </header>
+  <main id="main"><div class="feed" id="feed" aria-live="polite"></div></main>
+  <footer class="composer">
+    <div class="cin">
+      <label for="txt" class="sr" style="position:absolute;left:-9999px">Mensagem</label>
+      <textarea id="txt" rows="1" placeholder="Digite sua mensagem"></textarea>
+      <button class="send" id="enviar" aria-label="Enviar"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+    </div>
+  </footer>
+</div>
+
+<div class="sheet" id="sheet" hidden>
+  <header><div class="hin">
+    <button class="iconbtn" id="fechar" aria-label="Voltar para a conversa"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+    <h2>Nossos serviços</h2><div class="sp"></div>
+  </div></header>
+  <main><div id="catalogo"></div></main>
+  <div class="sheetfoot"><div class="sfin">
+    <div class="sum" id="sum"></div>
+    <button class="chip pri" id="confirmar">Ver orçamento</button>
+  </div></div>
+</div>
+
+<script>
+/* DEMONSTRAÇÃO: na versão final, preços e porte vêm do servidor; esta página não terá tabela nenhuma. */
+const MULT={mei:0.8,micro:1,pequena:1.35,media:1.8,grande:2.5};
+const NOMEPORTE={mei:"MEI",micro:"Microempresa",pequena:"Pequena empresa",media:"Média empresa",grande:"Grande empresa"};
+const RAW=[
+["Checkout com Pix, cartão e boleto integrado ao Bling","Sistemas e integrações","Projeto",85,60,"Pagamento online, carnê de boletos, frete, pedido e financeiro automáticos no Bling, baixa e rastreio"],
+["Painel de enriquecimento de produtos (Bling)","Sistemas e integrações","Projeto",70,60,"Busca descrição, fotos, pesos e medidas e atualiza o cadastro do Bling em lotes"],
+["Emissor de NFS-e de obra (NFS-e Nacional + Bling)","Sistemas e integrações","Projeto",60,60,"Emissão da nota, PDF e lançamento no Bling"],
+["Painel de apuração de impostos","Sistemas e integrações","Projeto",50,60,"Notas de entrada e saída do Bling, débito, crédito e saldo acumulado"],
+["Consulta de NF-e na SEFAZ com entrada automática","Sistemas e integrações","Projeto",40,60,"Busca as notas emitidas contra o seu CNPJ e dá entrada no Bling"],
+["Integração de NFS-e com o Bling","Sistemas e integrações","Projeto",30,60,"Registra as notas de serviço no Bling automaticamente"],
+["Robô de ajuste de impostos nas notas de entrada","Sistemas e integrações","Projeto",30,60,"Corrige CFOP, PIS e COFINS nos itens, nota por nota"],
+["Download de XML de NF-e","Sistemas e integrações","Projeto",25,60,"Baixa os XMLs a partir das chaves de acesso"],
+["Automação sob medida (pequena)","Sistemas e integrações","Projeto",10,60,"Rotina para automatizar uma tarefa repetitiva"],
+["Manutenção de sistemas e integrações","Sistemas e integrações","Mensal",6,60,"Correções, ajustes e acompanhamento"],
+["Layout e configuração de loja virtual","Loja virtual e web","Projeto",40,50,"Home, menu, página de produto e configuração da loja"],
+["Personalização de loja Nuvemshop","Loja virtual e web","Projeto",25,50,"Tema, home e página de produto"],
+["Landing page ou site institucional","Loja virtual e web","Projeto",25,50,"Página responsiva com SEO básico"],
+["Cadastro de produtos na loja","Loja virtual e web","Por lote",5,50,"Lote de 50 produtos (precisa de mais? é só pedir no chat) com descrição, fotos, preço, peso e medidas"],
+["Planilha personalizada","Loja virtual e web","Projeto",10,50,"Financeiro, estoque ou precificação, com fórmulas e resumo"],
+["Faturamento e emissão de notas","Financeiro e fiscal","Mensal",10,45,"Emissão de NF-e e NFS-e e conferência dos pedidos"],
+["Contas a pagar e receber com conciliação","Financeiro e fiscal","Mensal",12,45,"Lançamentos, baixas e conciliação bancária"],
+["Lançamento de notas de entrada","Fiscal e impostos","Mensal",6,45,"Até 100 notas por mês"],
+["Lançamento e conferência de notas de saída","Fiscal e impostos","Mensal",4,45,"Até 100 notas por mês"],
+["Conferência tributária das notas","Fiscal e impostos","Mensal",4,45,"CFOP, CST, NCM e alíquotas"],
+["Escrituração de NFS-e e ISS","Fiscal e impostos","Mensal",3,45,"Notas prestadas e tomadas, ISS próprio e retido"],
+["Apuração de impostos","Fiscal e impostos","Mensal",10,45,"ICMS, ICMS-ST, DIFAL, PIS, COFINS, IPI e Simples, conforme o regime"],
+["SPED Fiscal (EFD ICMS/IPI)","Fiscal e impostos","Mensal",4,45,"Geração, validação e transmissão"],
+["SPED Contribuições","Fiscal e impostos","Mensal",4,45,"Geração, validação e transmissão"],
+["EFD-Reinf","Fiscal e impostos","Mensal",2,45,"Retenções sobre serviços tomados"],
+["DeSTDA","Fiscal e impostos","Mensal",1.5,45,"Declaração do Simples Nacional"],
+["Emissão de guias de impostos","Fiscal e impostos","Mensal",1,45,"DARF, GARE e DAE do mês"],
+["MEI: DAS mensal e declaração anual","Fiscal e impostos","Mensal",1,45,"Guia do mês e DASN-SIMEI"],
+["Cadastro tributário de produtos","Fiscal e impostos","Por lote",6,45,"Lote de 100 produtos: NCM, CEST, CST e CFOP"],
+["Revisão de créditos tributários","Fiscal e impostos","Projeto",20,45,"Créditos de ICMS, PIS e COFINS dos últimos 12 meses"],
+["Pacote fiscal mensal completo","Fiscal e impostos","Mensal",25,45,"Lançamentos, conferência, apurações, SPEDs e guias"],
+["Suporte técnico remoto","Suporte e atendimento","Mensal",10,45,"Computadores, impressoras e sistemas"],
+["Suporte e treinamento no Bling","Suporte e atendimento","Pacote",4,45,"Pacote de 4 horas"],
+["Atendimento ao cliente terceirizado (SAC)","Suporte e atendimento","Mensal",20,45,"WhatsApp, e-mail e marketplaces"],
+["Identidade visual (logo e marca)","Design e marketing","Projeto",15,45,"Logo, cores e aplicações básicas"],
+["Artes para redes sociais","Design e marketing","Pacote",8,45,"Pacote com 10 posts e stories"],
+["Gestão de redes sociais","Design e marketing","Mensal",16,45,"Planejamento, criação e publicação"],
+["Campanha de e-mail marketing","Design e marketing","Por campanha",4,45,"Layout, lista e disparo"],
+["Formatação e reinstalação do Windows", "Serviços básicos (avulsos)", "Por hora", 1, 45, "Backup dos arquivos, formatação, drivers e programas básicos"],
+["Instalação e configuração de programas", "Serviços básicos (avulsos)", "Por hora", 1, 45, "Office, antivírus, sistemas e programas do dia a dia"],
+["Remoção de vírus e limpeza do computador", "Serviços básicos (avulsos)", "Por hora", 1, 45, "Varredura, remoção de pragas e ajuste de desempenho"],
+["Configuração de impressora e scanner", "Serviços básicos (avulsos)", "Por hora", 1, 45, "Instalação, rede e testes de impressão"],
+["Configuração de rede e Wi-Fi", "Serviços básicos (avulsos)", "Por hora", 1, 45, "Roteador, senha, alcance e compartilhamento na rede"],
+["Backup e recuperação de arquivos", "Serviços básicos (avulsos)", "Por hora", 1, 45, "Cópia de segurança e recuperação de arquivos apagados"],
+["Configuração de e-mail", "Serviços básicos (avulsos)", "Por hora", 1, 45, "Contas de e-mail no computador e no celular"],
+["Configuração de celular", "Serviços básicos (avulsos)", "Por hora", 1, 45, "Contas, aplicativos, transferência de dados e WhatsApp Business"],
+["Suporte remoto avulso", "Serviços básicos (avulsos)", "Por hora", 1, 45, "Atendimento por acesso remoto para resolver um problema pontual"],
+["Visita técnica", "Serviços básicos (avulsos)", "Por hora", 1, 45, "Atendimento presencial; deslocamento cobrado à parte"],
+["Assistência técnica em produtos", "Serviços básicos (avulsos)", "Por hora", 1, 45, "Diagnóstico e orientação de uso ou defeito em produtos"],
+["Suporte avulso no Bling ou ERP", "Serviços básicos (avulsos)", "Por hora", 1, 45, "Dúvidas, ajustes de cadastro, configurações e erros do sistema"],
+["Emissão avulsa de nota fiscal", "Serviços básicos (avulsos)", "Por hora", 1, 45, "Emissão de NF-e ou NFS-e avulsa"],
+["Lançamentos e organização financeira avulsos", "Serviços básicos (avulsos)", "Por hora", 1, 45, "Lançamentos, conferências e organização de planilhas e contas"],
+["Digitação e cadastros avulsos", "Serviços básicos (avulsos)", "Por hora", 1, 45, "Digitação de documentos e cadastros em sistemas"],
+["Cadastro em marketplaces", "Serviços básicos (avulsos)", "Por hora", 1, 45, "Conta e anúncios básicos no Mercado Livre, Shopee ou Amazon"],
+["Edição de imagens e artes simples", "Serviços básicos (avulsos)", "Por hora", 1, 45, "Ajuste de fotos de produto, banners e artes pontuais"],
+["Treinamento avulso", "Serviços básicos (avulsos)", "Por hora", 1, 45, "Treinamento em sistemas, Office ou ferramentas"],
+["Edição de vídeo curto (Reels, TikTok, Shorts)", "Foto e vídeo", "Por vídeo", 3.5, 45, "Vídeo de até 60 s: cortes, legendas, trilha e capa"],
+["Edição de vídeo para YouTube ou institucional", "Foto e vídeo", "Por vídeo", 9, 45, "Vídeo de até 10 min: cortes, legendas, trilha, vinheta e capa"],
+["Edição de vídeo personalizada", "Foto e vídeo", "Por hora", 1, 45, "Vídeos longos, eventos, animações ou edição sob medida"],
+["Pacote mensal de vídeos curtos", "Foto e vídeo", "Mensal", 11, 45, "4 vídeos curtos por mês, até 60 s cada"],
+["Tratamento de fotos de produto (lote de 20)", "Foto e vídeo", "Por lote", 7, 45, "Ajuste de luz, cor, recorte e padronização para loja e anúncios"],
+["Remoção de fundo de fotos (lote de 50)", "Foto e vídeo", "Por lote", 5.5, 45, "Fundo branco ou transparente, pronto para loja virtual e marketplaces"],
+["Edição e retoque de fotos personalizada", "Foto e vídeo", "Por hora", 1, 45, "Retoque, montagens e edições sob medida"],
+["Pacote mensal de fotos e vídeos para redes", "Foto e vídeo", "Mensal", 15.5, 45, "4 vídeos curtos e 20 fotos tratadas por mês, mais barato que contratar separado"]
+];
+const COMB=new Set([0,1,2,3,4,5,6,7,8,29,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,58,62]);
+const ENT={9:"Correções e ajustes, até 2 pedidos por mês",15:"Até 100 notas emitidas e conferência dos pedidos",16:"Até 150 lançamentos e conciliação de 1 conta bancária",17:"Até 100 notas",18:"Até 100 notas",19:"Até 100 notas conferidas",20:"Notas de serviço do mês e ISS, dentro do prazo legal",21:"Apuração do mês, dentro do prazo legal",22:"Entrega dentro do prazo legal",23:"Entrega dentro do prazo legal",24:"Entrega dentro do prazo legal",25:"Entrega dentro do prazo legal",26:"Guias do mês, enviadas antes do vencimento",27:"DAS do mês e declaração anual",30:"Tudo do mês fiscal, até 100 notas",31:"Até 10 atendimentos, em horário comercial",33:"WhatsApp, e-mail e marketplaces, em horário comercial",36:"Até 12 posts e 8 stories, planejamento e publicação",59:"4 vídeos curtos por mês, até 60 s cada",63:"4 vídeos curtos e 20 fotos tratadas por mês"};
+const SVCS=RAW.map((r,i)=>({id:i,nome:r[0],cat:r[1],cob:r[2],horas:r[3],base:r[4],inc:r[5],comb:COMB.has(i),ent:ENT[i]||null}));
+const KEYS=[
+ [/v[ií]deo|reels|tiktok|youtube|shorts/,[56,57]],[/foto|imagem|fundo branco|tirar o fundo/,[60,61]],
+ [/format|windows/,[38]],[/v[ií]rus|lent[oa]/,[40]],[/wi-?fi|internet|roteador|rede/,[42]],[/backup|recuperar/,[43]],[/celular/,[45]],[/marketplace|mercado livre|shopee|amazon/,[53]],
+ [/loja|site|e-?commerce|vender online|vitrine|layout/,[10]],
+ [/checkout|pagamento|pix|boleto|cart[aã]o|carn[eê]/,[0]],
+ [/cadastr.*produt|produtos? na loja|fotos? dos produtos/,[13]],
+ [/nuvemshop/,[11]],[/landing|institucional/,[12]],[/planilha/,[14]],
+ [/sped/,[22,23]],[/apura|imposto|icms|pis|cofins/,[21]],
+ [/nota.*entrada|lan[çc]ar notas|lan[çc]amento de notas/,[17]],[/faturamento|emitir nota|emiss[aã]o de nota/,[15]],
+ [/contas a (pagar|receber)|financeiro|concilia/,[16]],[/mei\b|das\b/,[27]],
+ [/suporte|computador|impressora|help ?desk/,[31]],[/treinamento|bling/,[32]],[/atendimento|sac/,[33]],
+ [/logo|marca|identidade/,[34]],[/rede.? sociais|instagram|posts?/,[35,36]],[/e-?mail marketing|newsletter/,[37]],
+ [/nfs-?e.*obra|constru[çc][aã]o civil/,[2]],[/xml/,[7]],[/automa/,[8]]
+];
+const brl=n=>"R$ "+Math.round(n).toLocaleString("pt-BR");
+const mround=(x,m)=>Math.round(x/m)*m;
+const S={porte:null,empresa:null,step:"cnpj",sel:{},nome:"",contato:""};
+const rate=s=>mround(s.base*MULT[S.porte],5);
+const valor=s=>{const m=(s.cat==="Fiscal e impostos"||s.cat==="Foto e vídeo")?10:100;return Math.round(s.horas*rate(s)/m)*m};
+const $=q=>document.querySelector(q);
+const WHATS="5511945426510";
+function linkZap(txt){return "https://wa.me/"+WHATS+"?text="+encodeURIComponent(txt)}
+const feed=$("#feed");
+function esc(t){return t.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
+function scroll(){const m=$("#main");m.scrollTop=m.scrollHeight}
+function me(t){feed.insertAdjacentHTML("beforeend",`<div class="msg me"><div class="bub"><p>${esc(t)}</p></div></div>`);scroll()}
+const AV=`<div class="av" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 100 100"><path d="M74 26 A34 34 0 1 0 84 50 L58 50" fill="none" stroke="#F6F5F0" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/><path d="M74 26 C77 12 88 6 97 4 C95 17 88 25 74 26 Z" fill="#B8E35A"/></svg></div>`;
+function bot(html,delay=650){
+  return new Promise(res=>{
+    const t=document.createElement("div");t.className="msg";t.innerHTML=AV+`<div class="bub typing" aria-label="digitando"><span></span><span></span><span></span></div>`;
+    feed.appendChild(t);scroll();
+    setTimeout(()=>{t.innerHTML=AV+`<div class="bub">${html}</div>`;scroll();res(t)},matchMedia("(prefers-reduced-motion:reduce)").matches?0:delay);
+  });
+}
+function chips(el,opts){
+  const box=document.createElement("div");box.className="chips";
+  opts.forEach(o=>{const b=document.createElement("button");b.className="chip"+(o.pri?" pri":"");b.textContent=o.t;
+    b.addEventListener("click",()=>{box.querySelectorAll("button").forEach(x=>x.disabled=true);me(o.t);o.fn()});box.appendChild(b)});
+  el.querySelector(".bub").appendChild(box);scroll();
+}
+function onlyDigits(t){return t.replace(/\D/g,"")}
+// --------- detecção (demonstração)
+function detectar(doc){
+  if(doc.length===11)return{nome:"Pessoa física",porte:"mei",motivo:"CPF"};
+  if(doc==="39513451000168")return{nome:"Brejão Atacarejo Ltda",porte:"pequena"};
+  if(doc==="02604970000121")return{nome:"Mercantil Papagaio Ltda",porte:"micro"};
+  return{nome:"Empresa de demonstração",porte:"micro"};
+}
+// --------- fluxo
+async function start(){
+  const el=await bot(`<p>Olá! Eu sou o assistente da <strong>Grovan Soluções</strong>.</p><p>Pra começar, me informa o <strong>nome da empresa e o CNPJ</strong>. Se for pessoa física, o seu <strong>nome e CPF</strong>.</p>
+    <form class="form" id="fid"><div><label for="fid-nome">Nome da empresa ou seu nome</label><input id="fid-nome" required autocomplete="organization"></div>
+    <div><label for="fid-doc">CNPJ ou CPF</label><input id="fid-doc" required inputmode="numeric" placeholder="Só os números ou com pontos"></div>
+    <p id="fid-erro" class="fine" style="color:var(--fg)" hidden></p>
+    <button class="chip pri" type="submit">Continuar</button></form>`,300);
+  el.querySelector("#fid").addEventListener("submit",e=>{
+    e.preventDefault();const n=$("#fid-nome").value.trim(),d=$("#fid-doc").value.trim();
+    if(!n||!d)return;
+    if(![11,14].includes(onlyDigits(d).length)){const er=$("#fid-erro");er.hidden=false;er.textContent="Confere o número: o CNPJ tem 14 dígitos e o CPF tem 11.";return}
+    e.target.querySelectorAll("input,button").forEach(x=>x.disabled=true);
+    me(`${n} · ${d}`);recebeDoc(n,d);
+  });
+  $("#fid-nome").focus();
+}
+async function recebeDoc(nome,doc){
+  const d=onlyDigits(doc);const r=detectar(d);
+  S.porte=r.porte;S.empresa=nome;S.doc=d;S.step="descricao";$("#txt").placeholder="Escreva o que você precisa";
+  const quem=d.length===11?nome.split(" ")[0]:nome;
+  const el=await bot(`<p>Olá, <strong>${esc(quem)}</strong>! O que você precisa hoje?</p><p>Pode escrever aqui embaixo com as suas palavras ou ver a lista dos nossos serviços.</p>`,1100);
+  chips(el,[{t:"Ver e escolher os serviços",pri:true,fn:abrirCatalogo}]);
+}
+async function pedeDescricao(){S.step="descricao";await bot(`<p>Me conta com as suas palavras o que você precisa. Pode ser bem simples, tipo "quero vender meus produtos pela internet".</p>`);$("#txt").focus()}
+async function recebeDescricao(t){
+  S.desc=t;
+  const low=t.toLowerCase();const ids=new Set();KEYS.forEach(([re,arr])=>{if(re.test(low))arr.forEach(i=>ids.add(i))});
+  if(!ids.size){
+    S.step="livre";
+    const msg=`Olá, Cristian! Preciso de um serviço pela Grovan Soluções.\n\nEmpresa: ${S.empresa||""}\nCNPJ/CPF: ${S.doc||""}\n\nO que preciso: ${t}`;
+    const el=await bot(`<p>Entendi. Esse pedido é sob medida, então quem responde é o <strong>Cristian</strong>, com valor e prazo.</p><p>Toque no botão abaixo pra enviar o seu pedido pra ele pelo WhatsApp, já escrito.</p>
+      <p><a class="chip pri" style="text-decoration:none" href="${linkZap(msg)}" target="_blank" rel="noopener">Enviar pelo WhatsApp</a></p>`,1000);
+    chips(el,[{t:"Ver os serviços do catálogo",fn:abrirCatalogo}]);return;
+  }
+  S.sel={};ids.forEach(i=>S.sel[i]=1);S.step="livre";
+  mostraOrcamento("Pelo que você descreveu, estes serviços resolvem:");
+}
+function abrirCatalogo(){renderCatalogo();$("#sheet").hidden=false;$("#fechar").focus()}
+function fecharCatalogo(){$("#sheet").hidden=true}
+function renderCatalogo(){
+  const cats=[...new Set(SVCS.map(s=>s.cat))];
+  $("#catalogo").innerHTML=cats.map(c=>`<div class="cat"><h3>${c}</h3>${SVCS.filter(s=>s.cat===c).map(s=>{
+    const on=!!S.sel[s.id];const lote=s.cob==="Por lote";
+    return `<label class="svc ${on?"on":""}" for="sv-${s.id}"><input type="checkbox" id="sv-${s.id}" data-id="${s.id}" ${on?"checked":""}>
+      <div style="min-width:0"><div class="nm">${s.nome}</div><div class="ds">${s.inc}</div>
+      <div class="meta">${s.ent?`<span>Inclui: <b>${s.ent}</b></span>`:(s.comb?`<span>Valor/hora: <b>${brl(rate(s))}</b></span><span>Horas e valor final: <b>definidos na proposta</b></span>`:`<span>Horas: <b>${s.horas.toLocaleString("pt-BR")} h</b></span><span>Valor/hora: <b>${brl(rate(s))}</b></span><span>Cobrança: <b>${s.cob}</b></span>`)}</div>
+</div>
+      <div class="pr">${s.comb?`A combinar<small>${brl(rate(s))}/hora</small>`:`${brl(valor(s))}<small>${s.cob==="Mensal"?"por mês":(lote?"por lote":(s.cob==="Por vídeo"?"por vídeo":"valor fixo"))}</small>`}</div></label>`}).join("")}</div>`).join("");
+  $("#catalogo").querySelectorAll("input").forEach(i=>i.addEventListener("change",()=>{if(i.checked)S.sel[i.dataset.id]=1;else delete S.sel[i.dataset.id];renderCatalogo();const n=document.getElementById(i.id);n&&n.focus()}));
+  renderSum();
+}
+function totais(){
+  let unico=0,mensal=0,horas=0,comb=0;const it=[];
+  Object.entries(S.sel).forEach(([id,q])=>{const s=SVCS[id];const v=s.comb?0:valor(s)*(s.cob==="Por lote"?q:1);it.push({s,q,v});
+    if(s.comb)comb++;else if(s.cob==="Mensal")mensal+=v;else{unico+=v;horas+=s.horas*(s.cob==="Por lote"?q:1)}});
+  return{it,unico,mensal,horas,comb};
+}
+function renderSum(){
+  const t=totais();const n=t.it.length;
+  $("#sum").innerHTML=n?`${n} serviço${n>1?"s":""}${t.unico?` · <b>${brl(t.unico)}</b>`:""}${t.mensal?` + <b>${brl(t.mensal)}</b>/mês`:""}${t.comb?` + ${t.comb} a combinar`:""}`:`<span style="color:var(--muted)">Marque os serviços que você precisa</span>`;
+  $("#confirmar").disabled=!n;
+}
+function prazo(h){if(!h)return null;const d=Math.ceil(h/5);const s=Math.ceil(d/5);return d<=5?`${d} dia${d>1?"s":""} úteis`:`cerca de ${s} semana${s>1?"s":""}`}
+async function mostraOrcamento(titulo){
+  const t=totais();const pz=prazo(t.horas);
+  const rows=t.it.map(x=>{const sub=x.s.comb?`${brl(rate(x.s))}/hora · valor final na proposta`:(x.s.ent?`Mensal · ${x.s.ent}`:`${x.s.horas*(x.s.cob==="Por lote"?x.q:1)} h · ${x.s.cob}`);
+    return `<div class="row"><span>${x.s.nome}${x.s.cob==="Por lote"?` (${x.q} lote${x.q>1?"s":""})`:""}<small>${sub}</small></span><span class="v">${x.s.comb?"A combinar":brl(x.v)+(x.s.cob==="Mensal"?"/mês":"")}</span></div>`}).join("");
+  const el=await bot(`<p>${titulo}</p><div class="quote">${rows}
+    ${t.unico?`<div class="row tot"><span>Total dos projetos</span><span class="v">${brl(t.unico)}</span></div>`:""}
+    ${t.mensal?`<div class="row tot"><span>Mensalidade</span><span class="v">${brl(t.mensal)}/mês</span></div>`:""}
+    ${t.comb?`<div class="row"><span>Itens a combinar<small>O Cristian analisa o seu caso e envia horas, valor e prazo na proposta</small></span><span class="v">${t.comb}</span></div>`:""}</div>
+    ${pz?`<p style="margin-top:10px">Prazo estimado de entrega: <strong>${pz}</strong>${t.mensal?". Os serviços mensais começam no mês seguinte à contratação.":"."}</p>`:(t.mensal?`<p style="margin-top:10px">Os serviços mensais começam no mês seguinte à contratação.</p>`:"")}
+    <p class="fine">Valores e prazo estimados. O Cristian confirma tudo antes de você pagar.</p>`,1000);
+  chips(el,[{t:"Quero este orçamento",pri:true,fn:pedeContato},{t:"Ajustar serviços",fn:abrirCatalogo}]);
+}
+async function pedeContato(){
+  const el=await bot(`<p>Ótimo! Só preciso de um contato pra te avisar quando a proposta estiver confirmada.</p>
+    <form class="form" id="fc"><div><label for="fc-nome">Seu nome</label><input id="fc-nome" required autocomplete="name" value="${S.doc&&S.doc.length===11?esc(S.empresa):""}"></div>
+    <div><label for="fc-cont">WhatsApp ou e-mail</label><input id="fc-cont" required></div>
+    <button class="chip pri" type="submit">Enviar solicitação</button></form>`);
+  el.querySelector("#fc").addEventListener("submit",async e=>{
+    e.preventDefault();const n=$("#fc-nome").value.trim(),c=$("#fc-cont").value.trim();if(!n||!c)return;
+    e.target.querySelectorAll("input,button").forEach(x=>x.disabled=true);S.nome=n;S.contato=c;me(`${n} · ${c}`);
+    const t=totais();
+    const linhas=t.it.map(x=>`• ${x.s.nome}: ${x.s.comb?"a combinar":brl(x.v)+(x.s.cob==="Mensal"?"/mês":"")}`).join("\n");
+    const msg=`Olá, Cristian! Quero um orçamento pela Grovan Soluções.\n\nEmpresa: ${S.empresa||""}\nCNPJ/CPF: ${S.doc||""}\nContato: ${n} · ${c}\n${S.desc?`\nO que preciso: ${S.desc}\n`:""}\nServiços escolhidos:\n${linhas}${t.unico?`\n\nTotal estimado: ${brl(t.unico)}`:""}${t.mensal?`\nMensal: ${brl(t.mensal)}/mês`:""}`;
+    const el2=await bot(`<p>Pronto, ${esc(n.split(" ")[0])}! Agora é só tocar no botão abaixo: a conversa abre no WhatsApp do Cristian com o seu orçamento já escrito, e você só aperta enviar.</p>
+      <p><a class="chip pri" style="text-decoration:none" href="${linkZap(msg)}" target="_blank" rel="noopener">Enviar pelo WhatsApp</a></p>
+      <p class="fine">Se o botão não abrir, chame no (11) 94542-6510.</p>`,800);
+  });
+}
+// --------- entrada de texto
+async function enviar(){
+  const v=$("#txt").value.trim();if(!v)return;$("#txt").value="";autosize();me(v);
+  if(S.step==="cnpj"){await bot(`<p>Antes, preenche o nome e o CNPJ ou CPF logo acima, por favor.</p>`);return}
+  if(S.step==="descricao")return recebeDescricao(v);
+  if(/menor pre[çc]o|desconto|mei|mais barato|outro porte|tabela/i.test(v)){await bot(`<p>Os valores são definidos pela análise do seu cadastro. Pra conversar sobre condições, fale direto com o Cristian:</p><p><a class="chip pri" style="text-decoration:none" href="${linkZap("Olá, Cristian! Quero conversar sobre as condições do meu orçamento. Empresa: "+(S.empresa||""))}" target="_blank" rel="noopener">Falar no WhatsApp</a></p>`);return}
+  S.step="descricao";return recebeDescricao(v);
+}
+function autosize(){const t=$("#txt");t.style.height="46px";t.style.height=Math.min(t.scrollHeight,140)+"px"}
+$("#enviar").addEventListener("click",enviar);
+$("#txt").addEventListener("keydown",e=>{if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();enviar()}});
+$("#txt").addEventListener("input",autosize);
+$("#fechar").addEventListener("click",fecharCatalogo);
+$("#confirmar").addEventListener("click",()=>{fecharCatalogo();me("Selecionei os serviços");mostraOrcamento("Aqui está o seu orçamento:")});
+// --------- tema
+const SUN='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>';
+const MOON='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>';
+function isDark(){const a=document.documentElement.dataset.theme;return a?a==="dark":matchMedia("(prefers-color-scheme:dark)").matches}
+function paintTema(){$("#tema").innerHTML=isDark()?SUN:MOON;$("#tema").setAttribute("aria-label",isDark()?"Mudar para modo claro":"Mudar para modo escuro")}
+try{const t=localStorage.getItem("grovan_tema");if(t)document.documentElement.dataset.theme=t}catch(e){}
+$("#tema").addEventListener("click",()=>{const n=isDark()?"light":"dark";document.documentElement.dataset.theme=n;try{localStorage.setItem("grovan_tema",n)}catch(e){}paintTema()});
+matchMedia("(prefers-color-scheme:dark)").addEventListener("change",paintTema);
+paintTema();start();
+</script>
+
+</body>
+</html>

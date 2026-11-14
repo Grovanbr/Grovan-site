@@ -395,7 +395,11 @@ paintTema();
 (function(){
   let tk=null;try{tk=new URL(location.href).searchParams.get("c")}catch(e){}
   if(!tk){try{tk=localStorage.getItem("grovan_atendimento")}catch(e){}}
-  if(tk)retomar(tk);else inicio();
+  // Voltou da página de pagamento da InfinitePay: confere o pagamento e limpa o endereço
+  let ret=null;try{const u=new URL(location.href);const keys=["order_nsu","transaction_nsu","transaction_id","slug","invoice_slug","capture_method","receipt_url"];
+    if(keys.some(k=>u.searchParams.has(k))){ret={};keys.forEach(k=>{if(u.searchParams.has(k))ret[k]=u.searchParams.get(k)});keys.forEach(k=>u.searchParams.delete(k));history.replaceState(null,"",u)}}catch(e){}
+  if(tk&&ret){S.token=tk;api("confirmar_pagamento",{params:ret}).catch(()=>{}).finally(()=>retomar(tk))}
+  else if(tk)retomar(tk);else inicio();
 })();
 </script>
 </body>

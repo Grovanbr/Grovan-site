@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-11-13 20:51",
+ "geradoEm": "2026-11-14 08:51",
  "itens": [
   {
    "nome": "Secret Boom Box Gloss Labial Com Chaveiro De Ursinho Sortido",
@@ -66,14 +66,10 @@
    "nome": "Principia Kit Limpeza E Hidratação Ch-01 + Ol-01 + Gl-02 Todo Tipo De Pele Dia/noite",
    "link": "https://meli.la/1ikSs3S",
    "loja": "Mercado Livre",
-   "precoAtual": 98.73,
+   "precoAtual": 96.58,
    "conferencia": {
-    "status": "baixou",
-    "preco": 96.58,
-    "precoAntigo": 147.0,
-    "imagem": "https://http2.mlstatic.com/D_NQ_NP_609209-MLA94364515810_102025-F.webp",
-    "aplicado": true,
-    "precoAnterior": 98.73
+    "status": "igual",
+    "preco": 96.58
    },
    "alternativas": []
   },
@@ -84,8 +80,8 @@
    "precoAtual": 15.43,
    "conferencia": {
     "status": "subiu",
-    "preco": 39.69,
-    "precoAntigo": null,
+    "preco": 39.9,
+    "precoAntigo": 92.9,
     "imagem": "https://http2.mlstatic.com/D_NQ_NP_756821-MLA86791313939_062025-F.webp",
     "revisar": true
    },
@@ -104,14 +100,8 @@
   }
  ],
  "avisos": [
-  "A Shopee não respondeu na busca de 1 de 7 produtos (Guarda Chuva Grande Reforçado Contra Vento Cabe Na Bolsa). Esses produtos são procurados de novo na próxima procura. Motivo: A API da Shopee está instável agora. Tente de novo em alguns minutos. Detalhe da Shopee: System Error"
+  "A Shopee não respondeu na busca de 1 de 7 produtos (Secret Boom Box Gloss Labial Com Chaveiro De Ursinho Sortido). Esses produtos são procurados de novo na próxima procura. Motivo: A API da Shopee está instável agora. Tente de novo em alguns minutos. Detalhe da Shopee: System Error"
  ],
- "precosAtualizados": [
-  {
-   "nome": "Principia Kit Limpeza E Hidratação Ch-01 + Ol-01 + Gl-02 Todo Tipo De Pele Dia/noite",
-   "de": 98.73,
-   "para": 96.58
-  }
- ],
+ "precosAtualizados": [],
  "trocasAutomaticas": []
 }

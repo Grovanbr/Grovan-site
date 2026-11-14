@@ -100,6 +100,20 @@ footer.composer{border-top:1px solid var(--line);background:var(--surface);paddi
 .demo{max-width:760px;margin:0 auto 4px;font-size:12px;color:var(--muted);text-align:center}
 @media (prefers-reduced-motion:reduce){.typing span{animation:none}}
 </style>
+<style>
+.av-c{background:var(--sprout);color:var(--sprout-ink);font:700 15px var(--f-display)}
+.bub .quem{font:600 12px var(--f-body);color:var(--ok);margin-bottom:2px}
+.aviso{align-self:center;max-width:88%;text-align:center;font-size:12.5px;color:var(--muted);background:var(--sunk);border-radius:99px;padding:5px 12px;margin:0}
+.linkbox{margin-top:8px;background:var(--sunk);border-radius:10px;padding:8px 10px;font-size:13px;overflow-wrap:anywhere}
+.prog{height:8px;background:var(--sunk);border-radius:99px;overflow:hidden;margin-top:8px}
+.prog i{display:block;height:100%;background:var(--sprout)}
+.etapas{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:8px}
+.etapas li{display:flex;gap:10px;align-items:flex-start}
+.etapas .dot{flex:none;width:12px;height:12px;border-radius:50%;border:2px solid var(--muted);margin-top:4px}
+.etapas li.ok .dot{background:var(--sprout);border-color:var(--sprout)}
+.etapas small{color:var(--muted)}
+a.chip{text-decoration:none}
+</style>
 </head>
 <body>
 
@@ -138,232 +152,236 @@ footer.composer{border-top:1px solid var(--line);background:var(--surface);paddi
 </div>
 
 <script>
-/* DEMONSTRAÇÃO: na versão final, preços e porte vêm do servidor; esta página não terá tabela nenhuma. */
-const MULT={mei:0.8,micro:1,pequena:1.35,media:1.8,grande:2.5};
-const NOMEPORTE={mei:"MEI",micro:"Microempresa",pequena:"Pequena empresa",media:"Média empresa",grande:"Grande empresa"};
-const RAW=[
-["Checkout com Pix, cartão e boleto integrado ao Bling","Sistemas e integrações","Projeto",85,60,"Pagamento online, carnê de boletos, frete, pedido e financeiro automáticos no Bling, baixa e rastreio"],
-["Painel de enriquecimento de produtos (Bling)","Sistemas e integrações","Projeto",70,60,"Busca descrição, fotos, pesos e medidas e atualiza o cadastro do Bling em lotes"],
-["Emissor de NFS-e de obra (NFS-e Nacional + Bling)","Sistemas e integrações","Projeto",60,60,"Emissão da nota, PDF e lançamento no Bling"],
-["Painel de apuração de impostos","Sistemas e integrações","Projeto",50,60,"Notas de entrada e saída do Bling, débito, crédito e saldo acumulado"],
-["Consulta de NF-e na SEFAZ com entrada automática","Sistemas e integrações","Projeto",40,60,"Busca as notas emitidas contra o seu CNPJ e dá entrada no Bling"],
-["Integração de NFS-e com o Bling","Sistemas e integrações","Projeto",30,60,"Registra as notas de serviço no Bling automaticamente"],
-["Robô de ajuste de impostos nas notas de entrada","Sistemas e integrações","Projeto",30,60,"Corrige CFOP, PIS e COFINS nos itens, nota por nota"],
-["Download de XML de NF-e","Sistemas e integrações","Projeto",25,60,"Baixa os XMLs a partir das chaves de acesso"],
-["Automação sob medida (pequena)","Sistemas e integrações","Projeto",10,60,"Rotina para automatizar uma tarefa repetitiva"],
-["Manutenção de sistemas e integrações","Sistemas e integrações","Mensal",6,60,"Correções, ajustes e acompanhamento"],
-["Layout e configuração de loja virtual","Loja virtual e web","Projeto",40,50,"Home, menu, página de produto e configuração da loja"],
-["Personalização de loja Nuvemshop","Loja virtual e web","Projeto",25,50,"Tema, home e página de produto"],
-["Landing page ou site institucional","Loja virtual e web","Projeto",25,50,"Página responsiva com SEO básico"],
-["Cadastro de produtos na loja","Loja virtual e web","Por lote",5,50,"Lote de 50 produtos (precisa de mais? é só pedir no chat) com descrição, fotos, preço, peso e medidas"],
-["Planilha personalizada","Loja virtual e web","Projeto",10,50,"Financeiro, estoque ou precificação, com fórmulas e resumo"],
-["Faturamento e emissão de notas","Financeiro e fiscal","Mensal",10,45,"Emissão de NF-e e NFS-e e conferência dos pedidos"],
-["Contas a pagar e receber com conciliação","Financeiro e fiscal","Mensal",12,45,"Lançamentos, baixas e conciliação bancária"],
-["Lançamento de notas de entrada","Fiscal e impostos","Mensal",6,45,"Até 100 notas por mês"],
-["Lançamento e conferência de notas de saída","Fiscal e impostos","Mensal",4,45,"Até 100 notas por mês"],
-["Conferência tributária das notas","Fiscal e impostos","Mensal",4,45,"CFOP, CST, NCM e alíquotas"],
-["Escrituração de NFS-e e ISS","Fiscal e impostos","Mensal",3,45,"Notas prestadas e tomadas, ISS próprio e retido"],
-["Apuração de impostos","Fiscal e impostos","Mensal",10,45,"ICMS, ICMS-ST, DIFAL, PIS, COFINS, IPI e Simples, conforme o regime"],
-["SPED Fiscal (EFD ICMS/IPI)","Fiscal e impostos","Mensal",4,45,"Geração, validação e transmissão"],
-["SPED Contribuições","Fiscal e impostos","Mensal",4,45,"Geração, validação e transmissão"],
-["EFD-Reinf","Fiscal e impostos","Mensal",2,45,"Retenções sobre serviços tomados"],
-["DeSTDA","Fiscal e impostos","Mensal",1.5,45,"Declaração do Simples Nacional"],
-["Emissão de guias de impostos","Fiscal e impostos","Mensal",1,45,"DARF, GARE e DAE do mês"],
-["MEI: DAS mensal e declaração anual","Fiscal e impostos","Mensal",1,45,"Guia do mês e DASN-SIMEI"],
-["Cadastro tributário de produtos","Fiscal e impostos","Por lote",6,45,"Lote de 100 produtos: NCM, CEST, CST e CFOP"],
-["Revisão de créditos tributários","Fiscal e impostos","Projeto",20,45,"Créditos de ICMS, PIS e COFINS dos últimos 12 meses"],
-["Pacote fiscal mensal completo","Fiscal e impostos","Mensal",25,45,"Lançamentos, conferência, apurações, SPEDs e guias"],
-["Suporte técnico remoto","Suporte e atendimento","Mensal",10,45,"Computadores, impressoras e sistemas"],
-["Suporte e treinamento no Bling","Suporte e atendimento","Pacote",4,45,"Pacote de 4 horas"],
-["Atendimento ao cliente terceirizado (SAC)","Suporte e atendimento","Mensal",20,45,"WhatsApp, e-mail e marketplaces"],
-["Identidade visual (logo e marca)","Design e marketing","Projeto",15,45,"Logo, cores e aplicações básicas"],
-["Artes para redes sociais","Design e marketing","Pacote",8,45,"Pacote com 10 posts e stories"],
-["Gestão de redes sociais","Design e marketing","Mensal",16,45,"Planejamento, criação e publicação"],
-["Campanha de e-mail marketing","Design e marketing","Por campanha",4,45,"Layout, lista e disparo"],
-["Formatação e reinstalação do Windows", "Serviços básicos (avulsos)", "Por hora", 1, 45, "Backup dos arquivos, formatação, drivers e programas básicos"],
-["Instalação e configuração de programas", "Serviços básicos (avulsos)", "Por hora", 1, 45, "Office, antivírus, sistemas e programas do dia a dia"],
-["Remoção de vírus e limpeza do computador", "Serviços básicos (avulsos)", "Por hora", 1, 45, "Varredura, remoção de pragas e ajuste de desempenho"],
-["Configuração de impressora e scanner", "Serviços básicos (avulsos)", "Por hora", 1, 45, "Instalação, rede e testes de impressão"],
-["Configuração de rede e Wi-Fi", "Serviços básicos (avulsos)", "Por hora", 1, 45, "Roteador, senha, alcance e compartilhamento na rede"],
-["Backup e recuperação de arquivos", "Serviços básicos (avulsos)", "Por hora", 1, 45, "Cópia de segurança e recuperação de arquivos apagados"],
-["Configuração de e-mail", "Serviços básicos (avulsos)", "Por hora", 1, 45, "Contas de e-mail no computador e no celular"],
-["Configuração de celular", "Serviços básicos (avulsos)", "Por hora", 1, 45, "Contas, aplicativos, transferência de dados e WhatsApp Business"],
-["Suporte remoto avulso", "Serviços básicos (avulsos)", "Por hora", 1, 45, "Atendimento por acesso remoto para resolver um problema pontual"],
-["Visita técnica", "Serviços básicos (avulsos)", "Por hora", 1, 45, "Atendimento presencial; deslocamento cobrado à parte"],
-["Assistência técnica em produtos", "Serviços básicos (avulsos)", "Por hora", 1, 45, "Diagnóstico e orientação de uso ou defeito em produtos"],
-["Suporte avulso no Bling ou ERP", "Serviços básicos (avulsos)", "Por hora", 1, 45, "Dúvidas, ajustes de cadastro, configurações e erros do sistema"],
-["Emissão avulsa de nota fiscal", "Serviços básicos (avulsos)", "Por hora", 1, 45, "Emissão de NF-e ou NFS-e avulsa"],
-["Lançamentos e organização financeira avulsos", "Serviços básicos (avulsos)", "Por hora", 1, 45, "Lançamentos, conferências e organização de planilhas e contas"],
-["Digitação e cadastros avulsos", "Serviços básicos (avulsos)", "Por hora", 1, 45, "Digitação de documentos e cadastros em sistemas"],
-["Cadastro em marketplaces", "Serviços básicos (avulsos)", "Por hora", 1, 45, "Conta e anúncios básicos no Mercado Livre, Shopee ou Amazon"],
-["Edição de imagens e artes simples", "Serviços básicos (avulsos)", "Por hora", 1, 45, "Ajuste de fotos de produto, banners e artes pontuais"],
-["Treinamento avulso", "Serviços básicos (avulsos)", "Por hora", 1, 45, "Treinamento em sistemas, Office ou ferramentas"],
-["Edição de vídeo curto (Reels, TikTok, Shorts)", "Foto e vídeo", "Por vídeo", 3.5, 45, "Vídeo de até 60 s: cortes, legendas, trilha e capa"],
-["Edição de vídeo para YouTube ou institucional", "Foto e vídeo", "Por vídeo", 9, 45, "Vídeo de até 10 min: cortes, legendas, trilha, vinheta e capa"],
-["Edição de vídeo personalizada", "Foto e vídeo", "Por hora", 1, 45, "Vídeos longos, eventos, animações ou edição sob medida"],
-["Pacote mensal de vídeos curtos", "Foto e vídeo", "Mensal", 11, 45, "4 vídeos curtos por mês, até 60 s cada"],
-["Tratamento de fotos de produto (lote de 20)", "Foto e vídeo", "Por lote", 7, 45, "Ajuste de luz, cor, recorte e padronização para loja e anúncios"],
-["Remoção de fundo de fotos (lote de 50)", "Foto e vídeo", "Por lote", 5.5, 45, "Fundo branco ou transparente, pronto para loja virtual e marketplaces"],
-["Edição e retoque de fotos personalizada", "Foto e vídeo", "Por hora", 1, 45, "Retoque, montagens e edições sob medida"],
-["Pacote mensal de fotos e vídeos para redes", "Foto e vídeo", "Mensal", 15.5, 45, "4 vídeos curtos e 20 fotos tratadas por mês, mais barato que contratar separado"]
-];
-const COMB=new Set([0,1,2,3,4,5,6,7,8,29,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,58,62]);
-const ENT={9:"Correções e ajustes, até 2 pedidos por mês",15:"Até 100 notas emitidas e conferência dos pedidos",16:"Até 150 lançamentos e conciliação de 1 conta bancária",17:"Até 100 notas",18:"Até 100 notas",19:"Até 100 notas conferidas",20:"Notas de serviço do mês e ISS, dentro do prazo legal",21:"Apuração do mês, dentro do prazo legal",22:"Entrega dentro do prazo legal",23:"Entrega dentro do prazo legal",24:"Entrega dentro do prazo legal",25:"Entrega dentro do prazo legal",26:"Guias do mês, enviadas antes do vencimento",27:"DAS do mês e declaração anual",30:"Tudo do mês fiscal, até 100 notas",31:"Até 10 atendimentos, em horário comercial",33:"WhatsApp, e-mail e marketplaces, em horário comercial",36:"Até 12 posts e 8 stories, planejamento e publicação",59:"4 vídeos curtos por mês, até 60 s cada",63:"4 vídeos curtos e 20 fotos tratadas por mês"};
-const SVCS=RAW.map((r,i)=>({id:i,nome:r[0],cat:r[1],cob:r[2],horas:r[3],base:r[4],inc:r[5],comb:COMB.has(i),ent:ENT[i]||null}));
-const KEYS=[
- [/v[ií]deo|reels|tiktok|youtube|shorts/,[56,57]],[/foto|imagem|fundo branco|tirar o fundo/,[60,61]],
- [/format|windows/,[38]],[/v[ií]rus|lent[oa]/,[40]],[/wi-?fi|internet|roteador|rede/,[42]],[/backup|recuperar/,[43]],[/celular/,[45]],[/marketplace|mercado livre|shopee|amazon/,[53]],
- [/loja|site|e-?commerce|vender online|vitrine|layout/,[10]],
- [/checkout|pagamento|pix|boleto|cart[aã]o|carn[eê]/,[0]],
- [/cadastr.*produt|produtos? na loja|fotos? dos produtos/,[13]],
- [/nuvemshop/,[11]],[/landing|institucional/,[12]],[/planilha/,[14]],
- [/sped/,[22,23]],[/apura|imposto|icms|pis|cofins/,[21]],
- [/nota.*entrada|lan[çc]ar notas|lan[çc]amento de notas/,[17]],[/faturamento|emitir nota|emiss[aã]o de nota/,[15]],
- [/contas a (pagar|receber)|financeiro|concilia/,[16]],[/mei\b|das\b/,[27]],
- [/suporte|computador|impressora|help ?desk/,[31]],[/treinamento|bling/,[32]],[/atendimento|sac/,[33]],
- [/logo|marca|identidade/,[34]],[/rede.? sociais|instagram|posts?/,[35,36]],[/e-?mail marketing|newsletter/,[37]],
- [/nfs-?e.*obra|constru[çc][aã]o civil/,[2]],[/xml/,[7]],[/automa/,[8]]
-];
-const brl=n=>"R$ "+Math.round(n).toLocaleString("pt-BR");
-const mround=(x,m)=>Math.round(x/m)*m;
-const S={porte:null,empresa:null,step:"cnpj",sel:{},nome:"",contato:""};
-const rate=s=>mround(s.base*MULT[S.porte],5);
-const valor=s=>{const m=(s.cat==="Fiscal e impostos"||s.cat==="Foto e vídeo")?10:100;return Math.round(s.horas*rate(s)/m)*m};
+/* ===== CONFIGURAÇÃO (preencha com os dados do seu projeto no Supabase) =====
+   Estes dois valores são públicos por natureza: eles só deixam o site chamar a função "portal".
+   Preços, portes e chaves ficam no servidor, nunca aqui. */
+const CONFIG={
+  supabaseUrl:"https://gemsxocgwkpkgapgflkt.supabase.co",
+  anonKey:"sb_publishable_CIgMVDHTDKmTEfzttKyCqA_WktHZV13",
+  funcao:"funcao-portal"
+};
+/* ======================================================================== */
+
 const $=q=>document.querySelector(q);
-const WHATS="5511945426510";
-function linkZap(txt){return "https://wa.me/"+WHATS+"?text="+encodeURIComponent(txt)}
 const feed=$("#feed");
-function esc(t){return t.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
+const brl=n=>"R$ "+Number(n).toLocaleString("pt-BR",{minimumFractionDigits:0,maximumFractionDigits:2});
+const S={token:null,step:"id",cat:null,sel:new Set(),ultimoId:0,status:null,nome:""};
+function esc(t){return String(t??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
 function scroll(){const m=$("#main");m.scrollTop=m.scrollHeight}
 function me(t){feed.insertAdjacentHTML("beforeend",`<div class="msg me"><div class="bub"><p>${esc(t)}</p></div></div>`);scroll()}
 const AV=`<div class="av" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 100 100"><path d="M74 26 A34 34 0 1 0 84 50 L58 50" fill="none" stroke="#F6F5F0" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/><path d="M74 26 C77 12 88 6 97 4 C95 17 88 25 74 26 Z" fill="#B8E35A"/></svg></div>`;
-function bot(html,delay=650){
+const AV_C=`<div class="av av-c" aria-hidden="true">C</div>`;
+function digitando(){const t=document.createElement("div");t.className="msg";t.innerHTML=AV+`<div class="bub typing" aria-label="digitando"><span></span><span></span><span></span></div>`;feed.appendChild(t);scroll();return t}
+function bot(html,{quem="ia",demora=0}={}){
   return new Promise(res=>{
-    const t=document.createElement("div");t.className="msg";t.innerHTML=AV+`<div class="bub typing" aria-label="digitando"><span></span><span></span><span></span></div>`;
-    feed.appendChild(t);scroll();
-    setTimeout(()=>{t.innerHTML=AV+`<div class="bub">${html}</div>`;scroll();res(t)},matchMedia("(prefers-reduced-motion:reduce)").matches?0:delay);
+    const t=digitando();
+    setTimeout(()=>{t.innerHTML=(quem==="cristian"?AV_C:AV)+`<div class="bub">${quem==="cristian"?'<p class="quem">Cristian</p>':""}${html}</div>`;scroll();res(t)},matchMedia("(prefers-reduced-motion:reduce)").matches?0:demora);
   });
 }
 function chips(el,opts){
   const box=document.createElement("div");box.className="chips";
   opts.forEach(o=>{const b=document.createElement("button");b.className="chip"+(o.pri?" pri":"");b.textContent=o.t;
-    b.addEventListener("click",()=>{box.querySelectorAll("button").forEach(x=>x.disabled=true);me(o.t);o.fn()});box.appendChild(b)});
+    b.addEventListener("click",()=>{box.querySelectorAll("button").forEach(x=>x.disabled=true);if(o.eco!==false)me(o.t);o.fn()});box.appendChild(b)});
   el.querySelector(".bub").appendChild(box);scroll();
 }
-function onlyDigits(t){return t.replace(/\D/g,"")}
-// --------- detecção (demonstração)
-function detectar(doc){
-  if(doc.length===11)return{nome:"Pessoa física",porte:"mei",motivo:"CPF"};
-  if(doc==="39513451000168")return{nome:"Brejão Atacarejo Ltda",porte:"pequena"};
-  if(doc==="02604970000121")return{nome:"Mercantil Papagaio Ltda",porte:"micro"};
-  return{nome:"Empresa de demonstração",porte:"micro"};
+const onlyDigits=t=>String(t).replace(/\D/g,"");
+
+// ---------- servidor
+async function api(acao,dados={}){
+  const r=await fetch(`${CONFIG.supabaseUrl}/functions/v1/${CONFIG.funcao}`,{method:"POST",
+    headers:{"content-type":"application/json",apikey:CONFIG.anonKey,...(CONFIG.anonKey.startsWith("eyJ")?{authorization:"Bearer "+CONFIG.anonKey}:{})},
+    body:JSON.stringify({acao,token:S.token,...dados})}).catch(()=>null);
+  if(!r)throw new Error("Sem conexão com o servidor. Confira a sua internet e tente de novo.");
+  const j=await r.json().catch(()=>({}));
+  if(!r.ok)throw new Error(j.erro||"Algo deu errado aqui. Tente de novo em instantes.");
+  return j;
 }
-// --------- fluxo
-async function start(){
+async function tenta(fn){
+  const t=digitando();
+  try{const r=await fn();t.remove();return r}
+  catch(e){t.innerHTML=AV+`<div class="bub"><p>${esc(e.message)}</p></div>`;scroll();return null}
+}
+function guardaToken(tk){
+  S.token=tk;
+  try{localStorage.setItem("grovan_atendimento",tk)}catch(e){}
+  try{const u=new URL(location.href);u.searchParams.set("c",tk);history.replaceState(null,"",u)}catch(e){}
+}
+function linkCliente(){try{const u=new URL(location.href);u.search="?c="+S.token;u.hash="";return u.toString()}catch(e){return location.href}}
+
+// ---------- 1) identificação
+async function inicio(){
   const el=await bot(`<p>Olá! Eu sou o assistente da <strong>Grovan Soluções</strong>.</p><p>Pra começar, me informa o <strong>nome da empresa e o CNPJ</strong>. Se for pessoa física, o seu <strong>nome e CPF</strong>.</p>
     <form class="form" id="fid"><div><label for="fid-nome">Nome da empresa ou seu nome</label><input id="fid-nome" required autocomplete="organization"></div>
     <div><label for="fid-doc">CNPJ ou CPF</label><input id="fid-doc" required inputmode="numeric" placeholder="Só os números ou com pontos"></div>
     <p id="fid-erro" class="fine" style="color:var(--fg)" hidden></p>
-    <button class="chip pri" type="submit">Continuar</button></form>`,300);
-  el.querySelector("#fid").addEventListener("submit",e=>{
-    e.preventDefault();const n=$("#fid-nome").value.trim(),d=$("#fid-doc").value.trim();
+    <button class="chip pri" type="submit">Continuar</button></form>`);
+  el.querySelector("#fid").addEventListener("submit",async e=>{
+    e.preventDefault();const n=$("#fid-nome").value.trim(),d=$("#fid-doc").value.trim(),er=$("#fid-erro");
     if(!n||!d)return;
-    if(![11,14].includes(onlyDigits(d).length)){const er=$("#fid-erro");er.hidden=false;er.textContent="Confere o número: o CNPJ tem 14 dígitos e o CPF tem 11.";return}
-    e.target.querySelectorAll("input,button").forEach(x=>x.disabled=true);
-    me(`${n} · ${d}`);recebeDoc(n,d);
+    if(![11,14].includes(onlyDigits(d).length)){er.hidden=false;er.textContent="Confere o número: o CNPJ tem 14 dígitos e o CPF tem 11.";return}
+    const bts=e.target.querySelectorAll("input,button");bts.forEach(x=>x.disabled=true);er.hidden=true;
+    const r=await tenta(()=>api("identificar",{nome:n,documento:d}));
+    if(!r){bts.forEach(x=>x.disabled=false);return}
+    S.nome=n;me(`${n} · ${d}`);guardaToken(r.token);S.step="conversa";
+    $("#txt").placeholder="Escreva o que você precisa";
+    const el2=await bot(`<p>${esc(r.saudacao)}</p><p>Pode escrever aqui embaixo com as suas palavras ou ver a lista dos nossos serviços.</p>`,{demora:300});
+    chips(el2,[{t:"Ver e escolher os serviços",pri:true,fn:abrirCatalogo}]);
+    iniciaAcompanhamento();
   });
   $("#fid-nome").focus();
 }
-async function recebeDoc(nome,doc){
-  const d=onlyDigits(doc);const r=detectar(d);
-  S.porte=r.porte;S.empresa=nome;S.doc=d;S.step="descricao";$("#txt").placeholder="Escreva o que você precisa";
-  const quem=d.length===11?nome.split(" ")[0]:nome;
-  const el=await bot(`<p>Olá, <strong>${esc(quem)}</strong>! O que você precisa hoje?</p><p>Pode escrever aqui embaixo com as suas palavras ou ver a lista dos nossos serviços.</p>`,1100);
-  chips(el,[{t:"Ver e escolher os serviços",pri:true,fn:abrirCatalogo}]);
+
+// ---------- 2) catálogo (preços já calculados no servidor para este cliente)
+async function abrirCatalogo(){
+  if(!S.cat){const r=await tenta(()=>api("catalogo"));if(!r)return;S.cat=r.servicos}
+  renderCatalogo();$("#sheet").hidden=false;$("#fechar").focus();
 }
-async function pedeDescricao(){S.step="descricao";await bot(`<p>Me conta com as suas palavras o que você precisa. Pode ser bem simples, tipo "quero vender meus produtos pela internet".</p>`);$("#txt").focus()}
-async function recebeDescricao(t){
-  S.desc=t;
-  const low=t.toLowerCase();const ids=new Set();KEYS.forEach(([re,arr])=>{if(re.test(low))arr.forEach(i=>ids.add(i))});
-  if(!ids.size){
-    S.step="livre";
-    const msg=`Olá, Cristian! Preciso de um serviço pela Grovan Soluções.\n\nEmpresa: ${S.empresa||""}\nCNPJ/CPF: ${S.doc||""}\n\nO que preciso: ${t}`;
-    const el=await bot(`<p>Entendi. Esse pedido é sob medida, então quem responde é o <strong>Cristian</strong>, com valor e prazo.</p><p>Toque no botão abaixo pra enviar o seu pedido pra ele pelo WhatsApp, já escrito.</p>
-      <p><a class="chip pri" style="text-decoration:none" href="${linkZap(msg)}" target="_blank" rel="noopener">Enviar pelo WhatsApp</a></p>`,1000);
-    chips(el,[{t:"Ver os serviços do catálogo",fn:abrirCatalogo}]);return;
-  }
-  S.sel={};ids.forEach(i=>S.sel[i]=1);S.step="livre";
-  mostraOrcamento("Pelo que você descreveu, estes serviços resolvem:");
-}
-function abrirCatalogo(){renderCatalogo();$("#sheet").hidden=false;$("#fechar").focus()}
 function fecharCatalogo(){$("#sheet").hidden=true}
+function precoTxt(s){return s.a_combinar?`A combinar<small>${brl(s.valor_hora)}/hora</small>`:`${brl(s.valor)}<small>${s.cobranca==="Mensal"?"por mês":(s.cobranca==="Por lote"?"por lote":(s.cobranca==="Por vídeo"?"por vídeo":"valor fixo"))}</small>`}
+function metaTxt(s){
+  if(s.entrega)return `<span>Inclui: <b>${esc(s.entrega)}</b></span>`;
+  if(s.a_combinar)return `<span>Valor/hora: <b>${brl(s.valor_hora)}</b></span><span>Horas e valor final: <b>definidos na proposta</b></span>`;
+  return `<span>Horas: <b>${Number(s.horas).toLocaleString("pt-BR")} h</b></span><span>Valor/hora: <b>${brl(s.valor_hora)}</b></span><span>Cobrança: <b>${esc(s.cobranca)}</b></span>`;
+}
 function renderCatalogo(){
-  const cats=[...new Set(SVCS.map(s=>s.cat))];
-  $("#catalogo").innerHTML=cats.map(c=>`<div class="cat"><h3>${c}</h3>${SVCS.filter(s=>s.cat===c).map(s=>{
-    const on=!!S.sel[s.id];const lote=s.cob==="Por lote";
+  const cats=[...new Set(S.cat.map(s=>s.categoria))];
+  $("#catalogo").innerHTML=cats.map(c=>`<div class="cat"><h3>${esc(c)}</h3>${S.cat.filter(s=>s.categoria===c).map(s=>{const on=S.sel.has(s.id);
     return `<label class="svc ${on?"on":""}" for="sv-${s.id}"><input type="checkbox" id="sv-${s.id}" data-id="${s.id}" ${on?"checked":""}>
-      <div style="min-width:0"><div class="nm">${s.nome}</div><div class="ds">${s.inc}</div>
-      <div class="meta">${s.ent?`<span>Inclui: <b>${s.ent}</b></span>`:(s.comb?`<span>Valor/hora: <b>${brl(rate(s))}</b></span><span>Horas e valor final: <b>definidos na proposta</b></span>`:`<span>Horas: <b>${s.horas.toLocaleString("pt-BR")} h</b></span><span>Valor/hora: <b>${brl(rate(s))}</b></span><span>Cobrança: <b>${s.cob}</b></span>`)}</div>
-</div>
-      <div class="pr">${s.comb?`A combinar<small>${brl(rate(s))}/hora</small>`:`${brl(valor(s))}<small>${s.cob==="Mensal"?"por mês":(lote?"por lote":(s.cob==="Por vídeo"?"por vídeo":"valor fixo"))}</small>`}</div></label>`}).join("")}</div>`).join("");
-  $("#catalogo").querySelectorAll("input").forEach(i=>i.addEventListener("change",()=>{if(i.checked)S.sel[i.dataset.id]=1;else delete S.sel[i.dataset.id];renderCatalogo();const n=document.getElementById(i.id);n&&n.focus()}));
+      <div style="min-width:0"><div class="nm">${esc(s.nome)}</div><div class="ds">${esc(s.inclui)}</div><div class="meta">${metaTxt(s)}</div></div>
+      <div class="pr">${precoTxt(s)}</div></label>`}).join("")}</div>`).join("");
+  $("#catalogo").querySelectorAll("input").forEach(i=>i.addEventListener("change",()=>{const id=+i.dataset.id;i.checked?S.sel.add(id):S.sel.delete(id);renderCatalogo();const n=document.getElementById(i.id);n&&n.focus()}));
   renderSum();
 }
-function totais(){
-  let unico=0,mensal=0,horas=0,comb=0;const it=[];
-  Object.entries(S.sel).forEach(([id,q])=>{const s=SVCS[id];const v=s.comb?0:valor(s)*(s.cob==="Por lote"?q:1);it.push({s,q,v});
-    if(s.comb)comb++;else if(s.cob==="Mensal")mensal+=v;else{unico+=v;horas+=s.horas*(s.cob==="Por lote"?q:1)}});
-  return{it,unico,mensal,horas,comb};
-}
 function renderSum(){
-  const t=totais();const n=t.it.length;
-  $("#sum").innerHTML=n?`${n} serviço${n>1?"s":""}${t.unico?` · <b>${brl(t.unico)}</b>`:""}${t.mensal?` + <b>${brl(t.mensal)}</b>/mês`:""}${t.comb?` + ${t.comb} a combinar`:""}`:`<span style="color:var(--muted)">Marque os serviços que você precisa</span>`;
-  $("#confirmar").disabled=!n;
+  const it=S.cat.filter(s=>S.sel.has(s.id));let u=0,m=0,c=0;
+  it.forEach(s=>{if(s.a_combinar)c++;else if(s.cobranca==="Mensal")m+=s.valor;else u+=s.valor});
+  $("#sum").innerHTML=it.length?`${it.length} serviço${it.length>1?"s":""}${u?` · <b>${brl(u)}</b>`:""}${m?` + <b>${brl(m)}</b>/mês`:""}${c?` + ${c} a combinar`:""}`:`<span style="color:var(--muted)">Marque os serviços que você precisa</span>`;
+  $("#confirmar").disabled=!it.length;
 }
-function prazo(h){if(!h)return null;const d=Math.ceil(h/5);const s=Math.ceil(d/5);return d<=5?`${d} dia${d>1?"s":""} úteis`:`cerca de ${s} semana${s>1?"s":""}`}
-async function mostraOrcamento(titulo){
-  const t=totais();const pz=prazo(t.horas);
-  const rows=t.it.map(x=>{const sub=x.s.comb?`${brl(rate(x.s))}/hora · valor final na proposta`:(x.s.ent?`Mensal · ${x.s.ent}`:`${x.s.horas*(x.s.cob==="Por lote"?x.q:1)} h · ${x.s.cob}`);
-    return `<div class="row"><span>${x.s.nome}${x.s.cob==="Por lote"?` (${x.q} lote${x.q>1?"s":""})`:""}<small>${sub}</small></span><span class="v">${x.s.comb?"A combinar":brl(x.v)+(x.s.cob==="Mensal"?"/mês":"")}</span></div>`}).join("");
-  const el=await bot(`<p>${titulo}</p><div class="quote">${rows}
-    ${t.unico?`<div class="row tot"><span>Total dos projetos</span><span class="v">${brl(t.unico)}</span></div>`:""}
-    ${t.mensal?`<div class="row tot"><span>Mensalidade</span><span class="v">${brl(t.mensal)}/mês</span></div>`:""}
-    ${t.comb?`<div class="row"><span>Itens a combinar<small>O Cristian analisa o seu caso e envia horas, valor e prazo na proposta</small></span><span class="v">${t.comb}</span></div>`:""}</div>
-    ${pz?`<p style="margin-top:10px">Prazo estimado de entrega: <strong>${pz}</strong>${t.mensal?". Os serviços mensais começam no mês seguinte à contratação.":"."}</p>`:(t.mensal?`<p style="margin-top:10px">Os serviços mensais começam no mês seguinte à contratação.</p>`:"")}
-    <p class="fine">Valores e prazo estimados. O Cristian confirma tudo antes de você pagar.</p>`,1000);
+
+// ---------- 3) orçamento estimado
+function quoteHTML(o,titulo){
+  const rows=o.itens.map(s=>{const sub=s.a_combinar?`${brl(s.valor_hora)}/hora · valor final na proposta`:(s.entrega?`Mensal · ${esc(s.entrega)}`:`${Number(s.horas).toLocaleString("pt-BR")} h · ${esc(s.cobranca)}`);
+    return `<div class="row"><span>${esc(s.nome)}<small>${sub}</small></span><span class="v">${s.a_combinar?"A combinar":brl(s.valor)+(s.cobranca==="Mensal"?"/mês":"")}</span></div>`}).join("");
+  return `<p>${titulo}</p><div class="quote">${rows}
+    ${o.unico?`<div class="row tot"><span>Total dos projetos</span><span class="v">${brl(o.unico)}</span></div>`:""}
+    ${o.mensal?`<div class="row tot"><span>Mensalidade</span><span class="v">${brl(o.mensal)}/mês</span></div>`:""}
+    ${o.combinar?`<div class="row"><span>Itens a combinar<small>O Cristian analisa o seu caso e envia horas, valor e prazo na proposta</small></span><span class="v">${o.combinar}</span></div>`:""}</div>
+    ${o.prazo?`<p style="margin-top:10px">Prazo estimado de entrega: <strong>${esc(o.prazo)}</strong>.</p>`:""}
+    <p class="fine">Valores e prazo estimados. O Cristian confirma tudo antes de você pagar.</p>`;
+}
+async function confirmarSelecao(){
+  fecharCatalogo();me("Selecionei os serviços");
+  const o=await tenta(()=>api("orcamento",{ids:[...S.sel]}));if(!o)return;
+  mostraOrcamento(o,"Aqui está o seu orçamento:");
+}
+async function mostraOrcamento(o,titulo){
+  const el=await bot(quoteHTML(o,titulo),{demora:300});
   chips(el,[{t:"Quero este orçamento",pri:true,fn:pedeContato},{t:"Ajustar serviços",fn:abrirCatalogo}]);
 }
 async function pedeContato(){
   const el=await bot(`<p>Ótimo! Só preciso de um contato pra te avisar quando a proposta estiver confirmada.</p>
-    <form class="form" id="fc"><div><label for="fc-nome">Seu nome</label><input id="fc-nome" required autocomplete="name" value="${S.doc&&S.doc.length===11?esc(S.empresa):""}"></div>
+    <form class="form" id="fc"><div><label for="fc-nome">Seu nome</label><input id="fc-nome" required autocomplete="name"></div>
     <div><label for="fc-cont">WhatsApp ou e-mail</label><input id="fc-cont" required></div>
     <button class="chip pri" type="submit">Enviar solicitação</button></form>`);
   el.querySelector("#fc").addEventListener("submit",async e=>{
     e.preventDefault();const n=$("#fc-nome").value.trim(),c=$("#fc-cont").value.trim();if(!n||!c)return;
-    e.target.querySelectorAll("input,button").forEach(x=>x.disabled=true);S.nome=n;S.contato=c;me(`${n} · ${c}`);
-    const t=totais();
-    const linhas=t.it.map(x=>`• ${x.s.nome}: ${x.s.comb?"a combinar":brl(x.v)+(x.s.cob==="Mensal"?"/mês":"")}`).join("\n");
-    const msg=`Olá, Cristian! Quero um orçamento pela Grovan Soluções.\n\nEmpresa: ${S.empresa||""}\nCNPJ/CPF: ${S.doc||""}\nContato: ${n} · ${c}\n${S.desc?`\nO que preciso: ${S.desc}\n`:""}\nServiços escolhidos:\n${linhas}${t.unico?`\n\nTotal estimado: ${brl(t.unico)}`:""}${t.mensal?`\nMensal: ${brl(t.mensal)}/mês`:""}`;
-    const el2=await bot(`<p>Pronto, ${esc(n.split(" ")[0])}! Agora é só tocar no botão abaixo: a conversa abre no WhatsApp do Cristian com o seu orçamento já escrito, e você só aperta enviar.</p>
-      <p><a class="chip pri" style="text-decoration:none" href="${linkZap(msg)}" target="_blank" rel="noopener">Enviar pelo WhatsApp</a></p>
-      <p class="fine">Se o botão não abrir, chame no (11) 94542-6510.</p>`,800);
+    const bts=e.target.querySelectorAll("input,button");bts.forEach(x=>x.disabled=true);
+    const r=await tenta(()=>api("enviar",{nome:n,contato:c}));if(!r){bts.forEach(x=>x.disabled=false);return}
+    me(`${n} · ${c}`);
+    const el2=await bot(`<p>Pronto, ${esc(n.split(" ")[0])}! Sua solicitação <strong>${esc(r.numero)}</strong> foi enviada.</p>
+      <p>O Cristian vai revisar e a proposta confirmada aparece aqui, com o link de pagamento. Guarde este link: é por ele que você acompanha tudo até a entrega.</p>
+      <p class="linkbox"><span id="meulink">${esc(linkCliente())}</span></p>`,{demora:300});
+    chips(el2,[{t:"Copiar meu link",eco:false,fn:()=>copiar(linkCliente(),el2)}]);
   });
 }
-// --------- entrada de texto
+function copiar(txt,el){
+  const ok=()=>{const b=el.querySelector(".chips button");if(b){b.textContent="Link copiado";}};
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(ok,()=>seleciona())}else seleciona();
+  function seleciona(){const sp=el.querySelector("#meulink");if(!sp)return;const r=document.createRange();r.selectNodeContents(sp);const s=getSelection();s.removeAllRanges();s.addRange(r)}
+  el.querySelectorAll(".chips button").forEach(b=>b.disabled=false);
+}
+
+// ---------- 4) conversa livre com a IA
 async function enviar(){
-  const v=$("#txt").value.trim();if(!v)return;$("#txt").value="";autosize();me(v);
-  if(S.step==="cnpj"){await bot(`<p>Antes, preenche o nome e o CNPJ ou CPF logo acima, por favor.</p>`);return}
-  if(S.step==="descricao")return recebeDescricao(v);
-  if(/menor pre[çc]o|desconto|mei|mais barato|outro porte|tabela/i.test(v)){await bot(`<p>Os valores são definidos pela análise do seu cadastro. Pra conversar sobre condições, fale direto com o Cristian:</p><p><a class="chip pri" style="text-decoration:none" href="${linkZap("Olá, Cristian! Quero conversar sobre as condições do meu orçamento. Empresa: "+(S.empresa||""))}" target="_blank" rel="noopener">Falar no WhatsApp</a></p>`);return}
-  S.step="descricao";return recebeDescricao(v);
+  const v=$("#txt").value.trim();if(!v)return;
+  if(S.step==="id"){$("#txt").value="";autosize();await bot(`<p>Antes, preenche o nome e o CNPJ ou CPF logo acima, por favor.</p>`);return}
+  $("#txt").value="";autosize();me(v);
+  const r=await tenta(()=>api("mensagem",{texto:v}));if(!r)return;
+  await sincroniza(true);
+  if(r.orcamento&&r.orcamento.itens.length){S.sel=new Set(r.servicos);mostraOrcamento(r.orcamento,"Pelo que você descreveu, estes serviços resolvem:")}
 }
 function autosize(){const t=$("#txt");t.style.height="46px";t.style.height=Math.min(t.scrollHeight,140)+"px"}
+
+// ---------- 5) acompanhamento: mensagens do Cristian, proposta, pagamento e andamento
+let timer=null,propostaMostrada=null,pagMostrado=null,etapasSig="";
+function iniciaAcompanhamento(){if(!timer)timer=setInterval(()=>sincroniza(false),15000)}
+async function sincroniza(silencioso){
+  let e;try{e=await api("estado",{desde:S.ultimoId})}catch(err){if(!silencioso)return;return}
+  for(const m of e.mensagens){
+    S.ultimoId=Math.max(S.ultimoId,m.id);
+    if(m.autor==="cliente")continue;               // já aparece quando o cliente envia
+    if(m.autor==="ia"){await bot(`<p>${esc(m.texto)}</p>`);continue}
+    if(m.autor==="cristian"){await bot(`<p>${esc(m.texto).replace(/\n/g,"<br>")}</p>`,{quem:"cristian"});continue}
+    feed.insertAdjacentHTML("beforeend",`<p class="aviso">${esc(m.texto)}</p>`);scroll();
+  }
+  S.status=e.status;
+  if(e.proposta&&e.status==="proposta_enviada"&&propostaMostrada!==JSON.stringify(e.proposta)){
+    propostaMostrada=JSON.stringify(e.proposta);mostraProposta(e);
+  }
+  if(e.pagamento&&pagMostrado!==e.pagamento){
+    pagMostrado=e.pagamento;
+    await bot(`<p>Sua proposta está aprovada. É só concluir o pagamento por Pix ou cartão:</p><p><a class="chip pri pagar" href="${esc(e.pagamento)}" target="_blank" rel="noopener">Pagar agora</a></p><p class="fine">Assim que o pagamento cair, ele aparece confirmado aqui.</p>`);
+  }
+  const sig=JSON.stringify([e.progresso,e.etapas]);
+  if(e.etapas.length&&sig!==etapasSig){etapasSig=sig;mostraAndamento(e)}
+}
+async function mostraProposta(e){
+  const p=e.proposta;
+  const rows=p.itens.map(i=>`<div class="row"><span>${esc(i.nome)}${i.quantidade>1?` ×${i.quantidade}`:""}<small>${esc(i.descricao||i.cobranca)}</small></span><span class="v">${i.a_combinar&&i.valor==null?"A combinar":brl(i.valor)+(i.cobranca==="Mensal"?"/mês":"")}</span></div>`).join("");
+  const el=await bot(`<p><strong>Proposta ${esc(e.numero)}</strong>${p.condicao_especial?' <span class="badge">Condição especial aplicada</span>':""}</p><div class="quote">${rows}
+    ${Number(p.total_unico)?`<div class="row tot"><span>Total</span><span class="v">${brl(p.total_unico)}</span></div>`:""}
+    ${Number(p.total_mensal)?`<div class="row tot"><span>Mensalidade</span><span class="v">${brl(p.total_mensal)}/mês</span></div>`:""}</div>
+    ${p.prazo?`<p style="margin-top:10px">Prazo: <strong>${esc(p.prazo)}</strong></p>`:""}`,{quem:"cristian"});
+  chips(el,[{t:"Aceitar proposta",pri:true,fn:async()=>{const r=await tenta(()=>api("aceitar"));if(r){await bot(`<p>Proposta aceita! Em instantes você recebe aqui o link de pagamento.</p>`);sincroniza(true)}}},
+            {t:"Tenho uma dúvida",eco:false,fn:()=>{$("#txt").focus()}}]);
+}
+async function mostraAndamento(e){
+  await bot(`<p><strong>Andamento do seu serviço</strong></p>
+    <div class="prog" role="progressbar" aria-valuenow="${e.progresso}" aria-valuemin="0" aria-valuemax="100"><i style="width:${e.progresso}%"></i></div>
+    <p class="fine" style="margin-top:4px">${e.progresso}% concluído</p>
+    <ul class="etapas">${e.etapas.map(t=>`<li class="${t.concluida?"ok":""}"><span class="dot" aria-hidden="true"></span><span><b>${esc(t.titulo)}</b>${t.detalhe?`<br><small>${esc(t.detalhe)}</small>`:""}</span></li>`).join("")}</ul>`,{quem:"cristian"});
+}
+async function retomar(tk){
+  S.token=tk;S.step="conversa";$("#txt").placeholder="Escreva a sua mensagem";
+  try{
+    const e=await api("estado",{desde:0});
+    await bot(`<p>Olá de novo, <strong>${esc(e.cliente)}</strong>! Este é o atendimento <strong>${esc(e.numero)}</strong>.</p>`);
+    for(const m of e.mensagens.slice(-12)){
+      if(m.autor==="cliente")me(m.texto);
+      else if(m.autor==="cristian")feed.insertAdjacentHTML("beforeend",`<div class="msg">${AV_C}<div class="bub"><p class="quem">Cristian</p><p>${esc(m.texto).replace(/\n/g,"<br>")}</p></div></div>`);
+      else if(m.autor==="ia")feed.insertAdjacentHTML("beforeend",`<div class="msg">${AV}<div class="bub"><p>${esc(m.texto)}</p></div></div>`);
+      else feed.insertAdjacentHTML("beforeend",`<p class="aviso">${esc(m.texto)}</p>`);
+    }
+    S.ultimoId=e.mensagens.reduce((a,m)=>Math.max(a,m.id),0);scroll();
+    await sincroniza(true);
+    if(["em_conversa"].includes(e.status)){const el=await bot(`<p>Quer continuar de onde parou?</p>`);chips(el,[{t:"Ver e escolher os serviços",pri:true,fn:abrirCatalogo}])}
+    iniciaAcompanhamento();
+  }catch(err){
+    try{localStorage.removeItem("grovan_atendimento")}catch(e){}
+    await bot(`<p>${esc(err.message)}</p>`);S.token=null;S.step="id";inicio();
+  }
+}
+
+// ---------- eventos
 $("#enviar").addEventListener("click",enviar);
 $("#txt").addEventListener("keydown",e=>{if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();enviar()}});
 $("#txt").addEventListener("input",autosize);
 $("#fechar").addEventListener("click",fecharCatalogo);
-$("#confirmar").addEventListener("click",()=>{fecharCatalogo();me("Selecionei os serviços");mostraOrcamento("Aqui está o seu orçamento:")});
-// --------- tema
+$("#confirmar").addEventListener("click",confirmarSelecao);
+document.addEventListener("visibilitychange",()=>{if(!document.hidden&&S.token)sincroniza(true)});
+
+// ---------- tema claro e escuro
 const SUN='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>';
 const MOON='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>';
 function isDark(){const a=document.documentElement.dataset.theme;return a?a==="dark":matchMedia("(prefers-color-scheme:dark)").matches}
@@ -371,8 +389,14 @@ function paintTema(){$("#tema").innerHTML=isDark()?SUN:MOON;$("#tema").setAttrib
 try{const t=localStorage.getItem("grovan_tema");if(t)document.documentElement.dataset.theme=t}catch(e){}
 $("#tema").addEventListener("click",()=>{const n=isDark()?"light":"dark";document.documentElement.dataset.theme=n;try{localStorage.setItem("grovan_tema",n)}catch(e){}paintTema()});
 matchMedia("(prefers-color-scheme:dark)").addEventListener("change",paintTema);
-paintTema();start();
-</script>
+paintTema();
 
+// ---------- início: link com código (?c=) retoma o atendimento; sem código, começa um novo
+(function(){
+  let tk=null;try{tk=new URL(location.href).searchParams.get("c")}catch(e){}
+  if(!tk){try{tk=localStorage.getItem("grovan_atendimento")}catch(e){}}
+  if(tk)retomar(tk);else inicio();
+})();
+</script>
 </body>
 </html>

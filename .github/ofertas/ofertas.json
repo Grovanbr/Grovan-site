@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-11-14 16:52",
+ "geradoEm": "2026-11-14 20:46",
  "itens": [
   {
    "nome": "Secret Boom Box Gloss Labial Com Chaveiro De Ursinho Sortido",
@@ -77,14 +77,10 @@
    "nome": "NIVEA Loção Deo-Hidratante Soft Milk 400ml, Hidratação Profunda 72h, Hialurônico Puro, Corporal, Pele Seca",
    "link": "https://meli.la/2Mg6D1e",
    "loja": "Mercado Livre",
-   "precoAtual": 15.43,
+   "precoAtual": 17.18,
    "conferencia": {
-    "status": "subiu",
-    "preco": 17.18,
-    "precoAntigo": 26.99,
-    "imagem": "https://http2.mlstatic.com/D_NQ_NP_756821-MLA86791313939_062025-F.webp",
-    "aplicado": true,
-    "precoAnterior": 15.43
+    "status": "igual",
+    "preco": 17.18
    },
    "alternativas": []
   },
@@ -101,14 +97,8 @@
   }
  ],
  "avisos": [
-  "A Shopee não respondeu na busca de 2 de 7 produtos (Secret Boom Box Gloss Labial Com Chaveiro De Ursinho Sortido, Principia Kit Limpeza E Hidratação Ch-01 + Ol-01 + Gl-02 Todo Tipo De Pele Dia/noite). Esses produtos são procurados de novo na próxima procura. Motivo: A API da Shopee está instável agora. Tente de novo em alguns minutos. Detalhe da Shopee: System Error"
+  "A Shopee não respondeu na busca de 2 de 7 produtos (Secret Boom Box Gloss Labial Com Chaveiro De Ursinho Sortido, Guarda Chuva Grande Reforçado Contra Vento Cabe Na Bolsa). Esses produtos são procurados de novo na próxima procura. Motivo: A API da Shopee está instável agora. Tente de novo em alguns minutos. Detalhe da Shopee: System Error"
  ],
- "precosAtualizados": [
-  {
-   "nome": "NIVEA Loção Deo-Hidratante Soft Milk 400ml, Hidratação Profunda 72h, Hialurônico Puro, Corporal, Pele Seca",
-   "de": 15.43,
-   "para": 17.18
-  }
- ],
+ "precosAtualizados": [],
  "trocasAutomaticas": []
 }

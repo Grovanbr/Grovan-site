@@ -19,6 +19,59 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* Estilos só desta página (contato) */
+    .ct-banner{background:#0F3D2E;color:#F6F5F0;border-radius:24px;padding:36px;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:32px;align-items:center;margin-bottom:32px}
+    .ct-banner h2{font-family:Sora,sans-serif;font-size:clamp(24px,3vw,32px);line-height:1.15;margin:0 0 10px;color:#F6F5F0;text-wrap:balance}
+    .ct-banner p{margin:0 0 20px;color:#CFE0D6;font-size:16px;line-height:1.6}
+    .ct-cta{display:inline-flex;align-items:center;gap:8px;background:#B8E35A;color:#1F3A0E;font-weight:700;padding:14px 22px;border-radius:999px;text-decoration:none}
+    .ct-cta:hover{filter:brightness(1.05)}
+    .ct-passos{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+    .ct-passos li{display:flex;gap:14px;align-items:flex-start;background:rgba(246,245,240,.07);border:1px solid rgba(246,245,240,.14);border-radius:16px;padding:14px 16px}
+    .ct-num{flex:none;width:32px;height:32px;border-radius:50%;background:#B8E35A;color:#1F3A0E;font:700 15px Sora,sans-serif;display:grid;place-items:center}
+    .ct-passos .ct-num{color:#1F3A0E}
+    .ct-passos b{display:block;font-family:Sora,sans-serif;color:#F6F5F0}
+    .ct-passos span{color:#CFE0D6;font-size:14.5px;line-height:1.5}
+    .ct-titulo{font-family:Sora,sans-serif;font-size:clamp(22px,2.6vw,28px);margin:48px 0 6px;color:inherit}
+    .ct-sub{margin:0 0 20px;opacity:.8}
+    .ct-areas{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    @media (max-width:980px){.ct-areas{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media (max-width:620px){.ct-areas{grid-template-columns:1fr}}
+    .ct-area{border:1px solid rgba(15,61,46,.15);border-radius:20px;padding:22px;display:flex;flex-direction:column;gap:8px;background:rgba(255,255,255,.6)}
+    .ct-area h3{font-family:Sora,sans-serif;font-size:18px;margin:0;color:#0F3D2E}
+    .ct-area ul{margin:0;padding-left:18px;line-height:1.7;font-size:14.5px}
+    .ct-area a{margin-top:auto;padding-top:6px;font-weight:600;color:#0F3D2E}
+    [data-tema="escuro"] .ct-area{background:rgba(255,255,255,.04);border-color:rgba(246,245,240,.14)}
+    [data-tema="escuro"] .ct-area h3,[data-tema="escuro"] .ct-area a{color:#B8E35A}
+    @media (max-width:760px){.ct-banner{grid-template-columns:1fr;padding:26px}}
+    /* Vida na página: movimento leve, ícones e detalhes da marca */
+    .ct-banner{position:relative;overflow:hidden;isolation:isolate}
+    .ct-banner::before{content:"";position:absolute;z-index:-1;width:420px;height:420px;border-radius:50%;right:-120px;top:-160px;background:radial-gradient(circle,rgba(184,227,90,.28),rgba(184,227,90,0) 70%)}
+    .ct-banner::after{content:"";position:absolute;z-index:-1;width:260px;height:260px;border-radius:50%;left:-90px;bottom:-140px;background:radial-gradient(circle,rgba(184,227,90,.16),rgba(184,227,90,0) 70%)}
+    .ct-folha{position:absolute;right:28px;bottom:22px;width:64px;opacity:.18;z-index:-1}
+    .ct-cta svg{transition:transform .2s}
+    .ct-cta:hover svg{transform:translateX(4px)}
+    .ct-passos li{transition:transform .2s,background .2s}
+    .ct-passos li:hover{transform:translateX(4px);background:rgba(246,245,240,.12)}
+    .ct-area{transition:transform .2s,box-shadow .2s,border-color .2s}
+    .ct-area:hover{transform:translateY(-4px);box-shadow:0 14px 30px -18px rgba(15,61,46,.45);border-color:rgba(15,61,46,.35)}
+    .ct-ico{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:#E7F3CC;color:#0F3D2E;margin-bottom:4px}
+    .ct-ico svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    [data-tema="escuro"] .ct-ico{background:rgba(184,227,90,.16);color:#B8E35A}
+    .ct-area a{display:inline-flex;align-items:center;gap:6px;text-decoration:none}
+    .ct-area a::after{content:"→";transition:transform .2s}
+    .ct-area:hover a::after{transform:translateX(4px)}
+    .contato-item{transition:transform .2s,box-shadow .2s}
+    .contato-item:hover{transform:translateY(-4px);box-shadow:0 14px 30px -18px rgba(15,61,46,.45)}
+    .ct-entra{animation:ctEntra .6s ease-out both}
+    .ct-areas .ct-area:nth-child(2){animation-delay:.06s}.ct-areas .ct-area:nth-child(3){animation-delay:.12s}
+    .ct-areas .ct-area:nth-child(4){animation-delay:.18s}.ct-areas .ct-area:nth-child(5){animation-delay:.24s}.ct-areas .ct-area:nth-child(6){animation-delay:.3s}
+    @keyframes ctEntra{from{transform:translateY(10px)}to{transform:none}}
+    .ct-selo{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:#B8E35A;margin-bottom:12px;letter-spacing:.04em;text-transform:uppercase}
+    .ct-selo i{width:8px;height:8px;border-radius:50%;background:#B8E35A;box-shadow:0 0 0 0 rgba(184,227,90,.6);animation:ctPulso 2s infinite}
+    @keyframes ctPulso{0%{box-shadow:0 0 0 0 rgba(184,227,90,.55)}70%{box-shadow:0 0 0 10px rgba(184,227,90,0)}100%{box-shadow:0 0 0 0 rgba(184,227,90,0)}}
+    @media (prefers-reduced-motion:reduce){.ct-entra,.ct-selo i{animation:none}.ct-area,.ct-passos li,.contato-item,.ct-cta svg{transition:none}}
+  </style>
 </head>
 <body>
 
@@ -54,15 +107,31 @@
           Dúvida sobre um achado, orçamento de serviço ou planilha?
           Chame a gente. Respondemos rápido e sem compromisso.
         </p>
-        <p><a href="../atendimento/" class="botao botao-principal">Fazer orçamento online</a></p>
       </div>
     </section>
 
     <section class="secao-compacta">
-      <div class="container contato-grade">
+      <div class="container">
+
+        <!-- Banner do orçamento online -->
+        <div class="ct-banner">
+          <svg class="ct-folha" viewBox="0 0 100 100" aria-hidden="true"><path d="M74 26 C77 12 88 6 97 4 C95 17 88 25 74 26 Z" fill="#B8E35A"/><path d="M74 26 A34 34 0 1 0 84 50 L58 50" fill="none" stroke="#F6F5F0" stroke-width="10" stroke-linecap="round"/></svg>
+          <div>
+            <span class="ct-selo"><i aria-hidden="true"></i>Orçamento online</span>
+            <h2>Seu orçamento em poucos minutos, sem esperar resposta</h2>
+            <p>Escolha os serviços ou conte com as suas palavras o que você precisa. Você vê o valor na hora e acompanha tudo pelo seu link, da proposta até a entrega.</p>
+            <a href="../atendimento/" class="ct-cta">Fazer orçamento online
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+          <ol class="ct-passos">
+            <li><span class="ct-num">1</span><span><b>Conte o que precisa</b>Escolha na lista de serviços ou descreva do seu jeito.</span></li>
+            <li><span class="ct-num">2</span><span><b>Veja o valor na hora</b>O orçamento sai na tela, com prazo estimado.</span></li>
+            <li><span class="ct-num">3</span><span><b>Aprove e acompanhe</b>Pague por Pix ou cartão e siga cada etapa pelo seu link.</span></li>
+          </ol>
+        </div>
 
         <!-- Canais -->
-        <div class="contato-canais">
+        <div class="contato-canais" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px">
           <a href="../atendimento/" class="contato-item contato-item-orcamento">
             <span class="contato-icone" aria-hidden="true">
               <svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
@@ -79,12 +148,12 @@
             <span>(11) 94542-6510</span>
             <span class="contato-detalhe">O jeito mais rápido de falar com a gente</span>
           </a>
-          <a href="https://instagram.com/grovanbr" target="_blank" rel="noopener" class="contato-item">
+          <a href="https://instagram.com/grovan.oficial" target="_blank" rel="noopener" class="contato-item">
             <span class="contato-icone" aria-hidden="true">
               <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg>
             </span>
             <span class="contato-titulo">Instagram</span>
-            <span>@grovanbr</span>
+            <span>@grovan.oficial</span>
             <span class="contato-detalhe">Achados novos todos os dias</span>
           </a>
           <a href="mailto:contato@grovan.com.br" class="contato-item">
@@ -97,34 +166,30 @@
           </a>
         </div>
 
-        <!-- Mensagem rápida: monta o texto e abre o WhatsApp -->
-        <form id="form-contato" class="form-contato">
-          <h2>Mande uma mensagem</h2>
-          <p class="ajuda-form">Preencha e clique em enviar: a conversa abre no WhatsApp com tudo escrito.</p>
+        <!-- Como podemos ajudar -->
+        <h2 class="ct-titulo">Como podemos ajudar</h2>
+        <p class="ct-sub">Do computador que travou ao sistema que fala com o seu ERP.</p>
+        <div class="ct-areas">
+          <div class="ct-area ct-entra"><span class="ct-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 9l-4 3 4 3M16 9l4 3-4 3M13 6l-2 12"/></svg></span><h3>Sistemas e integrações</h3>
+            <ul><li>Integrações com o Bling e outros ERPs</li><li>Checkout com Pix, cartão e boleto</li><li>Emissor de NFS-e e automações</li></ul>
+            <a href="../atendimento/">Pedir orçamento</a></div>
+          <div class="ct-area ct-entra"><span class="ct-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 9l1.5-5h13L20 9M4 9h16v11H4zM9 20v-6h6v6"/></svg></span><h3>Loja virtual e sites</h3>
+            <ul><li>Layout e configuração de loja virtual</li><li>Landing pages e sites institucionais</li><li>Cadastro de produtos e marketplaces</li></ul>
+            <a href="../atendimento/">Pedir orçamento</a></div>
+          <div class="ct-area ct-entra"><span class="ct-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 7h6M9 11h6M9 15h3"/></svg></span><h3>Fiscal e financeiro</h3>
+            <ul><li>Lançamento de notas e apuração de impostos</li><li>SPED Fiscal e SPED Contribuições</li><li>Contas a pagar e receber, faturamento</li></ul>
+            <a href="../atendimento/">Pedir orçamento</a></div>
+          <div class="ct-area ct-entra"><span class="ct-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></span><h3>Suporte técnico</h3>
+            <ul><li>Formatação, programas e remoção de vírus</li><li>Impressoras, rede e Wi-Fi</li><li>Suporte remoto e treinamento</li></ul>
+            <a href="../atendimento/">Pedir orçamento</a></div>
+          <div class="ct-area ct-entra"><span class="ct-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3"/></svg></span><h3>Foto e vídeo</h3>
+            <ul><li>Vídeos curtos para Reels, TikTok e Shorts</li><li>Tratamento e fundo branco em fotos de produto</li><li>Pacotes mensais para redes sociais</li></ul>
+            <a href="../atendimento/">Pedir orçamento</a></div>
+          <div class="ct-area ct-entra"><span class="ct-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18c1 0 1.5-.7 1.5-1.5 0-1-.8-1.4-.8-2.3 0-.9.7-1.6 1.6-1.6H17a4 4 0 0 0 4-4c0-4.7-4-8.6-9-8.6z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10" cy="7" r="1"/><circle cx="15" cy="7.5" r="1"/></svg></span><h3>Design e marketing</h3>
+            <ul><li>Identidade visual e logo</li><li>Artes e gestão de redes sociais</li><li>Campanhas de e-mail marketing</li></ul>
+            <a href="../atendimento/">Pedir orçamento</a></div>
+        </div>
 
-          <label class="campo-form">
-            <span>Seu nome</span>
-            <input type="text" name="nome" autocomplete="name" required>
-          </label>
-
-          <label class="campo-form">
-            <span>Assunto</span>
-            <select name="assunto">
-              <option>Orçamento de serviço de informática</option>
-              <option>Planilhas</option>
-              <option>Consultoria</option>
-              <option>Dúvida sobre um achado</option>
-              <option>Outro assunto</option>
-            </select>
-          </label>
-
-          <label class="campo-form">
-            <span>Mensagem</span>
-            <textarea name="mensagem" rows="4" required placeholder="Conte o que você precisa"></textarea>
-          </label>
-
-          <button type="submit" class="botao botao-principal">Enviar pelo WhatsApp</button>
-        </form>
       </div>
     </section>
 
@@ -151,7 +216,6 @@
     <span class="botao-whatsapp-texto">Fale no WhatsApp</span>
   </a>
 
-  <script src="../js/contato.js"></script>
   <script src="../js/tema.js"></script>
 
 </body>

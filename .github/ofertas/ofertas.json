@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-11-16 13:49",
+ "geradoEm": "2026-11-16 17:07",
  "itens": [
   {
    "nome": "Secret Boom Box Gloss Labial Com Chaveiro De Ursinho Sortido",
@@ -49,14 +49,10 @@
    "nome": "Escovas Para Maquiagem Multicolor Kit 8 Peças Pincel Macio Sortida",
    "link": "https://meli.la/1uWXStd",
    "loja": "Mercado Livre",
-   "precoAtual": 42.84,
+   "precoAtual": 26.79,
    "conferencia": {
-    "status": "baixou",
-    "preco": 26.79,
-    "precoAntigo": 42.84,
-    "imagem": "https://http2.mlstatic.com/D_NQ_NP_683755-MLB112552959736_062026-F.webp",
-    "aplicado": true,
-    "precoAnterior": 42.84
+    "status": "igual",
+    "preco": 26.79
    },
    "alternativas": []
   },
@@ -77,8 +73,12 @@
    "loja": "Shopee",
    "precoAtual": 88.9,
    "conferencia": {
-    "status": "igual",
-    "preco": 88.9
+    "status": "baixou",
+    "preco": 84.9,
+    "precoAntigo": null,
+    "imagem": "https://cf.shopee.com.br/file/br-11134207-820lh-msn53tgvj952b7",
+    "aplicado": true,
+    "precoAnterior": 88.9
    },
    "alternativas": [
     {
@@ -96,6 +96,22 @@
      "vendas": 0,
      "semelhanca": 100,
      "economia": 12.57
+    },
+    {
+     "loja": "Shopee",
+     "shopee": "1475886431.57717240116",
+     "nome": "Árvore de Natal 1,50cm 400 Galhos Pinheiro Verde Resistente Desmontável Pé de Ferro e Plástico",
+     "preco": 84.9,
+     "precoAntigo": null,
+     "imagem": "https://cf.shopee.com.br/file/br-11134207-820lh-msn53tgvj952b7",
+     "link": "https://s.shopee.com.br/6q2IqUAIsR",
+     "linkProduto": "https://shopee.com.br/product/1475886431/57717240116",
+     "afiliado": true,
+     "vendedor": "",
+     "comissao": 0.0,
+     "vendas": 0,
+     "semelhanca": 100,
+     "economia": 4.0
     }
    ]
   },
@@ -103,14 +119,10 @@
    "nome": "Principia Kit Limpeza E Hidratação Ch-01 + Ol-01 + Gl-02 Todo Tipo De Pele Dia/noite",
    "link": "https://meli.la/1ikSs3S",
    "loja": "Mercado Livre",
-   "precoAtual": 96.58,
+   "precoAtual": 107.31,
    "conferencia": {
-    "status": "subiu",
-    "preco": 107.31,
-    "precoAntigo": 147.0,
-    "imagem": "https://http2.mlstatic.com/D_NQ_NP_609209-MLA94364515810_102025-F.webp",
-    "aplicado": true,
-    "precoAnterior": 96.58
+    "status": "igual",
+    "preco": 107.31
    },
    "alternativas": []
   },
@@ -143,14 +155,14 @@
      "shopee": "1387542695.23394417877",
      "nome": "Kit 50 ou 100 Bolas + Brinde Estrela Enfeite Árvore Natal Decoração",
      "preco": 69.9,
-     "precoAntigo": null,
+     "precoAntigo": 124.82,
      "imagem": "https://cf.shopee.com.br/file/br-11134207-820ma-mscv9ben53ie70",
      "link": "https://s.shopee.com.br/7VI0AuuJgB",
      "linkProduto": "https://shopee.com.br/product/1387542695/23394417877",
      "afiliado": true,
-     "vendedor": "",
-     "comissao": 0.0,
-     "vendas": 0,
+     "vendedor": "dans_Ecommerce",
+     "comissao": 11.0,
+     "vendas": 318,
      "semelhanca": 67,
      "economia": 10.0
     }
@@ -160,14 +172,9 @@
  "avisos": [],
  "precosAtualizados": [
   {
-   "nome": "Escovas Para Maquiagem Multicolor Kit 8 Peças Pincel Macio Sortida",
-   "de": 42.84,
-   "para": 26.79
-  },
-  {
-   "nome": "Principia Kit Limpeza E Hidratação Ch-01 + Ol-01 + Gl-02 Todo Tipo De Pele Dia/noite",
-   "de": 96.58,
-   "para": 107.31
+   "nome": "Árvore de Natal 1,50cm 400 Galhos Pinheiro Verde Resistente Desmontável Pé de Ferro e Plástico",
+   "de": 88.9,
+   "para": 84.9
   }
  ],
  "trocasAutomaticas": []

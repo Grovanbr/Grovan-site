@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-11-15 20:54",
+ "geradoEm": "2026-11-16 09:23",
  "itens": [
   {
    "nome": "Secret Boom Box Gloss Labial Com Chaveiro De Ursinho Sortido",
@@ -18,8 +18,12 @@
    "loja": "Mercado Livre",
    "precoAtual": 26.72,
    "conferencia": {
-    "status": "igual",
-    "preco": 26.72
+    "status": "subiu",
+    "preco": 42.84,
+    "precoAntigo": 42.89,
+    "imagem": "https://http2.mlstatic.com/D_NQ_NP_683755-MLB112552959736_062026-F.webp",
+    "aplicado": true,
+    "precoAnterior": 26.72
    },
    "alternativas": []
   },
@@ -96,7 +100,15 @@
    "alternativas": []
   }
  ],
- "avisos": [],
- "precosAtualizados": [],
+ "avisos": [
+  "A Shopee não respondeu na busca de 2 de 7 produtos (Escovas Para Maquiagem Multicolor Kit 8 Peças Pincel Macio Sortida, Kit 100 Bolas de Natal com Estrela ou Kit 50 Enfeite Árvore Vermelha Dourada Mista Fosca Glitter). Esses produtos são procurados de novo na próxima procura. Motivo: A API da Shopee está instável agora. Tente de novo em alguns minutos. Detalhe da Shopee: System Error"
+ ],
+ "precosAtualizados": [
+  {
+   "nome": "Escovas Para Maquiagem Multicolor Kit 8 Peças Pincel Macio Sortida",
+   "de": 26.72,
+   "para": 42.84
+  }
+ ],
  "trocasAutomaticas": []
 }

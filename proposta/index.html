@@ -196,7 +196,8 @@
         <div class="pv-grid">${sug.map((s,i)=>`<article class="pv-card"><span class="pv-ico" aria-hidden="true">${i+1}</span><h3>${esc(s.nome)}</h3><p>${esc((D.conteudo?.servicos||[]).find(x=>x.id===s.id)?.porque||s.inclui)}</p></article>`).join("")}</div></div>`:""}
       ${(D.trabalhos||[]).length?`<div class="pv-sec"><h2>Trabalhos parecidos</h2><p class="pv-sub">Exemplos do que fazemos.</p>
         <div class="pv-grid">${D.trabalhos.map(t=>`<article class="pv-card pv-trab">${t.imagem_url?`<img src="${esc(t.imagem_url)}" alt="${esc(t.titulo)}" loading="lazy">`:""}${t.conceito?'<span class="pv-selo">Projeto conceito</span>':""}<h3>${esc(t.titulo)}</h3>${t.descricao?`<p>${esc(t.descricao)}</p>`:""}${t.link?`<a href="${esc(t.link)}" target="_blank" rel="noopener">Ver o trabalho →</a>`:""}</article>`).join("")}</div></div>`:""}
-      <div class="pv-sec" id="orcamento"><h2>Seu orçamento</h2><p class="pv-sub">Os serviços sugeridos já estão marcados. Desmarque o que não quiser ou inclua outros.</p>
+      <div class="pv-sec" id="orcamento"><h2>Seu orçamento</h2><p class="pv-sub">Os serviços sugeridos já estão marcados. Desmarque o que não quiser ou inclua outros.${D.validade_ate&&!D.vencida&&!travado()?` <b>Valores válidos até ${new Date(D.validade_ate).toLocaleDateString("pt-BR")}.</b>`:""}</p>
+        ${D.vencida?`<p class="pv-aviso" style="margin-bottom:14px">Os valores desta proposta venceram em ${new Date(D.validade_ate).toLocaleDateString("pt-BR")}. Chame a gente no chat que o Cristian atualiza para você.</p>`:""}
         <div class="pv-orc">
           ${D.identificado?"":`<div class="pv-doc"><b>Veja os valores para a sua empresa</b><p>Informe o CNPJ (ou o CPF, se for pessoa física). Usamos só para calcular o orçamento certo.</p>
             <form id="pv-docf"><label for="pv-doc" style="position:absolute;left:-9999px">CNPJ ou CPF</label><input id="pv-doc" inputmode="numeric" autocomplete="off" placeholder="CNPJ ou CPF"><button class="pv-btn" type="submit">Ver valores</button></form><p class="pv-erro" id="pv-docerro" role="alert"></p></div>`}
@@ -221,7 +222,7 @@
     const el=$("#pv-total");if(!el)return;
     if(!D.identificado){el.innerHTML=`<div><small>${l.length} serviço(s) marcado(s)</small>Informe o CNPJ ou CPF para ver o total.</div>`;return}
     el.innerHTML=`<div><small>Total${m?" (projeto + 1ª mensalidade)":""}</small><span class="v">${brl(u+m)}</span>${m?`<small>${brl(u)} do projeto + ${brl(m)}/mês</small>`:""}${c?`<small>+ ${c} item(ns) a combinar com o Cristian</small>`:""}</div>
-      ${travado()?"":`<button class="pv-btn" id="pv-aprovar" type="button" ${l.length?"":"disabled"}>${c?"Aprovar e enviar ao Cristian":"Aprovar e pagar"}</button>`}`;
+      ${travado()||D.vencida?"":`<button class="pv-btn" id="pv-aprovar" type="button" ${l.length?"":"disabled"}>${c?"Aprovar e enviar ao Cristian":"Aprovar e pagar"}</button>`}`;
     $("#pv-aprovar")?.addEventListener("click",aprovar);
   }
   let selT=null;

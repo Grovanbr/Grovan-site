@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-11-16 20:53",
+ "geradoEm": "2026-11-17 08:59",
  "itens": [
   {
    "nome": "Secret Boom Box Gloss Labial Com Chaveiro De Ursinho Sortido",
@@ -21,8 +21,8 @@
      "link": "https://s.shopee.com.br/AKcCfjzuYf",
      "linkProduto": "https://shopee.com.br/product/1281459644/58273036416",
      "afiliado": true,
-     "vendedor": "",
-     "comissao": 0.0,
+     "vendedor": "BRMULTIMARCAS_MAKEUP",
+     "comissao": 3.0,
      "vendas": 0,
      "semelhanca": 88,
      "economia": 12.09
@@ -37,8 +37,8 @@
      "link": "https://s.shopee.com.br/5q9nJTH2gq",
      "linkProduto": "https://shopee.com.br/product/1921359156/58273023052",
      "afiliado": true,
-     "vendedor": "",
-     "comissao": 0.0,
+     "vendedor": "BRUDORA...",
+     "comissao": 3.0,
      "vendas": 0,
      "semelhanca": 88,
      "economia": 12.09
@@ -114,7 +114,7 @@
    "conferencia": {
     "status": "subiu",
     "preco": 32.97,
-    "precoAntigo": 49.9,
+    "precoAntigo": 42.0,
     "imagem": "https://http2.mlstatic.com/D_NQ_NP_756821-MLA86791313939_062025-F.webp",
     "revisar": true
    },
@@ -149,9 +149,7 @@
    ]
   }
  ],
- "avisos": [
-  "A Shopee não respondeu na busca de 1 de 7 produtos (Principia Kit Limpeza E Hidratação Ch-01 + Ol-01 + Gl-02 Todo Tipo De Pele Dia/noite). Esses produtos são procurados de novo na próxima procura. Motivo: A API da Shopee está instável agora. Tente de novo em alguns minutos. Detalhe da Shopee: System Error"
- ],
+ "avisos": [],
  "precosAtualizados": [],
  "trocasAutomaticas": []
 }

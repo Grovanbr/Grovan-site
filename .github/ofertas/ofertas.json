@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-11-17 08:59",
+ "geradoEm": "2026-11-17 13:07",
  "itens": [
   {
    "nome": "Secret Boom Box Gloss Labial Com Chaveiro De Ursinho Sortido",
@@ -114,7 +114,7 @@
    "conferencia": {
     "status": "subiu",
     "preco": 32.97,
-    "precoAntigo": 42.0,
+    "precoAntigo": 49.9,
     "imagem": "https://http2.mlstatic.com/D_NQ_NP_756821-MLA86791313939_062025-F.webp",
     "revisar": true
    },
@@ -135,14 +135,14 @@
      "shopee": "1387542695.23394417877",
      "nome": "Kit 50 ou 100 Bolas + Brinde Estrela Enfeite Árvore Natal Decoração",
      "preco": 69.9,
-     "precoAntigo": 124.82,
+     "precoAntigo": null,
      "imagem": "https://cf.shopee.com.br/file/br-11134207-820ma-mscv9ben53ie70",
      "link": "https://s.shopee.com.br/7VI0AuuJgB",
      "linkProduto": "https://shopee.com.br/product/1387542695/23394417877",
      "afiliado": true,
-     "vendedor": "dans_Ecommerce",
-     "comissao": 11.0,
-     "vendas": 318,
+     "vendedor": "",
+     "comissao": 0.0,
+     "vendas": 0,
      "semelhanca": 67,
      "economia": 10.0
     }

@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /proposta/
+Disallow: /atendimento/
+
+Sitemap: https://grovan.com.br/sitemap.xml

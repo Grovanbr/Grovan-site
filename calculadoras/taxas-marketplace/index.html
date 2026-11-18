@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de taxas da Shopee e do Mercado Livre 2026 | Grovan</title>
+  <meta name="description" content="Calcule a comissão da Shopee e a tarifa do Mercado Livre em 2026, quanto cai na sua conta, seu lucro por venda e o preço mínimo para não ter prejuízo.">
+  <link rel="canonical" href="https://grovan.com.br/calculadoras/taxas-marketplace/">
+  <meta property="og:title" content="Calculadora de taxas da Shopee e do Mercado Livre 2026 | Grovan">
+  <meta property="og:description" content="Calcule a comissão da Shopee e a tarifa do Mercado Livre em 2026, quanto cai na sua conta, seu lucro por venda e o preço mínimo para não ter prejuízo.">
+  <meta property="og:url" content="https://grovan.com.br/calculadoras/taxas-marketplace/">
+  <meta property="og:type" content="website">
+  <script>
+    try {
+      var tema = localStorage.getItem("grovan-tema");
+      if (!tema) tema = matchMedia("(prefers-color-scheme: dark)").matches ? "escuro" : "claro";
+      document.documentElement.dataset.tema = tema;
+    } catch (e) {}
+  </script>
+  <link rel="icon" href="../../img/grovan-perfil-icone.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../calculadoras/calc.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Calculadora de taxas da Shopee e do Mercado Livre", "url": "https://grovan.com.br/calculadoras/taxas-marketplace/", "applicationCategory": "BusinessApplication", "operatingSystem": "Navegador", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "BRL"}, "provider": {"@type": "Organization", "name": "Grovan", "url": "https://grovan.com.br/"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Quanto a Shopee cobra por venda em 2026?", "acceptedAnswer": {"@type": "Answer", "text": "Até R$ 79,99 a Shopee cobra 20% do preço mais R$ 4,50 por item. De R$ 80 em diante a comissão é de 14%, com taxa fixa de R$ 16 (até R$ 99,99), R$ 20 (até R$ 199,99) ou R$ 26 (a partir de R$ 200)."}}, {"@type": "Question", "name": "Vender na Shopee pelo CPF paga mais?", "acceptedAnswer": {"@type": "Answer", "text": "Até 450 pedidos em 90 dias, o CPF paga a mesma comissão do CNPJ. Acima disso, paga R$ 3 a mais por item vendido."}}, {"@type": "Question", "name": "Quanto o Mercado Livre cobra por venda?", "acceptedAnswer": {"@type": "Answer", "text": "A tarifa vai de 10% a 14% no anúncio Clássico e de 15% a 19% no Premium, conforme a categoria, mais o custo de envio, que depende do peso e do preço do produto."}}, {"@type": "Question", "name": "Por que meu lucro caiu ao aumentar o preço na Shopee?", "acceptedAnswer": {"@type": "Answer", "text": "Porque ao passar de R$ 79,99 para R$ 80 a taxa fixa sobe de R$ 4,50 para R$ 16. A calculadora avisa quando vender a R$ 79,90 compensa mais."}}]}</script>
+</head>
+<body>
+
+  <!-- ===== Cabeçalho (igual em todas as páginas) ===== -->
+  <header class="cabecalho">
+    <div class="container cabecalho-conteudo">
+      <a href="../../">
+        <img src="../../img/grovan-logo.png" alt="Grovan" class="logo logo-tema-claro">
+        <img src="../../img/grovan-logo-claro.png" alt="Grovan" class="logo logo-tema-escuro">
+      </a>
+      <div class="cabecalho-direita">
+        <nav class="menu" aria-label="Menu principal">
+          <a href="../../">Achados</a>
+          <a href="../../servicos/">Serviços</a>
+          <a href="../../sobre/">Sobre</a>
+          <a href="../../contato/">Contato</a>
+        </nav>
+        <button type="button" class="botao-tema" aria-label="Mudar para o tema escuro" aria-pressed="false">
+          <svg class="icone-lua" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+          <svg class="icone-sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="pagina-topo">
+      <div class="container">
+        <span class="etiqueta">Calculadora grátis</span>
+        <h1>Calculadora de taxas da Shopee e do Mercado Livre</h1>
+        <p class="inicio-texto">Escolha o marketplace, coloque o preço e o custo do produto. Você vê a comissão, quanto cai na sua conta, o lucro de cada venda e o preço mínimo para não ter prejuízo.</p>
+      </div>
+    </section>
+
+    <section class="secao-compacta">
+      <div class="container">
+        <div class="calc">
+          <form class="calc-caixa" id="f" novalidate>
+            <div class="calc-abas" role="tablist" aria-label="Marketplace">
+              <button type="button" role="tab" id="aba-shopee" aria-selected="true">Shopee</button>
+              <button type="button" role="tab" id="aba-ml" aria-selected="false">Mercado Livre</button>
+            </div>
+            <div class="calc-campos">
+              <div class="calc-campo"><label for="preco">Preço de venda</label><div class="calc-entrada"><span class="antes">R$</span><input id="preco" name="preco" type="text" inputmode="decimal" value="79,90" autocomplete="off"></div></div>
+              <div class="calc-campo"><label for="custo">Custo do produto</label><div class="calc-entrada"><span class="antes">R$</span><input id="custo" name="custo" type="text" inputmode="decimal" value="30,00" autocomplete="off"></div></div>
+              <div class="calc-campo"><label for="extras">Embalagem e outros custos</label><div class="calc-entrada"><span class="antes">R$</span><input id="extras" name="extras" type="text" inputmode="decimal" value="2,00" autocomplete="off"></div></div>
+              <div class="calc-campo"><label for="imposto">Imposto sobre a venda</label><div class="calc-entrada"><input id="imposto" name="imposto" type="text" inputmode="decimal" value="6" autocomplete="off"><span class="depois">%</span></div><small>MEI ou CPF: coloque 0.</small></div>
+              <div class="calc-campo inteiro"><label for="margem">Margem que você quer</label><div class="calc-entrada"><input id="margem" name="margem" type="text" inputmode="decimal" value="15" autocomplete="off"><span class="depois">%</span></div><small>Para calcular o preço ideal.</small></div>
+            </div>
+            <div id="campos-shopee" class="calc-campos" style="margin-top:14px">
+              <div class="calc-campo inteiro"><label for="tipo">Tipo de conta</label><select id="tipo"><option value="cnpj">CNPJ</option><option value="cpf">CPF</option></select></div>
+              <label class="calc-check inteiro" id="linha-450"><input type="checkbox" id="cpf450"> CPF com mais de 450 pedidos em 90 dias (paga R$ 3 a mais por item)</label>
+            </div>
+            <div id="campos-ml" class="calc-campos" style="margin-top:14px" hidden>
+              <div class="calc-campo"><label for="anuncio">Tipo de anúncio</label><select id="anuncio"><option value="12">Clássico</option><option value="17">Premium</option></select></div>
+              <div class="calc-campo"><label for="tarifa">Tarifa da sua categoria</label><div class="calc-entrada"><input id="tarifa" name="tarifa" type="text" inputmode="decimal" value="12" autocomplete="off"><span class="depois">%</span></div><small>Clássico: 10% a 14%. Premium: 15% a 19%.</small></div>
+              <div class="calc-campo inteiro"><label for="envio">Custo de envio ou custo por unidade</label><div class="calc-entrada"><span class="antes">R$</span><input id="envio" name="envio" type="text" inputmode="decimal" value="0" autocomplete="off"></div><small>Veja o valor no simulador de custos do Mercado Livre para o peso do seu produto.</small></div>
+            </div>
+          </form>
+          <aside class="calc-caixa calc-res" aria-live="polite">
+            <h2>Resultado</h2>
+            <p class="calc-destaque-rotulo" id="r-rotulo">Cai na sua conta</p>
+            <p class="calc-destaque" id="r-destaque">R$ 0,00</p>
+            <ul class="calc-linhas" id="r-linhas"></ul>
+            <p class="calc-aviso" id="r-aviso" hidden></p>
+            <div class="calc-cta">
+              <a id="r-whats" href="https://wa.me/5511945426510" target="_blank" rel="noopener">Quero vender melhor nos marketplaces</a>
+              <a class="sec" href="../../servicos/#lojas">Ver serviços de loja e cadastro</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao-compacta">
+      <div class="container calc-texto">
+        <h2>Taxas da Shopee em 2026</h2>
+        <p>A comissão da Shopee depende da faixa de preço de cada item e já inclui a taxa de transação. A tabela abaixo vale desde 1º de outubro de 2026, igual para CNPJ e CPF:</p>
+        <div class="tabela"><table><thead><tr><th>Preço do item</th><th>Comissão</th><th>Taxa fixa por item</th></tr></thead><tbody>
+          <tr><td>Até R$ 79,99</td><td>20%</td><td>R$ 4,50</td></tr>
+          <tr><td>R$ 80 a R$ 99,99</td><td>14%</td><td>R$ 16,00</td></tr>
+          <tr><td>R$ 100 a R$ 199,99</td><td>14%</td><td>R$ 20,00</td></tr>
+          <tr><td>A partir de R$ 200</td><td>14%</td><td>R$ 26,00</td></tr></tbody></table></div>
+        <p>Para CNPJ, itens abaixo de R$ 9 pagam metade do preço como parte fixa. Para CPF, abaixo de R$ 12 a Shopee usa uma tabela própria que não é publicada, então confira na sua Central do Vendedor. Quem vende pelo CPF e passa de 450 pedidos em 90 dias paga R$ 3 a mais por item.</p>
+        <p><strong>Cuidado com a mudança de faixa:</strong> passar de R$ 79,99 para R$ 80 faz a taxa fixa saltar de R$ 4,50 para R$ 16. Muitas vezes vender a R$ 79,90 deixa mais dinheiro do que vender a R$ 85.</p>
+        <h2>Taxas do Mercado Livre em 2026</h2>
+        <p>No Mercado Livre a tarifa de venda vai de 10% a 14% no anúncio Clássico e de 15% a 19% no Premium, conforme a categoria. Além dela, entra o custo de envio, que depende do peso e do preço do produto. Por isso a calculadora deixa você informar a tarifa e o custo de envio da sua categoria, que aparecem no simulador de custos do próprio Mercado Livre.</p>
+        <p class="calc-fonte">As taxas mudam com frequência. Valores conferidos em novembro de 2026 em levantamentos públicos das tabelas da Shopee e do Mercado Livre; confirme sempre na central do vendedor antes de definir o preço.</p>
+      </div>
+    </section>
+    <section class="secao-compacta"><div class="container calc-texto"><h2>Perguntas frequentes</h2>
+<div class="calc-faq">
+<details><summary>Quanto a Shopee cobra por venda em 2026?</summary><p>Até R$ 79,99 a Shopee cobra 20% do preço mais R$ 4,50 por item. De R$ 80 em diante a comissão é de 14%, com taxa fixa de R$ 16 (até R$ 99,99), R$ 20 (até R$ 199,99) ou R$ 26 (a partir de R$ 200).</p></details>
+<details><summary>Vender na Shopee pelo CPF paga mais?</summary><p>Até 450 pedidos em 90 dias, o CPF paga a mesma comissão do CNPJ. Acima disso, paga R$ 3 a mais por item vendido.</p></details>
+<details><summary>Quanto o Mercado Livre cobra por venda?</summary><p>A tarifa vai de 10% a 14% no anúncio Clássico e de 15% a 19% no Premium, conforme a categoria, mais o custo de envio, que depende do peso e do preço do produto.</p></details>
+<details><summary>Por que meu lucro caiu ao aumentar o preço na Shopee?</summary><p>Porque ao passar de R$ 79,99 para R$ 80 a taxa fixa sobe de R$ 4,50 para R$ 16. A calculadora avisa quando vender a R$ 79,90 compensa mais.</p></details>
+</div></div></section>
+
+    <section class="secao-compacta calc-mais">
+      <div class="container">
+        <h2 class="sv-titulo" style="font-family:var(--fonte-titulo);color:var(--verde-texto)">Outras calculadoras grátis</h2>
+        <div class="calc-lista"><a class="calc-item" href="../../calculadoras/preco-de-venda/"><strong>Preço de venda e margem</strong><span>Descubra por quanto vender cada produto para pagar custos, impostos e taxas e ainda ter lucro.</span><em>Abrir calculadora →</em></a><a class="calc-item" href="../../calculadoras/das-mei/"><strong>DAS e limite do MEI 2026</strong><span>Valor do DAS do mês, quanto você ainda pode faturar no ano e o que acontece se passar.</span><em>Abrir calculadora →</em></a><a class="calc-item" href="../../calculadoras/valor-da-hora/"><strong>Valor da hora para prestador de serviço</strong><span>Calcule quanto cobrar por hora e por serviço para pagar suas contas e ter o salário que quer.</span><em>Abrir calculadora →</em></a></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Rodapé (igual em todas as páginas) ===== -->
+  <footer class="rodape">
+    <div class="container rodape-conteudo">
+      <img src="../../img/grovan-logo.png" alt="Grovan" class="logo">
+      <p>Achou, resolveu, cresceu.</p>
+      <nav class="rodape-links" aria-label="Links do rodapé">
+        <a href="../../">Achados</a>
+        <a href="../../servicos/">Serviços</a>
+        <a href="../../calculadoras/">Calculadoras</a>
+        <a href="../../sobre/">Sobre</a>
+        <a href="../../planilhas/">Planilhas</a>
+        <a href="../../contato/">Contato</a>
+      </nav>
+      <p class="rodape-copy">© 2026 Grovan. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/5511945426510?text=Ol%C3%A1%2C%20vim%20pelas%20calculadoras%20da%20Grovan!" target="_blank" rel="noopener" class="botao-whatsapp" aria-label="Fale com a Grovan no WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z"/><path class="whats-fone" d="M9.2 7.8c.3 0 .5 0 .7.5l.7 1.6c.1.3 0 .5-.1.7l-.5.6c-.1.2-.2.3 0 .6.5.9 1.3 1.7 2.2 2.2.3.2.5.1.6 0l.6-.7c.2-.2.4-.2.6-.1l1.6.8c.3.1.4.3.4.5 0 .9-.7 1.7-1.6 1.8-1 .1-2.4-.3-4-1.7-1.5-1.3-2.3-2.8-2.4-3.9-.1-1 .5-2 1.2-2.9z"/></svg>
+    <span class="botao-whatsapp-texto">Fale no WhatsApp</span>
+  </a>
+
+  <script src="../../js/tema.js"></script>
+  <script src="../../calculadoras/calc.js"></script>
+  <script>
+  (function(){
+    const C=Calc; let mkt="shopee";
+    const abaS=document.getElementById("aba-shopee"),abaM=document.getElementById("aba-ml");
+    function escolher(m){mkt=m;abaS.setAttribute("aria-selected",m==="shopee");abaM.setAttribute("aria-selected",m==="ml");document.getElementById("campos-shopee").hidden=m!=="shopee";document.getElementById("campos-ml").hidden=m!=="ml";conta();}
+    abaS.onclick=()=>escolher("shopee"); abaM.onclick=()=>escolher("ml");
+    document.getElementById("anuncio").addEventListener("change",e=>{document.getElementById("tarifa").value=e.target.value;});
+    function ler(){return {cpf:document.getElementById("tipo").value==="cpf",c450:document.getElementById("cpf450").checked,tarifa:C.val("tarifa"),envio:C.val("envio"),imp:C.val("imposto"),custo:C.val("custo")+C.val("extras")};}
+    function taxas(p,P){
+      if(mkt==="shopee"){
+        let pctx,fixo;
+        if(p<80){pctx=20;fixo=4.5;} else if(p<100){pctx=14;fixo=16;} else if(p<200){pctx=14;fixo=20;} else {pctx=14;fixo=26;}
+        if(!P.cpf&&p<9) fixo=p/2;
+        if(P.cpf&&P.c450) fixo+=3;
+        return {com:p*pctx/100,fixo,rot:"Comissão Shopee ("+pctx+"%)",rotf:"Taxa fixa por item"};
+      }
+      return {com:p*P.tarifa/100,fixo:P.envio,rot:"Tarifa de venda ("+C.pct(P.tarifa)+")",rotf:"Envio / custo por unidade"};
+    }
+    function lucro(p,P){const t=taxas(p,P);return p-t.com-t.fixo-p*P.imp/100-P.custo;}
+    function minimo(alvo,P){for(let c=5;c<=2000000;c+=10){const p=c/100;if(lucro(p,P)>=p*alvo/100)return p;}return null;}
+    function conta(){
+      document.getElementById("linha-450").hidden=document.getElementById("tipo").value!=="cpf";
+      const P=ler(),p=C.val("preco"),t=taxas(p,P),imp=p*P.imp/100,rec=p-t.com-t.fixo,l=lucro(p,P),m=p>0?l/p*100:0;
+      C.set("r-destaque",C.brl(rec));
+      const pmin=minimo(0,P),pid=minimo(C.val("margem"),P);
+      C.linhas("r-linhas",[["Preço de venda",C.brl(p)],[t.rot,"− "+C.brl(t.com)],[t.rotf,"− "+C.brl(t.fixo)],["Imposto","− "+C.brl(imp)],["Custo + embalagem","− "+C.brl(P.custo)],["Lucro por venda ("+C.pct(m)+")",C.brl(l),true],["Preço mínimo sem prejuízo",pmin?C.brl(pmin):"—"],["Preço para "+C.pct(C.val("margem"))+" de margem",pid?C.brl(pid):"—"]]);
+      let msg="",tipo="";
+      if(l<0){msg="Com esse preço você perde "+C.brl(-l)+" em cada venda.";tipo="ruim";}
+      else if(mkt==="shopee"&&p>=80&&p<86&&lucro(79.9,P)>l){msg="Vender a R$ 79,90 deixaria "+C.brl(lucro(79.9,P))+" de lucro, mais do que a "+C.brl(p)+", por causa da taxa fixa da faixa seguinte.";tipo="bom";}
+      C.aviso("r-aviso",msg,tipo);
+      C.whats("r-whats","Olá! Usei a calculadora de taxas da Grovan ("+(mkt==="shopee"?"Shopee":"Mercado Livre")+"). Vendo por "+C.brl(p)+" e sobra "+C.brl(l)+" por venda. Quero ajuda para melhorar minhas vendas.");
+    }
+    C.ligar("f",conta);
+  })();
+  </script>
+</body>
+</html>

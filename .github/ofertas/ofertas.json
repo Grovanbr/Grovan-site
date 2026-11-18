@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-11-18 17:10",
+ "geradoEm": "2026-11-18 20:49",
  "itens": [
   {
    "nome": "Secret Boom Box Gloss Labial Com Chaveiro De Ursinho Sortido",
@@ -21,8 +21,8 @@
      "link": "https://s.shopee.com.br/1BO0uDzXra",
      "linkProduto": "https://shopee.com.br/product/1281459644/58273036416",
      "afiliado": true,
-     "vendedor": "",
-     "comissao": 0.0,
+     "vendedor": "BRMULTIMARCAS_MAKEUP",
+     "comissao": 3.0,
      "vendas": 0,
      "semelhanca": 88,
      "economia": 12.09
@@ -37,8 +37,8 @@
      "link": "https://s.shopee.com.br/1LhR6WyuWf",
      "linkProduto": "https://shopee.com.br/product/1921359156/58273023052",
      "afiliado": true,
-     "vendedor": "",
-     "comissao": 0.0,
+     "vendedor": "BRUDORA...",
+     "comissao": 3.0,
      "vendas": 0,
      "semelhanca": 88,
      "economia": 12.09
@@ -114,9 +114,10 @@
    "conferencia": {
     "status": "subiu",
     "preco": 32.97,
-    "precoAntigo": 59.99,
+    "precoAntigo": 161.51,
     "imagem": "https://http2.mlstatic.com/D_NQ_NP_756821-MLA86791313939_062025-F.webp",
-    "revisar": true
+    "aplicado": true,
+    "precoAnterior": 32.97
    },
    "alternativas": []
   },
@@ -135,14 +136,14 @@
      "shopee": "1387542695.23394417877",
      "nome": "Kit 50 ou 100 Bolas + Brinde Estrela Enfeite Árvore Natal Decoração",
      "preco": 69.9,
-     "precoAntigo": null,
+     "precoAntigo": 124.82,
      "imagem": "https://cf.shopee.com.br/file/br-11134207-820ma-mscv9ben53ie70",
      "link": "https://s.shopee.com.br/7VI0AuuJgB",
      "linkProduto": "https://shopee.com.br/product/1387542695/23394417877",
      "afiliado": true,
-     "vendedor": "",
-     "comissao": 0.0,
-     "vendas": 0,
+     "vendedor": "dans_Ecommerce",
+     "comissao": 11.0,
+     "vendas": 315,
      "semelhanca": 67,
      "economia": 10.0
     }
@@ -150,6 +151,12 @@
   }
  ],
  "avisos": [],
- "precosAtualizados": [],
+ "precosAtualizados": [
+  {
+   "nome": "NIVEA Loção Deo-Hidratante Soft Milk 400ml, Hidratação Profunda 72h, Hialurônico Puro, Corporal, Pele Seca",
+   "de": 32.97,
+   "para": 32.97
+  }
+ ],
  "trocasAutomaticas": []
 }

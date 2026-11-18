@@ -14,7 +14,7 @@ const configBanner = {"segundos": 5};
 const banners = [
   {
     "tipo": "produto",
-    "nome": "Secret Boom Box Gloss Labial Com Chaveiro De Ursinho Sortido"
+    "nome": "Secret Boom Box Metallic MBOOM Gloss Labial 5ml com Chaveiro Ursinho Colecionável Surpresa"
   },
   {
     "tipo": "produto",

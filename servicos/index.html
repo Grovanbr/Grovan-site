@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Serviços e preços | Grovan</title>
+  <meta name="description" content="Preços claros para suporte técnico, Bling e sistemas, fiscal e financeiro, lojas virtuais, sites, edição de vídeo e design. Atendimento remoto em todo o Brasil.">
+  <link rel="canonical" href="https://grovan.com.br/servicos/">
+
+  <!-- Aplica o tema salvo antes de desenhar a página (evita piscar) -->
+  <script>
+    try {
+      var tema = localStorage.getItem("grovan-tema");
+      if (!tema) tema = matchMedia("(prefers-color-scheme: dark)").matches ? "escuro" : "claro";
+      document.documentElement.dataset.tema = tema;
+    } catch (e) {}
+  </script>
+  <link rel="icon" href="../img/grovan-perfil-icone.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"ProfessionalService","name":"Grovan","url":"https://grovan.com.br/servicos/","telephone":"+55 11 94542-6510","email":"contato@grovan.com.br","areaServed":"BR","address":{"@type":"PostalAddress","addressLocality":"São Paulo","addressRegion":"SP","addressCountry":"BR"},"description":"Suporte técnico, Bling e sistemas, rotinas fiscais e financeiras, lojas virtuais, sites, edição de vídeo e design para pequenos negócios."}
+  </script>
+  <style>
+    /* Estilos só desta página (serviços e preços) */
+    .sv-banner{position:relative;overflow:hidden;isolation:isolate;background:#0F3D2E;color:#F6F5F0;border-radius:24px;padding:34px 36px;display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between;margin-bottom:8px}
+    .sv-banner::before{content:"";position:absolute;z-index:-1;width:420px;height:420px;border-radius:50%;right:-120px;top:-170px;background:radial-gradient(circle,rgba(184,227,90,.28),rgba(184,227,90,0) 70%)}
+    .sv-banner h2{font-family:Sora,sans-serif;font-size:clamp(22px,2.8vw,30px);line-height:1.15;margin:0 0 8px;color:#F6F5F0;text-wrap:balance}
+    .sv-banner p{margin:0;color:#CFE0D6;max-width:560px;line-height:1.6}
+    .sv-banner-acoes{display:flex;flex-wrap:wrap;gap:10px}
+    .sv-cta{display:inline-flex;align-items:center;gap:8px;background:#B8E35A;color:#1F3A0E;font-weight:700;padding:13px 20px;border-radius:999px;text-decoration:none}
+    .sv-cta-sec{background:transparent;color:#F6F5F0;border:1.5px solid rgba(246,245,240,.45)}
+    .sv-cta:hover{filter:brightness(1.06)}
+    .sv-atalhos{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 0}
+    .sv-atalhos a{padding:8px 14px;border-radius:999px;border:1px solid rgba(15,61,46,.2);text-decoration:none;color:#0F3D2E;font-weight:600;font-size:14px;background:rgba(255,255,255,.6)}
+    .sv-atalhos a:hover{border-color:#0F3D2E}
+    .sv-titulo{font-family:Sora,sans-serif;font-size:clamp(22px,2.6vw,28px);margin:8px 0 6px;color:inherit}
+    .sv-sub{margin:0 0 20px;opacity:.8;max-width:720px;line-height:1.6}
+    .sv-grade{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+    .sv-card{position:relative;border:1px solid rgba(15,61,46,.15);border-radius:20px;padding:22px;display:flex;flex-direction:column;gap:8px;background:rgba(255,255,255,.6);transition:transform .2s,box-shadow .2s,border-color .2s}
+    .sv-card:hover{transform:translateY(-4px);box-shadow:0 14px 30px -18px rgba(15,61,46,.45);border-color:rgba(15,61,46,.35)}
+    .sv-card-destaque{border:2px solid #B8E35A}
+    .sv-tag{position:absolute;top:-11px;left:18px;background:#B8E35A;color:#1F3A0E;font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px;letter-spacing:.03em}
+    .sv-card h3{font-family:Sora,sans-serif;font-size:17px;margin:0;color:#0F3D2E;line-height:1.3}
+    .sv-inclui{margin:0;font-size:14.5px;line-height:1.55;opacity:.85}
+    .sv-preco{margin:auto 0 0;padding-top:8px;font-family:Sora,sans-serif;font-size:24px;font-weight:700;color:#0F3D2E}
+    .sv-preco small{font-family:Inter,sans-serif;font-size:13px;font-weight:500;opacity:.75;margin:0 3px}
+    .sv-preco-grande{font-size:32px;margin:6px 0 16px}
+    .sv-sob{font-size:18px}
+    .sv-botao{display:inline-flex;justify-content:center;align-items:center;gap:6px;margin-top:6px;padding:10px 14px;border-radius:12px;background:#0F3D2E;color:#F6F5F0;font-weight:600;text-decoration:none;font-size:14.5px}
+    .sv-botao:hover{filter:brightness(1.15)}
+    .sv-avulsos{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:28px;align-items:start;border:1px solid rgba(15,61,46,.15);border-radius:24px;padding:28px;background:rgba(255,255,255,.6)}
+    .sv-avulsos .sv-botao{display:inline-flex}
+    .sv-lista{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 18px}
+    .sv-lista li{position:relative;padding-left:24px;line-height:1.5;font-size:14.5px}
+    .sv-lista li::before{content:"✓";position:absolute;left:0;color:#5E8F1E;font-weight:700}
+    .sv-faq-item{border:1px solid rgba(15,61,46,.15);border-radius:16px;padding:16px 20px;margin-bottom:10px;background:rgba(255,255,255,.6)}
+    .sv-faq-item summary{cursor:pointer;font-weight:600;color:#0F3D2E}
+    .sv-faq-item p{margin:10px 0 0;line-height:1.6;opacity:.85}
+    .sv-nota{font-size:13.5px;opacity:.7;margin-top:18px}
+    [data-tema="escuro"] .sv-card,[data-tema="escuro"] .sv-avulsos,[data-tema="escuro"] .sv-faq-item,[data-tema="escuro"] .sv-atalhos a{background:rgba(255,255,255,.04);border-color:rgba(246,245,240,.14)}
+    [data-tema="escuro"] .sv-card-destaque{border-color:#B8E35A}
+    [data-tema="escuro"] .sv-card h3,[data-tema="escuro"] .sv-preco,[data-tema="escuro"] .sv-faq-item summary,[data-tema="escuro"] .sv-atalhos a{color:#B8E35A}
+    [data-tema="escuro"] .sv-botao{background:#B8E35A;color:#1F3A0E}
+    [data-tema="escuro"] .sv-lista li::before{color:#B8E35A}
+    @media (max-width:820px){.sv-avulsos{grid-template-columns:1fr}.sv-banner{padding:26px}}
+    @media (max-width:520px){.sv-lista{grid-template-columns:1fr}}
+    @media (prefers-reduced-motion:reduce){.sv-card{transition:none}}
+  </style>
+</head>
+<body>
+
+  <!-- ===== Cabeçalho (igual em todas as páginas) ===== -->
+  <header class="cabecalho">
+    <div class="container cabecalho-conteudo">
+      <a href="../">
+        <img src="../img/grovan-logo.png" alt="Grovan" class="logo logo-tema-claro">
+        <img src="../img/grovan-logo-claro.png" alt="Grovan" class="logo logo-tema-escuro">
+      </a>
+      <div class="cabecalho-direita">
+        <nav class="menu" aria-label="Menu principal">
+          <a href="../">Achados</a>
+          <a href="../servicos/" class="ativo" aria-current="page">Serviços</a>
+          <a href="../sobre/">Sobre</a>
+          <a href="../contato/">Contato</a>
+        </nav>
+        <button type="button" class="botao-tema" aria-label="Mudar para o tema escuro" aria-pressed="false">
+          <svg class="icone-lua" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+          <svg class="icone-sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== Topo ===== -->
+    <section class="pagina-topo">
+      <div class="container">
+        <span class="etiqueta">Serviços e preços</span>
+        <h1>Tecnologia para pequenos negócios, com preço na mesa</h1>
+        <p class="inicio-texto">
+          Suporte, Bling, notas e impostos, lojas, sites, vídeos e design. Você vê quanto custa antes de falar com a gente,
+          contrata online e acompanha tudo pelo seu link.
+        </p>
+        <nav class="sv-atalhos" aria-label="Ir para a categoria">
+          <a href="#planos">Planos mensais</a>
+          <a href="#bling">Bling e sistemas</a>
+          <a href="#fiscal">Fiscal e financeiro</a>
+          <a href="#lojas">Lojas e sites</a>
+          <a href="#video">Foto e vídeo</a>
+          <a href="#design">Design</a>
+          <a href="#avulsos">Suporte avulso</a>
+        </nav>
+      </div>
+    </section>
+
+    <section class="secao-compacta">
+      <div class="container">
+        <div class="sv-banner">
+          <div>
+            <h2>Não sabe qual serviço escolher?</h2>
+            <p>Faça um diagnóstico gratuito de 15 minutos. A gente entende o seu negócio e indica o pacote certo, sem compromisso.</p>
+          </div>
+          <div class="sv-banner-acoes">
+            <a class="sv-cta" href="https://wa.me/5511945426510?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Grovan%20e%20quero%20saber%20mais%20sobre%3A%20Diagn%C3%B3stico%20gratuito%20de%2015%20minutos" target="_blank" rel="noopener">Quero meu diagnóstico</a>
+            <a class="sv-cta sv-cta-sec" href="../atendimento/">Orçamento online</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="planos" class="secao-compacta">
+      <div class="container">
+        <h2 class="sv-titulo">Planos mensais</h2>
+        <p class="sv-sub">Você paga um valor fixo por mês e para de se preocupar. Sem fidelidade longa: contrato mínimo de 3 meses e aviso de 30 dias para cancelar.</p>
+        <div class="sv-grade">
+          <article class="sv-card sv-card-destaque">
+            <span class="sv-tag">Mais pedido</span><h3>Suporte técnico e help desk remoto</h3>
+            <p class="sv-inclui">Até 10 atendimentos por mês em horário comercial: computadores, impressoras e sistemas</p>
+            <p class="sv-preco"><small>a partir de</small> R$ 400<small>/mês</small></p>
+            <a class="sv-botao" href="https://wa.me/5511945426510?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Grovan%20e%20quero%20saber%20mais%20sobre%3A%20Suporte%20t%C3%A9cnico%20e%20help%20desk%20remoto" target="_blank" rel="noopener">Quero este serviço</a>
+          </article>
+          <article class="sv-card sv-card-destaque">
+            <span class="sv-tag">Mais pedido</span><h3>Contas a pagar e receber</h3>
+            <p class="sv-inclui">Até 150 lançamentos, baixas e conciliação de 1 conta bancária</p>
+            <p class="sv-preco"><small>a partir de</small> R$ 400<small>/mês</small></p>
+            <a class="sv-botao" href="https://wa.me/5511945426510?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Grovan%20e%20quero%20saber%20mais%20sobre%3A%20Contas%20a%20pagar%20e%20receber" target="_blank" rel="noopener">Quero este serviço</a>
+          </article>
+          <article class="sv-card sv-card-destaque">
+            <span class="sv-tag">Mais pedido</span><h3>Faturamento e emissão de notas</h3>
+            <p class="sv-inclui">Até 100 notas emitidas (NF-e e NFS-e) e conferência dos pedidos</p>
+            <p class="sv-preco"><small>a partir de</small> R$ 400<small>/mês</small></p>
+            <a class="sv-botao" href="https://wa.me/5511945426510?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Grovan%20e%20quero%20saber%20mais%20sobre%3A%20Faturamento%20e%20emiss%C3%A3o%20de%20notas" target="_blank" rel="noopener">Quero este serviço</a>
+          </article>
+          <article class="sv-card sv-card-destaque">
+            <span class="sv-tag">Mais pedido</span><h3>Pacote fiscal mensal completo</h3>
+            <p class="sv-inclui">Lançamentos, conferência, apurações, SPEDs e guias do mês, até 100 notas</p>
+            <p class="sv-preco"><small>a partir de</small> R$ 880<small>/mês</small></p>
+            <a class="sv-botao" href="https://wa.me/5511945426510?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Grovan%20e%20quero%20saber%20mais%20sobre%3A%20Pacote%20fiscal%20mensal%20completo" target="_blank" rel="noopener">Quero este serviço</a>
+          </article>
+          <article class="sv-card sv-card-destaque">
+            <span class="sv-tag">Mais pedido</span><h3>Pacote mensal de vídeos curtos</h3>
+            <p class="sv-inclui">4 vídeos de até 60 s por mês, com cortes, legendas, trilha e capa</p>
+            <p class="sv-preco"><small>a partir de</small> R$ 390<small>/mês</small></p>
+            <a class="sv-botao" href="https://wa.me/5511945426510?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Grovan%20e%20quero%20saber%20mais%20sobre%3A%20Pacote%20mensal%20de%20v%C3%ADdeos%20curtos" target="_blank" rel="noopener">Quero este serviço</a>
+          </article>
+          <article class="sv-card">
+            <h3>Gestão de redes sociais</h3>
+            <p class="sv-inclui">Até 12 posts e 8 stories por mês, planejamento e publicação</p>
+            <p class="sv-preco"><small>a partir de</small> R$ 600<small>/mês</small></p>
+            <a class="sv-botao" href="https://wa.me/5511945426510?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Grovan%20e%20quero%20saber%20mais%20sobre%3A%20Gest%C3%A3o%20de%20redes%20sociais" target="_blank" rel="noopener">Quero este serviço</a>
+          </article>
+          <article class="sv-card">
+            <h3>Fotos e vídeos para redes</h3>
+            <p class="sv-inclui">4 vídeos curtos e 20 fotos tratadas por mês</p>
+            <p class="sv-preco"><small>a partir de</small> R$ 540<small>/mês</small></p>
+            <a class="sv-botao" href="https://wa.me/5511945426510?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Grovan%20e%20quero%20saber%20mais%20sobre%3A%20Fotos%20e%20v%C3%ADdeos%20para%20redes" target="_blank" rel="noopener">Quero este serviço</a>
+          </article>
+          <article class="sv-card">
+            <h3>Atendimento ao cliente (SAC)</h3>
+            <p class="sv-inclui">Seu WhatsApp, e-mail e marketplaces atendidos em horário comercial</p>
+            <p class="sv-preco"><small>a partir de</small> R$ 700<small>/mês</small></p>
+            <a class="sv-botao" href="https://wa.me/5511945426510?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Grovan%20e%20quero%20saber%20mais%20sobre%3A%20Atendimento%20ao%20cliente%20%28SAC%29" target="_blank" rel="noopener">Quero este serviço</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="bling" class="secao-compacta">
+      <div class="container">
+        <h2 class="sv-titulo">Bling e sistemas</h2>
+        <p class="sv-sub">Integrações, automações e painéis que fazem o seu ERP trabalhar sozinho.</p>
+        <div class="sv-grade">
+          <article class="sv-card">
+            <h3>Integrações com o Bling</h3>
+            <p class="sv-inclui">Notas de serviço, consulta de NF-e na SEFAZ e entrada automática de notas</p>
+            <p class="sv-preco"><span class="sv-sob">Sob orçamento</span></p>
+            <a class="sv-botao" href="https://wa.me/5511945426510?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Grovan%20e%20quero%20saber%20mais%20sobre%3A%20Integra%C3%A7%C3%B5es%20com%20o%20Bling" target="_blank" rel="noopener">Quero este serviço</a>
+          </article>
+          <article class="sv-card">
+            <h3>Checkout com Pix, cartão e boleto</h3>
+            <p class="sv-inclui">Pagamento PagBank, carnê de boletos, frete e pedido lançado no Bling</p>
+            <p class="sv-preco"><span class="sv-sob">Sob orçamento</span></p>
+            <a class="sv-botao" href="https://wa.me/5511945426510?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Grovan%20e%20quero%20saber%20mais%20sobre%3A%20Checkout%20com%20Pix%2C%20cart%C3%A3o%20e%20boleto" target="_blank" rel="noopener">Quero este serviço</a>
+          </article>
+          <article class="sv-card">
+            <h3>Painéis e robôs fiscais</h3>
+            <p class="sv-inclui">Apuração de impostos, ajuste de CFOP, PIS e COFINS, download de XML</p>
+            <p class="sv-preco"><span class="sv-sob">Sob orçamento</span></p>
+            <a class="sv-botao" href="https://wa.me/5511945426510?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Grovan%20e%20quero%20saber%20mais%20sobre%3A%20Pain%C3%A9is%20e%20rob%C3%B4s%20fiscais" target="_blank" rel="noopener">Quero este serviço</a>
+          </article>
+          <article class="sv-card">
+            <h3>Enriquecimento de cadastro</h3>
+            <p class="sv-inclui">Descrição, fotos, pesos e medidas buscados e enviados ao Bling em lotes</p>
+            <p class="sv-preco"><span class="sv-sob">Sob orçamento</span></p>
+            <a class="sv-botao" href="https://wa.me/5511945426510?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Grovan%20e%20quero%20saber%20mais%20sobre%3A%20Enriquecimento%20de%20cadastro" target="_blank" rel="noopener">Quero este serviço</a>
+          </article>
+          <article class="sv-card">
+            <h3>Suporte e treinamento no Bling</h3>
+            <p class="sv-inclui">Configuração do sistema e treinamento da equipe, pacote de 4 h</p>
+            <p class="sv-preco"><small>a partir de</small> R$ 100<small></small></p>
+            <a class="sv-botao" href="https://wa.me/5511945426510?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Grovan%20e%20quero%20saber%20mais%20sobre%3A%20Suporte%20e%20treinamento%20no%20Bling" target="_blank" rel="noopener">Quero este serviço</a>
+          </article>
+          <article class="sv-card">
+            <h3>Manutenção de sistemas</h3>
+            <p class="sv-inclui">Correções e ajustes nos sistemas entregues, até 2 pedidos por mês</p>
+            <p class="sv-preco"><small>a partir de</small> R$ 300<small>/mês</small></p>
+            <a class="sv-botao" href="https://wa.me/5511945426510?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Grovan%20e%20quero%20saber%20mais%20sobre%3A%20Manuten%C3%A7%C3%A3o%20de%20sistemas" target="_blank" rel="noopener">Quero este serviço</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="fiscal" class="secao-compacta">
+      <div class="container">
+        <h2 class="sv-titulo">Fiscal e financeiro</h2>
+        <p class="sv-sub">Rotinas do mês em dia, trabalhando junto com o seu contador.</p>
+        <div class="sv-grade">
+          <article class="sv-card">
+            <h3>Lançamento de notas de entrada</h3>
+            <p class="sv-inclui">Importação do XML, conferência e escrituração, até 100 notas</p>
+            <p class="sv-preco"><small>a partir de</small> R$ 210<small>/mês</small></p>
+            <a class="sv-botao" href="https://wa.me/5511945426510?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Grovan%20e%20quero%20saber%20mais%20sobre%3A%20Lan%C3%A7amento%20de%20notas%20de%20entrada" target="_blank" rel="noopener">Quero este serviço</a>
+          </article>
+          <article class="sv-card">
+            <h3>Notas de saída</h3>
+            <p class="sv-inclui">Conferência de faturamento, cancelamentos e devoluções, até 100 notas</p>
+            <p class="sv-preco"><small>a partir de</small> R$ 140<small>/mês</small></p>
+            <a class="sv-botao" href="https://wa.me/5511945426510?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Grovan%20e%20quero%20saber%20mais%20sobre%3A%20Notas%20de%20sa%C3%ADda" target="_blank" rel="noopener">Quero este serviço</a>
+          </article>
+          <article class="sv-card">
+            <h3>Conferência tributária</h3>
+            <p class="sv-inclui">CFOP, CST, NCM e alíquotas corrigidos nos itens, até 100 notas</p>
+            <p class="sv-preco"><small>a partir de</small> R$ 140<small>/mês</small></p>
+            <a class="sv-botao" href="https://wa.me/5511945426510?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Grovan%20e%20quero%20saber%20mais%20sobre%3A%20Confer%C3%AAncia%20tribut%C3%A1ria" target="_blank" rel="noopener">Quero este serviço</a>
+          </article>
+          <article class="sv-card">
+            <h3>Apuração de impostos</h3>
+            <p class="sv-inclui">ICMS, ICMS-ST, DIFAL, PIS, COFINS, IPI e DAS, conforme o regime</p>
+            <p class="sv-preco"><small>a partir de</small> R$ 350<small>/mês</small></p>
+            <a class="sv-botao" href="https://wa.me/5511945426510?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Grovan%20e%20quero%20saber%20mais%20sobre%3A%20Apura%C3%A7%C3%A3o%20de%20impostos" target="_blank" rel="noopener">Quero este serviço</a>
+          </article>
+          <article class="sv-card">
+            <h3>SPED Fiscal ou SPED Contribuições</h3>
+            <p class="sv-inclui">Geração, validação no PVA e transmissão no prazo</p>
+            <p class="sv-preco"><small>a partir de</small> R$ 140<small>/mês</small></p>
+            <a class="sv-botao" href="https://wa.me/5511945426510?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Grovan%20e%20quero%20saber%20mais%20sobre%3A%20SPED%20Fiscal%20ou%20SPED%20Contribui%C3%A7%C3%B5es" target="_blank" rel="noopener">Quero este serviço</a>
+          </article>
+          <article class="sv-card">
+            <h3>NFS-e e ISS</h3>
+            <p class="sv-inclui">Notas de serviço prestadas e tomadas, ISS próprio e retido</p>
+            <p class="sv-preco"><small>a partir de</small> R$ 110<small>/mês</small></p>
+            <a class="sv-botao" href="https://wa.me/5511945426510?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Grovan%20e%20quero%20saber%20mais%20sobre%3A%20NFS-e%20e%20ISS" target="_blank" rel="noopener">Quero este serviço</a>
+          </article>
+          <article class="sv-card">
+            <h3>MEI em dia</h3>
+            <p class="sv-inclui">DAS do mês e declaração anual (DASN-SIMEI)</p>
+            <p class="sv-preco"><small>a partir de</small> R$ 40<small>/mês</small></p>
+            <a class="sv-botao" href="https://wa.me/5511945426510?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Grovan%20e%20quero%20saber%20mais%20sobre%3A%20MEI%20em%20dia" target="_blank" rel="noopener">Quero este serviço</a>
+          </article>
+          <article class="sv-card">
+            <h3>Cadastro tributário de produtos</h3>
+            <p class="sv-inclui">NCM, CEST, CST e CFOP corretos, lote de 100 produtos</p>
+            <p class="sv-preco"><small>a partir de</small> R$ 210<small></small></p>
+            <a class="sv-botao" href="https://wa.me/5511945426510?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Grovan%20e%20quero%20saber%20mais%20sobre%3A%20Cadastro%20tribut%C3%A1rio%20de%20produtos" target="_blank" rel="noopener">Quero este serviço</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="lojas" class="secao-compacta">
+      <div class="container">
+        <h2 class="sv-titulo">Loja virtual e sites</h2>
+        <p class="sv-sub">Lojas e páginas bonitas, rápidas e prontas para vender.</p>
+        <div class="sv-grade">
+          <article class="sv-card">
+            <h3>Loja virtual Bling/Tray</h3>
+            <p class="sv-inclui">Home, menu, página de produto, HTML/CSS customizado e configuração</p>
+            <p class="sv-preco"><small>a partir de</small> R$ 1.600<small></small></p>
+            <a class="sv-botao" href="https://wa.me/5511945426510?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Grovan%20e%20quero%20saber%20mais%20sobre%3A%20Loja%20virtual%20Bling/Tray" target="_blank" rel="noopener">Quero este serviço</a>
+          </article>
+          <article class="sv-card">
+            <h3>Loja Nuvemshop</h3>
+            <p class="sv-inclui">Ajuste de tema, home e página de produto</p>
+            <p class="sv-preco"><small>a partir de</small> R$ 1.000<small></small></p>
+            <a class="sv-botao" href="https://wa.me/5511945426510?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Grovan%20e%20quero%20saber%20mais%20sobre%3A%20Loja%20Nuvemshop" target="_blank" rel="noopener">Quero este serviço</a>
+          </article>
+          <article class="sv-card">
+            <h3>Landing page ou site institucional</h3>
+            <p class="sv-inclui">Página responsiva com SEO básico e botão de WhatsApp</p>
+            <p class="sv-preco"><small>a partir de</small> R$ 1.000<small></small></p>
+            <a class="sv-botao" href="https://wa.me/5511945426510?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Grovan%20e%20quero%20saber%20mais%20sobre%3A%20Landing%20page%20ou%20site%20institucional" target="_blank" rel="noopener">Quero este serviço</a>
+          </article>
+          <article class="sv-card">
+            <h3>Cadastro de produtos</h3>
+            <p class="sv-inclui">Título, descrição, fotos, preço, peso e medidas, lote de 50</p>
+            <p class="sv-preco"><small>a partir de</small> R$ 200<small></small></p>
+            <a class="sv-botao" href="https://wa.me/5511945426510?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Grovan%20e%20quero%20saber%20mais%20sobre%3A%20Cadastro%20de%20produtos" target="_blank" rel="noopener">Quero este serviço</a>
+          </article>
+          <article class="sv-card">
+            <h3>Planilha personalizada</h3>
+            <p class="sv-inclui">Financeiro, estoque ou precificação, com fórmulas e painel de resumo</p>
+            <p class="sv-preco"><small>a partir de</small> R$ 400<small></small></p>
+            <a class="sv-botao" href="https://wa.me/5511945426510?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Grovan%20e%20quero%20saber%20mais%20sobre%3A%20Planilha%20personalizada" target="_blank" rel="noopener">Quero este serviço</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="video" class="secao-compacta">
+      <div class="container">
+        <h2 class="sv-titulo">Foto e vídeo</h2>
+        <p class="sv-sub">Vídeos e fotos que fazem o seu Instagram e a sua loja venderem mais.</p>
+        <div class="sv-grade">
+          <article class="sv-card">
+            <h3>Vídeo curto (Reels, TikTok, Shorts)</h3>
+            <p class="sv-inclui">Até 60 s, com cortes, legendas, trilha e capa</p>
+            <p class="sv-preco"><small>a partir de</small> R$ 120<small></small></p>
+            <a class="sv-botao" href="https://wa.me/5511945426510?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Grovan%20e%20quero%20saber%20mais%20sobre%3A%20V%C3%ADdeo%20curto%20%28Reels%2C%20TikTok%2C%20Shorts%29" target="_blank" rel="noopener">Quero este serviço</a>
+          </article>
+          <article class="sv-card">
+            <h3>Vídeo para YouTube ou institucional</h3>
+            <p class="sv-inclui">Até 10 min, com cortes, legendas, trilha, vinheta e capa</p>
+            <p class="sv-preco"><small>a partir de</small> R$ 320<small></small></p>
+            <a class="sv-botao" href="https://wa.me/5511945426510?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Grovan%20e%20quero%20saber%20mais%20sobre%3A%20V%C3%ADdeo%20para%20YouTube%20ou%20institucional" target="_blank" rel="noopener">Quero este serviço</a>
+          </article>
+          <article class="sv-card">
+            <h3>Tratamento de fotos de produto</h3>
+            <p class="sv-inclui">Luz, cor, recorte e padronização, lote de 20 fotos</p>
+            <p class="sv-preco"><small>a partir de</small> R$ 250<small></small></p>
+            <a class="sv-botao" href="https://wa.me/5511945426510?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Grovan%20e%20quero%20saber%20mais%20sobre%3A%20Tratamento%20de%20fotos%20de%20produto" target="_blank" rel="noopener">Quero este serviço</a>
+          </article>
+          <article class="sv-card">
+            <h3>Fundo branco ou transparente</h3>
+            <p class="sv-inclui">Fotos prontas para loja e marketplaces, lote de 50</p>
+            <p class="sv-preco"><small>a partir de</small> R$ 190<small></small></p>
+            <a class="sv-botao" href="https://wa.me/5511945426510?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Grovan%20e%20quero%20saber%20mais%20sobre%3A%20Fundo%20branco%20ou%20transparente" target="_blank" rel="noopener">Quero este serviço</a>
+          </article>
+          <article class="sv-card">
+            <h3>Edição personalizada</h3>
+            <p class="sv-inclui">Vídeos longos, eventos, animações ou retoques sob medida</p>
+            <p class="sv-preco"><small>a partir de</small> R$ 35<small>/hora</small></p>
+            <a class="sv-botao" href="https://wa.me/5511945426510?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Grovan%20e%20quero%20saber%20mais%20sobre%3A%20Edi%C3%A7%C3%A3o%20personalizada" target="_blank" rel="noopener">Quero este serviço</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="design" class="secao-compacta">
+      <div class="container">
+        <h2 class="sv-titulo">Design e marketing</h2>
+        <p class="sv-sub">Uma marca com cara de empresa e presença constante nas redes.</p>
+        <div class="sv-grade">
+          <article class="sv-card">
+            <h3>Identidade visual</h3>
+            <p class="sv-inclui">Logo, paleta de cores e aplicações básicas</p>
+            <p class="sv-preco"><small>a partir de</small> R$ 500<small></small></p>
+            <a class="sv-botao" href="https://wa.me/5511945426510?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Grovan%20e%20quero%20saber%20mais%20sobre%3A%20Identidade%20visual" target="_blank" rel="noopener">Quero este serviço</a>
+          </article>
+          <article class="sv-card">
+            <h3>Artes para redes sociais</h3>
+            <p class="sv-inclui">Pacote de 10 posts e stories no padrão da sua marca</p>
+            <p class="sv-preco"><small>a partir de</small> R$ 300<small></small></p>
+            <a class="sv-botao" href="https://wa.me/5511945426510?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Grovan%20e%20quero%20saber%20mais%20sobre%3A%20Artes%20para%20redes%20sociais" target="_blank" rel="noopener">Quero este serviço</a>
+          </article>
+          <article class="sv-card">
+            <h3>Campanha de e-mail marketing</h3>
+            <p class="sv-inclui">Layout do e-mail, lista e disparo</p>
+            <p class="sv-preco"><small>a partir de</small> R$ 100<small></small></p>
+            <a class="sv-botao" href="https://wa.me/5511945426510?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Grovan%20e%20quero%20saber%20mais%20sobre%3A%20Campanha%20de%20e-mail%20marketing" target="_blank" rel="noopener">Quero este serviço</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="avulsos" class="secao-compacta">
+      <div class="container">
+        <div class="sv-avulsos">
+          <div>
+            <h2 class="sv-titulo">Suporte técnico avulso</h2>
+            <p class="sv-sub">Resolveu um problema pontual? Cobramos só as horas usadas, com mínimo de 1 hora. Atendimento remoto em todo o Brasil e presencial em São Paulo (deslocamento à parte).</p>
+            <p class="sv-preco sv-preco-grande"><small>a partir de</small> R$ 35<small>/hora</small></p>
+            <a class="sv-botao" href="https://wa.me/5511945426510?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Grovan%20e%20quero%20saber%20mais%20sobre%3A%20Suporte%20t%C3%A9cnico%20avulso" target="_blank" rel="noopener">Chamar agora no WhatsApp</a>
+          </div>
+          <ul class="sv-lista"><li>Formatação e reinstalação do Windows</li><li>Instalação de programas</li><li>Remoção de vírus e limpeza</li><li>Impressora e scanner</li><li>Rede e Wi-Fi</li><li>Backup e recuperação de arquivos</li><li>Configuração de e-mail</li><li>Configuração de celular</li><li>Suporte remoto</li><li>Visita técnica em São Paulo</li><li>Suporte no Bling ou ERP</li><li>Emissão avulsa de nota fiscal</li><li>Lançamentos e organização financeira</li><li>Digitação e cadastros</li><li>Cadastro em marketplaces</li><li>Treinamento em sistemas e Office</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="duvidas" class="secao-compacta">
+      <div class="container">
+        <h2 class="sv-titulo">Dúvidas frequentes</h2>
+          <details class="sv-faq-item"><summary>Por que os preços são &quot;a partir de&quot;?</summary><p>O valor final depende do porte da sua empresa. MEI paga o valor mostrado aqui; micro, pequena e média empresa têm tabela própria, que você vê no orçamento online antes de aprovar.</p></details>
+          <details class="sv-faq-item"><summary>Como funciona o pagamento?</summary><p>Por Pix ou cartão. Serviços até R$ 500 são pagos antes do início. Projetos maiores: metade na entrada e metade na entrega. Planos mensais são pagos no início de cada mês.</p></details>
+          <details class="sv-faq-item"><summary>Vocês atendem fora de São Paulo?</summary><p>Sim. Quase tudo é feito a distância, para todo o Brasil. Em São Paulo também atendemos presencialmente, com hora marcada.</p></details>
+          <details class="sv-faq-item"><summary>Vocês substituem o meu contador?</summary><p>Não. A Grovan cuida da rotina operacional (notas, lançamentos, conferências, sistema) e trabalha junto com o seu contador, que continua responsável pela contabilidade.</p></details>
+          <details class="sv-faq-item"><summary>Quanto tempo leva?</summary><p>O prazo de cada serviço aparece na proposta e começa a contar a partir do pagamento. Você acompanha cada etapa pelo seu link de atendimento.</p></details>
+        <p class="sv-nota">Hospedagem, licenças, APIs pagas e taxas de pagamento de terceiros ficam por conta do cliente. Valores para MEI; outros portes no orçamento.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== Rodapé (igual em todas as páginas) ===== -->
+  <footer class="rodape">
+    <div class="container rodape-conteudo">
+      <img src="../img/grovan-logo.png" alt="Grovan" class="logo">
+      <p>Achou, resolveu, cresceu.</p>
+      <nav class="rodape-links" aria-label="Links do rodapé">
+        <a href="../">Achados</a>
+        <a href="../servicos/">Serviços</a>
+        <a href="../sobre/">Sobre</a>
+        <a href="../planilhas/">Planilhas</a>
+        <a href="../contato/">Contato</a>
+      </nav>
+      <p class="rodape-copy">© 2026 Grovan. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- ===== Botão do WhatsApp (fica fixo no canto da tela) ===== -->
+  <a href="https://wa.me/5511945426510?text=Ol%C3%A1%2C%20vim%20pela%20p%C3%A1gina%20de%20servi%C3%A7os%20da%20Grovan!" target="_blank" rel="noopener" class="botao-whatsapp" aria-label="Fale com a Grovan no WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z"/><path class="whats-fone" d="M9.2 7.8c.3 0 .5 0 .7.5l.7 1.6c.1.3 0 .5-.1.7l-.5.6c-.1.2-.2.3 0 .6.5.9 1.3 1.7 2.2 2.2.3.2.5.1.6 0l.6-.7c.2-.2.4-.2.6-.1l1.6.8c.3.1.4.3.4.5 0 .9-.7 1.7-1.6 1.8-1 .1-2.4-.3-4-1.7-1.5-1.3-2.3-2.8-2.4-3.9-.1-1 .5-2 1.2-2.9z"/></svg>
+    <span class="botao-whatsapp-texto">Fale no WhatsApp</span>
+  </a>
+
+  <script src="../js/tema.js"></script>
+
+</body>
+</html>

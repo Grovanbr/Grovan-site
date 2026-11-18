@@ -84,7 +84,7 @@ const produtos = [
     link: "https://meli.la/2Mg6D1e",
     imagem: "https://http2.mlstatic.com/D_NQ_NP_756821-MLA86791313939_062025-F.webp",
     preco: 32.97,
-    precoAntigo: 59.99,
+    precoAntigo: 161.51,
     destaque: false
   },
   {

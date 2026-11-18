@@ -36,5 +36,13 @@ window.Calc = (function () {
     f.addEventListener("submit", e => e.preventDefault());
     fn();
   }
-  return { num, val, brl, pct, set, linhas, aviso, whats, ligar };
+  const SB = { url: "https://gemsxocgwkpkgapgflkt.supabase.co", key: "sb_publishable_CIgMVDHTDKmTEfzttKyCqA_WktHZV13" };
+  function telefone(v) { let d = String(v || "").replace(/\D/g, ""); if (d.length === 10 || d.length === 11) d = "55" + d; return /^55\d{10,11}$/.test(d) ? d : null; }
+  async function salvarContato(dados) {
+    try {
+      const r = await fetch(SB.url + "/rest/v1/contatos_site", { method: "POST", headers: { "content-type": "application/json", apikey: SB.key, prefer: "return=minimal" }, body: JSON.stringify(dados) });
+      return r.ok;
+    } catch (e) { return false; }
+  }
+  return { num, val, brl, pct, set, linhas, aviso, whats, ligar, telefone, salvarContato, WHATS };
 })();

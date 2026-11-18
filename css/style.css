@@ -1797,3 +1797,18 @@ body, .cabecalho, .card, .produto, .oferta, .contato-item, .filtros, .plano, .pa
 .rodape {
   padding-bottom: 96px;
 }
+
+/* Menu com 5 itens cabe numa linha no celular */
+@media (max-width: 420px) {
+  .menu {
+    gap: 6px 12px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 380px) {
+  .menu {
+    gap: 6px 10px;
+    font-size: 13px;
+  }
+}

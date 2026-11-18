@@ -88,14 +88,14 @@ const produtos = [
     destaque: false
   },
   {
-    nome: "Kit 100 Bolas de Natal com Estrela ou Kit 50 Enfeite Árvore Vermelha Dourada Mista Fosca Glitter",
+    nome: "Kit 50 ou 100 Bolas + Brinde Estrela Enfeite Árvore Natal Decoração",
     loja: "Shopee",
     categoria: "Artigos de Festa",
-    link: "https://s.shopee.com.br/9V2xcO7s3w",
-    imagem: "https://cf.shopee.com.br/file/sg-11134201-82584-mu0wlh0ytywz41",
-    preco: 79.90,
-    precoAntigo: 150.75,
+    link: "https://s.shopee.com.br/9Kjj8WTwnM",
+    imagem: "https://cf.shopee.com.br/file/br-11134207-820ma-mscv9ben53ie70",
+    preco: 69.90,
+    precoAntigo: 0.00,
     destaque: false,
-    shopee: "1340072116.22394461600"
+    shopee: "1387542695.23394417877"
   },
 ];

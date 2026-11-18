@@ -25,14 +25,15 @@
 
 const produtos = [
   {
-    nome: "Secret Boom Box Gloss Labial Com Chaveiro De Ursinho Sortido",
-    loja: "Mercado Livre",
+    nome: "Secret Boom Box Metallic MBOOM Gloss Labial 5ml com Chaveiro Ursinho Colecionável Surpresa",
+    loja: "Shopee",
     categoria: "Beleza",
-    link: "https://meli.la/251SmGp",
-    imagem: "https://http2.mlstatic.com/D_NQ_NP_606455-MLB117287382722_102026-F.webp",
-    preco: 141.99,
-    precoAntigo: 197.49,
-    destaque: true
+    link: "https://s.shopee.com.br/30pfarsSe3",
+    imagem: "https://cf.shopee.com.br/file/br-11134207-820m4-mvhulg898dmr6c",
+    preco: 129.90,
+    precoAntigo: 0.00,
+    destaque: true,
+    shopee: "1281459644.58273036416"
   },
   {
     nome: "Escovas Para Maquiagem Multicolor Kit 8 Peças Pincel Macio Sortida",

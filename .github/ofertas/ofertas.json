@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-11-14 20:46",
+ "geradoEm": "2026-11-17 20:58",
  "itens": [
   {
    "nome": "Secret Boom Box Gloss Labial Com Chaveiro De Ursinho Sortido",
@@ -10,16 +10,49 @@
     "status": "igual",
     "preco": 141.99
    },
-   "alternativas": []
+   "alternativas": [
+    {
+     "loja": "Shopee",
+     "shopee": "1281459644.58273036416",
+     "nome": "Secret Boom Box Metallic MBOOM Gloss Labial 5ml com Chaveiro Ursinho Colecionável Surpresa",
+     "preco": 129.9,
+     "precoAntigo": null,
+     "imagem": "https://cf.shopee.com.br/file/br-11134207-820m4-mvhulg898dmr6c",
+     "link": "https://s.shopee.com.br/AKcCfjzuYf",
+     "linkProduto": "https://shopee.com.br/product/1281459644/58273036416",
+     "afiliado": true,
+     "vendedor": "BRMULTIMARCAS_MAKEUP",
+     "comissao": 3.0,
+     "vendas": 0,
+     "semelhanca": 88,
+     "economia": 12.09
+    },
+    {
+     "loja": "Shopee",
+     "shopee": "1921359156.58273023052",
+     "nome": "Secret Boom Box Metallic MBOOM Gloss Labial 5ml com Chaveiro Ursinho Colecionável Surpresa",
+     "preco": 129.9,
+     "precoAntigo": null,
+     "imagem": "https://cf.shopee.com.br/file/br-11134207-820m1-mvhuiit9cutc03",
+     "link": "https://s.shopee.com.br/5q9nJTH2gq",
+     "linkProduto": "https://shopee.com.br/product/1921359156/58273023052",
+     "afiliado": true,
+     "vendedor": "BRUDORA...",
+     "comissao": 3.0,
+     "vendas": 0,
+     "semelhanca": 88,
+     "economia": 12.09
+    }
+   ]
   },
   {
    "nome": "Escovas Para Maquiagem Multicolor Kit 8 Peças Pincel Macio Sortida",
    "link": "https://meli.la/1uWXStd",
    "loja": "Mercado Livre",
-   "precoAtual": 26.72,
+   "precoAtual": 26.79,
    "conferencia": {
     "status": "igual",
-    "preco": 26.72
+    "preco": 26.79
    },
    "alternativas": []
   },
@@ -38,10 +71,10 @@
    "nome": "Árvore de Natal 1,50cm 400 Galhos Pinheiro Verde Resistente Desmontável Pé de Ferro e Plástico",
    "link": "https://s.shopee.com.br/8AXZ3P2GAs",
    "loja": "Shopee",
-   "precoAtual": 88.9,
+   "precoAtual": 84.9,
    "conferencia": {
     "status": "igual",
-    "preco": 88.9
+    "preco": 84.9
    },
    "alternativas": [
     {
@@ -51,14 +84,14 @@
      "preco": 76.33,
      "precoAntigo": null,
      "imagem": "https://cf.shopee.com.br/file/sg-11134201-8257t-mvfeehgl1dl4e1",
-     "link": "https://s.shopee.com.br/AUvY21Y3YN",
+     "link": "https://s.shopee.com.br/8Kr8I5p7P1",
      "linkProduto": "https://shopee.com.br/product/280716196/58272875543",
      "afiliado": true,
      "vendedor": "",
      "comissao": 0.0,
      "vendas": 0,
      "semelhanca": 100,
-     "economia": 12.57
+     "economia": 8.57
     }
    ]
   },
@@ -66,10 +99,10 @@
    "nome": "Principia Kit Limpeza E Hidratação Ch-01 + Ol-01 + Gl-02 Todo Tipo De Pele Dia/noite",
    "link": "https://meli.la/1ikSs3S",
    "loja": "Mercado Livre",
-   "precoAtual": 96.58,
+   "precoAtual": 107.31,
    "conferencia": {
     "status": "igual",
-    "preco": 96.58
+    "preco": 107.31
    },
    "alternativas": []
   },
@@ -79,8 +112,11 @@
    "loja": "Mercado Livre",
    "precoAtual": 17.18,
    "conferencia": {
-    "status": "igual",
-    "preco": 17.18
+    "status": "subiu",
+    "preco": 32.97,
+    "precoAntigo": 375.27,
+    "imagem": "https://http2.mlstatic.com/D_NQ_NP_756821-MLA86791313939_062025-F.webp",
+    "revisar": true
    },
    "alternativas": []
   },
@@ -93,12 +129,27 @@
     "status": "igual",
     "preco": 79.9
    },
-   "alternativas": []
+   "alternativas": [
+    {
+     "loja": "Shopee",
+     "shopee": "1387542695.23394417877",
+     "nome": "Kit 50 ou 100 Bolas + Brinde Estrela Enfeite Árvore Natal Decoração",
+     "preco": 69.9,
+     "precoAntigo": 124.82,
+     "imagem": "https://cf.shopee.com.br/file/br-11134207-820ma-mscv9ben53ie70",
+     "link": "https://s.shopee.com.br/7VI0AuuJgB",
+     "linkProduto": "https://shopee.com.br/product/1387542695/23394417877",
+     "afiliado": true,
+     "vendedor": "dans_Ecommerce",
+     "comissao": 11.0,
+     "vendas": 319,
+     "semelhanca": 67,
+     "economia": 10.0
+    }
+   ]
   }
  ],
- "avisos": [
-  "A Shopee não respondeu na busca de 2 de 7 produtos (Secret Boom Box Gloss Labial Com Chaveiro De Ursinho Sortido, Guarda Chuva Grande Reforçado Contra Vento Cabe Na Bolsa). Esses produtos são procurados de novo na próxima procura. Motivo: A API da Shopee está instável agora. Tente de novo em alguns minutos. Detalhe da Shopee: System Error"
- ],
+ "avisos": [],
  "precosAtualizados": [],
  "trocasAutomaticas": []
 }

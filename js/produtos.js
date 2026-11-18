@@ -40,7 +40,7 @@ const produtos = [
     categoria: "Beleza",
     link: "https://meli.la/1uWXStd",
     imagem: "https://http2.mlstatic.com/D_NQ_NP_683755-MLB112552959736_062026-F.webp",
-    preco: 26.72,
+    preco: 26.79,
     precoAntigo: 42.84,
     destaque: true
   },
@@ -61,7 +61,7 @@ const produtos = [
     categoria: "Artigos de Festa",
     link: "https://s.shopee.com.br/8AXZ3P2GAs",
     imagem: "https://cf.shopee.com.br/file/br-11134207-820lh-msn53tgvj952b7",
-    preco: 88.90,
+    preco: 84.90,
     precoAntigo: 0.00,
     destaque: true,
     shopee: "1475886431.57717240116"
@@ -72,7 +72,7 @@ const produtos = [
     categoria: "Beleza",
     link: "https://meli.la/1ikSs3S",
     imagem: "https://http2.mlstatic.com/D_NQ_NP_609209-MLA94364515810_102025-F.webp",
-    preco: 96.58,
+    preco: 107.31,
     precoAntigo: 147.00,
     destaque: true
   },

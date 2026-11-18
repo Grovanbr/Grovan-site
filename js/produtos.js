@@ -60,12 +60,12 @@ const produtos = [
     nome: "Árvore de Natal 1,50cm 400 Galhos Pinheiro Verde Resistente Desmontável Pé de Ferro e Plástico",
     loja: "Shopee",
     categoria: "Artigos de Festa",
-    link: "https://s.shopee.com.br/8AXZ3P2GAs",
-    imagem: "https://cf.shopee.com.br/file/br-11134207-820lh-msn53tgvj952b7",
-    preco: 84.90,
+    link: "https://s.shopee.com.br/3VlwBnHRA7",
+    imagem: "https://cf.shopee.com.br/file/sg-11134201-8257t-mvfeehgl1dl4e1",
+    preco: 76.33,
     precoAntigo: 0.00,
     destaque: true,
-    shopee: "1475886431.57717240116"
+    shopee: "280716196.58272875543"
   },
   {
     nome: "Principia Kit Limpeza E Hidratação Ch-01 + Ol-01 + Gl-02 Todo Tipo De Pele Dia/noite",

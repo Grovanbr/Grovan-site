@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-11-19 13:14",
+ "geradoEm": "2026-11-19 17:16",
  "itens": [
   {
    "nome": "Secret Boom Box Metallic MBOOM Gloss Labial 5ml com Chaveiro Ursinho Colecionável Surpresa",
@@ -60,14 +60,14 @@
    "nome": "NIVEA Loção Deo-Hidratante Soft Milk 400ml, Hidratação Profunda 72h, Hialurônico Puro, Corporal, Pele Seca",
    "link": "https://meli.la/2Mg6D1e",
    "loja": "Mercado Livre",
-   "precoAtual": 32.97,
+   "precoAtual": 16.67,
    "conferencia": {
     "status": "baixou",
-    "preco": 16.67,
+    "preco": 14.82,
     "precoAntigo": 26.99,
     "imagem": "https://http2.mlstatic.com/D_NQ_NP_756821-MLA86791313939_062025-F.webp",
     "aplicado": true,
-    "precoAnterior": 32.97
+    "precoAnterior": 16.67
    },
    "alternativas": []
   },
@@ -83,12 +83,14 @@
    "alternativas": []
   }
  ],
- "avisos": [],
+ "avisos": [
+  "A Shopee não respondeu na busca de 1 de 7 produtos (Guarda Chuva Grande Reforçado Contra Vento Cabe Na Bolsa). Esses produtos são procurados de novo na próxima procura. Motivo: A API da Shopee está instável agora. Tente de novo em alguns minutos. Detalhe da Shopee: System Error"
+ ],
  "precosAtualizados": [
   {
    "nome": "NIVEA Loção Deo-Hidratante Soft Milk 400ml, Hidratação Profunda 72h, Hialurônico Puro, Corporal, Pele Seca",
-   "de": 32.97,
-   "para": 16.67
+   "de": 16.67,
+   "para": 14.82
   }
  ],
  "trocasAutomaticas": []

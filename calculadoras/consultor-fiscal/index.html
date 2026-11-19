@@ -70,7 +70,7 @@
             </div>
           </form>
           <aside class="calc-caixa calc-res" aria-live="polite">
-            <p class="calc-destaque-rotulo" id="r-ncm">Escolha um produto</p>
+            <p class="calc-destaque-rotulo" id="r-ncm">Digite o produto ou o NCM e escolha na lista</p>
             <p class="calc-destaque" id="r-destaque" style="font-size:22px">—</p>
             <ul class="calc-linhas" id="r-linhas"></ul>
             <p class="calc-aviso" id="r-aviso" style="display:block">Estimativa pela regra geral. Reduções de base, benefícios do estado e exceções do produto podem mudar o resultado: confirme com o seu contador.</p>
@@ -79,6 +79,17 @@
               <a class="sec" href="../../calculadoras/cfop/">Consultar CFOP</a>
             </div>
           </aside>
+        </div>
+
+        <div class="sv-calc" style="margin-top:22px">
+          <h2 class="sv-titulo">Quer a conferência de todos os seus produtos?</h2>
+          <p class="sv-sub">A gente confere NCM, CEST, CFOP e CST de todo o seu cadastro e corrige no seu sistema. Você recebe o orçamento pelo WhatsApp.</p>
+          <div class="calc-campos" style="max-width:640px">
+            <div class="calc-campo"><label for="qtd-prod">Quantos produtos você tem?</label><div class="calc-entrada"><input id="qtd-prod" type="text" inputmode="numeric" value="200"></div></div>
+            <div class="calc-campo"><label for="sist">Qual sistema usa?</label><div class="calc-entrada"><select id="sist" style="width:100%;border:0;background:transparent;font:inherit;padding:10px"><option>Bling</option><option>Tiny/Olist</option><option>Omie</option><option>Outro sistema</option><option>Planilha</option></select></div></div>
+          </div>
+          <p class="sv-calc-total">Estimativa: <strong id="conf-valor">—</strong></p>
+          <a id="conf-zap" class="sv-cta" href="https://wa.me/5511945426510" target="_blank" rel="noopener">Quero a conferência dos meus produtos</a>
         </div>
       </div>
     </section>
@@ -118,11 +129,14 @@
   const UF={"AC": 19, "AL": 19, "AP": 18, "AM": 20, "BA": 20.5, "CE": 20, "DF": 20, "ES": 17, "GO": 19, "MA": 22, "MT": 17, "MS": 17, "MG": 18, "PA": 19, "PB": 20, "PR": 19.5, "PE": 20.5, "PI": 21, "RJ": 22, "RN": 20, "RS": 17, "RO": 19.5, "RR": 20, "SC": 17, "SP": 18, "SE": 19, "TO": 20};
   const $=id=>document.getElementById(id);
   const so=s=>String(s||"").replace(/\D/g,"");
-  let CEST=null, item=null;
-  fetch("../../calculadoras/consultor-fiscal/cest.json").then(r=>r.ok?r.json():null).then(d=>{CEST=d;}).catch(()=>{});
+  let CEST=null, item=null, TEM_NCM=false;
+  fetch("../../calculadoras/consultor-fiscal/cest.json").then(r=>r.ok?r.json():null).then(d=>{CEST=Array.isArray(d)?d:((d&&d.dados)||[]);TEM_NCM=CEST.some(c=>c.ncm||c.NCM||c.ncms);}).catch(()=>{});
   // capítulos/posições com PIS/COFINS monofásico (indicação geral, confirmar)
   const MONO=[["2710","combustíveis"],["2207","álcool combustível"],["3001","medicamentos"],["3002","medicamentos"],["3003","medicamentos"],["3004","medicamentos"],["3303","perfumaria"],["3304","cosméticos"],["3305","produtos de cabelo"],["3307","higiene"],["3401","sabonetes"],["4011","pneus"],["4013","câmaras de ar"],["2201","águas"],["2202","refrigerantes"],["2203","cervejas"],["8708","autopeças"],["8483","autopeças"],["8511","autopeças"],["4016","autopeças"]];
-  function cestDe(ncm){ if(!CEST) return null; const n=so(ncm); return CEST.filter(c=>{const l=[].concat(c.ncm||c.NCM||c.ncms||[]).join(" "); return l.split(/[\s,;]+/).map(so).some(x=>x&&n.startsWith(x));}).map(c=>(c.cest||c.CEST)+" — "+(c.descricao||c.DESCRICAO||c.description||"")); }
+  const semAc=s=>String(s||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
+  function cestTexto(desc){ if(!CEST) return []; const ws=semAc(desc).replace(/<[^>]+>/g," ").split(/[^a-z]+/).filter(w=>w.length>4&&!/^(outros|outras|exceto|mesmo|partes|produtos|artigos|demais)$/.test(w)); if(!ws.length) return [];
+    return CEST.map(c=>{const t=semAc(c.descricao);return [ws.filter(w=>t.includes(w.slice(0,6))).length,c];}).filter(x=>x[0]>0).sort((a,b)=>b[0]-a[0]).slice(0,3).map(x=>x[1].cest+" — "+x[1].descricao.slice(0,70)); }
+  function cestDe(ncm){ if(!CEST) return null; if(!TEM_NCM) return null; const n=so(ncm); return CEST.filter(c=>{const l=[].concat(c.ncm||c.NCM||c.ncms||[]).join(" "); return l.split(/[\s,;]+/).map(so).some(x=>x&&n.startsWith(x));}).map(c=>(c.cest||c.CEST)+" — "+(c.descricao||c.DESCRICAO||c.description||"")); }
   function mono(ncm){ const n=so(ncm); const m=MONO.find(x=>n.startsWith(x[0])); return m?m[1]:null; }
   function calc(){ if(!item) return;
     const uf=$("uf").value, reg=$("reg").value, al=UF[uf];
@@ -130,6 +144,7 @@
     $("r-ncm").textContent="NCM "+item.codigo; $("r-destaque").textContent=item.descricao.slice(0,90);
     const L=[];
     if(CEST===null) L.push(["Substituição tributária (ST)","tabela CEST carregando…"]);
+    else if(!TEM_NCM){ const sug=cestTexto(item.descricao); L.push(["Substituição tributária (ST)", sug.length?"Possível ST — confira o CEST":"Não parece ter ST", sug.length>0]); sug.forEach(x=>L.push(["CEST possível",x])); }
     else L.push(["Substituição tributária (ST)", st?"Sim — CEST "+cs[0]:"Não encontrada para este NCM", st]);
     if(st){ L.push(["CFOP venda no estado","5405"],["CFOP venda para outro estado","6403 / 6404"],["ICMS na revenda","Já recolhido por ST (confirme o MVA do estado)"],["CST / CSOSN", reg==="sn"?"CSOSN 500":"CST 060"]); }
     else { L.push(["CFOP venda no estado","5102 (revenda) / 5101 (fabricação)"],["CFOP venda para outro estado","6102 / 6101"],["ICMS interno "+uf, reg==="sn"?"incluso no DAS do Simples":al.toString().replace(".",",")+"% (alíquota geral)"],["ICMS interestadual","12% (7% para N, NE, CO e ES saindo do S/SE; 4% importados)"],["CST / CSOSN", reg==="sn"?"CSOSN 102 (ou 101 com crédito)":"CST 000"]); }
@@ -141,10 +156,22 @@
     Calc.linhas("r-linhas",L);
     Calc.whats("r-whats","Olá! Consultei o NCM "+item.codigo+" ("+item.descricao.slice(0,60)+") no consultor fiscal da Grovan. Quero uma conferência tributária dos meus produtos.");
   }
-  let tmr; $("q").addEventListener("input",()=>{clearTimeout(tmr);const t=$("q").value.trim(); if(t.length<3){$("sug").innerHTML="";return;}
+  function usarCodigo(cod,desc){item={codigo:cod,descricao:desc||"Produto do NCM "+cod};$("sug").innerHTML="";calc();}
+  function porCodigo(t){const d=so(t).slice(0,8); if(d.length<8) return false;
+    const cod=d.slice(0,4)+"."+d.slice(4,6)+"."+d.slice(6,8);
+    fetch("https://brasilapi.com.br/api/ncm/v1/"+d).then(r=>r.ok?r.json():null).then(x=>usarCodigo(cod,x&&x.descricao)).catch(()=>usarCodigo(cod)); return true;}
+  $("q").addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();porCodigo($("q").value);}});
+  $("q").addEventListener("change",()=>{if(!item||!$("q").value.startsWith(item.codigo))porCodigo($("q").value);});
+  let tmr; $("q").addEventListener("input",()=>{clearTimeout(tmr);item=null;const t=$("q").value.trim(); if(so(t).length>=8 && /^[\d.\s-]+/.test(t)){porCodigo(t);return;} if(t.length<3){$("sug").innerHTML="";return;}
     tmr=setTimeout(()=>{fetch("https://brasilapi.com.br/api/ncm/v1?search="+encodeURIComponent(t)).then(r=>r.json()).then(d=>{const ul=$("sug");ul.innerHTML="";(d||[]).filter(x=>so(x.codigo).length===8).slice(0,25).forEach(x=>{const li=document.createElement("li");li.style.cursor="pointer";li.innerHTML="<span><strong>"+x.codigo+"</strong> — "+x.descricao+"</span>";li.onclick=()=>{item=x;ul.innerHTML="";$("q").value=x.codigo+" "+x.descricao.slice(0,40);calc();};ul.appendChild(li);}); if(!ul.children.length) ul.innerHTML="<li><span>Nada encontrado. Tente outra palavra ou o NCM.</span></li>";}).catch(()=>{$("sug").innerHTML="<li><span>Não foi possível consultar agora. Tente de novo.</span></li>";});},400);});
   $("uf").addEventListener("change",calc); $("reg").addEventListener("change",calc);
   })();
+  (function(){const q=document.getElementById("qtd-prod"),si=document.getElementById("sist"),v=document.getElementById("conf-valor"),z=document.getElementById("conf-zap");
+  function up(){const n=Math.max(1,parseInt(String(q.value).replace(/\D/g,""))||0),lotes=Math.ceil(n/100),a=lotes*300,b=lotes*360;
+  v.textContent=a.toLocaleString("pt-BR",{style:"currency",currency:"BRL",maximumFractionDigits:0})+" a "+b.toLocaleString("pt-BR",{style:"currency",currency:"BRL",maximumFractionDigits:0});
+  const uf=document.getElementById("uf").value,reg=document.getElementById("reg").selectedOptions[0].text;
+  z.href="https://wa.me/5511945426510?text="+encodeURIComponent("Olá! Usei o consultor fiscal da Grovan e quero a conferência tributária de todos os meus produtos.\n• Quantidade: "+n+" produtos\n• Sistema: "+si.value+"\n• Estado: "+uf+"\n• Regime: "+reg+"\n• Estimativa do site: "+v.textContent+"\nPodem me mandar o orçamento?");}
+  [q,si,document.getElementById("uf"),document.getElementById("reg")].forEach(e=>{e.addEventListener("input",up);e.addEventListener("change",up);});up();})();
   </script>
 </body>
 </html>

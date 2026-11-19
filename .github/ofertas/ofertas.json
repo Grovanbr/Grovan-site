@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-11-18 20:59",
+ "geradoEm": "2026-11-19 09:10",
  "itens": [
   {
    "nome": "Secret Boom Box Metallic MBOOM Gloss Labial 5ml com Chaveiro Ursinho Colecionável Surpresa",
@@ -62,8 +62,8 @@
    "loja": "Mercado Livre",
    "precoAtual": 32.97,
    "conferencia": {
-    "status": "igual",
-    "preco": 32.97
+    "status": "erro",
+    "texto": "Não consegui abrir o link (HTTPError). Preencha os campos manualmente."
    },
    "alternativas": []
   },

@@ -70,12 +70,7 @@
         </div>
 
        </div>
-       <div class="i-mock" aria-hidden="true">
-         <div class="i-noti" style="--d:0s"><span class="i-ok">✓</span><div><b>Pedido #1043 lançado no Bling</b><small>agora mesmo</small></div></div>
-         <div class="i-noti" style="--d:.6s"><span class="i-ok i-pix">R$</span><div><b>Pix recebido · R$ 289,90</b><small>há 1 min</small></div></div>
-         <div class="i-noti" style="--d:1.2s"><span class="i-ok">✓</span><div><b>NF-e 5.214 autorizada</b><small>há 2 min</small></div></div>
-         <div class="i-noti" style="--d:1.8s"><span class="i-ok i-xml">XML</span><div><b>32 notas de entrada ajustadas</b><small>CFOP, PIS e COFINS</small></div></div>
-       </div>
+       <div class="i-mock" id="i-mock" aria-hidden="true"></div>
       </div>
     </section>
 
@@ -158,7 +153,28 @@
     <span class="botao-whatsapp-texto">Fale no WhatsApp</span>
   </a>
 
+  <script>
+  (function(){
+    const box=document.getElementById("i-mock"); if(!box) return;
+    const N=[["✓","","Pedido #1043 lançado no Bling","agora mesmo"],["R$","i-pix","Pix recebido · R$ 289,90","agora mesmo"],["✓","","NF-e 5.214 autorizada","agora mesmo"],["XML","i-xml","32 notas de entrada ajustadas","CFOP, PIS e COFINS"],["✓","","Boleto 3/10 pago · R$ 146,00","agora mesmo"],["💬","i-pix","Cliente respondido no WhatsApp","atendimento automático"],["✓","","Estoque atualizado na loja","128 produtos"],["R$","i-pix","Venda no cartão · 6x R$ 79,90","agora mesmo"],["✓","","NFS-e emitida e lançada no Bling","contas a receber"],["XML","i-xml","XML baixado da SEFAZ","15 notas novas"]];
+    const reduz=matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let i=0;
+    function nova(){
+      const n=N[i++%N.length];
+      const el=document.createElement("div");el.className="i-noti";
+      el.innerHTML='<span class="i-ok '+n[1]+'">'+n[0]+'</span><div><b>'+n[2]+'</b><small>'+n[3]+'</small></div>';
+      box.prepend(el);
+      requestAnimationFrame(()=>el.classList.add("on"));
+      const ant=box.querySelectorAll(".i-noti");
+      ant.forEach((x,k)=>{ if(k>0){const sm=x.querySelector("small"); if(sm && sm.textContent==="agora mesmo") sm.textContent="há "+k+" min";} });
+      if(ant.length>4){const v=ant[ant.length-1];v.classList.add("sai");setTimeout(()=>v.remove(),500);}
+    }
+    nova();nova();nova();
+    if(!reduz) setInterval(nova,2600);
+  })();
+  </script>
   <script src="js/tema.js"></script>
+  <script src="js/notificacoes.js"></script>
   <script>try{const o=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add("rev-on");o.unobserve(x.target);}}),{threshold:.12});document.querySelectorAll("[data-rev]").forEach(el=>{el.classList.add("rev");o.observe(el);});}catch(e){}</script>
 </body>
 </html>

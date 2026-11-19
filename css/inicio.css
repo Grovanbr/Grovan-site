@@ -57,8 +57,11 @@
 .i-hero-grade{display:grid;grid-template-columns:1.25fr .9fr;gap:48px;align-items:center}
 @media (max-width:860px){.i-hero-grade{grid-template-columns:1fr}.i-mock{display:none}}
 .i-mock{display:grid;gap:12px}
-.i-noti{display:flex;gap:12px;align-items:center;background:rgba(246,245,240,.08);border:1px solid rgba(184,227,90,.25);border-radius:16px;padding:14px 16px;backdrop-filter:blur(4px);opacity:0;transform:translateY(12px);animation:i-entra .6s ease forwards var(--d),i-flutua 6s ease-in-out infinite calc(var(--d) + .6s)}
-.i-noti:nth-child(2n){margin-left:28px}
+.i-noti{display:flex;gap:12px;align-items:center;background:rgba(246,245,240,.08);border:1px solid rgba(184,227,90,.25);border-radius:16px;padding:14px 16px;backdrop-filter:blur(4px);opacity:0;transform:translateY(-14px) scale(.97);transition:opacity .45s ease,transform .45s ease,max-height .45s ease;max-height:90px}
+.i-noti.on{opacity:1;transform:none}
+.i-noti.sai{opacity:0;transform:translateY(10px);max-height:0;padding-block:0;border-width:0}
+.i-noti:first-child.on{border-color:#B8E35A;box-shadow:0 0 0 3px rgba(184,227,90,.15)}
+.i-mock{min-height:330px;align-content:start}
 .i-noti b{display:block;color:#F6F5F0;font-size:15px;font-weight:600}
 .i-noti small{color:#CFE0D6;font-size:12px}
 .i-ok{flex:none;width:36px;height:36px;border-radius:10px;background:#B8E35A;color:#0F3D2E;display:grid;place-items:center;font-weight:800;font-size:13px}
@@ -72,3 +75,14 @@
 .rev{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
 .rev-on{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.i-noti,.rev{animation:none!important;opacity:1!important;transform:none!important;transition:none}}
+
+/* notificações sobre fundo claro (topo das páginas internas) */
+.i-mock-claro{min-height:250px}
+.i-mock-claro .i-noti{background:var(--superficie);border-color:var(--borda);box-shadow:0 6px 18px rgba(15,61,46,.08)}
+.i-mock-claro .i-noti b{color:var(--verde-texto)}
+.i-mock-claro .i-noti small{color:var(--cinza)}
+.i-mock-claro .i-ok{background:#0F3D2E;color:#B8E35A}
+.i-mock-claro .i-pix{background:#B8E35A;color:#0F3D2E}
+.i-mock-claro .i-xml{background:var(--areia-escura);color:var(--verde-texto)}
+.i-mock-claro .i-noti:first-child.on{border-color:#4E7A1C}
+.pagina-topo .i-hero-grade{align-items:center}

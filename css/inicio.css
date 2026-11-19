@@ -104,3 +104,56 @@ select option{background:var(--superficie);color:var(--grafite)}
 .g-grupo>p{color:var(--cinza);margin-bottom:16px}
 .sv-cta{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:#B8E35A;color:#1F3A0E;font-weight:700;padding:13px 22px;border-radius:999px;text-decoration:none}
 .sv-cta-sec{background:transparent;color:var(--verde-texto);border:1.5px solid var(--borda)}
+
+/* Chamada final das ferramentas */
+.fim-cta{display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between;background:#0F3D2E;color:#F6F5F0;border-radius:20px;padding:32px clamp(20px,4vw,40px);position:relative;overflow:hidden}
+.fim-cta::after{content:"";position:absolute;right:-80px;top:-80px;width:240px;height:240px;border-radius:50%;background:rgba(184,227,90,.12);pointer-events:none}
+.fim-cta>div:first-child{flex:1 1 380px;min-width:0;position:relative;z-index:1}
+.fim-cta-etq{display:inline-block;font-size:.8rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#B8E35A;margin-bottom:8px}
+.fim-cta h2{font-family:var(--fonte-titulo);font-size:clamp(1.3rem,2.6vw,1.7rem);margin:0 0 8px;color:#F6F5F0;text-wrap:balance}
+.fim-cta p{margin:0;color:#CFE0D6;max-width:60ch}
+.fim-cta-acoes{display:flex;flex-direction:column;gap:10px;align-items:flex-start;position:relative;z-index:1}
+.fim-cta-link{color:#CFE0D6;font-size:.92rem;text-decoration:underline;text-underline-offset:3px}
+[data-tema="escuro"] .fim-cta{background:#16241D;border:1px solid #2A3832}
+
+/* E-book */
+.ebook-lista{margin:0 0 14px;padding-left:22px;display:grid;gap:6px}
+.ebook-lista li::marker{color:var(--broto-escuro);font-weight:700}
+
+/* Comece por aqui */
+.cp{max-width:760px;margin:0 auto;background:var(--superficie);border:1px solid var(--borda);border-radius:20px;padding:clamp(20px,4vw,36px)}
+.cp-barra{height:6px;background:var(--areia-escura);border-radius:99px;overflow:hidden;margin-bottom:22px}
+.cp-barra span{display:block;height:100%;width:0;background:#B8E35A;transition:width .35s ease}
+.cp-num{font-size:.8rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--broto-escuro);margin:0 0 6px}
+.cp h2{font-family:var(--fonte-titulo);color:var(--verde-texto);margin:0 0 18px;text-wrap:balance}
+.cp-ops{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+.cp-op{font:inherit;font-weight:600;text-align:left;padding:16px 18px;border-radius:14px;border:1.5px solid var(--borda);background:var(--areia);color:var(--grafite);cursor:pointer;transition:border-color .2s,transform .2s}
+.cp-op:hover,.cp-op:focus-visible{border-color:#B8E35A;transform:translateY(-2px);outline:none}
+.cp-res h3{font-family:var(--fonte-titulo);font-size:1.05rem;color:var(--verde-texto);margin:22px 0 10px}
+.cp-ferr{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+.cp-card{display:flex;flex-direction:column;gap:4px;padding:14px 16px;border-radius:14px;background:var(--areia);border:1px solid var(--borda);text-decoration:none;color:var(--grafite)}
+.cp-card strong{color:var(--verde-texto)}
+.cp-card span{font-size:.9rem;color:var(--cinza)}
+.cp-card:hover{border-color:#B8E35A}
+.cp-serv{margin-top:8px}
+.cp-serv ul{margin:0 0 16px;padding-left:20px;display:grid;gap:4px}
+.cp-acoes{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.cp-acoes .fim-cta-link{color:var(--verde-texto)}
+.cp-ebook{margin:22px 0 0;padding:12px 14px;border-radius:12px;background:var(--areia-escura);font-size:.95rem}
+.cp-ebook a{color:var(--verde-texto);font-weight:600}
+.cp-refazer{margin-top:16px;font:inherit;background:none;border:0;color:var(--cinza);text-decoration:underline;cursor:pointer;padding:0}
+
+/* Destaques do hub de ferramentas */
+.g-destaques{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-bottom:18px}
+.g-dest{display:flex;flex-direction:column;gap:4px;padding:18px 20px;border-radius:16px;background:#0F3D2E;color:#F6F5F0;text-decoration:none;transition:transform .2s}
+.g-dest:hover{transform:translateY(-2px)}
+.g-dest span{color:#CFE0D6;font-size:.93rem}
+.g-dest em{font-style:normal;font-weight:600;color:#B8E35A;margin-top:4px}
+.g-dest-ebook{background:#EAF3D3;color:#14171A}
+.g-dest-ebook span{color:#4A524D}
+.g-dest-ebook em{color:#4E7A1C}
+[data-tema="escuro"] .g-dest{background:#16241D;border:1px solid #2A3832}
+[data-tema="escuro"] .g-dest-ebook{background:#1F2E1A}
+[data-tema="escuro"] .g-dest-ebook span{color:#A9B7AF}
+[data-tema="escuro"] .g-dest-ebook em{color:#B8E35A}
+[data-tema="escuro"] .g-dest-ebook strong{color:#E6ECE8}

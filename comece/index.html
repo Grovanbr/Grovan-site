@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comece por aqui: do que o seu negócio precisa agora? | Grovan</title>
+  <meta name="description" content="Responda 3 perguntas rápidas e veja as ferramentas grátis e os serviços que mais fazem sentido para o seu negócio.">
+  <link rel="canonical" href="https://grovan.com.br/comece/">
+  <meta property="og:site_name" content="Grovan">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:image" content="https://grovan.com.br/img/og/comece.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Comece por aqui: do que o seu negócio precisa agora? | Grovan">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:title" content="Comece por aqui: do que o seu negócio precisa agora? | Grovan">
+  <meta property="og:description" content="Responda 3 perguntas rápidas e veja as ferramentas grátis e os serviços que mais fazem sentido para o seu negócio.">
+  <meta property="og:url" content="https://grovan.com.br/comece/">
+  <meta property="og:type" content="website">
+  <script>
+    try {
+      var tema = localStorage.getItem("grovan-tema");
+      if (!tema) tema = matchMedia("(prefers-color-scheme: dark)").matches ? "escuro" : "claro";
+      document.documentElement.dataset.tema = tema;
+    } catch (e) {}
+  </script>
+  <link rel="icon" href="../img/grovan-perfil-icone.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/inicio.css">
+  <link rel="stylesheet" href="../calculadoras/calc.css">
+  </head>
+<body>
+
+  <!-- ===== Cabeçalho (igual em todas as páginas) ===== -->
+  <header class="cabecalho">
+    <div class="container cabecalho-conteudo">
+      <a href="../">
+        <img src="../img/grovan-logo.png" alt="Grovan" class="logo logo-tema-claro">
+        <img src="../img/grovan-logo-claro.png" alt="Grovan" class="logo logo-tema-escuro">
+      </a>
+      <div class="cabecalho-direita">
+        <nav class="menu" aria-label="Menu principal">
+          <a href="../">Início</a>
+          <a href="../servicos/">Serviços</a>
+          <a href="../calculadoras/">Ferramentas grátis</a>
+          <a href="../sobre/">Sobre</a>
+          <a href="../contato/">Contato</a>
+        </nav>
+        <button type="button" class="botao-tema" aria-label="Mudar para o tema escuro" aria-pressed="false">
+          <svg class="icone-lua" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+          <svg class="icone-sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="pagina-topo">
+      <div class="container">
+        <span class="etiqueta">Comece por aqui</span>
+        <h1>Do que o seu negócio precisa agora?</h1>
+        <p class="inicio-texto">Responda 3 perguntas e veja o caminho certo: as ferramentas grátis para usar hoje e o que a Grovan pode fazer por você.</p>
+      </div>
+    </section>
+    <section class="secao-compacta">
+      <div class="container">
+        <div class="cp" id="cp">
+          <div class="cp-barra"><span id="cp-prog"></span></div>
+<div class="cp-perg" data-p="tipo"><p class="cp-num">Pergunta 1 de 3</p><h2>Qual é o seu tipo de negócio?</h2><div class="cp-ops"><button type="button" class="cp-op" data-v="fisica">Loja física</button><button type="button" class="cp-op" data-v="online">Loja online ou marketplace</button><button type="button" class="cp-op" data-v="servico">Prestador de serviço</button><button type="button" class="cp-op" data-v="mei">MEI começando agora</button></div></div><div class="cp-perg" data-p="dor"><p class="cp-num">Pergunta 2 de 3</p><h2>O que mais tira o seu sono hoje?</h2><div class="cp-ops"><button type="button" class="cp-op" data-v="fiscal">Impostos e notas fiscais</button><button type="button" class="cp-op" data-v="preco">Preço e lucro</button><button type="button" class="cp-op" data-v="financeiro">Organizar o financeiro</button><button type="button" class="cp-op" data-v="vendas">Vender mais e aparecer na internet</button></div></div><div class="cp-perg" data-p="sis"><p class="cp-num">Pergunta 3 de 3</p><h2>Você usa algum sistema de gestão?</h2><div class="cp-ops"><button type="button" class="cp-op" data-v="bling">Uso o Bling</button><button type="button" class="cp-op" data-v="outro">Uso outro sistema</button><button type="button" class="cp-op" data-v="nenhum">Não uso nenhum</button><button type="button" class="cp-op" data-v="planilha">Só planilha ou caderno</button></div></div>
+          <div class="cp-res" id="cp-res" hidden>
+            <p class="cp-num">O seu caminho</p>
+            <h2 id="cp-tit"></h2>
+            <p id="cp-txt"></p>
+            <h3>Comece hoje, de graça</h3>
+            <div class="cp-ferr" id="cp-ferr"></div>
+            <div class="cp-serv">
+              <h3>Quando quiser que a gente faça por você</h3>
+              <ul id="cp-serv"></ul>
+              <div class="cp-acoes"><a class="sv-cta" id="cp-zap" href="https://wa.me/5511945426510" target="_blank" rel="noopener">Falar com a Grovan no WhatsApp</a><a class="fim-cta-link" href="../servicos/">Ver serviços e preços</a></div>
+            </div>
+            <p class="cp-ebook">📘 Bônus: <a href="../ebook/">baixe grátis o e-book "10 erros fiscais que fazem a sua loja perder dinheiro"</a>.</p>
+            <button type="button" class="cp-refazer" id="cp-refazer">Refazer as perguntas</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Rodapé (igual em todas as páginas) ===== -->
+  <footer class="rodape-fino">
+    <div class="container">
+      <img src="../img/grovan-logo-claro.png" alt="Grovan">
+      <nav aria-label="Links do rodapé">
+        <a href="../servicos/">Serviços</a>
+        <a href="../calculadoras/">Ferramentas grátis</a>
+        <a href="../indique/">Indique e ganhe</a>
+        <a href="../contadores/">Para contadores</a>
+        <a href="../contato/">Contato</a>
+      </nav>
+      <span>© 2026 Grovan · <a href="../privacidade/">Privacidade</a></span>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/5511945426510?text=Ol%C3%A1%2C%20vim%20pelas%20calculadoras%20da%20Grovan!" target="_blank" rel="noopener" class="botao-whatsapp" aria-label="Fale com a Grovan no WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z"/><path class="whats-fone" d="M9.2 7.8c.3 0 .5 0 .7.5l.7 1.6c.1.3 0 .5-.1.7l-.5.6c-.1.2-.2.3 0 .6.5.9 1.3 1.7 2.2 2.2.3.2.5.1.6 0l.6-.7c.2-.2.4-.2.6-.1l1.6.8c.3.1.4.3.4.5 0 .9-.7 1.7-1.6 1.8-1 .1-2.4-.3-4-1.7-1.5-1.3-2.3-2.8-2.4-3.9-.1-1 .5-2 1.2-2.9z"/></svg>
+    <span class="botao-whatsapp-texto">Fale no WhatsApp</span>
+  </a>
+
+  <script src="../js/tema.js"></script>
+  <script src="../js/notificacoes.js"></script>
+  <script src="../calculadoras/calc.js"></script>
+  <script>
+  (function(){
+    const F={
+      "consultor-fiscal":["Consultor fiscal","Veja NCM, ST, CFOP e impostos de um produto"],
+      "simples-nacional":["Simulador do Simples","Alíquota efetiva e valor do DAS"],
+      "das-mei":["Calculadora do MEI","DAS e quanto falta para o limite"],
+      "cfop":["Consulta de CFOP","O código certo para cada operação"],
+      "markup":["Markup e margem","Quanto sobra de verdade em cada venda"],
+      "preco-de-venda":["Preço de venda","Preço certo com custo, imposto e lucro"],
+      "valor-da-hora":["Valor da hora","Quanto cobrar pelo seu serviço"],
+      "taxas-marketplace":["Taxas de marketplace","Quanto cai na conta na Shopee e no ML"],
+      "frete-gratis":["Frete grátis","Quanto embutir sem perder margem"],
+      "ponto-de-equilibrio":["Ponto de equilíbrio","Quanto vender para não ter prejuízo"],
+      "economia-automacao":["Economia com automação","Horas e dinheiro perdidos à mão"],
+      "presenca-online":["Teste de presença online","A nota do seu negócio na internet"],
+      "checklist-loja":["Checklist da loja","Sua loja está pronta para vender?"],
+      "mensagens-whatsapp":["Mensagens para WhatsApp","Modelos prontos para copiar"],
+      "planilha":["Planilha de gestão grátis","Caixa, contas, DRE e estoque","../planilha-gratis/"]
+    };
+    const DOR={
+      fiscal:{t:"Arrumar a parte fiscal",x:"O primeiro passo é saber se os seus produtos estão com a tributação certa. É aí que mais se paga imposto a mais sem perceber.",f:["consultor-fiscal","cfop","simples-nacional"],s:["Conferência tributária dos produtos","Cadastro tributário (NCM, CEST, CFOP)","Apuração de impostos"]},
+      preco:{t:"Acertar o preço e o lucro",x:"Antes de vender mais, garanta que cada venda dá lucro. Comece calculando a margem real dos seus produtos.",f:["preco-de-venda","markup","ponto-de-equilibrio"],s:["Precificação do catálogo","Planilha personalizada","Contas a pagar e receber"]},
+      financeiro:{t:"Organizar o financeiro",x:"Com o caixa organizado você descobre quanto sobra de verdade e onde o dinheiro está indo.",f:["planilha","ponto-de-equilibrio","economia-automacao"],s:["Contas a pagar e receber","Planilha personalizada","Automação de tarefas"]},
+      vendas:{t:"Vender mais e aparecer",x:"Comece vendo como o seu negócio aparece na internet e o que falta para o cliente comprar com confiança.",f:["presenca-online","checklist-loja","mensagens-whatsapp"],s:["Loja virtual ou site","Artes e vídeos para redes","Perfil no Google e WhatsApp Business"]}
+    };
+    const TIPO={fisica:[],online:["taxas-marketplace","frete-gratis"],servico:["valor-da-hora"],mei:["das-mei"]};
+    const SIS={bling:"Como você já usa o Bling, dá para automatizar boa parte disso direto no sistema.",outro:"Trabalhamos também com outros sistemas: conte qual é o seu.",nenhum:"Se fizer sentido, ajudamos a escolher e implantar um sistema simples, como o Bling.",planilha:"Uma planilha bem feita já resolve muito; quando crescer, ajudamos a migrar para um sistema."};
+    const NT={fisica:"loja física",online:"loja online/marketplace",servico:"prestação de serviço",mei:"MEI"};
+    const NS={bling:"uso o Bling",outro:"uso outro sistema",nenhum:"não uso sistema",planilha:"uso planilha"};
+    const r={},ps=[...document.querySelectorAll(".cp-perg")],res=document.getElementById("cp-res"),prog=document.getElementById("cp-prog");
+    function mostra(i){ps.forEach((p,k)=>p.hidden=k!==i);res.hidden=i<ps.length;prog.style.width=(Math.min(i,3)/3*100)+"%";}
+    ps.forEach((p,i)=>p.querySelectorAll(".cp-op").forEach(b=>b.addEventListener("click",()=>{r[p.dataset.p]=b.dataset.v;i+1<ps.length?mostra(i+1):resultado();})));
+    function resultado(){
+      const d=DOR[r.dor]; let fs=[...d.f,...TIPO[r.tipo]].filter((v,i,a)=>a.indexOf(v)===i).slice(0,4);
+      if(r.tipo==="servico") fs=fs.filter(f=>!["frete-gratis","checklist-loja"].includes(f));
+      document.getElementById("cp-tit").textContent=d.t;
+      document.getElementById("cp-txt").textContent=d.x+" "+SIS[r.sis];
+      document.getElementById("cp-ferr").innerHTML=fs.map(k=>{const f=F[k];return '<a class="cp-card" href="'+(f[2]||"../calculadoras/"+k+"/")+'"><strong>'+f[0]+'</strong><span>'+f[1]+'</span></a>';}).join("");
+      document.getElementById("cp-serv").innerHTML=d.s.map(x=>"<li>"+x+"</li>").join("");
+      const msg="Olá, Grovan! Fiz o \"Comece por aqui\" no site. Tenho "+NT[r.tipo]+", "+NS[r.sis]+" e quero ajuda para "+d.t.toLowerCase()+".";
+      document.getElementById("cp-zap").href="https://wa.me/5511945426510?text="+encodeURIComponent(msg);
+      mostra(ps.length); document.getElementById("cp").scrollIntoView({behavior:"smooth",block:"start"});
+    }
+    document.getElementById("cp-refazer").addEventListener("click",()=>mostra(0));
+    mostra(0);
+  })();
+  </script>
+</body>
+</html>

@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-11-19 09:10",
+ "geradoEm": "2026-11-19 13:14",
  "itens": [
   {
    "nome": "Secret Boom Box Metallic MBOOM Gloss Labial 5ml com Chaveiro Ursinho Colecionável Surpresa",
@@ -62,8 +62,12 @@
    "loja": "Mercado Livre",
    "precoAtual": 32.97,
    "conferencia": {
-    "status": "erro",
-    "texto": "Não consegui abrir o link (HTTPError). Preencha os campos manualmente."
+    "status": "baixou",
+    "preco": 16.67,
+    "precoAntigo": 26.99,
+    "imagem": "https://http2.mlstatic.com/D_NQ_NP_756821-MLA86791313939_062025-F.webp",
+    "aplicado": true,
+    "precoAnterior": 32.97
    },
    "alternativas": []
   },
@@ -80,6 +84,12 @@
   }
  ],
  "avisos": [],
- "precosAtualizados": [],
+ "precosAtualizados": [
+  {
+   "nome": "NIVEA Loção Deo-Hidratante Soft Milk 400ml, Hidratação Profunda 72h, Hialurônico Puro, Corporal, Pele Seca",
+   "de": 32.97,
+   "para": 16.67
+  }
+ ],
  "trocasAutomaticas": []
 }

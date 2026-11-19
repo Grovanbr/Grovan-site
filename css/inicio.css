@@ -52,3 +52,23 @@
 .sv-calc-opcoes input{margin-top:4px;accent-color:#4E7A1C;width:18px;height:18px}
 .sv-calc-total{font-size:18px;margin-bottom:14px}
 .sv-calc-total strong{font-family:var(--fonte-titulo);color:var(--verde-texto)}
+
+/* ===== Mais vida ===== */
+.i-hero-grade{display:grid;grid-template-columns:1.25fr .9fr;gap:48px;align-items:center}
+@media (max-width:860px){.i-hero-grade{grid-template-columns:1fr}.i-mock{display:none}}
+.i-mock{display:grid;gap:12px}
+.i-noti{display:flex;gap:12px;align-items:center;background:rgba(246,245,240,.08);border:1px solid rgba(184,227,90,.25);border-radius:16px;padding:14px 16px;backdrop-filter:blur(4px);opacity:0;transform:translateY(12px);animation:i-entra .6s ease forwards var(--d),i-flutua 6s ease-in-out infinite calc(var(--d) + .6s)}
+.i-noti:nth-child(2n){margin-left:28px}
+.i-noti b{display:block;color:#F6F5F0;font-size:15px;font-weight:600}
+.i-noti small{color:#CFE0D6;font-size:12px}
+.i-ok{flex:none;width:36px;height:36px;border-radius:10px;background:#B8E35A;color:#0F3D2E;display:grid;place-items:center;font-weight:800;font-size:13px}
+.i-pix{background:#F6F5F0}.i-xml{background:#CFE0D6;font-size:10px}
+@keyframes i-entra{to{opacity:1;transform:none}}
+@keyframes i-flutua{50%{transform:translateY(-4px)}}
+.i-hero h1 em{background:linear-gradient(transparent 62%,rgba(184,227,90,.25) 62%);padding-inline:2px}
+.i-cartao:hover .i-icone{transform:rotate(-6deg) scale(1.06)}
+.i-icone{transition:transform .25s}
+.i-ferr a{transition:transform .2s,background .2s}.i-ferr a:hover{transform:translateY(-3px);background:#1B5A43}
+.rev{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.rev-on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.i-noti,.rev{animation:none!important;opacity:1!important;transform:none!important;transition:none}}

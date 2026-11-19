@@ -25,14 +25,15 @@
 
 const produtos = [
   {
-    nome: "Secret Boom Box Gloss Labial Com Chaveiro De Ursinho Sortido",
-    loja: "Mercado Livre",
+    nome: "Secret Boom Box Metallic MBOOM Gloss Labial 5ml com Chaveiro Ursinho Colecionável Surpresa",
+    loja: "Shopee",
     categoria: "Beleza",
-    link: "https://meli.la/251SmGp",
-    imagem: "https://http2.mlstatic.com/D_NQ_NP_606455-MLB117287382722_102026-F.webp",
-    preco: 141.99,
-    precoAntigo: 197.49,
-    destaque: true
+    link: "https://s.shopee.com.br/30pfarsSe3",
+    imagem: "https://cf.shopee.com.br/file/br-11134207-820m4-mvhulg898dmr6c",
+    preco: 129.90,
+    precoAntigo: 0.00,
+    destaque: true,
+    shopee: "1281459644.58273036416"
   },
   {
     nome: "Escovas Para Maquiagem Multicolor Kit 8 Peças Pincel Macio Sortida",
@@ -59,12 +60,12 @@ const produtos = [
     nome: "Árvore de Natal 1,50cm 400 Galhos Pinheiro Verde Resistente Desmontável Pé de Ferro e Plástico",
     loja: "Shopee",
     categoria: "Artigos de Festa",
-    link: "https://s.shopee.com.br/8AXZ3P2GAs",
-    imagem: "https://cf.shopee.com.br/file/br-11134207-820lh-msn53tgvj952b7",
-    preco: 84.90,
+    link: "https://s.shopee.com.br/3VlwBnHRA7",
+    imagem: "https://cf.shopee.com.br/file/sg-11134201-8257t-mvfeehgl1dl4e1",
+    preco: 76.33,
     precoAntigo: 0.00,
     destaque: true,
-    shopee: "1475886431.57717240116"
+    shopee: "280716196.58272875543"
   },
   {
     nome: "Principia Kit Limpeza E Hidratação Ch-01 + Ol-01 + Gl-02 Todo Tipo De Pele Dia/noite",
@@ -82,19 +83,19 @@ const produtos = [
     categoria: "Beleza",
     link: "https://meli.la/2Mg6D1e",
     imagem: "https://http2.mlstatic.com/D_NQ_NP_756821-MLA86791313939_062025-F.webp",
-    preco: 17.18,
-    precoAntigo: 26.99,
+    preco: 32.97,
+    precoAntigo: 161.51,
     destaque: false
   },
   {
-    nome: "Kit 100 Bolas de Natal com Estrela ou Kit 50 Enfeite Árvore Vermelha Dourada Mista Fosca Glitter",
+    nome: "Kit 50 ou 100 Bolas + Brinde Estrela Enfeite Árvore Natal Decoração",
     loja: "Shopee",
     categoria: "Artigos de Festa",
-    link: "https://s.shopee.com.br/9V2xcO7s3w",
-    imagem: "https://cf.shopee.com.br/file/sg-11134201-82584-mu0wlh0ytywz41",
-    preco: 79.90,
-    precoAntigo: 150.75,
+    link: "https://s.shopee.com.br/9Kjj8WTwnM",
+    imagem: "https://cf.shopee.com.br/file/br-11134207-820ma-mscv9ben53ie70",
+    preco: 69.90,
+    precoAntigo: 0.00,
     destaque: false,
-    shopee: "1340072116.22394461600"
+    shopee: "1387542695.23394417877"
   },
 ];

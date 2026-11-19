@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de frete grátis | Grovan</title>
+  <meta name="description" content="Descubra quanto embutir no preço para oferecer frete grátis sem perder margem.">
+  <link rel="canonical" href="https://grovan.com.br/calculadoras/frete-gratis/">
+  <meta property="og:title" content="Calculadora de frete grátis | Grovan">
+  <meta property="og:description" content="Descubra quanto embutir no preço para oferecer frete grátis sem perder margem.">
+  <meta property="og:url" content="https://grovan.com.br/calculadoras/frete-gratis/">
+  <meta property="og:type" content="website">
+  <script>
+    try {
+      var tema = localStorage.getItem("grovan-tema");
+      if (!tema) tema = matchMedia("(prefers-color-scheme: dark)").matches ? "escuro" : "claro";
+      document.documentElement.dataset.tema = tema;
+    } catch (e) {}
+  </script>
+  <link rel="icon" href="../../img/grovan-perfil-icone.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/inicio.css">
+  <link rel="stylesheet" href="../../calculadoras/calc.css">
+</head>
+<body>
+
+  <!-- ===== Cabeçalho (igual em todas as páginas) ===== -->
+  <header class="cabecalho">
+    <div class="container cabecalho-conteudo">
+      <a href="../../">
+        <img src="../../img/grovan-logo.png" alt="Grovan" class="logo logo-tema-claro">
+        <img src="../../img/grovan-logo-claro.png" alt="Grovan" class="logo logo-tema-escuro">
+      </a>
+      <div class="cabecalho-direita">
+        <nav class="menu" aria-label="Menu principal">
+          <a href="../../">Início</a>
+          <a href="../../servicos/">Serviços</a>
+          <a href="../../calculadoras/" class="ativo" aria-current="page">Ferramentas grátis</a>
+          <a href="../../sobre/">Sobre</a>
+          <a href="../../contato/">Contato</a>
+        </nav>
+        <button type="button" class="botao-tema" aria-label="Mudar para o tema escuro" aria-pressed="false">
+          <svg class="icone-lua" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+          <svg class="icone-sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="pagina-topo">
+      <div class="container">
+        <span class="etiqueta">Calculadora grátis</span>
+        <h1>Quanto embutir no preço para dar frete grátis?</h1>
+        <p class="inicio-texto">Informe o preço atual, o frete médio e quantos produtos vão por pedido. Veja o novo preço que paga o frete.</p>
+      </div>
+    </section>
+    <section class="secao-compacta">
+      <div class="container">
+        <div class="calc">
+          <form class="calc-caixa" id="f" novalidate>
+            <div class="calc-campos">
+              <div class="calc-campo"><label for="preco">Preço atual do produto</label><div class="calc-entrada"><span class="antes">R$</span><input id="preco" name="preco" type="text" inputmode="decimal" value="100" autocomplete="off"></div><small>Preço sem frete.</small></div><div class="calc-campo"><label for="frete">Frete médio por pedido</label><div class="calc-entrada"><span class="antes">R$</span><input id="frete" name="frete" type="text" inputmode="decimal" value="25" autocomplete="off"></div><small>Média do que você paga de envio.</small></div><div class="calc-campo"><label for="itens">Produtos por pedido</label><div class="calc-entrada"><input id="itens" name="itens" type="text" inputmode="decimal" value="1" autocomplete="off"><span class="depois">un</span></div><small>Média de itens em cada pedido.</small></div><div class="calc-campo"><label for="taxa">Impostos e taxas sobre a venda</label><div class="calc-entrada"><input id="taxa" name="taxa" type="text" inputmode="decimal" value="15" autocomplete="off"><span class="depois">%</span></div><small>Porcentagem cobrada sobre o preço.</small></div>
+            </div>
+          </form>
+          <aside class="calc-caixa calc-res" aria-live="polite">
+            <p class="calc-destaque-rotulo">Novo preço com frete grátis</p>
+            <p class="calc-destaque" id="r-destaque">—</p>
+            <ul class="calc-linhas" id="r-linhas"></ul>
+            <p class="calc-aviso" id="r-aviso" hidden></p>
+            <div class="calc-cta">
+              <a id="r-whats" href="https://wa.me/5511945426510" target="_blank" rel="noopener">Quero frete e checkout integrados</a>
+              <a class="sec" href="../../calculadoras/taxas-marketplace/">Calcular taxas de marketplace</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao-compacta calc-mais">
+      <div class="container">
+        <p style="text-align:center"><a class="sv-cta" href="../../calculadoras/">Ver todas as ferramentas grátis</a></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Rodapé (igual em todas as páginas) ===== -->
+  <footer class="rodape-fino">
+    <div class="container">
+      <img src="../../img/grovan-logo-claro.png" alt="Grovan">
+      <nav aria-label="Links do rodapé">
+        <a href="../../servicos/">Serviços</a>
+        <a href="../../calculadoras/">Ferramentas grátis</a>
+        <a href="../../indique/">Indique e ganhe</a>
+        <a href="../../contadores/">Para contadores</a>
+        <a href="../../contato/">Contato</a>
+      </nav>
+      <span>© 2026 Grovan · <a href="../../privacidade/">Privacidade</a></span>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/5511945426510?text=Ol%C3%A1%2C%20vim%20pelas%20calculadoras%20da%20Grovan!" target="_blank" rel="noopener" class="botao-whatsapp" aria-label="Fale com a Grovan no WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z"/><path class="whats-fone" d="M9.2 7.8c.3 0 .5 0 .7.5l.7 1.6c.1.3 0 .5-.1.7l-.5.6c-.1.2-.2.3 0 .6.5.9 1.3 1.7 2.2 2.2.3.2.5.1.6 0l.6-.7c.2-.2.4-.2.6-.1l1.6.8c.3.1.4.3.4.5 0 .9-.7 1.7-1.6 1.8-1 .1-2.4-.3-4-1.7-1.5-1.3-2.3-2.8-2.4-3.9-.1-1 .5-2 1.2-2.9z"/></svg>
+    <span class="botao-whatsapp-texto">Fale no WhatsApp</span>
+  </a>
+
+  <script src="../../js/tema.js"></script>
+  <script src="../../calculadoras/calc.js"></script>
+  <script>
+  (function(){const C=Calc;function conta(){const p=C.val("preco"),f=C.val("frete"),n=Math.max(1,C.val("itens")),t=C.val("taxa");if(t>=100)return;
+  const add=f/n/(1-t/100),np=p+add;
+  C.set("r-destaque",C.brl(np));
+  C.linhas("r-linhas",[["Acréscimo por produto",C.brl(add),true],["Aumento no preço",C.pct(p>0?add/p*100:0)],["Frete por produto",C.brl(f/n)]]);
+  C.aviso("r-aviso","Dica: frete grátis acima de um valor mínimo aumenta o ticket médio e dilui o custo do envio.","");
+  C.whats("r-whats","Olá! Usei a calculadora de frete grátis da Grovan e quero ajuda com frete e checkout na minha loja.");}C.ligar("f",conta);})();
+  </script>
+</body>
+</html>

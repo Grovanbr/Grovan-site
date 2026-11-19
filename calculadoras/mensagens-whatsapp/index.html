@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerador de mensagens para WhatsApp | Grovan</title>
+  <meta name="description" content="Mensagens prontas de boas-vindas, cobrança, pós-venda e avaliação para copiar e enviar aos seus clientes.">
+  <link rel="canonical" href="https://grovan.com.br/calculadoras/mensagens-whatsapp/">
+  <meta property="og:title" content="Gerador de mensagens para WhatsApp | Grovan">
+  <meta property="og:description" content="Mensagens prontas de boas-vindas, cobrança, pós-venda e avaliação para copiar e enviar aos seus clientes.">
+  <meta property="og:url" content="https://grovan.com.br/calculadoras/mensagens-whatsapp/">
+  <meta property="og:type" content="website">
+  <script>
+    try {
+      var tema = localStorage.getItem("grovan-tema");
+      if (!tema) tema = matchMedia("(prefers-color-scheme: dark)").matches ? "escuro" : "claro";
+      document.documentElement.dataset.tema = tema;
+    } catch (e) {}
+  </script>
+  <link rel="icon" href="../../img/grovan-perfil-icone.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/inicio.css">
+  <link rel="stylesheet" href="../../calculadoras/calc.css">
+</head>
+<body>
+
+  <!-- ===== Cabeçalho (igual em todas as páginas) ===== -->
+  <header class="cabecalho">
+    <div class="container cabecalho-conteudo">
+      <a href="../../">
+        <img src="../../img/grovan-logo.png" alt="Grovan" class="logo logo-tema-claro">
+        <img src="../../img/grovan-logo-claro.png" alt="Grovan" class="logo logo-tema-escuro">
+      </a>
+      <div class="cabecalho-direita">
+        <nav class="menu" aria-label="Menu principal">
+          <a href="../../">Início</a>
+          <a href="../../servicos/">Serviços</a>
+          <a href="../../calculadoras/" class="ativo" aria-current="page">Ferramentas grátis</a>
+          <a href="../../sobre/">Sobre</a>
+          <a href="../../contato/">Contato</a>
+        </nav>
+        <button type="button" class="botao-tema" aria-label="Mudar para o tema escuro" aria-pressed="false">
+          <svg class="icone-lua" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+          <svg class="icone-sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="pagina-topo">
+      <div class="container">
+        <span class="etiqueta">Ferramenta grátis</span>
+        <h1>Mensagens prontas para o WhatsApp do seu negócio</h1>
+        <p class="inicio-texto">Escolha o tipo de mensagem, coloque o nome da loja e do cliente e copie. Pronto para colar no WhatsApp.</p>
+      </div>
+    </section>
+    <section class="secao-compacta">
+      <div class="container">
+        <div class="calc">
+          <form class="calc-caixa" id="f" onsubmit="return false">
+            <div class="calc-campos">
+              <div class="calc-campo inteiro"><label for="tipo">Tipo de mensagem</label><div class="calc-entrada"><select id="tipo" style="width:100%;border:0;background:transparent;font:inherit;padding:10px"><option>Boas-vindas</option><option>Cobrança gentil</option><option>Pós-venda</option><option>Pedido de avaliação</option><option>Carrinho abandonado</option><option>Promoção</option></select></div></div>
+              <div class="calc-campo"><label for="loja">Nome da loja</label><div class="calc-entrada"><input id="loja" type="text" value="Minha Loja"></div></div>
+              <div class="calc-campo"><label for="cli">Nome do cliente</label><div class="calc-entrada"><input id="cli" type="text" value="Maria"></div></div>
+            </div>
+          </form>
+          <aside class="calc-caixa calc-res">
+            <p class="calc-destaque-rotulo">Sua mensagem</p>
+            <p id="msg" style="white-space:pre-wrap;line-height:1.6;user-select:all"></p>
+            <div class="calc-cta">
+              <a href="#" id="copiar">Copiar mensagem</a>
+              <a class="sec" id="r-whats" href="https://wa.me/5511945426510?text=Ol%C3%A1%21%20Usei%20o%20gerador%20de%20mensagens%20da%20Grovan%20e%20quero%20um%20atendimento%20autom%C3%A1tico%20no%20WhatsApp." target="_blank" rel="noopener">Quero respostas automáticas com IA</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao-compacta calc-mais">
+      <div class="container">
+        <p style="text-align:center"><a class="sv-cta" href="../../calculadoras/">Ver todas as ferramentas grátis</a></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Rodapé (igual em todas as páginas) ===== -->
+  <footer class="rodape-fino">
+    <div class="container">
+      <img src="../../img/grovan-logo-claro.png" alt="Grovan">
+      <nav aria-label="Links do rodapé">
+        <a href="../../servicos/">Serviços</a>
+        <a href="../../calculadoras/">Ferramentas grátis</a>
+        <a href="../../indique/">Indique e ganhe</a>
+        <a href="../../contadores/">Para contadores</a>
+        <a href="../../contato/">Contato</a>
+      </nav>
+      <span>© 2026 Grovan · <a href="../../privacidade/">Privacidade</a></span>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/5511945426510?text=Ol%C3%A1%2C%20vim%20pelas%20calculadoras%20da%20Grovan!" target="_blank" rel="noopener" class="botao-whatsapp" aria-label="Fale com a Grovan no WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z"/><path class="whats-fone" d="M9.2 7.8c.3 0 .5 0 .7.5l.7 1.6c.1.3 0 .5-.1.7l-.5.6c-.1.2-.2.3 0 .6.5.9 1.3 1.7 2.2 2.2.3.2.5.1.6 0l.6-.7c.2-.2.4-.2.6-.1l1.6.8c.3.1.4.3.4.5 0 .9-.7 1.7-1.6 1.8-1 .1-2.4-.3-4-1.7-1.5-1.3-2.3-2.8-2.4-3.9-.1-1 .5-2 1.2-2.9z"/></svg>
+    <span class="botao-whatsapp-texto">Fale no WhatsApp</span>
+  </a>
+
+  <script src="../../js/tema.js"></script>
+  <script src="../../calculadoras/calc.js"></script>
+  <script>
+  (function(){const M={"Boas-vindas": "Olá, {c}! Seja bem-vindo(a) à {l}. Ficamos felizes em ter você por aqui. Qualquer dúvida, é só chamar neste número.", "Cobrança gentil": "Olá, {c}, tudo bem? Passando para lembrar que o pagamento referente ao seu pedido na {l} vence em breve. Se já pagou, desconsidere. Qualquer coisa, estamos à disposição!", "Pós-venda": "Oi, {c}! Aqui é da {l}. Seu pedido chegou direitinho? Ficou tudo como esperava? Sua opinião nos ajuda muito a melhorar.", "Pedido de avaliação": "Olá, {c}! Obrigado por comprar na {l}. Se puder, deixe uma avaliação sobre a sua experiência. Leva menos de 1 minuto e ajuda muito o nosso negócio.", "Carrinho abandonado": "Oi, {c}! Vimos que você deixou alguns itens no carrinho da {l}. Ficou com alguma dúvida? Estamos aqui para ajudar a finalizar o seu pedido.", "Promoção": "Olá, {c}! Novidade na {l}: condição especial por tempo limitado. Quer que eu te mande os detalhes?"};
+  const g=()=>{const t=M[document.getElementById("tipo").value];document.getElementById("msg").textContent=t.replaceAll("{c}",document.getElementById("cli").value||"cliente").replaceAll("{l}",document.getElementById("loja").value||"nossa loja");};
+  document.getElementById("f").addEventListener("input",g);document.getElementById("tipo").addEventListener("change",g);g();
+  document.getElementById("copiar").addEventListener("click",e=>{e.preventDefault();const tx=document.getElementById("msg").textContent;(navigator.clipboard?navigator.clipboard.writeText(tx):Promise.reject()).then(()=>{e.target.textContent="Copiado!";},()=>{const r=document.createRange();r.selectNodeContents(document.getElementById("msg"));const s=getSelection();s.removeAllRanges();s.addRange(r);});});})();
+  </script>
+</body>
+</html>

@@ -4,10 +4,15 @@
   <meta name="google-site-verification" content="DgTsDSTo7Ofi8g_-qwQjK4Eu-qVfwkpxYxbwYjsmGzQ" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Grovan | Achados com desconto em lojas de confiança</title>
-  <meta name="description" content="Achados da Grovan: ofertas selecionadas de casa, cozinha e tecnologia em lojas de confiança.">
-
-  <!-- Aplica o tema salvo antes de desenhar a página (evita piscar) -->
+  <title>Grovan | Sistemas, automação e organização para pequenos negócios</title>
+  <meta name="description" content="Integração com o Bling, automação de notas e impostos, sites e lojas virtuais, fiscal e design para pequenos negócios. 100% remoto, em todo o Brasil.">
+  <link rel="canonical" href="https://grovan.com.br/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Grovan">
+  <meta property="og:title" content="Grovan | Sistemas, automação e organização para pequenos negócios">
+  <meta property="og:description" content="Bling, notas, impostos, sites e design. 100% remoto, em todo o Brasil.">
+  <meta property="og:url" content="https://grovan.com.br/">
+  <meta property="og:image" content="https://grovan.com.br/img/grovan-perfil-icone.png">
   <script>
     try {
       var tema = localStorage.getItem("grovan-tema");
@@ -20,10 +25,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/inicio.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Grovan Soluções","url":"https://grovan.com.br/","image":"https://grovan.com.br/img/grovan-perfil-icone.png","telephone":"+55 11 94542-6510","areaServed":"BR","address":{"@type":"PostalAddress","addressLocality":"São Paulo","addressRegion":"SP","addressCountry":"BR"},"description":"Sistemas, automação, fiscal, sites e design para pequenos negócios. 100% remoto."}</script>
 </head>
 <body>
 
-  <!-- ===== Cabeçalho (igual em todas as páginas) ===== -->
   <header class="cabecalho">
     <div class="container cabecalho-conteudo">
       <a href="./">
@@ -32,9 +38,9 @@
       </a>
       <div class="cabecalho-direita">
         <nav class="menu" aria-label="Menu principal">
-          <a href="./" class="ativo" aria-current="page">Achados</a>
+          <a href="./" class="ativo" aria-current="page">Início</a>
           <a href="servicos/">Serviços</a>
-          <a href="calculadoras/">Calculadoras</a>
+          <a href="calculadoras/">Ferramentas grátis</a>
           <a href="sobre/">Sobre</a>
           <a href="contato/">Contato</a>
         </nav>
@@ -44,140 +50,105 @@
         </button>
       </div>
     </div>
-
-    <!-- Barra de busca e categorias -->
-    <div class="barra-achados">
-      <div class="container">
-        <form id="form-busca" class="busca" role="search">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
-          <label for="busca" class="visualmente-oculto">Buscar produtos</label>
-          <input id="busca" type="search" placeholder="Busque por air fryer, fone, organizador...">
-        </form>
-        <div id="pilulas" class="pilulas" aria-label="Categorias"></div>
-      </div>
-    </div>
   </header>
 
   <main>
-
-    <!-- ===== Banner rotativo (mostra os produtos marcados como destaque) ===== -->
-    <section class="banner-area" aria-label="Ofertas em destaque">
+    <section class="i-hero">
       <div class="container">
-        <div id="banner" class="banner" aria-roledescription="carrossel" hidden>
-          <div class="banner-janela">
-            <div id="banner-trilho" class="banner-trilho" aria-live="off"></div>
-          </div>
-          <button type="button" class="banner-seta banner-anterior" aria-label="Oferta anterior">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
-          </button>
-          <button type="button" class="banner-seta banner-proximo" aria-label="Próxima oferta">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
-          </button>
-          <div class="banner-controles">
-            <div id="banner-pontos" class="banner-pontos"></div>
-            <button type="button" id="banner-pausa" class="banner-pausa" aria-label="Pausar o banner" aria-pressed="false">
-              <svg class="icone-pausa" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6v12M15 6v12"/></svg>
-              <svg class="icone-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5l11 7-11 7z"/></svg>
-            </button>
-          </div>
+        <span class="i-etq">Grovan Soluções · 100% remoto</span>
+        <h1>Sistemas, automação e organização para <em>pequenos negócios</em></h1>
+        <p>Integramos o Bling à sua loja, automatizamos notas e impostos, criamos sites e cuidamos da rotina que toma o seu tempo, para você focar em vender.</p>
+        <div class="i-botoes">
+          <a href="contato/" class="i-btn i-btn-lima">Pedir orçamento grátis →</a>
+          <a href="servicos/" class="i-btn i-btn-contorno">Ver serviços</a>
+        </div>
+        <div class="i-selos">
+          <span>Mais de 7 anos em lojas reais</span>
+          <span>Atendimento em todo o Brasil</span>
+          <span>Diagnóstico grátis de 15 minutos</span>
         </div>
       </div>
     </section>
 
-    <!-- ===== Categorias ===== -->
-    <section id="categorias" class="secao-compacta">
+    <section class="i-secao">
       <div class="container">
-        <h2 class="titulo-bloco">Navegue por categoria</h2>
-        <div id="blocos-categoria" class="blocos-categoria"></div>
-      </div>
-    </section>
-
-    <!-- ===== Todos os achados ===== -->
-    <section id="todos" class="secao-compacta">
-      <div class="container">
-        <h1 class="titulo-bloco">Todos os achados</h1>
-
-        <div class="catalogo">
-          <!-- Filtros -->
-          <aside class="filtros" aria-label="Filtros">
-            <fieldset id="filtro-categorias">
-              <legend>Categoria</legend>
-            </fieldset>
-            <fieldset id="filtro-lojas">
-              <legend>Loja</legend>
-            </fieldset>
-            <button type="button" id="limpar-filtros" class="limpar">Limpar filtros</button>
-          </aside>
-
-          <!-- Lista -->
-          <div class="catalogo-lista">
-            <div class="catalogo-barra">
-              <p id="contador" class="contador"></p>
-              <div class="catalogo-acoes">
-                <button type="button" id="botao-favoritos" class="botao-favoritos" aria-pressed="false">♥ Meus favoritos</button>
-                <label for="ordem" class="visualmente-oculto">Ordenar</label>
-                <select id="ordem">
-                  <option value="relevancia">Relevância</option>
-                  <option value="desconto">Maior desconto</option>
-                  <option value="menor-preco">Menor preço</option>
-                  <option value="maior-preco">Maior preço</option>
-                </select>
-              </div>
-            </div>
-            <div id="grade-todos" class="grade-ofertas"></div>
-            <p id="sem-resultado" class="sem-resultado" hidden>Nenhum produto encontrado. Tente outra busca ou limpe os filtros.</p>
-          </div>
+        <div class="i-titulo">
+          <span class="i-etq">Por onde começar</span>
+          <h2>Escolha o que você procura</h2>
+          <p>Cada área tem a sua página com todos os detalhes.</p>
         </div>
-
-        <p class="aviso">
-          Os links desta página são de afiliado: se você comprar por eles, a Grovan recebe uma pequena comissão,
-          sem nenhum custo extra para você. Preços e disponibilidade podem mudar a qualquer momento na loja.
-        </p>
+        <div class="i-grade">
+          <a href="servicos/" class="i-cartao">
+            <div class="i-icone"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div>
+            <h3>Serviços</h3>
+            <p>Sistemas e integrações com o Bling, loja virtual e sites, fiscal e financeiro, design e vídeo. Com preços e como funciona.</p>
+            <span class="i-mais">Ver serviços →</span>
+          </a>
+          <a href="calculadoras/" class="i-cartao">
+            <div class="i-icone"><svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 7h6M9 11h2M13 11h2M9 15h2M13 15h2"/></svg></div>
+            <h3>Ferramentas grátis</h3>
+            <p>Calculadoras, simuladores, testes, planilha de gestão e guias de nota fiscal para usar agora, sem cadastro.</p>
+            <span class="i-mais">Usar ferramentas →</span>
+          </a>
+          <a href="sobre/" class="i-cartao">
+            <div class="i-icone"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></div>
+            <h3>Sobre a Grovan</h3>
+            <p>Quem somos, como trabalhamos e os programas Indique e ganhe e Para contadores.</p>
+            <span class="i-mais">Conhecer →</span>
+          </a>
+        </div>
       </div>
     </section>
 
-
-    <!-- ===== Ferramentas grátis (calculadoras e guias) ===== -->
-    <section class="secao-compacta" aria-label="Ferramentas grátis">
+    <section class="i-secao i-alt">
       <div class="container">
-        <div style="border:1px solid var(--borda);background:var(--areia-escura);border-radius:24px;padding:26px;display:flex;flex-direction:column;gap:14px">
-          <div><span class="etiqueta">Grátis</span><h2 style="font-family:var(--fonte-titulo);margin:4px 0 6px;color:var(--verde-texto);font-size:clamp(20px,2.4vw,26px)">Tem um pequeno negócio?</h2><p style="margin:0;color:var(--cinza);line-height:1.6;max-width:640px">Use as calculadoras grátis da Grovan para acertar preço, taxas dos marketplaces e o MEI.</p></div>
-          <div style="display:flex;flex-wrap:wrap;gap:8px"><a href="calculadoras/preco-de-venda/" style="padding:9px 14px;border-radius:999px;border:1px solid var(--borda);background:var(--superficie);color:var(--verde-texto);font-weight:600;font-size:14px;text-decoration:none">Preço de venda e margem</a><a href="calculadoras/taxas-marketplace/" style="padding:9px 14px;border-radius:999px;border:1px solid var(--borda);background:var(--superficie);color:var(--verde-texto);font-weight:600;font-size:14px;text-decoration:none">Taxas Shopee e Mercado Livre</a><a href="calculadoras/das-mei/" style="padding:9px 14px;border-radius:999px;border:1px solid var(--borda);background:var(--superficie);color:var(--verde-texto);font-weight:600;font-size:14px;text-decoration:none">DAS e limite do MEI</a><a href="calculadoras/valor-da-hora/" style="padding:9px 14px;border-radius:999px;border:1px solid var(--borda);background:var(--superficie);color:var(--verde-texto);font-weight:600;font-size:14px;text-decoration:none">Valor da hora</a><a href="planilha-gratis/" style="padding:9px 14px;border-radius:999px;border:1px solid var(--borda);background:var(--superficie);color:var(--verde-texto);font-weight:600;font-size:14px;text-decoration:none">Planilha de caixa grátis</a><a href="guias/" style="padding:9px 14px;border-radius:999px;border:1px solid var(--borda);background:var(--superficie);color:var(--verde-texto);font-weight:600;font-size:14px;text-decoration:none">Erros de nota fiscal</a></div>
+        <div class="i-titulo">
+          <span class="i-etq">Ferramentas grátis</span>
+          <h2>Use agora, sem cadastro</h2>
+          <p>Descubra em 1 minuto onde o seu negócio pode lucrar mais.</p>
+        </div>
+        <div class="i-ferr">
+          <a href="calculadoras/preco-de-venda/"><strong>Preço de venda</strong><span>Margem, custos e impostos</span><em>Calcular →</em></a>
+          <a href="calculadoras/taxas-marketplace/"><strong>Taxas de marketplace</strong><span>Shopee e Mercado Livre</span><em>Calcular →</em></a>
+          <a href="calculadoras/ponto-de-equilibrio/"><strong>Ponto de equilíbrio</strong><span>Quanto vender para não ter prejuízo</span><em>Calcular →</em></a>
+          <a href="planilha-gratis/"><strong>Planilha de gestão</strong><span>Caixa, DRE e estoque</span><em>Baixar grátis →</em></a>
+          <a href="calculadoras/economia-automacao/"><strong>Quanto você perde à mão</strong><span>Simulador de economia</span><em>Simular →</em></a><a href="calculadoras/simples-nacional/"><strong>Simples Nacional</strong><span>Alíquota e valor do DAS</span><em>Simular →</em></a><a href="calculadoras/presenca-online/"><strong>Teste de presença online</strong><span>Nota de 0 a 10</span><em>Fazer o teste →</em></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="i-secao">
+      <div class="container">
+        <div class="i-cta">
+          <div>
+            <h2>Vamos resolver o que está travando o seu negócio?</h2>
+            <p>Fale com a nossa equipe. Resposta rápida, orçamento sem compromisso.</p>
+          </div>
+          <a href="https://wa.me/5511945426510?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Grovan!" target="_blank" rel="noopener" class="i-btn i-btn-lima">Falar no WhatsApp →</a>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- ===== Rodapé (igual em todas as páginas) ===== -->
-  <footer class="rodape">
-    <div class="container rodape-conteudo">
-      <img src="img/grovan-logo.png" alt="Grovan" class="logo">
-      <p>Achou, resolveu, cresceu.</p>
-      <nav class="rodape-links" aria-label="Links do rodapé">
-        <a href="./">Achados</a>
+  <footer class="rodape-fino">
+    <div class="container">
+      <img src="img/grovan-logo-claro.png" alt="Grovan">
+      <nav aria-label="Links do rodapé">
         <a href="servicos/">Serviços</a>
-        <a href="calculadoras/">Calculadoras</a>
-        <a href="sobre/">Sobre</a>
-        <a href="planilhas/">Planilhas</a>
-        <a href="planilha-gratis/">Planilha grátis</a>
+        <a href="calculadoras/">Ferramentas grátis</a>
         <a href="indique/">Indique e ganhe</a>
         <a href="contadores/">Para contadores</a>
         <a href="contato/">Contato</a>
       </nav>
-      <p class="rodape-copy">© 2026 Grovan. Todos os direitos reservados.</p>
+      <span>© 2026 Grovan · <a href="privacidade/">Privacidade</a></span>
     </div>
   </footer>
 
-  <!-- ===== Botão do WhatsApp (fica fixo no canto da tela) ===== -->
   <a href="https://wa.me/5511945426510?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Grovan!" target="_blank" rel="noopener" class="botao-whatsapp" aria-label="Fale com a Grovan no WhatsApp">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z"/><path class="whats-fone" d="M9.2 7.8c.3 0 .5 0 .7.5l.7 1.6c.1.3 0 .5-.1.7l-.5.6c-.1.2-.2.3 0 .6.5.9 1.3 1.7 2.2 2.2.3.2.5.1.6 0l.6-.7c.2-.2.4-.2.6-.1l1.6.8c.3.1.4.3.4.5 0 .9-.7 1.7-1.6 1.8-1 .1-2.4-.3-4-1.7-1.5-1.3-2.3-2.8-2.4-3.9-.1-1 .5-2 1.2-2.9z"/></svg>
     <span class="botao-whatsapp-texto">Fale no WhatsApp</span>
   </a>
 
-  <script src="js/produtos.js"></script>
-  <script src="js/banners.js"></script>
-  <script src="js/achados.js"></script>
   <script src="js/tema.js"></script>
-
 </body>
 </html>

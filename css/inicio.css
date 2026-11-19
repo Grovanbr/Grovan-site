@@ -1,0 +1,54 @@
+/* ===== Página inicial nova (classes i-) ===== */
+.i-btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:999px;font-weight:600;transition:transform .15s}
+.i-btn:hover{transform:translateY(-1px)}
+.i-btn-lima{background:#B8E35A;color:#0F3D2E}
+.i-btn-contorno{border:1.5px solid #F6F5F0;color:#F6F5F0}
+.i-etq{display:inline-block;font-size:13px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--broto-escuro);margin-bottom:12px}
+.i-hero{background:#0F3D2E;color:#F6F5F0;padding-block:88px 96px;position:relative;overflow:hidden}
+.i-hero::after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(184,227,90,.28),transparent 70%)}
+.i-hero .container{position:relative;z-index:1}
+.i-hero .i-etq{color:#B8E35A}
+.i-hero h1{color:#F6F5F0;font-size:clamp(34px,5.6vw,60px);max-width:780px;margin-bottom:20px;text-wrap:balance}
+.i-hero h1 em{font-style:normal;color:#B8E35A}
+.i-hero p{color:#CFE0D6;font-size:clamp(16px,2vw,19px);max-width:620px;margin-bottom:32px}
+.i-botoes{display:flex;flex-wrap:wrap;gap:12px}
+.i-selos{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:40px;font-size:14px;color:#CFE0D6}
+.i-selos span::before{content:"✓ ";color:#B8E35A;font-weight:700}
+.i-secao{padding-block:80px}
+.i-alt{background:var(--areia-escura)}
+.i-titulo{max-width:640px;margin-bottom:40px}
+.i-titulo h2{font-size:clamp(26px,3.6vw,38px);margin-bottom:10px}
+.i-titulo p{color:var(--cinza)}
+.i-grade{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.i-cartao{background:var(--superficie);border:1px solid var(--borda);border-radius:18px;padding:26px;display:flex;flex-direction:column;gap:10px;min-width:0;transition:border-color .2s,transform .2s}
+.i-cartao:hover{border-color:var(--broto-escuro);transform:translateY(-2px)}
+.i-icone{width:46px;height:46px;border-radius:12px;background:#0F3D2E;display:grid;place-items:center}
+.i-icone svg{width:24px;height:24px;stroke:#B8E35A;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.i-cartao h3{font-size:19px}
+.i-cartao p{color:var(--cinza);font-size:15px}
+.i-mais{margin-top:auto;font-weight:600;color:var(--verde-texto);border-bottom:2px solid #B8E35A;align-self:flex-start}
+.i-ferr{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.i-ferr a{display:flex;flex-direction:column;gap:4px;padding:20px;border-radius:14px;background:#0F3D2E;color:#F6F5F0}
+.i-ferr strong{font-family:var(--fonte-titulo);font-size:16px}
+.i-ferr span{font-size:14px;color:#CFE0D6}
+.i-ferr em{font-style:normal;margin-top:6px;font-size:13px;font-weight:600;color:#B8E35A}
+.i-cta{background:#0F3D2E;color:#F6F5F0;border-radius:24px;padding:48px clamp(24px,5vw,56px);display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between}
+.i-cta h2{color:#F6F5F0;font-size:clamp(24px,3.4vw,34px);max-width:560px}
+.i-cta p{color:#CFE0D6;margin-top:8px}
+:root[data-tema="escuro"] .i-cartao .i-icone,:root[data-tema="escuro"] .i-ferr a,:root[data-tema="escuro"] .i-cta{background:var(--verde-medio)}
+/* Rodapé fino (todas as páginas) */
+.rodape-fino{background:#0F3D2E;color:#CFE0D6;font-size:13px;padding-block:18px}
+.rodape-fino .container{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 20px}
+.rodape-fino img{height:24px;width:auto}
+.rodape-fino nav{display:flex;flex-wrap:wrap;gap:4px 16px}
+.rodape-fino a:hover{color:#F6F5F0}
+
+/* Serviços: selos e calculadora */
+.sv-selos{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.sv-selos span{padding:8px 14px;border-radius:999px;background:var(--areia-escura);border:1px solid var(--borda);font-size:14px;color:var(--verde-texto);font-weight:500}
+.sv-calc{background:var(--superficie);border:1px solid var(--borda);border-radius:24px;padding:28px}
+.sv-calc-opcoes{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px;margin:18px 0}
+.sv-calc-opcoes label{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border:1px solid var(--borda);border-radius:12px;cursor:pointer;font-size:15px}
+.sv-calc-opcoes input{margin-top:4px;accent-color:#4E7A1C;width:18px;height:18px}
+.sv-calc-total{font-size:18px;margin-bottom:14px}
+.sv-calc-total strong{font-family:var(--fonte-titulo);color:var(--verde-texto)}

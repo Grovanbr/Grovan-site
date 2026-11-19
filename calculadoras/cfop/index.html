@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consulta de CFOP: encontre o código certo | Grovan</title>
+  <meta name="description" content="Busque o CFOP certo para venda, compra, devolução, remessa e bonificação, dentro e fora do estado.">
+  <link rel="canonical" href="https://grovan.com.br/calculadoras/cfop/">
+  <meta property="og:title" content="Consulta de CFOP: encontre o código certo | Grovan">
+  <meta property="og:description" content="Busque o CFOP certo para venda, compra, devolução, remessa e bonificação, dentro e fora do estado.">
+  <meta property="og:url" content="https://grovan.com.br/calculadoras/cfop/">
+  <meta property="og:type" content="website">
+  <script>
+    try {
+      var tema = localStorage.getItem("grovan-tema");
+      if (!tema) tema = matchMedia("(prefers-color-scheme: dark)").matches ? "escuro" : "claro";
+      document.documentElement.dataset.tema = tema;
+    } catch (e) {}
+  </script>
+  <link rel="icon" href="../../img/grovan-perfil-icone.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/inicio.css">
+  <link rel="stylesheet" href="../../calculadoras/calc.css">
+</head>
+<body>
+
+  <!-- ===== Cabeçalho (igual em todas as páginas) ===== -->
+  <header class="cabecalho">
+    <div class="container cabecalho-conteudo">
+      <a href="../../">
+        <img src="../../img/grovan-logo.png" alt="Grovan" class="logo logo-tema-claro">
+        <img src="../../img/grovan-logo-claro.png" alt="Grovan" class="logo logo-tema-escuro">
+      </a>
+      <div class="cabecalho-direita">
+        <nav class="menu" aria-label="Menu principal">
+          <a href="../../">Início</a>
+          <a href="../../servicos/">Serviços</a>
+          <a href="../../calculadoras/" class="ativo" aria-current="page">Ferramentas grátis</a>
+          <a href="../../sobre/">Sobre</a>
+          <a href="../../contato/">Contato</a>
+        </nav>
+        <button type="button" class="botao-tema" aria-label="Mudar para o tema escuro" aria-pressed="false">
+          <svg class="icone-lua" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+          <svg class="icone-sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="pagina-topo">
+      <div class="container">
+        <span class="etiqueta">Consulta grátis</span>
+        <h1>Qual CFOP usar na sua nota?</h1>
+        <p class="inicio-texto">Digite a operação (venda, devolução, remessa, brinde...) ou o número do CFOP. Lista dos códigos mais usados por pequenos comércios.</p>
+      </div>
+    </section>
+    <section class="secao-compacta">
+      <div class="container">
+        <div class="calc-caixa">
+          <div class="calc-campo inteiro"><label for="q">Buscar operação ou código</label><div class="calc-entrada"><input id="q" type="search" placeholder="Ex.: devolução, outro estado, 5102"></div></div>
+          <ul id="lista" class="calc-linhas" style="margin-top:14px"></ul>
+          <p class="calc-aviso" style="display:block">Errou o CFOP e a nota foi rejeitada? <a href="../../guias/" style="font-weight:600;text-decoration:underline">Veja os guias de rejeição</a> ou <a id="r-whats" href="https://wa.me/5511945426510?text=Ol%C3%A1%21%20Usei%20a%20consulta%20de%20CFOP%20da%20Grovan%20e%20quero%20ajuda%20com%20a%20confer%C3%AAncia%20tribut%C3%A1ria%20das%20minhas%20notas." target="_blank" rel="noopener" style="font-weight:600;text-decoration:underline">peça uma conferência das suas notas</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao-compacta calc-mais">
+      <div class="container">
+        <p style="text-align:center"><a class="sv-cta" href="../../calculadoras/">Ver todas as ferramentas grátis</a></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Rodapé (igual em todas as páginas) ===== -->
+  <footer class="rodape-fino">
+    <div class="container">
+      <img src="../../img/grovan-logo-claro.png" alt="Grovan">
+      <nav aria-label="Links do rodapé">
+        <a href="../../servicos/">Serviços</a>
+        <a href="../../calculadoras/">Ferramentas grátis</a>
+        <a href="../../indique/">Indique e ganhe</a>
+        <a href="../../contadores/">Para contadores</a>
+        <a href="../../contato/">Contato</a>
+      </nav>
+      <span>© 2026 Grovan · <a href="../../privacidade/">Privacidade</a></span>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/5511945426510?text=Ol%C3%A1%2C%20vim%20pelas%20calculadoras%20da%20Grovan!" target="_blank" rel="noopener" class="botao-whatsapp" aria-label="Fale com a Grovan no WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z"/><path class="whats-fone" d="M9.2 7.8c.3 0 .5 0 .7.5l.7 1.6c.1.3 0 .5-.1.7l-.5.6c-.1.2-.2.3 0 .6.5.9 1.3 1.7 2.2 2.2.3.2.5.1.6 0l.6-.7c.2-.2.4-.2.6-.1l1.6.8c.3.1.4.3.4.5 0 .9-.7 1.7-1.6 1.8-1 .1-2.4-.3-4-1.7-1.5-1.3-2.3-2.8-2.4-3.9-.1-1 .5-2 1.2-2.9z"/></svg>
+    <span class="botao-whatsapp-texto">Fale no WhatsApp</span>
+  </a>
+
+  <script src="../../js/tema.js"></script>
+  <script src="../../calculadoras/calc.js"></script>
+  <script>
+  (function(){const L=[["5102", "Venda de mercadoria comprada de terceiros (dentro do estado)"], ["6102", "Venda de mercadoria comprada de terceiros (outro estado)"], ["5101", "Venda de produção própria (dentro do estado)"], ["6101", "Venda de produção própria (outro estado)"], ["5405", "Venda de mercadoria com ICMS-ST já recolhido (dentro do estado)"], ["6403", "Venda de mercadoria sujeita a ST (outro estado)"], ["5202", "Devolução de compra para comercialização (dentro do estado)"], ["6202", "Devolução de compra para comercialização (outro estado)"], ["1202", "Devolução de venda de mercadoria (dentro do estado)"], ["2202", "Devolução de venda de mercadoria (outro estado)"], ["1102", "Compra para comercialização (dentro do estado)"], ["2102", "Compra para comercialização (outro estado)"], ["1403", "Compra para comercialização com ST (dentro do estado)"], ["2403", "Compra para comercialização com ST (outro estado)"], ["1556", "Compra de material para uso e consumo (dentro do estado)"], ["2556", "Compra de material para uso e consumo (outro estado)"], ["5910", "Remessa em bonificação, doação ou brinde (dentro do estado)"], ["6910", "Remessa em bonificação, doação ou brinde (outro estado)"], ["5915", "Remessa para conserto (dentro do estado)"], ["6915", "Remessa para conserto (outro estado)"], ["5949", "Outra saída não especificada (dentro do estado)"], ["6949", "Outra saída não especificada (outro estado)"], ["5929", "Venda já registrada em cupom fiscal (NFC-e)"], ["6108", "Venda para não contribuinte em outro estado"], ["5353", "Prestação de serviço de transporte (dentro do estado)"], ["1949", "Outra entrada não especificada (dentro do estado)"]];
+  const n=s=>s.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
+  const q=document.getElementById("q"),ul=document.getElementById("lista");
+  function r(){const t=n(q.value.trim());ul.innerHTML="";L.filter(x=>!t||n(x[0]+" "+x[1]).includes(t)).forEach(x=>{const li=document.createElement("li");li.innerHTML="<span><strong>"+x[0]+"</strong> — "+x[1]+"</span>";ul.appendChild(li);});if(!ul.children.length)ul.innerHTML="<li><span>Nada encontrado. Tente outra palavra.</span></li>";}
+  q.addEventListener("input",r);r();})();
+  </script>
+</body>
+</html>

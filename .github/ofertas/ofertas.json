@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-11-20 17:11",
+ "geradoEm": "2026-11-20 20:58",
  "itens": [
   {
    "nome": "Secret Boom Box Metallic MBOOM Gloss Labial 5ml com Chaveiro Ursinho Colecionável Surpresa",
@@ -60,14 +60,10 @@
    "nome": "NIVEA Loção Deo-Hidratante Soft Milk 400ml, Hidratação Profunda 72h, Hialurônico Puro, Corporal, Pele Seca",
    "link": "https://meli.la/2Mg6D1e",
    "loja": "Mercado Livre",
-   "precoAtual": 14.82,
+   "precoAtual": 18.52,
    "conferencia": {
-    "status": "subiu",
-    "preco": 18.52,
-    "precoAntigo": 26.99,
-    "imagem": "https://http2.mlstatic.com/D_NQ_NP_756821-MLA86791313939_062025-F.webp",
-    "aplicado": true,
-    "precoAnterior": 14.82
+    "status": "igual",
+    "preco": 18.52
    },
    "alternativas": []
   },
@@ -84,12 +80,6 @@
   }
  ],
  "avisos": [],
- "precosAtualizados": [
-  {
-   "nome": "NIVEA Loção Deo-Hidratante Soft Milk 400ml, Hidratação Profunda 72h, Hialurônico Puro, Corporal, Pele Seca",
-   "de": 14.82,
-   "para": 18.52
-  }
- ],
+ "precosAtualizados": [],
  "trocasAutomaticas": []
 }

@@ -91,11 +91,11 @@ const produtos = [
     nome: "Kit 50 ou 100 Bolas + Brinde Estrela Enfeite Árvore Natal Decoração",
     loja: "Shopee",
     categoria: "Artigos de Festa",
-    link: "https://s.shopee.com.br/9Kjj8WTwnM",
-    imagem: "https://cf.shopee.com.br/file/br-11134207-820ma-mscv9ben53ie70",
-    preco: 69.90,
-    precoAntigo: 0.00,
+    link: "https://s.shopee.com.br/80EWj2fWSp",
+    imagem: "https://cf.shopee.com.br/file/br-11134207-820m0-mvqfcosfh1c218",
+    preco: 21.99,
+    precoAntigo: 99.95,
     destaque: false,
-    shopee: "1387542695.23394417877"
+    shopee: "640104920.46868561309"
   },
 ];

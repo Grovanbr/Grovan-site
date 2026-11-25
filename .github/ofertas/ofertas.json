@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-11-25 13:21",
+ "geradoEm": "2026-11-25 17:08",
  "itens": [
   {
    "nome": "Secret Boom Box Metallic MBOOM Gloss Labial 5ml com Chaveiro Ursinho Colecionável Surpresa",
@@ -76,27 +76,12 @@
     "status": "igual",
     "preco": 69.9
    },
-   "alternativas": [
-    {
-     "loja": "Shopee",
-     "shopee": "640104920.46868561309",
-     "nome": "Kit 100 Bolas Natal Com Estrela Brinde Ponteira Flor Enfeite  Decoração Árvore Mista OU KIT Com 50 Bolinhas",
-     "preco": 21.99,
-     "precoAntigo": null,
-     "imagem": "https://cf.shopee.com.br/file/br-11134207-820m0-mvqfcosfh1c218",
-     "link": "https://s.shopee.com.br/3qOvNmecAZ",
-     "linkProduto": "https://shopee.com.br/product/640104920/46868561309",
-     "afiliado": true,
-     "vendedor": "",
-     "comissao": 0.0,
-     "vendas": 0,
-     "semelhanca": 100,
-     "economia": 47.91
-    }
-   ]
+   "alternativas": []
   }
  ],
- "avisos": [],
+ "avisos": [
+  "A Shopee não respondeu na busca de 1 de 7 produtos (Kit 50 ou 100 Bolas + Brinde Estrela Enfeite Árvore Natal Decoração). Esses produtos são procurados de novo na próxima procura. Motivo: A API da Shopee está instável agora. Tente de novo em alguns minutos. Detalhe da Shopee: System Error"
+ ],
  "precosAtualizados": [],
  "trocasAutomaticas": []
 }

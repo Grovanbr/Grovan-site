@@ -166,6 +166,19 @@ const $=q=>document.querySelector(q);
 const feed=$("#feed");
 const brl=n=>"R$ "+Number(n).toLocaleString("pt-BR",{minimumFractionDigits:0,maximumFractionDigits:2});
 const S={token:null,step:"id",cat:null,sel:new Set(),ultimoId:0,status:null,nome:""};
+// Link com kit (?kit=presenca | loja | sos): o orçamento já começa com o kit marcado
+const KITS={presenca:"Kit Presença Digital Express",loja:"Kit Loja Iniciante",sos:"Kit Conserto e Cuido"};
+let KIT=null;try{KIT=KITS[new URL(location.href).searchParams.get("kit")]||null}catch(e){}
+async function aplicarKit(){
+  if(!KIT||!S.token)return false;
+  const r=await tenta(()=>api("catalogo"));if(!r)return false;S.cat=r.servicos;
+  const ids=S.cat.filter(c=>c.nome.startsWith(KIT)).map(c=>c.id);if(!ids.length)return false;
+  ids.forEach(i=>S.sel.add(i));
+  const el=await bot(`<p>Você veio pelo <strong>${esc(KIT)}</strong>. Já deixei ele marcado.</p><p>Quer ver o orçamento agora ou acrescentar outros serviços?</p>`,{demora:300});
+  chips(el,[{t:"Ver o orçamento",pri:true,fn:confirmarSelecao},{t:"Acrescentar outros serviços",fn:abrirCatalogo}]);
+  KIT=null;try{const u=new URL(location.href);u.searchParams.delete("kit");history.replaceState(null,"",u)}catch(e){}
+  return true;
+}
 function esc(t){return String(t??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
 function scroll(){const m=$("#main");m.scrollTop=m.scrollHeight}
 function me(t){feed.insertAdjacentHTML("beforeend",`<div class="msg me"><div class="bub"><p>${esc(t)}</p></div></div>`);scroll()}
@@ -225,7 +238,7 @@ async function inicio(){
     S.nome=n;me(`${n} · ${d}`);guardaToken(r.token);S.step="conversa";
     $("#txt").placeholder="Escreva o que você precisa";
     const el2=await bot(`<p>${esc(r.saudacao)}</p><p>Pode escrever aqui embaixo com as suas palavras ou ver a lista dos nossos serviços.</p>`,{demora:300});
-    chips(el2,[{t:"Ver e escolher os serviços",pri:true,fn:abrirCatalogo}]);
+    if(!(await aplicarKit()))chips(el2,[{t:"Ver e escolher os serviços",pri:true,fn:abrirCatalogo}]);
     iniciaAcompanhamento();
   });
   $("#fid-nome").focus();
@@ -239,6 +252,7 @@ async function abrirCatalogo(){
 function fecharCatalogo(){$("#sheet").hidden=true}
 function precoTxt(s){return s.a_combinar?`A combinar<small>${brl(s.valor_hora)}/hora</small>`:`${brl(s.valor)}<small>${s.cobranca==="Mensal"?"por mês":(s.cobranca==="Por lote"?"por lote":(s.cobranca==="Por vídeo"?"por vídeo":"valor fixo"))}</small>`}
 function metaTxt(s){
+  if(s.categoria==="Kits prontos")return s.cobranca==="Mensal"?`<span>Por mês: <b>${esc(s.entrega||"")}</b></span>`:(s.a_combinar?`<span>Valor final: <b>definido após o diagnóstico</b></span>`:`<span>Pacote fechado</span>`);
   if(s.entrega)return `<span>Inclui: <b>${esc(s.entrega)}</b></span>`;
   if(s.a_combinar)return `<span>Valor/hora: <b>${brl(s.valor_hora)}</b></span><span>Horas e valor final: <b>definidos na proposta</b></span>`;
   return `<span>Horas: <b>${Number(s.horas).toLocaleString("pt-BR")} h</b></span><span>Valor/hora: <b>${brl(s.valor_hora)}</b></span><span>Cobrança: <b>${esc(s.cobranca)}</b></span>`;
@@ -261,7 +275,7 @@ function renderSum(){
 
 // ---------- 3) orçamento estimado
 function quoteHTML(o,titulo){
-  const rows=o.itens.map(s=>{const sub=s.a_combinar?`${brl(s.valor_hora)}/hora · valor final na proposta`:(s.entrega?`Mensal · ${esc(s.entrega)}`:`${Number(s.horas).toLocaleString("pt-BR")} h · ${esc(s.cobranca)}`);
+  const rows=o.itens.map(s=>{const sub=s.categoria==="Kits prontos"?(s.cobranca==="Mensal"?`Mensal · ${esc(s.entrega||"")}`:(s.a_combinar?"Valor final após o diagnóstico":"Pacote fechado")):s.a_combinar?`${brl(s.valor_hora)}/hora · valor final na proposta`:(s.entrega?`Mensal · ${esc(s.entrega)}`:`${Number(s.horas).toLocaleString("pt-BR")} h · ${esc(s.cobranca)}`);
     return `<div class="row"><span>${esc(s.nome)}<small>${sub}</small></span><span class="v">${s.a_combinar?"A combinar":brl(s.valor)+(s.cobranca==="Mensal"?"/mês":"")}</span></div>`}).join("");
   return `<p>${titulo}</p><div class="quote">${rows}
     ${o.unico?`<div class="row tot"><span>Total dos projetos</span><span class="v">${brl(o.unico)}</span></div>`:""}
@@ -365,7 +379,7 @@ async function retomar(tk){
     }
     S.ultimoId=e.mensagens.reduce((a,m)=>Math.max(a,m.id),0);scroll();
     await sincroniza(true);
-    if(["em_conversa"].includes(e.status)){const el=await bot(`<p>Quer continuar de onde parou?</p>`);chips(el,[{t:"Ver e escolher os serviços",pri:true,fn:abrirCatalogo}])}
+    if(["em_conversa"].includes(e.status)&&!(await aplicarKit())){const el=await bot(`<p>Quer continuar de onde parou?</p>`);chips(el,[{t:"Ver e escolher os serviços",pri:true,fn:abrirCatalogo}])}
     iniciaAcompanhamento();
   }catch(err){
     try{localStorage.removeItem("grovan_atendimento")}catch(e){}

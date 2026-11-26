@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Casa Aroma · Loja modelo Grovan</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="Loja virtual modelo feita pela Grovan (Kit Loja Iniciante). Loja e produtos fictícios.">
+<link rel="icon" href="../../img/grovan-perfil-icone.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FBF7F1;--fg:#2E2621;--muted:#7C6E63;--acc:#8A5A3B;--acc2:#EDE2D4;--card:#FFFFFF;--borda:#E8DDCF;--verde:#5E7A55}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:15.5px/1.6 'Work Sans',system-ui,sans-serif;padding-bottom:64px}
+a{color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding-inline:max(18px,env(safe-area-inset-left))}
+.aviso-topo{background:var(--fg);color:#F4EDE4;text-align:center;font-size:13px;padding:7px 12px}
+header{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--borda)}
+.topo{display:flex;align-items:center;gap:20px;min-height:68px}
+.marca{font-family:'Fraunces',Georgia,serif;font-size:1.6rem;font-weight:700;text-decoration:none;margin-right:auto}
+.busca{flex:0 1 320px;display:flex;border:1px solid var(--borda);border-radius:999px;background:var(--card);padding:0 14px}
+.busca input{border:0;background:none;font:inherit;padding:10px 0;width:100%;outline:none}
+.icone{background:none;border:0;cursor:pointer;position:relative;padding:8px;color:var(--fg)}
+.icone svg{width:24px;height:24px}
+.qtd{position:absolute;top:0;right:-2px;background:var(--acc);color:#fff;font-size:11px;font-weight:700;border-radius:99px;min-width:18px;height:18px;display:grid;place-items:center;padding:0 4px}
+.cats{display:flex;gap:22px;overflow-x:auto;padding-block:10px;font-size:.93rem}
+.cats a{text-decoration:none;color:var(--muted);white-space:nowrap}.cats a.on,.cats a:hover{color:var(--fg);font-weight:600}
+@media(max-width:700px){.busca{display:none}}
+.banner{margin-block:22px;border-radius:24px;overflow:hidden;display:grid;grid-template-columns:1.1fr .9fr;background:var(--acc2);min-height:330px}
+@media(max-width:760px){.banner{grid-template-columns:1fr}}
+.banner div:first-child{padding:44px clamp(22px,5vw,56px);display:flex;flex-direction:column;justify-content:center;gap:14px}
+.banner h1{font-family:'Fraunces',Georgia,serif;font-size:clamp(2rem,4.4vw,3.2rem);line-height:1.08;margin:0;text-wrap:balance}
+.banner p{margin:0;color:var(--muted);max-width:44ch}
+.banner .arte{background:radial-gradient(circle at 60% 40%,#F6E7D2 0 30%,transparent 31%),linear-gradient(160deg,#C79E7A,#8A5A3B);position:relative;min-height:220px}
+.banner .arte svg{position:absolute;inset:0;margin:auto;width:56%;height:auto}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--fg);color:#fff;border:0;border-radius:999px;padding:13px 24px;font:600 15px 'Work Sans',sans-serif;cursor:pointer;text-decoration:none}
+.btn.acc{background:var(--acc)}.btn.sec{background:transparent;color:var(--fg);border:1.5px solid var(--borda)}
+.vantagens{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-bottom:34px}
+.vantagens div{background:var(--card);border:1px solid var(--borda);border-radius:16px;padding:14px 16px;font-size:.92rem}
+.vantagens b{display:block}
+h2.t{font-family:'Fraunces',Georgia,serif;font-size:1.7rem;margin:0 0 16px}
+.grade{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:18px;margin-bottom:40px}
+.prod{background:var(--card);border:1px solid var(--borda);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;text-decoration:none}
+.prod .img{aspect-ratio:1;display:grid;place-items:center;position:relative}
+.prod .img svg{width:62%;height:auto}
+.selo{position:absolute;left:10px;top:10px;background:var(--verde);color:#fff;font-size:12px;font-weight:600;padding:3px 9px;border-radius:99px}
+.prod .info{padding:12px 14px 16px;display:flex;flex-direction:column;gap:2px}
+.prod .nome{font-weight:600}.preco{font-weight:700;font-size:1.08rem}
+.de{color:var(--muted);text-decoration:line-through;font-size:.88rem;margin-right:6px;font-weight:400}
+.parc{color:var(--muted);font-size:.85rem}
+.produto{display:grid;grid-template-columns:1fr 1fr;gap:40px;padding-block:28px}
+@media(max-width:800px){.produto{grid-template-columns:1fr}}
+.produto .img{border-radius:24px;aspect-ratio:1;display:grid;place-items:center}
+.produto .img svg{width:58%}
+.produto h1{font-family:'Fraunces',Georgia,serif;font-size:2.1rem;line-height:1.1;margin:6px 0 10px}
+.produto .preco{font-size:1.7rem}
+.opcoes{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
+.opcoes button{font:inherit;border:1.5px solid var(--borda);background:var(--card);border-radius:12px;padding:8px 14px;cursor:pointer}
+.opcoes button.on{border-color:var(--fg);font-weight:600}
+.frete{display:flex;gap:8px;margin:16px 0}
+.frete input{flex:1;border:1px solid var(--borda);border-radius:12px;padding:10px 12px;font:inherit;min-width:0}
+.res-frete{font-size:.92rem;color:var(--muted)}
+.voltar{background:none;border:0;font:inherit;color:var(--muted);cursor:pointer;padding:16px 0 0}
+.gaveta{position:fixed;inset:0;background:rgba(46,38,33,.45);z-index:20;display:flex;justify-content:flex-end}
+.gaveta .caixa{background:var(--bg);width:min(420px,100%);height:100%;padding:22px;display:flex;flex-direction:column;gap:14px;overflow:auto}
+.item{display:grid;grid-template-columns:64px 1fr auto;gap:12px;align-items:center;border-bottom:1px solid var(--borda);padding-bottom:12px}
+.item .mini{width:64px;height:64px;border-radius:12px;display:grid;place-items:center}.item .mini svg{width:70%}
+.qtdbox{display:flex;align-items:center;gap:8px}.qtdbox button{width:28px;height:28px;border-radius:50%;border:1px solid var(--borda);background:var(--card);cursor:pointer}
+.total{display:flex;justify-content:space-between;font-weight:700;font-size:1.1rem}
+.pag{display:grid;gap:10px}
+.pag label{display:flex;gap:10px;align-items:center;border:1.5px solid var(--borda);border-radius:14px;padding:12px 14px;background:var(--card);cursor:pointer}
+.pag label:has(input:checked){border-color:var(--fg)}
+.campo{display:grid;gap:4px;font-size:.9rem;font-weight:600}
+.campo input{font:inherit;font-weight:400;border:1px solid var(--borda);border-radius:12px;padding:10px 12px}
+.ok{background:#EEF4EA;border:1px solid #CFE0C6;border-radius:16px;padding:16px;font-size:.95rem}
+footer{border-top:1px solid var(--borda);margin-top:30px;padding-block:26px;color:var(--muted);font-size:.88rem;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.modelo{position:fixed;left:0;right:0;bottom:0;z-index:30;background:#0F3D2E;color:#F6F5F0;display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;padding:10px max(16px,env(safe-area-inset-left)) calc(10px + env(safe-area-inset-bottom));font:500 14px/1.3 system-ui,sans-serif;text-align:center}
+.modelo a{background:#B8E35A;color:#1F3A0E;text-decoration:none;font-weight:700;padding:8px 16px;border-radius:999px}
+.modelo .v{color:#CFE0D6;text-decoration:underline;background:none;padding:0}
+@media(max-width:560px){.modelo .longo{display:none}}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<div class="aviso-topo">Frete grátis acima de R$ 199 · 5% de desconto no Pix</div>
+<header><div class="wrap">
+  <div class="topo">
+    <a class="marca" href="#inicio">Casa Aroma</a>
+    <label class="busca"><input type="search" placeholder="Buscar velas, difusores..." id="busca" aria-label="Buscar produtos"></label>
+    <button class="icone" id="abrir-carrinho" aria-label="Abrir carrinho"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 7h14l-1.5 12h-11z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg><span class="qtd" id="qtd" hidden>0</span></button>
+  </div>
+  <nav class="cats" id="cats" aria-label="Categorias"></nav>
+</div></header>
+
+<main class="wrap">
+  <section id="v-inicio">
+    <div class="banner">
+      <div><span style="color:var(--acc);font-weight:600">Coleção de verão</span><h1>Aromas que deixam a casa com cara de férias</h1><p>Velas artesanais de cera vegetal, difusores e sabonetes feitos em pequenos lotes.</p><div><a class="btn acc" href="#cat-velas">Ver as velas</a></div></div>
+      <div class="arte" aria-hidden="true"><svg viewBox="0 0 120 140"><rect x="25" y="45" width="70" height="85" rx="12" fill="#F6EEE3"/><rect x="25" y="62" width="70" height="26" fill="#C79E7A"/><path d="M60 18c8 10 8 18 0 24-8-6-8-14 0-24z" fill="#F2B84B"/><rect x="58.5" y="38" width="3" height="9" fill="#2E2621"/></svg></div>
+    </div>
+    <div class="vantagens"><div><b>Pix com 5% off</b>Desconto aplicado no carrinho</div><div><b>Até 3x sem juros</b>No cartão de crédito</div><div><b>Frete grátis</b>Acima de R$ 199</div><div><b>Troca fácil</b>Até 7 dias após receber</div></div>
+    <h2 class="t" id="titulo-grade">Mais vendidos</h2>
+    <div class="grade" id="grade"></div>
+  </section>
+  <section id="v-produto" hidden></section>
+  <footer><span>© 2026 Casa Aroma · Loja fictícia, criada como exemplo.</span><span>Pix · Cartão · Correios · Entrega própria</span></footer>
+</main>
+
+<div class="gaveta" id="gaveta" hidden><div class="caixa" role="dialog" aria-label="Carrinho" id="caixa-carrinho"></div></div>
+
+<div class="modelo" role="note"><span>Loja modelo da Grovan<span class="longo"> (Kit Loja Iniciante). Produtos, preços e pedidos são fictícios</span>.</span>
+  <a href="https://wa.me/5511945426510?text=Ol%C3%A1%2C%20Grovan!%20Vi%20a%20loja%20modelo%20%22Casa%20Aroma%22%20e%20quero%20uma%20loja%20assim%20para%20o%20meu%20neg%C3%B3cio." target="_blank" rel="noopener">Quero uma loja assim</a><a class="v" href="../../portfolio/">Ver o portfólio</a></div>
+
+<script>
+const COR={velas:"#F1E4D3",difusores:"#E3EADD",sabonetes:"#F3E0E3",kits:"#E8E1F0"};
+const SVG={
+ vela:(c)=>`<svg viewBox="0 0 100 110"><rect x="22" y="38" width="56" height="64" rx="10" fill="#FFFDF9" stroke="#2E262122"/><rect x="22" y="54" width="56" height="20" fill="${c}"/><path d="M50 10c7 9 7 15 0 20-7-5-7-11 0-20z" fill="#F2B84B"/><rect x="48.8" y="28" width="2.4" height="10" fill="#2E2621"/></svg>`,
+ difusor:(c)=>`<svg viewBox="0 0 100 110"><path d="M36 50h28l6 50H30z" fill="${c}" stroke="#2E262122"/><rect x="42" y="42" width="16" height="10" rx="2" fill="#2E2621"/><g stroke="#8A5A3B" stroke-width="2.2"><path d="M46 44 34 8"/><path d="M50 44 50 4"/><path d="M54 44 66 8"/><path d="M48 44 42 6"/><path d="M52 44 58 6"/></g></svg>`,
+ sabonete:(c)=>`<svg viewBox="0 0 100 110"><rect x="18" y="40" width="64" height="40" rx="18" fill="${c}" stroke="#2E262122"/><ellipse cx="50" cy="58" rx="18" ry="7" fill="#FFFFFF88"/><circle cx="72" cy="30" r="6" fill="#FFFFFFAA" stroke="#2E262133"/><circle cx="82" cy="20" r="3.5" fill="#FFFFFFAA" stroke="#2E262133"/></svg>`,
+ kit:(c)=>`<svg viewBox="0 0 100 110"><rect x="14" y="44" width="72" height="56" rx="6" fill="${c}" stroke="#2E262122"/><rect x="46" y="44" width="8" height="56" fill="#8A5A3B"/><path d="M50 44c-10-16-24-10-16 0zM50 44c10-16 24-10 16 0z" fill="#8A5A3B"/></svg>`};
+const P=[
+ {id:1,cat:"velas",nome:"Vela Flor de Laranjeira",preco:69.9,de:79.9,tipo:"vela",cor:"#F6C79A",desc:"Cera vegetal de soja, pavio de algodão e 40 horas de queima. Notas cítricas e florais.",var:["180 g","300 g"],tag:"Mais vendido"},
+ {id:2,cat:"velas",nome:"Vela Madeira & Baunilha",preco:74.9,tipo:"vela",cor:"#C79E7A",desc:"Aroma amadeirado e aconchegante. Ideal para a sala e o quarto.",var:["180 g","300 g"]},
+ {id:3,cat:"difusores",nome:"Difusor Alecrim do Campo",preco:89.9,tipo:"difusor",cor:"#B9CDB0",desc:"Difusor de varetas com 250 ml. Dura de 60 a 90 dias.",var:["250 ml","500 ml"],tag:"Novo"},
+ {id:4,cat:"difusores",nome:"Difusor Lavanda Francesa",preco:89.9,tipo:"difusor",cor:"#C9BFE0",desc:"Relaxante e suave. Acompanha 8 varetas de fibra.",var:["250 ml","500 ml"]},
+ {id:5,cat:"sabonetes",nome:"Sabonete de Argila Rosa",preco:24.9,tipo:"sabonete",cor:"#E9B8C0",desc:"Sabonete vegetal com argila rosa e óleo de amêndoas. 110 g.",var:["Unidade","Trio"]},
+ {id:6,cat:"sabonetes",nome:"Sabonete de Aveia e Mel",preco:24.9,tipo:"sabonete",cor:"#EAD3A2",desc:"Hidratante e suave para todos os tipos de pele. 110 g.",var:["Unidade","Trio"]},
+ {id:7,cat:"kits",nome:"Kit Presente Casa Aroma",preco:179.9,de:209.7,tipo:"kit",cor:"#D8C3A5",desc:"Vela 180 g, difusor 250 ml e sabonete, em caixa presenteável com cartão.",var:["Caixa kraft","Caixa branca"],tag:"Presente"},
+ {id:8,cat:"velas",nome:"Vela Brisa do Mar",preco:69.9,tipo:"vela",cor:"#A9CBD3",desc:"Notas frescas e marinhas. Cera vegetal e 40 horas de queima.",var:["180 g","300 g"]}];
+const CATS=[["todos","Todos"],["velas","Velas"],["difusores","Difusores"],["sabonetes","Sabonetes"],["kits","Kits presente"]];
+const brl=v=>v.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+const $=q=>document.querySelector(q);
+let carrinho=[];
+function arte(p){return SVG[p.tipo](p.cor)}
+function card(p){return `<a class="prod" href="#produto-${p.id}"><div class="img" style="background:${COR[p.cat]}">${p.tag?`<span class="selo">${p.tag}</span>`:""}${arte(p)}</div><div class="info"><span class="nome">${p.nome}</span><span class="preco">${p.de?`<span class="de">${brl(p.de)}</span>`:""}${brl(p.preco)}</span><span class="parc">ou 3x de ${brl(p.preco/3)}</span></div></a>`}
+function grade(lista,titulo){$("#grade").innerHTML=lista.map(card).join("")||"<p>Nenhum produto encontrado.</p>";$("#titulo-grade").textContent=titulo}
+function cats(at){$("#cats").innerHTML=CATS.map(([k,n])=>`<a href="#cat-${k}" class="${k===at?"on":""}">${n}</a>`).join("")}
+function produto(p){
+  $("#v-produto").innerHTML=`<button class="voltar" onclick="history.back()">← Voltar</button><div class="produto"><div class="img" style="background:${COR[p.cat]}">${arte(p)}</div>
+  <div><span style="color:var(--muted)">${CATS.find(c=>c[0]===p.cat)[1]}</span><h1>${p.nome}</h1><div class="preco">${p.de?`<span class="de">${brl(p.de)}</span>`:""}${brl(p.preco)}</div><div class="parc">ou 3x de ${brl(p.preco/3)} sem juros · ${brl(p.preco*.95)} no Pix</div>
+  <p>${p.desc}</p><div class="opcoes" id="opc">${p.var.map((v,i)=>`<button class="${i?"":"on"}" data-v="${v}">${v}</button>`).join("")}</div>
+  <button class="btn acc" id="add" style="width:100%">Adicionar ao carrinho</button>
+  <div class="frete"><input id="cep" inputmode="numeric" placeholder="Seu CEP" maxlength="9" aria-label="CEP"><button class="btn sec" id="calc">Calcular frete</button></div><div class="res-frete" id="rf"></div></div></div>`;
+  let v=p.var[0];
+  document.querySelectorAll("#opc button").forEach(b=>b.onclick=()=>{document.querySelectorAll("#opc button").forEach(x=>x.classList.remove("on"));b.classList.add("on");v=b.dataset.v});
+  $("#add").onclick=()=>{const it=carrinho.find(i=>i.id===p.id&&i.v===v);it?it.q++:carrinho.push({id:p.id,v,q:1});atualizar();abrir()};
+  $("#calc").onclick=()=>{const c=$("#cep").value.replace(/\D/g,"");$("#rf").innerHTML=c.length===8?`PAC: ${brl(18.9)} · 6 a 9 dias úteis<br>SEDEX: ${brl(32.5)} · 2 a 4 dias úteis<br>Entrega própria (região): ${brl(12)} · até 2 dias úteis<br><small>Valores de exemplo.</small>`:"Digite um CEP com 8 números."};
+}
+function subtotal(){return carrinho.reduce((s,i)=>s+P.find(p=>p.id===i.id).preco*i.q,0)}
+function atualizar(){const n=carrinho.reduce((s,i)=>s+i.q,0);$("#qtd").textContent=n;$("#qtd").hidden=!n}
+function abrir(etapa="carrinho"){
+  const st=subtotal(),frete=st>=199||!st?0:18.9,cx=$("#caixa-carrinho");
+  if(etapa==="carrinho"){
+    cx.innerHTML=`<div style="display:flex;justify-content:space-between;align-items:center"><h2 class="t" style="margin:0">Carrinho</h2><button class="icone" onclick="fechar()" aria-label="Fechar">✕</button></div>
+    ${carrinho.length?carrinho.map((i,k)=>{const p=P.find(x=>x.id===i.id);return `<div class="item"><div class="mini" style="background:${COR[p.cat]}">${arte(p)}</div><div><b>${p.nome}</b><br><small style="color:var(--muted)">${i.v}</small><div class="qtdbox"><button onclick="mudar(${k},-1)" aria-label="Menos">−</button>${i.q}<button onclick="mudar(${k},1)" aria-label="Mais">+</button></div></div><b>${brl(p.preco*i.q)}</b></div>`}).join(""):`<p style="color:var(--muted)">Seu carrinho está vazio.</p>`}
+    ${carrinho.length?`<div class="total"><span>Subtotal</span><span>${brl(st)}</span></div><p class="parc" style="margin:0">${st>=199?"Você ganhou frete grátis!":`Faltam ${brl(199-st)} para o frete grátis.`}</p><button class="btn acc" onclick="abrir('checkout')">Finalizar compra</button>`:""}`;
+  }else if(etapa==="checkout"){
+    cx.innerHTML=`<div style="display:flex;justify-content:space-between;align-items:center"><h2 class="t" style="margin:0">Pagamento</h2><button class="icone" onclick="fechar()" aria-label="Fechar">✕</button></div>
+    <div class="campo">Nome completo<input autocomplete="off" value="Cliente de exemplo"></div><div class="campo">CEP<input inputmode="numeric" value="01000-000"></div>
+    <div class="pag"><label><input type="radio" name="pg" value="pix" checked> <span><b>Pix</b> · 5% de desconto, aprovação na hora</span></label><label><input type="radio" name="pg" value="cartao"> <span><b>Cartão de crédito</b> · até 3x sem juros</span></label></div>
+    <div class="pag"><label><input type="radio" name="fr" checked> <span>${frete?`PAC · ${brl(frete)}`:"Frete grátis (PAC)"}</span></label><label><input type="radio" name="fr"> <span>Retirar ou entrega própria na região</span></label></div>
+    <div class="total"><span>Total no Pix</span><span>${brl((st+frete)*.95)}</span></div><button class="btn acc" onclick="abrir('ok')">Confirmar pedido</button><small class="parc">Demonstração: nenhum pagamento é feito.</small>`;
+  }else{
+    cx.innerHTML=`<h2 class="t">Pedido recebido!</h2><div class="ok">Na loja de verdade, aqui aparece o QR Code do Pix ou a confirmação do cartão, e o pedido cai direto no sistema da loja com o estoque atualizado.</div><button class="btn" onclick="carrinho=[];atualizar();fechar()">Voltar à loja</button>`;
+  }
+  $("#gaveta").hidden=false;
+}
+function mudar(k,d){carrinho[k].q+=d;if(carrinho[k].q<1)carrinho.splice(k,1);atualizar();abrir()}
+function fechar(){$("#gaveta").hidden=true}
+$("#gaveta").addEventListener("click",e=>{if(e.target.id==="gaveta")fechar()});
+$("#abrir-carrinho").onclick=()=>abrir();
+$("#busca").addEventListener("input",e=>{const q=e.target.value.trim().toLowerCase();location.hash="#inicio";grade(P.filter(p=>p.nome.toLowerCase().includes(q)),q?`Resultados para "${e.target.value}"`:"Mais vendidos")});
+function rota(){
+  const h=location.hash.slice(1)||"inicio";const m=h.match(/^produto-(\d+)$/),c=h.match(/^cat-(\w+)$/);
+  $("#v-produto").hidden=!m;$("#v-inicio").hidden=!!m;
+  if(m){const p=P.find(x=>x.id===+m[1]);if(p){produto(p);cats(p.cat);scrollTo(0,0)}return}
+  if(c){const k=c[1];cats(k);grade(k==="todos"?P:P.filter(p=>p.cat===k),CATS.find(x=>x[0]===k)?.[1]||"Produtos");document.getElementById("titulo-grade").scrollIntoView({behavior:"smooth"});return}
+  cats("todos");grade(P,"Mais vendidos");
+}
+addEventListener("hashchange",rota);rota();
+</script>
+</body>
+</html>

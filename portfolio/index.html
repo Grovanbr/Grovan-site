@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfólio | Grovan</title>
+<meta name="description" content="Sites, lojas virtuais e sistemas feitos pela Grovan. Veja os modelos prontos e escolha o ponto de partida do seu projeto.">
+<meta name="author" content="Cristian Araujo | Grovan">
+<link rel="canonical" href="https://grovan.com.br/portfolio/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Grovan">
+<meta property="og:title" content="Portfólio | Grovan">
+<meta property="og:description" content="Sites, lojas virtuais e sistemas feitos pela Grovan. Veja os modelos prontos e escolha o ponto de partida do seu projeto.">
+<meta property="og:url" content="https://grovan.com.br/portfolio/">
+<meta property="og:image" content="https://grovan.com.br/portfolio/img/salao-1.webp">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../img/grovan-perfil-icone.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   CORES E FONTES (mude aqui para trocar o visual inteiro)
+   ========================================================= */
+:root{
+  --fundo:#08170F; --fundo2:#0F241A; --texto:#F1F4EF; --fraco:#9FB5A8;
+  --verde:#0F3D2E; --broto:#B8E35A; --borda:rgba(255,255,255,.10);
+  --titulo:'Sora',system-ui,sans-serif; --corpo:'Inter',system-ui,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--fundo);color:var(--texto);font:16px/1.6 var(--corpo);overflow-x:hidden}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:max(20px,env(safe-area-inset-left))}
+
+/* ---------- cabeçalho ---------- */
+.topo{position:fixed;top:0;left:0;right:0;z-index:20;transition:background .3s}
+.topo.solido{background:rgba(8,23,15,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--borda)}
+.topo .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:70px}
+.topo img{height:30px;width:auto;display:block}
+.topo nav{display:flex;gap:22px;font-size:.95rem}
+.topo nav a{text-decoration:none;color:var(--fraco)}.topo nav a:hover,.topo nav a.on{color:var(--texto)}
+@media(max-width:720px){.topo nav a:not(.on):not(.btn){display:none}}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--broto);color:#1F3A0E !important;text-decoration:none;font-weight:700;padding:11px 20px;border-radius:999px}
+
+/* ---------- 1) ABERTURA com cartões flutuando ---------- */
+.abertura{min-height:100vh;min-height:100svh;display:grid;place-items:center;text-align:center;position:relative;padding-block:120px 60px;overflow:hidden}
+.abertura::before{content:"";position:absolute;inset:-20%;background:radial-gradient(circle at 50% 35%,rgba(184,227,90,.16),transparent 45%),radial-gradient(circle at 80% 80%,rgba(60,138,98,.25),transparent 40%);pointer-events:none}
+.etq{display:inline-block;color:var(--broto);font-weight:600;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase}
+.abertura h1{font-family:var(--titulo);font-size:clamp(2.4rem,6.4vw,5rem);line-height:1.02;margin:14px 0 16px;letter-spacing:-.02em;text-wrap:balance}
+.abertura h1 em{font-style:normal;color:var(--broto)}
+.abertura p{color:var(--fraco);max-width:56ch;margin:0 auto 28px;font-size:1.1rem}
+.flutuantes{position:absolute;inset:0;pointer-events:none;perspective:1200px}
+.flutuantes img{position:absolute;width:clamp(150px,22vw,300px);border-radius:14px;box-shadow:0 30px 60px rgba(0,0,0,.55);border:1px solid var(--borda);opacity:.55;transition:transform .2s ease-out}
+.flutuantes img:nth-child(1){left:3%;top:18%;--r:-12deg;animation:boia 7s ease-in-out infinite}
+.flutuantes img:nth-child(2){right:3%;top:14%;--r:10deg;animation:boia 8s ease-in-out -2s infinite}
+.flutuantes img:nth-child(3){left:8%;bottom:8%;--r:8deg;animation:boia 9s ease-in-out -4s infinite}
+.flutuantes img:nth-child(4){right:7%;bottom:6%;--r:-9deg;animation:boia 7.5s ease-in-out -1s infinite}
+@keyframes boia{0%,100%{translate:0 0;rotate:var(--r)}50%{translate:0 -18px;rotate:calc(var(--r) * .7)}}
+@media(max-width:760px){.flutuantes img{opacity:.22}}
+.desca{position:absolute;bottom:22px;left:50%;translate:-50% 0;color:var(--fraco);font-size:.85rem;display:grid;justify-items:center;gap:6px}
+.desca i{width:22px;height:36px;border:2px solid var(--fraco);border-radius:12px;position:relative}
+.desca i::after{content:"";position:absolute;left:50%;top:6px;width:4px;height:8px;border-radius:2px;background:var(--broto);translate:-50% 0;animation:rola 1.6s infinite}
+@keyframes rola{0%{opacity:0;transform:translateY(0)}40%{opacity:1}100%{opacity:0;transform:translateY(12px)}}
+
+/* ---------- 2) PALCO 3D: cada trabalho vem do fundo para a frente ---------- */
+.palco{position:relative}                 /* altura definida pelo script: 1 tela por trabalho */
+.cena{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;perspective:1100px;display:grid;place-items:center}
+.cena::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 60%,transparent 40%,var(--fundo) 85%);pointer-events:none}
+.quadro{position:absolute;left:50%;top:calc(50% - 70px);width:min(860px,86vw,calc((100svh - 300px) * 1.6));aspect-ratio:16/10;border-radius:18px;overflow:hidden;background:#fff;
+  box-shadow:0 50px 120px rgba(0,0,0,.6),0 0 0 1px var(--borda);will-change:transform,opacity,filter;transform-style:preserve-3d}
+.quadro .barra{height:30px;background:#E9ECE6;display:flex;align-items:center;gap:6px;padding:0 12px}
+.quadro .barra i{width:10px;height:10px;border-radius:50%;background:#C8CEC4}
+.quadro .barra span{margin-left:10px;font:500 12px var(--corpo);color:#5B655E;background:#fff;border-radius:6px;padding:2px 10px}
+.quadro img,.quadro .sem-foto{display:block;width:100%;height:calc(100% - 30px);object-fit:cover;object-position:top}
+.legenda{position:absolute;left:50%;bottom:max(3vh,18px);translate:-50% 0;z-index:3;text-align:center;width:min(640px,90vw);transition:opacity .25s}
+.legenda .cat{color:var(--broto);font-size:.8rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+.legenda h2{font-family:var(--titulo);font-size:clamp(1.5rem,3.4vw,2.4rem);margin:4px 0 6px;line-height:1.1}
+.legenda p{color:var(--fraco);margin:0 0 14px}
+.legenda .acoes{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.btn-sec{display:inline-flex;align-items:center;gap:6px;border:1.5px solid var(--borda);color:var(--texto);text-decoration:none;font-weight:600;padding:10px 18px;border-radius:999px;background:rgba(255,255,255,.04)}
+.contador{position:absolute;right:max(20px,env(safe-area-inset-right));top:50%;translate:0 -50%;z-index:3;display:grid;gap:8px}
+.contador i{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.2);transition:.3s}
+.contador i.on{background:var(--broto);height:22px;border-radius:6px}
+
+/* ---------- 3) TODOS OS TRABALHOS (grade com filtro) ---------- */
+.todos{padding-block:100px 60px}
+.todos h2{font-family:var(--titulo);font-size:clamp(1.8rem,4vw,2.8rem);margin:8px 0 6px}
+.todos .sub{color:var(--fraco);margin:0 0 26px;max-width:60ch}
+.filtros{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:26px}
+.filtros button{font:600 14px var(--corpo);color:var(--fraco);background:rgba(255,255,255,.04);border:1px solid var(--borda);border-radius:999px;padding:9px 16px;cursor:pointer}
+.filtros button[aria-pressed="true"]{background:var(--broto);color:#1F3A0E;border-color:var(--broto)}
+.grade{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;perspective:1000px}
+.card{background:var(--fundo2);border:1px solid var(--borda);border-radius:18px;overflow:hidden;text-decoration:none;display:flex;flex-direction:column;transform-style:preserve-3d;transition:transform .15s ease-out,box-shadow .2s}
+.card:hover{box-shadow:0 30px 60px rgba(0,0,0,.45)}
+.card .img{aspect-ratio:16/10;overflow:hidden;background:#123224;position:relative}
+.card .img > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;opacity:0;transition:opacity .45s,transform .6s}
+.card .img > img.on{opacity:1}
+.card:hover .img > img.on{transform:scale(1.04)}
+.pontos{position:absolute;left:50%;bottom:10px;translate:-50% 0;display:flex;gap:5px;background:rgba(0,0,0,.45);padding:5px 8px;border-radius:99px}
+.pontos i{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.45);transition:.3s}
+.pontos i.on{background:#fff;width:16px;border-radius:4px}
+.sem-foto{display:grid!important;place-items:center;background:linear-gradient(135deg,#0F3D2E,#2C6B4D)}
+.sem-foto span{font-family:var(--titulo);font-weight:800;font-size:2.4rem;color:var(--broto);letter-spacing:.02em}
+.card .info{padding:16px 18px 20px;display:grid;gap:4px}
+.card .cat{color:var(--broto);font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+.card h3{margin:0;font-family:var(--titulo);font-size:1.15rem}
+.card p{margin:0;color:var(--fraco);font-size:.93rem}
+.card .ver{margin-top:8px;font-weight:600;font-size:.92rem}
+.fim{margin-block:40px 90px;background:linear-gradient(135deg,var(--verde),#1E5B42);border-radius:26px;padding:42px clamp(22px,5vw,56px);display:flex;justify-content:space-between;align-items:center;gap:22px;flex-wrap:wrap}
+.fim h2{font-family:var(--titulo);margin:0 0 6px;font-size:clamp(1.5rem,3vw,2.1rem)}.fim p{margin:0;color:#CFE0D6}
+footer{border-top:1px solid var(--borda);padding-block:26px 34px;color:var(--fraco);font-size:.88rem;text-align:center}
+
+/* ---------- aparece ao rolar ---------- */
+.rev{opacity:0;transform:translateY(40px) scale(.96);transition:opacity .7s,transform .7s cubic-bezier(.2,.8,.2,1)}
+.rev.on{opacity:1;transform:none}
+
+/* ---------- quem prefere menos movimento: sem 3D, tudo parado ---------- */
+@media (prefers-reduced-motion:reduce){
+  .flutuantes img,.desca i::after{animation:none}
+  .rev{opacity:1;transform:none}
+  .palco{display:none}
+}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+
+<header class="topo" id="topo"><div class="wrap">
+  <a href="../"><img src="../img/grovan-logo-claro.png" alt="Grovan"></a>
+  <nav aria-label="Menu"><a href="../">Início</a><a href="../servicos/">Serviços</a><a class="on" href="./">Portfólio</a><a href="../calculadoras/">Ferramentas grátis</a><a class="btn" href="../atendimento/">Pedir orçamento</a></nav>
+</div></header>
+
+<!-- 1) ABERTURA -->
+<section class="abertura">
+  <div class="flutuantes" id="flutuantes" aria-hidden="true">
+    <img src="img/salao-1.webp" alt=""><img src="img/loja-1.webp" alt=""><img src="img/raio-x-2.webp" alt=""><img src="img/restaurante-1.webp" alt="">
+  </div>
+  <div class="wrap" style="position:relative">
+    <span class="etq">Portfólio Grovan</span>
+    <h1>Pronto para ver<br><em>funcionando</em>?</h1>
+    <p>Sites, lojas virtuais e sistemas que já existem. Use como referência para o seu projeto ou escolha um modelo e saia na frente.</p>
+    <a class="btn" href="#todos">Ver todos os trabalhos</a>
+  </div>
+  <div class="desca" aria-hidden="true"><i></i>role para ver</div>
+</section>
+
+<!-- 2) PALCO 3D (preenchido pelo script com os trabalhos em destaque) -->
+<section class="palco" id="palco" aria-label="Trabalhos em destaque">
+  <div class="cena" id="cena">
+    <div class="legenda" id="legenda"></div>
+    <div class="contador" id="contador" aria-hidden="true"></div>
+  </div>
+</section>
+
+<!-- 3) TODOS OS TRABALHOS -->
+<section class="todos wrap" id="todos">
+  <span class="etq rev">Todos os trabalhos</span>
+  <h2 class="rev">Escolha por tipo</h2>
+  <p class="sub rev">Os modelos de site e loja usam negócios fictícios. Os sistemas estão em uso de verdade.</p>
+  <div class="filtros rev" id="filtros" role="group" aria-label="Filtrar trabalhos"></div>
+  <div class="grade" id="grade"></div>
+  <div class="fim rev"><div><h2>Gostou de algum?</h2><p>Diga qual modelo ou sistema chamou atenção e a gente adapta para o seu negócio.</p></div><a class="btn" href="../atendimento/">Pedir orçamento</a></div>
+</section>
+<footer>© 2026 Grovan · 100% remoto, em todo o Brasil · <a href="../privacidade/">Privacidade</a></footer>
+
+<script>
+/* =========================================================
+   TRABALHOS DO PORTFÓLIO
+   Para acrescentar um trabalho, copie um bloco { ... }, cole
+   no final da lista e troque os textos.
+   - tipo: "Sites", "Lojas", "Sistemas" ou "Vídeos"
+   - fotos: imagens dentro de portfolio/img, na ordem em que vão trocar
+     ao passar o mouse (deixe [] se ainda não tiver)
+   - destaque: true = aparece no efeito 3D lá em cima
+   - video: link do YouTube (só para o tipo "Vídeos")
+   ========================================================= */
+const TRABALHOS = [
+  { tipo:"Sites",    titulo:"Studio Bella Flor",      desc:"Site de uma página para salão de beleza e estética.",            fotos:["salao-1.webp","salao-2.webp","salao-3.webp"],       link:"../modelos/salao/",       destaque:true },
+  { tipo:"Lojas",    titulo:"Casa Aroma",              desc:"Loja virtual com vitrine, carrinho, Pix, cartão e frete.",       fotos:["loja-1.webp","loja-2.webp","loja-3.webp"],        link:"../modelos/loja/",        destaque:true },
+  { tipo:"Sistemas", titulo:"Raio-X Fiscal",           desc:"Programa que acha imposto pago a mais no Simples Nacional.",      fotos:["raio-x-1.webp","raio-x-2.webp","raio-x-3.webp"],      link:"",                        destaque:true },
+  { tipo:"Sites",    titulo:"Brasa & Cia",             desc:"Site de uma página para hamburgueria com cardápio e delivery.",  fotos:["restaurante-1.webp","restaurante-2.webp","restaurante-3.webp"], link:"../modelos/restaurante/", destaque:true },
+  { tipo:"Sites",    titulo:"Motor Certo Auto Center", desc:"Site de uma página para oficina mecânica.",                       fotos:["oficina-1.webp","oficina-2.webp","oficina-3.webp"],     link:"../modelos/oficina/",     destaque:true },
+  { tipo:"Sites",    titulo:"Clínica Vitalis",         desc:"Site de uma página para clínica e profissional liberal.",        fotos:["clinica-1.webp","clinica-2.webp","clinica-3.webp"],     link:"../modelos/clinica/",     destaque:false },
+  { tipo:"Sites",    titulo:"Antes e depois",          desc:"O mesmo site antes e depois do Kit Conserto e Cuido.",           fotos:["conserto-1.webp","conserto-2.webp"],    link:"../modelos/conserto/",    destaque:true },
+  { tipo:"Sistemas", titulo:"Ferramentas grátis",      desc:"19 calculadoras e consultas fiscais no site da Grovan.",         fotos:["ferramentas-1.webp"], link:"../calculadoras/",        destaque:false },
+  { tipo:"Sistemas", titulo:"Atendimento com IA",      desc:"Orçamento online com assistente, proposta e pagamento.",         fotos:[],                 link:"../atendimento/",         destaque:false },
+  { tipo:"Sistemas", titulo:"Robô de WhatsApp",        desc:"Busca empresas, faz a primeira mensagem e a IA atende.",         fotos:[],                 link:"",                        destaque:false },
+  { tipo:"Sistemas", titulo:"Painel de impostos",      desc:"Lê as notas do Bling e calcula ICMS, PIS, COFINS e IPI do mês.", fotos:[],                 link:"",                        destaque:false },
+  { tipo:"Sistemas", titulo:"Emissor de NFS-e",        desc:"Emite a nota de serviço nacional e lança no Bling.",             fotos:[],                 link:"",                        destaque:false },
+];
+
+const WHATS = "5511945426510";
+const $ = (q) => document.querySelector(q);
+const reduzir = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const linkWhats = (t) => `https://wa.me/${WHATS}?text=${encodeURIComponent(`Olá, Grovan! Vi "${t.titulo}" no portfólio e quero algo parecido.`)}`;
+const sigla = (t) => t.titulo.split(" ").map((p) => p[0]).join("").slice(0, 3).toUpperCase();
+const imagem = (t) => t.fotos.length ? `<img src="img/${t.fotos[0]}" alt="${t.titulo}" loading="lazy">` : `<div class="sem-foto"><span>${sigla(t)}</span></div>`;
+/* várias fotos empilhadas: a primeira aparece, as outras entram ao passar o mouse */
+const pilha = (t) => t.fotos.length
+  ? t.fotos.map((f, i) => `<img src="img/${f}" alt="${i ? "" : t.titulo}" loading="lazy" class="${i ? "" : "on"}">`).join("") + (t.fotos.length > 1 ? `<span class="pontos">${t.fotos.map((_, i) => `<i class="${i ? "" : "on"}"></i>`).join("")}</span>` : "")
+  : `<div class="sem-foto"><span>${sigla(t)}</span></div>`;
+
+/* ---------- cabeçalho fica sólido depois do topo ---------- */
+addEventListener("scroll", () => $("#topo").classList.toggle("solido", scrollY > 40), { passive: true });
+
+/* ---------- abertura: os cartões seguem o mouse ---------- */
+if (!reduzir) {
+  addEventListener("pointermove", (e) => {
+    const x = e.clientX / innerWidth - 0.5, y = e.clientY / innerHeight - 0.5;
+    document.querySelectorAll("#flutuantes img").forEach((img, i) => {
+      const f = (i + 1) * 12;
+      img.style.transform = `translate(${x * f}px, ${y * f}px)`;
+    });
+  });
+}
+
+/* ---------- PALCO 3D ----------
+   O palco tem 1 tela de altura por trabalho. Enquanto você rola,
+   a "cena" fica parada (sticky) e o script calcula, para cada quadro,
+   em que ponto ele está: -1 = lá no fundo, 0 = na sua frente, 1 = passou. */
+const destaques = TRABALHOS.filter((t) => t.destaque);
+const palco = $("#palco"), cena = $("#cena");
+palco.style.height = `${(destaques.length + 1) * 100}vh`;
+const quadros = destaques.map((t) => {
+  const q = document.createElement("div");
+  q.className = "quadro";
+  q.innerHTML = `<div class="barra"><i></i><i></i><i></i><span>${t.link ? "grovan.com.br/" + t.link.replace(/^\.\.\//, "") : "programa Grovan"}</span></div>${imagem(t)}`;
+  cena.insertBefore(q, $("#legenda"));
+  return q;
+});
+$("#contador").innerHTML = destaques.map(() => "<i></i>").join("");
+let atual = -1;
+
+function mostraLegenda(i) {
+  if (i === atual) return;
+  atual = i;
+  const t = destaques[i], leg = $("#legenda");
+  leg.style.opacity = 0;
+  setTimeout(() => {
+    leg.innerHTML = `<span class="cat">${t.tipo}</span><h2>${t.titulo}</h2><p>${t.desc}</p><div class="acoes">${t.link ? `<a class="btn" href="${t.link}">Ver ao vivo</a>` : ""}<a class="btn-sec" href="${linkWhats(t)}" target="_blank" rel="noopener">Quero algo assim</a></div>`;
+    leg.style.opacity = 1;
+  }, 150);
+  document.querySelectorAll("#contador i").forEach((b, k) => b.classList.toggle("on", k === i));
+}
+
+function animaPalco() {
+  const r = palco.getBoundingClientRect();
+  const total = palco.offsetHeight - innerHeight;
+  const p = Math.min(Math.max(-r.top / total, 0), 1) * destaques.length; // 0 até N
+  quadros.forEach((q, i) => {
+    const t = p - i - 0.5;               // -1 longe · 0 na frente · +1 passou
+    const longe = Math.max(-t, 0), passou = Math.max(t, 0);
+    const escala = t < 0 ? 1 - longe * 0.55 : 1 + passou * 0.9;
+    const giro = t < 0 ? 28 * longe : -18 * passou;            // inclinação
+    const sobe = t < 0 ? longe * 120 : -passou * 80;            // começa mais baixo
+    const opac = t < 0 ? Math.max(0, 1 - longe * 1.1) : Math.max(0, 1 - passou * 1.6);
+    q.style.transform = `translate(-50%, -50%) translateY(${sobe}px) rotateX(${giro}deg) rotateZ(${t * -3}deg) scale(${escala})`;
+    q.style.opacity = opac;
+    q.style.filter = `blur(${passou * 10}px)`;
+    q.style.zIndex = Math.round(100 - Math.abs(t) * 10);
+  });
+  mostraLegenda(Math.min(destaques.length - 1, Math.max(0, Math.floor(p))));
+}
+if (!reduzir) {
+  addEventListener("scroll", () => requestAnimationFrame(animaPalco), { passive: true });
+  addEventListener("resize", animaPalco);
+  animaPalco();
+}
+
+/* ---------- GRADE com filtro e cartões que inclinam com o mouse ---------- */
+const tipos = ["Todos", ...new Set(TRABALHOS.map((t) => t.tipo))];
+$("#filtros").innerHTML = tipos.map((t, i) => `<button aria-pressed="${i === 0}" data-t="${t}">${t}</button>`).join("");
+function desenhaGrade(tipo) {
+  const lista = tipo === "Todos" ? TRABALHOS : TRABALHOS.filter((t) => t.tipo === tipo);
+  $("#grade").innerHTML = lista.map((t) => {
+    const destino = t.link || linkWhats(t), fora = !t.link;
+    return `<a class="card rev" href="${destino}" ${fora ? 'target="_blank" rel="noopener"' : ""}>
+      <div class="img">${t.video ? `<div class="sem-foto"><span>▶</span></div>` : pilha(t)}</div>
+      <div class="info"><span class="cat">${t.tipo}</span><h3>${t.titulo}</h3><p>${t.desc}</p>
+      <span class="ver">${t.link ? "Ver ao vivo →" : "Quero ver uma demonstração →"}</span></div></a>`;
+  }).join("");
+  observar();
+  document.querySelectorAll(".card").forEach(trocaFotos);
+  if (!reduzir) document.querySelectorAll(".card").forEach((c) => {
+    c.addEventListener("pointermove", (e) => {
+      const r = c.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
+      c.style.transform = `rotateY(${x * 10}deg) rotateX(${-y * 10}deg) translateZ(10px)`;
+    });
+    c.addEventListener("pointerleave", () => (c.style.transform = ""));
+  });
+}
+/* ---------- troca de fotos: com mouse, troca enquanto o mouse está em cima;
+   no celular (sem mouse), troca sozinha enquanto o cartão aparece na tela ---------- */
+const temMouse = matchMedia("(hover: hover)").matches;
+function trocaFotos(card) {
+  const fotos = card.querySelectorAll(".img > img"), pts = card.querySelectorAll(".pontos i");
+  if (fotos.length < 2) return;
+  let i = 0, timer = null;
+  const vai = (n) => { fotos[i].classList.remove("on"); pts[i]?.classList.remove("on"); i = n % fotos.length; fotos[i].classList.add("on"); pts[i]?.classList.add("on"); };
+  const comeca = () => { if (!timer) { vai(i + 1); timer = setInterval(() => vai(i + 1), 1100); } };
+  const para = (volta) => { clearInterval(timer); timer = null; if (volta) vai(0); };
+  if (temMouse) { card.addEventListener("pointerenter", comeca); card.addEventListener("pointerleave", () => para(true)); }
+  else if ("IntersectionObserver" in window && !reduzir) {
+    new IntersectionObserver(([e]) => (e.isIntersecting ? comeca() : para(false)), { threshold: 0.6 }).observe(card);
+  }
+}
+$("#filtros").addEventListener("click", (e) => {
+  const b = e.target.closest("button"); if (!b) return;
+  document.querySelectorAll("#filtros button").forEach((x) => x.setAttribute("aria-pressed", x === b));
+  desenhaGrade(b.dataset.t);
+});
+
+/* ---------- aparece ao rolar ---------- */
+const obs = "IntersectionObserver" in window ? new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("on"); obs.unobserve(e.target); } }), { threshold: 0.12 }) : null;
+function observar() { document.querySelectorAll(".rev:not(.on)").forEach((el, i) => { el.style.transitionDelay = `${(i % 3) * 80}ms`; obs ? obs.observe(el) : el.classList.add("on"); }); }
+desenhaGrade("Todos");
+</script>
+</body>
+</html>

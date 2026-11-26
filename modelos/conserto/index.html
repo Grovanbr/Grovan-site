@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Antes e depois · Kit Conserto e Cuido · Grovan</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="Demonstração do Kit Conserto e Cuido da Grovan: como um site lento e sem segurança fica depois do conserto. Exemplo fictício.">
+<link rel="icon" href="../../img/grovan-perfil-icone.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F6F5F0;--fg:#14171A;--muted:#4A524D;--verde:#0F3D2E;--broto:#B8E35A;--borda:#E2E2DA;--card:#fff;--ruim:#B42318;--ruim2:#FEE4E2;--bom:#2E7D32;--bom2:#E3F2DC}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:15.5px/1.6 Inter,system-ui,sans-serif;padding-bottom:64px}
+.wrap{max-width:1100px;margin:0 auto;padding-inline:max(18px,env(safe-area-inset-left))}
+.topo{padding-block:44px 18px}
+.etq{display:inline-block;background:var(--broto);color:#1F3A0E;font-weight:700;font-size:.8rem;padding:4px 12px;border-radius:99px;letter-spacing:.03em;text-transform:uppercase}
+h1{font-family:Sora,sans-serif;font-size:clamp(1.9rem,4.2vw,3rem);line-height:1.1;margin:12px 0 10px;color:var(--verde);text-wrap:balance}
+.sub{color:var(--muted);max-width:62ch;margin:0}
+.chave{display:inline-flex;background:var(--card);border:1px solid var(--borda);border-radius:999px;padding:4px;margin:24px 0 18px}
+.chave button{font:600 15px Inter,sans-serif;border:0;background:none;padding:10px 22px;border-radius:999px;cursor:pointer;color:var(--muted)}
+.chave button[aria-pressed="true"]{background:var(--verde);color:#fff}
+.palco{display:grid;grid-template-columns:1.3fr 1fr;gap:22px;align-items:start}
+@media(max-width:860px){.palco{grid-template-columns:1fr}}
+.navegador{background:var(--card);border:1px solid var(--borda);border-radius:16px;overflow:hidden;box-shadow:0 14px 40px rgba(15,61,46,.08)}
+.barra{display:flex;align-items:center;gap:10px;padding:10px 14px;background:#EDEDE6;border-bottom:1px solid var(--borda);font-size:.85rem}
+.bolinhas{display:flex;gap:6px}.bolinhas i{width:10px;height:10px;border-radius:50%;background:#D0D0C8}
+.url{flex:1;background:#fff;border-radius:8px;padding:5px 10px;display:flex;align-items:center;gap:6px;color:var(--muted);min-width:0;overflow:hidden;white-space:nowrap}
+.url b{font-weight:600}
+.cad{font-weight:700}.ruim .cad{color:var(--ruim)}.bom .cad{color:var(--bom)}
+.tela{min-height:420px;position:relative}
+/* site ANTES */
+.antes{font-family:"Times New Roman",serif;padding:14px;background:#fff}
+.antes .cab{background:#3355aa;color:#ff0;font-size:22px;padding:10px;text-align:center}
+.antes .menu{display:flex;gap:4px;margin:6px 0}.antes .menu span{background:#ccc;border:2px outset #eee;padding:2px 8px;font-size:13px}
+.antes .quebrado{display:flex;gap:8px}
+.antes .img{width:520px;max-width:none;height:130px;background:repeating-linear-gradient(45deg,#ddd 0 10px,#eee 10px 20px);display:grid;place-items:center;color:#999;font-size:13px;flex:none}
+.antes p{font-size:13px;margin:6px 0}
+.antes .form{border:1px dashed #c00;padding:8px;font-size:13px;color:#c00;margin-top:8px}
+.carregando{position:absolute;inset:0;background:rgba(255,255,255,.75);display:grid;place-items:center;font:600 14px Inter,sans-serif;color:var(--ruim)}
+/* site DEPOIS */
+.depois{padding:26px;display:grid;gap:14px}
+.depois .cab{display:flex;justify-content:space-between;align-items:center}
+.depois .marca{font:800 1.2rem Sora,sans-serif;color:var(--verde)}
+.depois .bt{background:var(--verde);color:#fff;border-radius:999px;padding:8px 16px;font-weight:600;font-size:.9rem}
+.depois h2{font:700 1.7rem/1.15 Sora,sans-serif;margin:8px 0 0;color:var(--fg)}
+.depois .hero{border-radius:14px;height:120px;background:linear-gradient(135deg,var(--verde),#3c8a62)}
+.depois .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.depois .cards div{border:1px solid var(--borda);border-radius:12px;padding:10px;font-size:.85rem}
+.depois .form{border:1px solid var(--borda);border-radius:12px;padding:12px;font-size:.88rem;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.depois .form span{color:var(--bom);font-weight:600}
+.lista{display:grid;gap:10px}
+.item{background:var(--card);border:1px solid var(--borda);border-radius:14px;padding:14px 16px;display:grid;grid-template-columns:1fr auto;gap:4px 12px;align-items:center}
+.item b{font-size:.98rem}.item small{grid-column:1/-1;color:var(--muted)}
+.valor{font:700 1.05rem Sora,sans-serif;padding:3px 10px;border-radius:99px;white-space:nowrap}
+.ruim .valor{background:var(--ruim2);color:var(--ruim)}.bom .valor{background:var(--bom2);color:var(--bom)}
+.cta{margin:34px 0 10px;background:var(--verde);color:#F6F5F0;border-radius:22px;padding:30px clamp(20px,4vw,40px);display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.cta h2{font:700 1.5rem Sora,sans-serif;margin:0 0 6px}.cta p{margin:0;color:#CFE0D6}
+.cta a{background:var(--broto);color:#1F3A0E;font-weight:700;text-decoration:none;padding:13px 22px;border-radius:999px}
+.nota{color:var(--muted);font-size:.85rem}
+.modelo{position:fixed;left:0;right:0;bottom:0;z-index:30;background:#0F3D2E;color:#F6F5F0;display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;padding:10px max(16px,env(safe-area-inset-left)) calc(10px + env(safe-area-inset-bottom));font:500 14px/1.3 system-ui,sans-serif;text-align:center}
+.modelo a{color:#CFE0D6}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div class="topo">
+    <span class="etq">Kit Conserto e Cuido</span>
+    <h1>Seu site está espantando clientes?</h1>
+    <p class="sub">Veja o mesmo site antes e depois do conserto. Troque entre as duas versões e compare: cadeado de segurança, velocidade, celular e formulário funcionando.</p>
+  </div>
+  <div class="chave" role="group" aria-label="Escolha a versão"><button id="b-antes" aria-pressed="true">Antes</button><button id="b-depois" aria-pressed="false">Depois do conserto</button></div>
+  <div class="palco">
+    <div class="navegador ruim" id="nav">
+      <div class="barra"><span class="bolinhas"><i></i><i></i><i></i></span><span class="url"><span class="cad" id="cad">⚠ Não seguro</span><b id="url">http://</b>www.lojaexemplo.com.br</span></div>
+      <div class="tela" id="tela-antes"><div class="antes">
+        <div class="cab">LOJA EXEMPLO - BEM VINDO!!!</div>
+        <div class="menu"><span>Home</span><span>Produtos</span><span>Contato</span><span>Promoções</span></div>
+        <div class="quebrado"><div class="img">imagem pesada (4,8 MB)</div><p>Somos uma empresa com mais de 20 anos de tradição no mercado oferecendo os melhores produtos com o melhor preço da região...</p></div>
+        <div class="form">Erro: o formulário de contato não foi enviado. Tente novamente mais tarde.</div>
+      </div><div class="carregando">Carregando... 9,4 s</div></div>
+      <div class="tela" id="tela-depois" hidden><div class="depois">
+        <div class="cab"><span class="marca">Loja Exemplo</span><span class="bt">Fale no WhatsApp</span></div>
+        <h2>Tudo para a sua casa, com entrega no bairro</h2>
+        <div class="hero" aria-hidden="true"></div>
+        <div class="cards"><div><b>Entrega rápida</b><br>Até 2 dias</div><div><b>Pix e cartão</b><br>Em até 3x</div><div><b>Atendimento</b><br>Seg a sáb</div></div>
+        <div class="form">Formulário de contato <span>✓ Mensagem enviada</span></div>
+      </div></div>
+    </div>
+    <div class="lista" id="lista"></div>
+  </div>
+  <div class="cta"><div><h2>Quer o seu site assim?</h2><p>Diagnóstico e conserto a partir de R$ 497, em 3 a 5 dias úteis. O site continua na sua hospedagem.</p></div>
+    <a href="../../atendimento/?kit=sos">Pedir o Kit Conserto e Cuido</a></div>
+  <p class="nota">Exemplo fictício para demonstração. Os números variam de site para site e são medidos no diagnóstico.</p>
+</main>
+<div class="modelo" role="note">Demonstração da Grovan · <a href="../../portfolio/">Ver o portfólio</a></div>
+<script>
+const D={antes:[["Cadeado de segurança (HTTPS)","Não tem","O navegador avisa “Não seguro” e o cliente desiste."],["Tempo para abrir","9,4 s","Metade das pessoas sai antes de 3 segundos."],["No celular","Quebrado","Texto pequeno e imagem cortando a tela."],["Formulário de contato","Com erro","Os pedidos de orçamento se perdem."],["Cópia de segurança","Nenhuma","Se der problema, perde tudo."]],
+ depois:[["Cadeado de segurança (HTTPS)","Ativo","Navegação segura e confiança na hora."],["Tempo para abrir","1,6 s","Imagens otimizadas e código mais leve."],["No celular","Ajustado","Botões grandes e leitura confortável."],["Formulário de contato","Funcionando","Cada pedido chega no seu WhatsApp ou e-mail."],["Cópia de segurança","Todo mês conferida","No plano mensal de acompanhamento."]]};
+const $=q=>document.querySelector(q);
+function mostra(v){
+  const d=v==="depois";$("#b-antes").setAttribute("aria-pressed",!d);$("#b-depois").setAttribute("aria-pressed",d);
+  $("#tela-antes").hidden=d;$("#tela-depois").hidden=!d;$("#nav").className="navegador "+(d?"bom":"ruim");
+  $("#cad").textContent=d?"🔒 Seguro":"⚠ Não seguro";$("#url").textContent=d?"https://":"http://";
+  $("#lista").className="lista "+(d?"bom":"ruim");
+  $("#lista").innerHTML=D[v].map(([a,b,c])=>`<div class="item"><b>${a}</b><span class="valor">${b}</span><small>${c}</small></div>`).join("");
+}
+$("#b-antes").onclick=()=>mostra("antes");$("#b-depois").onclick=()=>mostra("depois");mostra("antes");
+</script>
+</body>
+</html>

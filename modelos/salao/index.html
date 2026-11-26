@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Studio Bella Flor · Modelo de site Grovan</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="Modelo de site de uma página para salão de beleza e estética, feito pela Grovan. Negócio fictício.">
+<link rel="icon" href="../../img/grovan-perfil-icone.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFF8F5;--fg:#2B1D22;--muted:#7A6268;--acc:#B5476A;--acc2:#F3D9DF;--card:#FFFFFF;--borda:#F0E1E4;--dark:#2B1D22;--ft:'Playfair Display', Georgia, serif;--fb:'DM Sans', system-ui, sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 var(--fb);padding-bottom:64px}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 max(20px,env(safe-area-inset-left))}
+header{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--borda)}
+.topo{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.marca{font-family:var(--ft);font-size:1.45rem;font-weight:700;text-decoration:none;letter-spacing:.01em}
+.marca small{display:block;font-family:var(--fb);font-size:.72rem;font-weight:500;color:var(--muted);letter-spacing:.04em;text-transform:uppercase}
+nav{display:flex;gap:22px;font-size:.95rem}nav a{text-decoration:none;color:var(--muted)}nav a:hover{color:var(--fg)}
+@media(max-width:820px){nav{display:none}}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--acc);color:#fff;text-decoration:none;font-weight:700;padding:13px 22px;border-radius:999px;border:0;font-family:var(--fb)}
+.btn svg{width:20px;height:20px}.btn:hover{filter:brightness(1.07)}
+.btn-sec{background:transparent;color:var(--fg);border:1.5px solid var(--borda)}
+.hero{padding-block:72px 56px;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+@media(max-width:860px){.hero{grid-template-columns:1fr;padding-top:36px}}
+@media(max-width:560px){header .btn span{display:none}header .btn{padding:12px}.marca{font-size:1.2rem}.modelo .longo{display:none}}
+.hero h1{font-family:var(--ft);font-size:clamp(2.3rem,5.4vw,4rem);line-height:1.05;margin:0 0 18px;text-wrap:balance}
+.hero p{font-size:1.12rem;color:var(--muted);max-width:52ch;margin:0 0 26px}
+.acoes{display:flex;gap:12px;flex-wrap:wrap}
+.selos{list-style:none;padding:0;margin:28px 0 0;display:flex;flex-wrap:wrap;gap:8px 18px;font-size:.9rem;color:var(--muted)}
+.selos li::before{content:"✓";color:var(--acc);font-weight:700;margin-right:6px}
+.arte{position:relative;aspect-ratio:4/5;max-width:100%;border-radius:28px;overflow:hidden;background:linear-gradient(150deg,var(--acc) 0%,var(--acc2) 100%)}
+.arte::before,.arte::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.18)}
+.arte::before{width:70%;aspect-ratio:1;right:-15%;top:-10%}.arte::after{width:45%;aspect-ratio:1;left:-10%;bottom:-8%;background:rgba(0,0,0,.12)}
+.arte .tag{position:absolute;left:20px;bottom:20px;right:20px;background:var(--card);color:var(--fg);border-radius:18px;padding:16px 18px;display:flex;gap:12px;align-items:center;box-shadow:0 12px 30px rgba(0,0,0,.15)}
+.arte .tag svg{width:26px;height:26px;color:var(--acc);flex:none}.arte .tag b{display:block}.arte .tag small{color:var(--muted)}
+.arte.faixa{border-radius:6px;background:repeating-linear-gradient(135deg,var(--acc) 0 26px,var(--dark) 26px 52px)}
+.arte.quadrado{border-radius:12px}.arte.arco{border-radius:220px 220px 28px 28px}
+section{padding-block:64px}
+.sec-t{font-family:var(--ft);font-size:clamp(1.8rem,3.6vw,2.6rem);line-height:1.1;margin:0 0 8px}
+.sec-s{color:var(--muted);margin:0 0 30px;max-width:60ch}
+.grade{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.serv{background:var(--card);border:1px solid var(--borda);border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:6px}
+.serv h3{margin:0;font-size:1.12rem}.serv p{margin:0;color:var(--muted);font-size:.95rem;flex:1}
+.preco{font-weight:700;color:var(--acc);margin-top:8px}
+.sobre{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+@media(max-width:820px){.sobre{grid-template-columns:1fr}}
+.sobre p{color:var(--muted);font-size:1.06rem}
+.galeria{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+@media(max-width:720px){.galeria{grid-template-columns:repeat(2,1fr)}}
+.foto{margin:0;aspect-ratio:1;border-radius:16px;position:relative;overflow:hidden;background:var(--acc2)}
+.foto.f0{background:linear-gradient(160deg,var(--acc),var(--acc2))}.foto.f1{background:radial-gradient(circle at 30% 30%,var(--acc2),var(--acc))}
+.foto.f2{background:linear-gradient(20deg,var(--dark),var(--acc))}.foto.f3{background:repeating-linear-gradient(90deg,var(--acc2) 0 18px,var(--card) 18px 36px)}
+.foto span{position:absolute;left:10px;bottom:10px;right:10px;font-size:.8rem;background:rgba(0,0,0,.55);color:#fff;padding:6px 10px;border-radius:10px}
+.depos{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.depo{margin:0;background:var(--card);border:1px solid var(--borda);border-radius:18px;padding:22px}
+.estrelas{display:flex;gap:2px;color:#F5A524}.estrelas svg{width:16px;height:16px}
+.depo p{margin:10px 0}.depo cite{font-style:normal;font-weight:700;color:var(--muted);font-size:.9rem}
+.contato{background:var(--dark);color:#fff;border-radius:28px;padding:44px clamp(22px,5vw,56px);display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:center}
+@media(max-width:820px){.contato{grid-template-columns:1fr}}
+.contato .sec-t{color:#fff}.contato p,.contato li{color:rgba(255,255,255,.78)}
+.info{list-style:none;padding:0;margin:0;display:grid;gap:14px}
+.info li{display:flex;gap:10px}.info svg{width:20px;height:20px;flex:none;color:var(--acc);margin-top:3px}
+.info ul{margin:0;padding:0;list-style:none}
+footer{padding-block:30px 40px;color:var(--muted);font-size:.88rem;text-align:center}
+.flutuante{position:fixed;right:18px;bottom:78px;width:56px;height:56px;border-radius:50%;background:#25D366;color:#fff;display:grid;place-items:center;box-shadow:0 8px 22px rgba(0,0,0,.25);z-index:6}
+.flutuante svg{width:30px;height:30px}
+.modelo{position:fixed;left:0;right:0;bottom:0;z-index:10;background:#0F3D2E;color:#F6F5F0;display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;padding:10px max(16px,env(safe-area-inset-left)) calc(10px + env(safe-area-inset-bottom));font:500 14px/1.3 system-ui,sans-serif;text-align:center}
+.modelo a{background:#B8E35A;color:#1F3A0E;text-decoration:none;font-weight:700;padding:8px 16px;border-radius:999px}
+.modelo .v{color:#CFE0D6;text-decoration:underline;background:none;padding:0}
+</style>
+</head>
+<body>
+<header><div class="wrap topo">
+  <a class="marca" href="#">Studio Bella Flor<small>Cabelo, unhas e estética</small></a>
+  <nav aria-label="Menu"><a href="#servicos">Serviços e valores</a><a href="#sobre">Sobre</a><a href="#depoimentos">Depoimentos</a><a href="#contato">Contato</a></nav>
+  <a class="btn" href="#contato"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.2-.7-2.7-1.1-4.4-3.8-4.6-4-.1-.2-1.1-1.4-1.1-2.7s.7-1.9.9-2.2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.8-1c.2-.3.4-.2.6-.1l2 .9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg><span>Agendar</span></a>
+</div></header>
+<main>
+  <div class="wrap hero">
+    <div>
+      <h1>Você merece sair daqui se sentindo linda</h1>
+      <p>Corte, coloração, escova, manicure e estética facial com hora marcada e atendimento sem pressa.</p>
+      <div class="acoes"><a class="btn" href="#contato"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.2-.7-2.7-1.1-4.4-3.8-4.6-4-.1-.2-1.1-1.4-1.1-2.7s.7-1.9.9-2.2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.8-1c.2-.3.4-.2.6-.1l2 .9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>Agendar pelo WhatsApp</a><a class="btn btn-sec" href="#servicos">Ver serviços e valores</a></div>
+      <ul class="selos"><li>4,9 de 5 no Google</li><li>Mais de 8 anos no bairro</li><li>Produtos profissionais</li></ul>
+    </div>
+    <div class="arte circulo" role="img" aria-label="Imagem ilustrativa"><div class="tag"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg><div><b>4,9 de 5 no Google</b><small>Cabelo, unhas e estética</small></div></div></div>
+  </div>
+  <section id="servicos"><div class="wrap">
+    <h2 class="sec-t">Serviços e valores</h2><p class="sec-s">Valores de referência. Confirme pelo WhatsApp antes de vir.</p>
+    <div class="grade"><article class="serv"><h3>Corte feminino</h3><p>Lavagem, corte e finalização</p><span class="preco">a partir de R$ 70</span></article><article class="serv"><h3>Coloração</h3><p>Raiz ou global, com hidratação</p><span class="preco">a partir de R$ 150</span></article><article class="serv"><h3>Escova modelada</h3><p>Lisa ou com movimento</p><span class="preco">R$ 55</span></article><article class="serv"><h3>Manicure e pedicure</h3><p>Esmaltação comum ou em gel</p><span class="preco">a partir de R$ 45</span></article><article class="serv"><h3>Design de sobrancelha</h3><p>Com ou sem henna</p><span class="preco">R$ 40</span></article><article class="serv"><h3>Limpeza de pele</h3><p>Extração, máscara e hidratação</p><span class="preco">R$ 120</span></article></div>
+  </div></section>
+  <section id="sobre"><div class="wrap sobre">
+    <div><h2 class="sec-t">Atendimento de salão de bairro, cuidado de estúdio</h2><p>A Bella Flor nasceu para ser o lugar onde você é chamada pelo nome. Cada atendimento começa com uma conversa para entender o que você quer, e termina com dicas para manter o resultado em casa.</p><a class="btn" href="#contato"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.2-.7-2.7-1.1-4.4-3.8-4.6-4-.1-.2-1.1-1.4-1.1-2.7s.7-1.9.9-2.2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.8-1c.2-.3.4-.2.6-.1l2 .9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>Agendar pelo WhatsApp</a></div>
+    <div class="galeria" style="grid-template-columns:repeat(2,1fr)"><figure class="foto f0"><span>Antes e depois de coloração</span></figure><figure class="foto f1"><span>Unhas em gel</span></figure><figure class="foto f2"><span>Escova modelada</span></figure><figure class="foto f3"><span>Ambiente do studio</span></figure></div>
+  </div></section>
+  <section id="depoimentos"><div class="wrap">
+    <h2 class="sec-t">Quem vem, volta</h2><p class="sec-s">O que os clientes dizem.</p>
+    <div class="depos"><blockquote class="depo"><div class="estrelas"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg></div><p>“Fiz coloração e ficou exatamente como eu pedi. Atendimento super atencioso.”</p><cite>Ana P.</cite></blockquote><blockquote class="depo"><div class="estrelas"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg></div><p>“Marco tudo pelo WhatsApp, rápido e sempre no horário.”</p><cite>Juliana R.</cite></blockquote><blockquote class="depo"><div class="estrelas"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg></div><p>“Minha manicure de confiança há 3 anos.”</p><cite>Carla M.</cite></blockquote></div>
+  </div></section>
+  <section id="contato"><div class="wrap"><div class="contato">
+    <div><h2 class="sec-t">Fale com a gente</h2><p>Resposta rápida pelo WhatsApp, no horário de atendimento.</p><a class="btn" href="#contato"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.2-.7-2.7-1.1-4.4-3.8-4.6-4-.1-.2-1.1-1.4-1.1-2.7s.7-1.9.9-2.2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.8-1c.2-.3.4-.2.6-.1l2 .9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>Agendar pelo WhatsApp</a></div>
+    <ul class="info"><li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" d="M12 21s-7-6.2-7-11a7 7 0 1 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/></svg><span>Rua das Acácias, 120 · Vila Exemplo · São Paulo</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><ul><li>Terça a sexta: 9h às 19h</li><li>Sábado: 8h às 17h</li><li>Domingo e segunda: fechado</li></ul></li></ul>
+  </div></div></section>
+</main>
+<footer class="wrap">© 2026 Studio Bella Flor · Negócio fictício, criado como exemplo.</footer>
+<a class="flutuante" href="#contato" aria-label="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.2-.7-2.7-1.1-4.4-3.8-4.6-4-.1-.2-1.1-1.4-1.1-2.7s.7-1.9.9-2.2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.8-1c.2-.3.4-.2.6-.1l2 .9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg></a>
+<div class="modelo" role="note"><span>Site modelo da Grovan<span class="longo"> para salão de beleza e estética. Nomes, preços e endereço são fictícios</span>.</span>
+  <a href="https://wa.me/5511945426510?text=Ol%C3%A1%2C%20Grovan%21%20Vi%20o%20modelo%20de%20site%20%22Studio%20Bella%20Flor%22%20%28Sal%C3%A3o%20de%20beleza%20e%20est%C3%A9tica%29%20e%20quero%20um%20assim%20para%20o%20meu%20neg%C3%B3cio." target="_blank" rel="noopener">Quero um assim</a><a class="v" href="../../portfolio/">Ver o portfólio</a></div>
+</body>
+</html>

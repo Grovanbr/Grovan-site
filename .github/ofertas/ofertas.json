@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-11-26 13:18",
+ "geradoEm": "2026-11-26 17:17",
  "itens": [
   {
    "nome": "Secret Boom Box Metallic MBOOM Gloss Labial 5ml com Chaveiro Ursinho Colecionável Surpresa",
@@ -18,8 +18,12 @@
    "loja": "Mercado Livre",
    "precoAtual": 26.79,
    "conferencia": {
-    "status": "igual",
-    "preco": 26.79
+    "status": "baixou",
+    "preco": 25.45,
+    "precoAntigo": 42.84,
+    "imagem": "https://http2.mlstatic.com/D_NQ_NP_683755-MLB112552959736_062026-F.webp",
+    "aplicado": true,
+    "precoAnterior": 26.79
    },
    "alternativas": []
   },
@@ -49,14 +53,14 @@
    "nome": "Principia Kit Limpeza E Hidratação Ch-01 + Ol-01 + Gl-02 Todo Tipo De Pele Dia/noite",
    "link": "https://meli.la/1ikSs3S",
    "loja": "Mercado Livre",
-   "precoAtual": 107.31,
+   "precoAtual": 91.21,
    "conferencia": {
-    "status": "baixou",
-    "preco": 91.21,
+    "status": "subiu",
+    "preco": 107.31,
     "precoAntigo": 147.0,
     "imagem": "https://http2.mlstatic.com/D_NQ_NP_609209-MLA94364515810_102025-F.webp",
     "aplicado": true,
-    "precoAnterior": 107.31
+    "precoAnterior": 91.21
    },
    "alternativas": []
   },
@@ -66,8 +70,12 @@
    "loja": "Mercado Livre",
    "precoAtual": 16.67,
    "conferencia": {
-    "status": "igual",
-    "preco": 16.67
+    "status": "baixou",
+    "preco": 14.82,
+    "precoAntigo": 26.99,
+    "imagem": "https://http2.mlstatic.com/D_NQ_NP_756821-MLA86791313939_062025-F.webp",
+    "aplicado": true,
+    "precoAnterior": 16.67
    },
    "alternativas": []
   },
@@ -83,12 +91,24 @@
    "alternativas": []
   }
  ],
- "avisos": [],
+ "avisos": [
+  "A Shopee não respondeu na busca de 1 de 7 produtos (Principia Kit Limpeza E Hidratação Ch-01 + Ol-01 + Gl-02 Todo Tipo De Pele Dia/noite). Esses produtos são procurados de novo na próxima procura. Motivo: A API da Shopee está instável agora. Tente de novo em alguns minutos. Detalhe da Shopee: System Error"
+ ],
  "precosAtualizados": [
   {
+   "nome": "Escovas Para Maquiagem Multicolor Kit 8 Peças Pincel Macio Sortida",
+   "de": 26.79,
+   "para": 25.45
+  },
+  {
    "nome": "Principia Kit Limpeza E Hidratação Ch-01 + Ol-01 + Gl-02 Todo Tipo De Pele Dia/noite",
-   "de": 107.31,
-   "para": 91.21
+   "de": 91.21,
+   "para": 107.31
+  },
+  {
+   "nome": "NIVEA Loção Deo-Hidratante Soft Milk 400ml, Hidratação Profunda 72h, Hialurônico Puro, Corporal, Pele Seca",
+   "de": 16.67,
+   "para": 14.82
   }
  ],
  "trocasAutomaticas": []

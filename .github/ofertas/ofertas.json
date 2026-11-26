@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-11-19 17:16",
+ "geradoEm": "2026-11-26 13:18",
  "itens": [
   {
    "nome": "Secret Boom Box Metallic MBOOM Gloss Labial 5ml com Chaveiro Ursinho Colecionável Surpresa",
@@ -7,8 +7,8 @@
    "loja": "Shopee",
    "precoAtual": 129.9,
    "conferencia": {
-    "status": "igual",
-    "preco": 129.9
+    "status": "erro",
+    "texto": "A Shopee não achou esse produto no programa de afiliados (pode estar sem comissão ou fora do ar)."
    },
    "alternativas": []
   },
@@ -51,8 +51,12 @@
    "loja": "Mercado Livre",
    "precoAtual": 107.31,
    "conferencia": {
-    "status": "igual",
-    "preco": 107.31
+    "status": "baixou",
+    "preco": 91.21,
+    "precoAntigo": 147.0,
+    "imagem": "https://http2.mlstatic.com/D_NQ_NP_609209-MLA94364515810_102025-F.webp",
+    "aplicado": true,
+    "precoAnterior": 107.31
    },
    "alternativas": []
   },
@@ -62,35 +66,29 @@
    "loja": "Mercado Livre",
    "precoAtual": 16.67,
    "conferencia": {
-    "status": "baixou",
-    "preco": 14.82,
-    "precoAntigo": 26.99,
-    "imagem": "https://http2.mlstatic.com/D_NQ_NP_756821-MLA86791313939_062025-F.webp",
-    "aplicado": true,
-    "precoAnterior": 16.67
+    "status": "igual",
+    "preco": 16.67
    },
    "alternativas": []
   },
   {
    "nome": "Kit 50 ou 100 Bolas + Brinde Estrela Enfeite Árvore Natal Decoração",
-   "link": "https://s.shopee.com.br/9Kjj8WTwnM",
+   "link": "https://s.shopee.com.br/80EWj2fWSp",
    "loja": "Shopee",
-   "precoAtual": 69.9,
+   "precoAtual": 79.98,
    "conferencia": {
     "status": "igual",
-    "preco": 69.9
+    "preco": 79.98
    },
    "alternativas": []
   }
  ],
- "avisos": [
-  "A Shopee não respondeu na busca de 1 de 7 produtos (Guarda Chuva Grande Reforçado Contra Vento Cabe Na Bolsa). Esses produtos são procurados de novo na próxima procura. Motivo: A API da Shopee está instável agora. Tente de novo em alguns minutos. Detalhe da Shopee: System Error"
- ],
+ "avisos": [],
  "precosAtualizados": [
   {
-   "nome": "NIVEA Loção Deo-Hidratante Soft Milk 400ml, Hidratação Profunda 72h, Hialurônico Puro, Corporal, Pele Seca",
-   "de": 16.67,
-   "para": 14.82
+   "nome": "Principia Kit Limpeza E Hidratação Ch-01 + Ol-01 + Gl-02 Todo Tipo De Pele Dia/noite",
+   "de": 107.31,
+   "para": 91.21
   }
  ],
  "trocasAutomaticas": []

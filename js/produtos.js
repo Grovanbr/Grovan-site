@@ -73,7 +73,7 @@ const produtos = [
     categoria: "Beleza",
     link: "https://meli.la/1ikSs3S",
     imagem: "https://http2.mlstatic.com/D_NQ_NP_609209-MLA94364515810_102025-F.webp",
-    preco: 107.31,
+    preco: 91.21,
     precoAntigo: 147.00,
     destaque: true
   },
@@ -83,7 +83,7 @@ const produtos = [
     categoria: "Beleza",
     link: "https://meli.la/2Mg6D1e",
     imagem: "https://http2.mlstatic.com/D_NQ_NP_756821-MLA86791313939_062025-F.webp",
-    preco: 14.82,
+    preco: 16.67,
     precoAntigo: 26.99,
     destaque: false
   },
@@ -91,11 +91,11 @@ const produtos = [
     nome: "Kit 50 ou 100 Bolas + Brinde Estrela Enfeite Árvore Natal Decoração",
     loja: "Shopee",
     categoria: "Artigos de Festa",
-    link: "https://s.shopee.com.br/9Kjj8WTwnM",
-    imagem: "https://cf.shopee.com.br/file/br-11134207-820ma-mscv9ben53ie70",
-    preco: 69.90,
-    precoAntigo: 0.00,
+    link: "https://s.shopee.com.br/80EWj2fWSp",
+    imagem: "https://cf.shopee.com.br/file/br-11134207-820m0-mvqfcosfh1c218",
+    preco: 79.98,
+    precoAntigo: 99.97,
     destaque: false,
-    shopee: "1387542695.23394417877"
+    shopee: "640104920.46868561309"
   },
 ];

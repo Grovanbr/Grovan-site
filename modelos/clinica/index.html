@@ -29,7 +29,7 @@ nav{display:flex;gap:24px}nav a{text-decoration:none;color:var(--muted);font-wei
 .hero h1 em{font-style:normal;color:var(--teal)}
 .hero p{color:var(--muted);font-size:1.1rem;max-width:50ch}
 .arco{aspect-ratio:4/4.6;border-radius:260px 260px 32px 32px;background:linear-gradient(170deg,var(--teal2),var(--teal));position:relative;overflow:hidden;max-width:440px;justify-self:center;width:100%}
-.arco svg{position:absolute;inset:auto 0 0 0;width:100%}
+.arco img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .card-fl{position:absolute;left:-12px;bottom:28px;background:var(--card);border-radius:16px;padding:12px 16px;box-shadow:0 14px 34px rgba(15,42,46,.15);font-size:.9rem}
 .card-fl b{display:block;font-size:1.3rem;color:var(--teal)}
 section{padding-block:60px}
@@ -54,11 +54,11 @@ section{padding-block:60px}
 .fim{background:var(--teal2);border-radius:16px;padding:18px}
 /* especialidades e equipe */
 .esp{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}@media(max-width:820px){.esp{grid-template-columns:1fr}}
-.esp div{background:var(--card);border:1px solid var(--borda);border-radius:20px;padding:22px}
+.esp div{background:var(--card);border:1px solid var(--borda);border-radius:20px;padding:22px;overflow:hidden}.esp .capa{display:block;width:calc(100% + 44px);max-width:none;margin:-22px -22px 16px;height:160px;object-fit:cover}
 .esp svg{width:40px;height:40px;color:var(--teal)}.esp h3{margin:10px 0 4px}.esp p{margin:0;color:var(--muted);font-size:.95rem}.esp b{display:block;margin-top:10px;color:var(--teal)}
 .equipe{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}@media(max-width:820px){.equipe{grid-template-columns:1fr}}
 .equipe div{display:flex;gap:14px;align-items:center;background:var(--card);border:1px solid var(--borda);border-radius:20px;padding:18px}
-.av{width:60px;height:60px;border-radius:18px;background:var(--teal);color:#fff;display:grid;place-items:center;font-weight:800;flex:none}
+.av{width:60px;height:60px;border-radius:18px;overflow:hidden;flex:none}.av svg{width:100%;height:100%;display:block}.ilus{display:block;font-size:.72rem;color:var(--muted);margin-top:4px}
 .equipe p{margin:0;color:var(--muted);font-size:.9rem}
 .reemb{display:grid;grid-template-columns:repeat(3,1fr);gap:0;background:var(--fg);color:#fff;border-radius:22px;overflow:hidden}
 @media(max-width:820px){.reemb{grid-template-columns:1fr}}
@@ -85,8 +85,7 @@ footer .g{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;ali
     <p>Conte onde dói e veja qual tratamento faz sentido para você. Depois, agende a avaliação em menos de um minuto.</p>
     <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:22px"><a class="btn" href="#triagem">Descobrir meu tratamento</a><a class="btn sec" href="#agendar">Agendar direto</a></div>
   </div>
-  <div class="arco" aria-hidden="true">
-    <svg viewBox="0 0 400 300"><path d="M0 220 Q100 150 200 200 T400 170 V300 H0Z" fill="#ffffff33"/><path d="M0 250 Q120 200 220 240 T400 220 V300 H0Z" fill="#ffffff55"/><circle cx="210" cy="96" r="24" fill="#fff"/><path d="M210 122c-30 10-52 34-70 70l14 8c14-24 30-40 46-48l8 70h16l6-64c20 10 34 26 46 44l14-8c-18-32-44-62-80-72z" fill="#fff"/></svg>
+  <div class="arco"><img src="img/pilates.webp" alt="Sala de pilates com aparelhos" loading="lazy">
     <div class="card-fl"><b>50 min</b>de avaliação individual<br>antes de começar</div>
   </div>
 </div>
@@ -113,20 +112,20 @@ footer .g{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;ali
 <section id="especialidades" style="padding-top:0"><div class="wrap">
   <h2 class="t">Especialidades</h2><p class="s">Valores de referência.</p>
   <div class="esp">
-    <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3v18M8 7h8M7 12h10M8 17h8"/></svg><h3>Fisioterapia ortopédica</h3><p>Coluna, joelho, ombro e pós-operatório.</p><b>Sessão R$ 140</b></div>
-    <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="5" r="2"/><path d="M4 21l4-8 4 3 4-3 4 8M12 7v9"/></svg><h3>Pilates clínico</h3><p>Turmas de até 3 pessoas, 2 vezes por semana.</p><b>A partir de R$ 380/mês</b></div>
-    <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v20M5 9l7-7 7 7"/></svg><h3>RPG</h3><p>Reeducação postural global, sessões individuais.</p><b>Sessão R$ 150</b></div>
+    <div><img src="img/maca1.webp" alt="Sala de atendimento com maca" loading="lazy" class="capa" style="object-position:center 85%"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3v18M8 7h8M7 12h10M8 17h8"/></svg><h3>Fisioterapia ortopédica</h3><p>Coluna, joelho, ombro e pós-operatório.</p><b>Sessão R$ 140</b></div>
+    <div><img src="img/equip.webp" alt="Acessórios de pilates na parede" loading="lazy" class="capa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="5" r="2"/><path d="M4 21l4-8 4 3 4-3 4 8M12 7v9"/></svg><h3>Pilates clínico</h3><p>Turmas de até 3 pessoas, 2 vezes por semana.</p><b>A partir de R$ 380/mês</b></div>
+    <div><img src="img/faixa.webp" alt="Faixa elástica e halteres" loading="lazy" class="capa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v20M5 9l7-7 7 7"/></svg><h3>RPG</h3><p>Reeducação postural global, sessões individuais.</p><b>Sessão R$ 150</b></div>
   </div>
 </div></section>
 
 <section id="equipe" style="padding-top:0"><div class="wrap">
-  <h2 class="t">Equipe</h2><p class="s">Fisioterapeutas com registro no conselho regional.</p>
-  <div class="equipe"><div><span class="av">LC</span><span><b>Dra. Laura Costa</b><p>Ortopedia e pós-operatório</p></span></div><div><span class="av" style="background:#3BA99C">PM</span><span><b>Dr. Pedro Moura</b><p>Pilates clínico e coluna</p></span></div><div><span class="av" style="background:#0F2A2E">AS</span><span><b>Dra. Ana Silveira</b><p>RPG e postura</p></span></div></div>
+  <h2 class="t">Equipe</h2><p class="s">Fisioterapeutas com registro no conselho regional. Retratos ilustrados.</p>
+  <div class="equipe"><div><span class="av"><svg viewBox="0 0 100 100" role="img" aria-label="Imagem ilustrativa"><rect width="100" height="100" fill="#0F8B8D"/><circle cx="50" cy="21" r="8" fill="#3A2A20"/><path d="M16 100c0-19 15-29 34-29s34 10 34 29z" fill="#FFFFFF"/><rect x="44" y="58" width="12" height="15" rx="5" fill="#E8B79A"/><ellipse cx="50" cy="45" rx="15" ry="17" fill="#E8B79A"/><path d="M35 43c0-13 7-19 15-19s15 6 15 19c-4-7-9-10-15-10s-11 3-15 10z" fill="#3A2A20"/><g fill="#2B1D22"><circle cx="44.5" cy="46" r="1.7"/><circle cx="55.5" cy="46" r="1.7"/></g><path d="M45 53q5 4 10 0" fill="none" stroke="#2B1D22" stroke-width="1.6" stroke-linecap="round"/></svg></span><span><b>Dra. Laura Costa</b><p>Ortopedia e pós-operatório</p><small class="ilus">Imagem ilustrativa</small></span></div><div><span class="av"><svg viewBox="0 0 100 100" role="img" aria-label="Imagem ilustrativa"><rect width="100" height="100" fill="#3BA99C"/><path d="M16 100c0-19 15-29 34-29s34 10 34 29z" fill="#0F2A2E"/><rect x="44" y="58" width="12" height="15" rx="5" fill="#B7795A"/><ellipse cx="50" cy="45" rx="15" ry="17" fill="#B7795A"/><path d="M35 41c0-12 7-18 15-18s15 6 15 18c-3-5-8-8-15-8s-12 3-15 8z" fill="#1E1410"/><g fill="#2B1D22"><circle cx="44.5" cy="46" r="1.7"/><circle cx="55.5" cy="46" r="1.7"/></g><path d="M45 53q5 4 10 0" fill="none" stroke="#2B1D22" stroke-width="1.6" stroke-linecap="round"/></svg></span><span><b>Dr. Pedro Moura</b><p>Pilates clínico e coluna</p><small class="ilus">Imagem ilustrativa</small></span></div><div><span class="av"><svg viewBox="0 0 100 100" role="img" aria-label="Imagem ilustrativa"><rect width="100" height="100" fill="#0F2A2E"/><path d="M30 46c0-17 9-27 20-27s20 10 20 27v32H30z" fill="#9A5B2E"/><path d="M16 100c0-19 15-29 34-29s34 10 34 29z" fill="#DDF3F1"/><rect x="44" y="58" width="12" height="15" rx="5" fill="#F1CBB0"/><ellipse cx="50" cy="45" rx="15" ry="17" fill="#F1CBB0"/><path d="M34 44c0-15 7-22 16-22s17 7 17 20c-7-2-13-7-16-12-4 7-10 11-17 14z" fill="#9A5B2E"/><g fill="#2B1D22"><circle cx="44.5" cy="46" r="1.7"/><circle cx="55.5" cy="46" r="1.7"/></g><path d="M45 53q5 4 10 0" fill="none" stroke="#2B1D22" stroke-width="1.6" stroke-linecap="round"/></svg></span><span><b>Dra. Ana Silveira</b><p>RPG e postura</p><small class="ilus">Imagem ilustrativa</small></span></div></div>
   <div class="reemb" style="margin-top:34px"><div><b>1</b><p>Você paga a sessão no particular.</p></div><div><b>2</b><p>Emitimos o recibo com os dados que o plano pede.</p></div><div><b>3</b><p>Você envia ao plano e recebe o reembolso.</p></div></div>
 </div></section>
 </main>
 <footer><div class="wrap g"><span style="display:flex;align-items:center;gap:10px"><svg viewBox="0 0 40 40" aria-hidden="true"><rect x="4" y="4" width="32" height="32" rx="10" fill="#0F8B8D"/><path d="M20 30c-6-4-9-8-9-12a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 4-3 8-9 12z" fill="#fff"/><path d="M13 20h4l2-4 3 8 2-4h3" stroke="#0F8B8D" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Clínica Vitalis · Rua da Saúde Exemplo, 300, sala 12 · São Paulo<br>Seg a sex 7h–20h · Sáb 8h–12h</span></span><span>Empresa fictícia, criada como exemplo.</span></div></footer>
-<div class="modelo" role="note"><span>Site modelo da Grovan<span class="longo"> para clínica e consultório. Empresa, preços e endereço são fictícios</span>.</span><a href="https://wa.me/5511945426510?text=Ol%C3%A1%2C%20Grovan%21%20Vi%20o%20modelo%20%22Cl%C3%ADnica%20Vitalis%22%20%28cl%C3%ADnica%20e%20consult%C3%B3rio%29%20no%20portf%C3%B3lio%20e%20quero%20um%20site%20assim." target="_blank" rel="noopener">Quero um assim</a><a class="v" href="../../portfolio/">Ver o portfólio</a></div>
+<div class="modelo" role="note"><span>Site modelo da Grovan<span class="longo"> para clínica e consultório. Empresa, preços e endereço são fictícios. Fotos ilustrativas (Unsplash)</span>.</span><a href="https://wa.me/5511945426510?text=Ol%C3%A1%2C%20Grovan%21%20Vi%20o%20modelo%20%22Cl%C3%ADnica%20Vitalis%22%20%28cl%C3%ADnica%20e%20consult%C3%B3rio%29%20no%20portf%C3%B3lio%20e%20quero%20um%20site%20assim." target="_blank" rel="noopener">Quero um assim</a><a class="v" href="../../portfolio/">Ver o portfólio</a></div>
 <script>
 {
 const R={"Coluna":["Fisioterapia + pilates","Dor lombar e cervical respondem bem a exercícios de estabilização.",["2 sessões por semana","Resultado em 6 a 8 semanas","Pilates para manter depois"]],

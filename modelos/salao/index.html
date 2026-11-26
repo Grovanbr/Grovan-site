@@ -34,6 +34,10 @@ nav{display:flex;gap:24px}nav a{text-decoration:none;color:var(--muted)}nav a:ho
 .hero h1{font:600 clamp(2.4rem,6vw,4.4rem)/1.05 'Playfair Display',serif;margin:14px auto 16px;max-width:15ch;position:relative;text-wrap:balance}
 .hero h1 em{color:var(--rosa)}
 .hero p{color:var(--muted);max-width:52ch;margin:0 auto 26px;font-size:1.1rem;position:relative}
+.hero .faixa-fotos{position:relative;display:grid;grid-template-columns:1fr 1.3fr 1fr;gap:14px;max-width:760px;margin:40px auto 0;align-items:end}
+.hero .faixa-fotos img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:999px 999px 20px 20px;box-shadow:0 20px 40px rgba(142,47,80,.18)}
+.hero .faixa-fotos img:nth-child(2){aspect-ratio:3/3.6}
+@media(max-width:560px){.hero .faixa-fotos{grid-template-columns:1fr 1fr}.hero .faixa-fotos img:nth-child(3){display:none}}
 .livres{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:26px;position:relative}
 .livres span{background:var(--card);border:1px solid var(--borda);border-radius:99px;padding:6px 14px;font-size:.9rem}
 .livres b{color:var(--rosa)}
@@ -66,17 +70,19 @@ button.on{border-color:var(--rosa)!important;background:var(--rosa2)!important;f
 .equipe{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 @media(max-width:760px){.equipe{grid-template-columns:1fr}}
 .pessoa{text-align:center;background:var(--card);border:1px solid var(--borda);border-radius:24px;padding:26px}
-.av{width:96px;height:96px;border-radius:50%;margin:0 auto 12px;display:grid;place-items:center;font:600 1.8rem 'Playfair Display',serif;color:#fff}
+.av{width:96px;height:96px;border-radius:50%;margin:0 auto 12px;overflow:hidden}.av svg{width:100%;height:100%;display:block}
+.ilus{display:inline-block;margin-top:10px;font-size:.72rem;color:var(--muted);border:1px solid var(--borda);border-radius:99px;padding:2px 9px}
 .pessoa h4{margin:0;font-size:1.1rem}.pessoa p{margin:4px 0 0;color:var(--muted);font-size:.92rem}
 /* GALERIA MOSAICO */
 .mosaico{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:150px;gap:12px}
-.mosaico div{border-radius:18px;position:relative;overflow:hidden}
-.mosaico div:nth-child(1){grid-row:span 2;background:linear-gradient(160deg,#B5476A,#F6DCE3)}
-.mosaico div:nth-child(2){background:linear-gradient(120deg,#C9A25A,#F9E8D2)}
-.mosaico div:nth-child(3){grid-row:span 2;background:radial-gradient(circle at 30% 30%,#F6DCE3,#8E2F50)}
-.mosaico div:nth-child(4){background:linear-gradient(200deg,#2B1D22,#B5476A)}
-.mosaico div:nth-child(5){grid-column:span 2;background:repeating-linear-gradient(90deg,#F6DCE3 0 20px,#fff 20px 40px)}
-.mosaico span{position:absolute;left:12px;bottom:12px;background:rgba(43,29,34,.6);color:#fff;font-size:.8rem;padding:4px 10px;border-radius:99px}
+.mosaico div{border-radius:18px;position:relative;overflow:hidden;background:#F6DCE3}
+.mosaico img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s}.mosaico div:hover img{transform:scale(1.05)}
+.mosaico div:nth-child(1){grid-row:span 2}
+.mosaico div:nth-child(2){}
+.mosaico div:nth-child(3){grid-row:span 2}
+.mosaico div:nth-child(4){}
+.mosaico div:nth-child(5){grid-column:span 2}
+.mosaico span{z-index:1;position:absolute;left:12px;bottom:12px;background:rgba(43,29,34,.6);color:#fff;font-size:.8rem;padding:4px 10px;border-radius:99px}
 @media(max-width:700px){.mosaico{grid-template-columns:repeat(2,1fr)}.mosaico div:nth-child(5){grid-column:span 2}}
 .depo{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}@media(max-width:820px){.depo{grid-template-columns:1fr}}
 .depo blockquote{margin:0;font:italic 600 1.15rem/1.4 'Playfair Display',serif;background:var(--card);border-radius:22px;padding:24px;border:1px solid var(--borda)}
@@ -106,6 +112,7 @@ footer svg{width:44px;height:44px}
     <p>Escolha o serviço, o dia e o horário aqui mesmo. A confirmação chega no seu WhatsApp.</p>
     <a class="btn" href="#agendar">Escolher meu horário</a>
     <div class="livres"><span>Hoje ainda tem: <b>14h</b></span><span><b>15h30</b></span><span><b>17h</b></span></div>
+    <div class="faixa-fotos"><img src="img/tesoura.webp" alt="Tesouras e pentes sobre a bancada" loading="lazy"><img src="img/secador.webp" alt="Bancada com secador" loading="lazy"><img src="img/esmalte2.webp" alt="Esmaltes" loading="lazy"></div>
   </div>
 </div>
 
@@ -136,17 +143,17 @@ footer svg{width:44px;height:44px}
 </div></section>
 
 <section id="equipe"><div class="wrap">
-  <h2 class="t">Quem cuida de você</h2><p class="s">Profissionais fixas, que lembram do seu nome e do seu último tom.</p>
+  <h2 class="t">Quem cuida de você</h2><p class="s">Profissionais fixas, que lembram do seu nome e do seu último tom. Retratos ilustrados.</p>
   <div class="equipe">
-    <div class="pessoa"><div class="av" style="background:#B5476A">MF</div><h4>Marina Flor</h4><p>Fundadora · coloração e mechas</p></div>
-    <div class="pessoa"><div class="av" style="background:#C9A25A">JS</div><h4>Jéssica Souza</h4><p>Unhas em gel e alongamento</p></div>
-    <div class="pessoa"><div class="av" style="background:#8E2F50">RL</div><h4>Renata Lima</h4><p>Estética facial e sobrancelhas</p></div>
+    <div class="pessoa"><div class="av"><svg viewBox="0 0 100 100" role="img" aria-label="Imagem ilustrativa"><rect width="100" height="100" fill="#B5476A"/><path d="M30 46c0-17 9-27 20-27s20 10 20 27v32H30z" fill="#5A2E1C"/><path d="M16 100c0-19 15-29 34-29s34 10 34 29z" fill="#F6DCE3"/><rect x="44" y="58" width="12" height="15" rx="5" fill="#E8B79A"/><ellipse cx="50" cy="45" rx="15" ry="17" fill="#E8B79A"/><path d="M34 44c0-15 7-22 16-22s17 7 17 20c-7-2-13-7-16-12-4 7-10 11-17 14z" fill="#5A2E1C"/><g fill="#2B1D22"><circle cx="44.5" cy="46" r="1.7"/><circle cx="55.5" cy="46" r="1.7"/></g><path d="M45 53q5 4 10 0" fill="none" stroke="#2B1D22" stroke-width="1.6" stroke-linecap="round"/></svg></div><h4>Marina Flor</h4><p>Fundadora · coloração e mechas</p><span class="ilus">Imagem ilustrativa</span></div>
+    <div class="pessoa"><div class="av"><svg viewBox="0 0 100 100" role="img" aria-label="Imagem ilustrativa"><rect width="100" height="100" fill="#C9A25A"/><circle cx="50" cy="21" r="8" fill="#1E1410"/><path d="M16 100c0-19 15-29 34-29s34 10 34 29z" fill="#FFF3E6"/><rect x="44" y="58" width="12" height="15" rx="5" fill="#8D5A3B"/><ellipse cx="50" cy="45" rx="15" ry="17" fill="#8D5A3B"/><path d="M35 43c0-13 7-19 15-19s15 6 15 19c-4-7-9-10-15-10s-11 3-15 10z" fill="#1E1410"/><g fill="#2B1D22"><circle cx="44.5" cy="46" r="1.7"/><circle cx="55.5" cy="46" r="1.7"/></g><path d="M45 53q5 4 10 0" fill="none" stroke="#2B1D22" stroke-width="1.6" stroke-linecap="round"/></svg></div><h4>Jéssica Souza</h4><p>Unhas em gel e alongamento</p><span class="ilus">Imagem ilustrativa</span></div>
+    <div class="pessoa"><div class="av"><svg viewBox="0 0 100 100" role="img" aria-label="Imagem ilustrativa"><rect width="100" height="100" fill="#8E2F50"/><path d="M30 46c0-17 9-27 20-27s20 10 20 27v32H30z" fill="#C98A4B"/><path d="M16 100c0-19 15-29 34-29s34 10 34 29z" fill="#2B1D22"/><rect x="44" y="58" width="12" height="15" rx="5" fill="#F1CBB0"/><ellipse cx="50" cy="45" rx="15" ry="17" fill="#F1CBB0"/><path d="M34 44c0-15 7-22 16-22s17 7 17 20c-7-2-13-7-16-12-4 7-10 11-17 14z" fill="#C98A4B"/><g fill="#2B1D22"><circle cx="44.5" cy="46" r="1.7"/><circle cx="55.5" cy="46" r="1.7"/></g><path d="M45 53q5 4 10 0" fill="none" stroke="#2B1D22" stroke-width="1.6" stroke-linecap="round"/></svg></div><h4>Renata Lima</h4><p>Estética facial e sobrancelhas</p><span class="ilus">Imagem ilustrativa</span></div>
   </div>
 </div></section>
 
 <section id="galeria" style="padding-top:0"><div class="wrap">
-  <h2 class="t">Resultados</h2><p class="s">No site real, aqui entram as fotos do Instagram do salão.</p>
-  <div class="mosaico"><div><span>Mechas</span></div><div><span>Unhas em gel</span></div><div><span>Coloração</span></div><div><span>Escova</span></div><div><span>Nosso espaço</span></div></div>
+  <h2 class="t">Nosso espaço</h2><p class="s">No site real, aqui entram as fotos do salão e do Instagram. Fotos ilustrativas.</p>
+  <div class="mosaico"><div><img src="img/interior2.webp" alt="Corredor do salão com espelhos e poltronas" loading="lazy"><span>Estações de corte</span></div><div><img src="img/esmalte2.webp" alt="Esmaltes coloridos" loading="lazy"><span>Unhas em gel</span></div><div><img src="img/interior3.webp" alt="Salão com cadeiras e espelhos" loading="lazy"><span>Nosso espaço</span></div><div><img src="img/escova.webp" alt="Escovas e secador" loading="lazy"><span>Escova</span></div><div><img src="img/shampoo.webp" alt="Frascos de shampoo e condicionador" loading="lazy"><span>Linha de tratamento</span></div></div>
 </div></section>
 
 <section style="padding-top:0"><div class="wrap">
@@ -159,7 +166,7 @@ footer svg{width:44px;height:44px}
   <div><h5>Horários</h5><ul><li>Ter a sex: 9h às 19h</li><li>Sábado: 8h às 17h</li><li>Dom e seg: fechado</li></ul></div>
   <div><h5>Onde estamos</h5><ul><li>Rua das Acácias, 120</li><li>Vila Exemplo · São Paulo</li><li>@bellaflor.studio</li></ul></div>
 </div><p class="copy">© 2026 Studio Bella Flor · Empresa fictícia, criada como exemplo.</p></div></footer>
-<div class="modelo" role="note"><span>Site modelo da Grovan<span class="longo"> para salão de beleza. Empresa, preços e endereço são fictícios</span>.</span><a href="https://wa.me/5511945426510?text=Ol%C3%A1%2C%20Grovan%21%20Vi%20o%20modelo%20%22Studio%20Bella%20Flor%22%20%28sal%C3%A3o%20de%20beleza%29%20no%20portf%C3%B3lio%20e%20quero%20um%20site%20assim." target="_blank" rel="noopener">Quero um assim</a><a class="v" href="../../portfolio/">Ver o portfólio</a></div>
+<div class="modelo" role="note"><span>Site modelo da Grovan<span class="longo"> para salão de beleza. Empresa, preços e endereço são fictícios. Fotos ilustrativas (Unsplash)</span>.</span><a href="https://wa.me/5511945426510?text=Ol%C3%A1%2C%20Grovan%21%20Vi%20o%20modelo%20%22Studio%20Bella%20Flor%22%20%28sal%C3%A3o%20de%20beleza%29%20no%20portf%C3%B3lio%20e%20quero%20um%20site%20assim." target="_blank" rel="noopener">Quero um assim</a><a class="v" href="../../portfolio/">Ver o portfólio</a></div>
 <script>
 {
 const S=[["Corte feminino",70,60],["Escova modelada",55,45],["Coloração raiz",150,120],["Manicure",35,40],["Esmaltação em gel",90,60],["Design de sobrancelha",40,30]];

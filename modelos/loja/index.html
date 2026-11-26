@@ -33,7 +33,7 @@ header{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px so
 .banner h1{font-family:'Fraunces',Georgia,serif;font-size:clamp(2rem,4.4vw,3.2rem);line-height:1.08;margin:0;text-wrap:balance}
 .banner p{margin:0;color:var(--muted);max-width:44ch}
 .banner .arte{background:radial-gradient(circle at 60% 40%,#F6E7D2 0 30%,transparent 31%),linear-gradient(160deg,#C79E7A,#8A5A3B);position:relative;min-height:220px}
-.banner .arte svg{position:absolute;inset:0;margin:auto;width:56%;height:auto}
+.banner .arte svg{display:none}.banner .arte{background:#2E2621 url(img/vela3.webp) center/cover!important}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--fg);color:#fff;border:0;border-radius:999px;padding:13px 24px;font:600 15px 'Work Sans',sans-serif;cursor:pointer;text-decoration:none}
 .btn.acc{background:var(--acc)}.btn.sec{background:transparent;color:var(--fg);border:1.5px solid var(--borda)}
 .vantagens{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-bottom:34px}
@@ -43,7 +43,7 @@ h2.t{font-family:'Fraunces',Georgia,serif;font-size:1.7rem;margin:0 0 16px}
 .grade{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:18px;margin-bottom:40px}
 .prod{background:var(--card);border:1px solid var(--borda);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;text-decoration:none}
 .prod .img{aspect-ratio:1;display:grid;place-items:center;position:relative}
-.prod .img svg{width:62%;height:auto}
+.prod .img svg{width:62%;height:auto}.prod .img,.produto .img,.item .mini{overflow:hidden}.prod .img img,.produto .img img,.item .mini img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.produto .img,.item .mini{position:relative}.prod .img img{transition:transform .5s}.prod:hover .img img{transform:scale(1.05)}.prod .selo{z-index:1}
 .selo{position:absolute;left:10px;top:10px;background:var(--verde);color:#fff;font-size:12px;font-weight:600;padding:3px 9px;border-radius:99px}
 .prod .info{padding:12px 14px 16px;display:flex;flex-direction:column;gap:2px}
 .prod .nome{font-weight:600}.preco{font-weight:700;font-size:1.08rem}
@@ -109,7 +109,7 @@ footer{border-top:1px solid var(--borda);margin-top:30px;padding-block:26px;colo
 
 <div class="gaveta" id="gaveta" hidden><div class="caixa" role="dialog" aria-label="Carrinho" id="caixa-carrinho"></div></div>
 
-<div class="modelo" role="note"><span>Loja modelo da Grovan<span class="longo"> (Kit Loja Iniciante). Produtos, preços e pedidos são fictícios</span>.</span>
+<div class="modelo" role="note"><span>Loja modelo da Grovan<span class="longo"> (Kit Loja Iniciante). Produtos, preços e pedidos são fictícios. Fotos ilustrativas (Unsplash)</span>.</span>
   <a href="https://wa.me/5511945426510?text=Ol%C3%A1%2C%20Grovan!%20Vi%20a%20loja%20modelo%20%22Casa%20Aroma%22%20e%20quero%20uma%20loja%20assim%20para%20o%20meu%20neg%C3%B3cio." target="_blank" rel="noopener">Quero uma loja assim</a><a class="v" href="../../portfolio/">Ver o portfólio</a></div>
 
 <script>
@@ -120,19 +120,19 @@ const SVG={
  sabonete:(c)=>`<svg viewBox="0 0 100 110"><rect x="18" y="40" width="64" height="40" rx="18" fill="${c}" stroke="#2E262122"/><ellipse cx="50" cy="58" rx="18" ry="7" fill="#FFFFFF88"/><circle cx="72" cy="30" r="6" fill="#FFFFFFAA" stroke="#2E262133"/><circle cx="82" cy="20" r="3.5" fill="#FFFFFFAA" stroke="#2E262133"/></svg>`,
  kit:(c)=>`<svg viewBox="0 0 100 110"><rect x="14" y="44" width="72" height="56" rx="6" fill="${c}" stroke="#2E262122"/><rect x="46" y="44" width="8" height="56" fill="#8A5A3B"/><path d="M50 44c-10-16-24-10-16 0zM50 44c10-16 24-10 16 0z" fill="#8A5A3B"/></svg>`};
 const P=[
- {id:1,cat:"velas",nome:"Vela Flor de Laranjeira",preco:69.9,de:79.9,tipo:"vela",cor:"#F6C79A",desc:"Cera vegetal de soja, pavio de algodão e 40 horas de queima. Notas cítricas e florais.",var:["180 g","300 g"],tag:"Mais vendido"},
- {id:2,cat:"velas",nome:"Vela Madeira & Baunilha",preco:74.9,tipo:"vela",cor:"#C79E7A",desc:"Aroma amadeirado e aconchegante. Ideal para a sala e o quarto.",var:["180 g","300 g"]},
- {id:3,cat:"difusores",nome:"Difusor Alecrim do Campo",preco:89.9,tipo:"difusor",cor:"#B9CDB0",desc:"Difusor de varetas com 250 ml. Dura de 60 a 90 dias.",var:["250 ml","500 ml"],tag:"Novo"},
- {id:4,cat:"difusores",nome:"Difusor Lavanda Francesa",preco:89.9,tipo:"difusor",cor:"#C9BFE0",desc:"Relaxante e suave. Acompanha 8 varetas de fibra.",var:["250 ml","500 ml"]},
- {id:5,cat:"sabonetes",nome:"Sabonete de Argila Rosa",preco:24.9,tipo:"sabonete",cor:"#E9B8C0",desc:"Sabonete vegetal com argila rosa e óleo de amêndoas. 110 g.",var:["Unidade","Trio"]},
- {id:6,cat:"sabonetes",nome:"Sabonete de Aveia e Mel",preco:24.9,tipo:"sabonete",cor:"#EAD3A2",desc:"Hidratante e suave para todos os tipos de pele. 110 g.",var:["Unidade","Trio"]},
- {id:7,cat:"kits",nome:"Kit Presente Casa Aroma",preco:179.9,de:209.7,tipo:"kit",cor:"#D8C3A5",desc:"Vela 180 g, difusor 250 ml e sabonete, em caixa presenteável com cartão.",var:["Caixa kraft","Caixa branca"],tag:"Presente"},
- {id:8,cat:"velas",nome:"Vela Brisa do Mar",preco:69.9,tipo:"vela",cor:"#A9CBD3",desc:"Notas frescas e marinhas. Cera vegetal e 40 horas de queima.",var:["180 g","300 g"]}];
+ {id:1,foto:"vela2",cat:"velas",nome:"Vela Flor de Laranjeira",preco:69.9,de:79.9,tipo:"vela",cor:"#F6C79A",desc:"Cera vegetal de soja, pavio de algodão e 40 horas de queima. Notas cítricas e florais.",var:["180 g","300 g"],tag:"Mais vendido"},
+ {id:2,foto:"vela4",cat:"velas",nome:"Vela Madeira & Baunilha",preco:74.9,tipo:"vela",cor:"#C79E7A",desc:"Aroma amadeirado e aconchegante. Ideal para a sala e o quarto.",var:["180 g","300 g"]},
+ {id:3,foto:"dif1",cat:"difusores",nome:"Difusor Alecrim do Campo",preco:89.9,tipo:"difusor",cor:"#B9CDB0",desc:"Difusor de varetas com 250 ml. Dura de 60 a 90 dias.",var:["250 ml","500 ml"],tag:"Novo"},
+ {id:4,foto:"dif3",cat:"difusores",nome:"Difusor Lavanda Francesa",preco:89.9,tipo:"difusor",cor:"#C9BFE0",desc:"Relaxante e suave. Acompanha 8 varetas de fibra.",var:["250 ml","500 ml"]},
+ {id:5,foto:"sab1",cat:"sabonetes",nome:"Sabonete de Argila Rosa",preco:24.9,tipo:"sabonete",cor:"#E9B8C0",desc:"Sabonete vegetal com argila rosa e óleo de amêndoas. 110 g.",var:["Unidade","Trio"]},
+ {id:6,foto:"sab2",cat:"sabonetes",nome:"Sabonete de Aveia e Mel",preco:24.9,tipo:"sabonete",cor:"#EAD3A2",desc:"Hidratante e suave para todos os tipos de pele. 110 g.",var:["Unidade","Trio"]},
+ {id:7,foto:"presente1",cat:"kits",nome:"Kit Presente Casa Aroma",preco:179.9,de:209.7,tipo:"kit",cor:"#D8C3A5",desc:"Vela 180 g, difusor 250 ml e sabonete, em caixa presenteável com cartão.",var:["Caixa kraft","Caixa branca"],tag:"Presente"},
+ {id:8,foto:"vela1",cat:"velas",nome:"Vela Brisa do Mar",preco:69.9,tipo:"vela",cor:"#A9CBD3",desc:"Notas frescas e marinhas. Cera vegetal e 40 horas de queima.",var:["180 g","300 g"]}];
 const CATS=[["todos","Todos"],["velas","Velas"],["difusores","Difusores"],["sabonetes","Sabonetes"],["kits","Kits presente"]];
 const brl=v=>v.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
 const $=q=>document.querySelector(q);
 let carrinho=[];
-function arte(p){return SVG[p.tipo](p.cor)}
+function arte(p){return p.foto?`<img src="img/${p.foto}.webp" alt="${p.nome}" loading="lazy">`:SVG[p.tipo](p.cor)}
 function card(p){return `<a class="prod" href="#produto-${p.id}"><div class="img" style="background:${COR[p.cat]}">${p.tag?`<span class="selo">${p.tag}</span>`:""}${arte(p)}</div><div class="info"><span class="nome">${p.nome}</span><span class="preco">${p.de?`<span class="de">${brl(p.de)}</span>`:""}${brl(p.preco)}</span><span class="parc">ou 3x de ${brl(p.preco/3)}</span></div></a>`}
 function grade(lista,titulo){$("#grade").innerHTML=lista.map(card).join("")||"<p>Nenhum produto encontrado.</p>";$("#titulo-grade").textContent=titulo}
 function cats(at){$("#cats").innerHTML=CATS.map(([k,n])=>`<a href="#cat-${k}" class="${k===at?"on":""}">${n}</a>`).join("")}

@@ -22,6 +22,8 @@ h2.titulo{font-size:clamp(1.8rem,3.6vw,2.6rem);line-height:1.12;margin:0 0 8px}
 .grade3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}@media(max-width:860px){.grade3{grid-template-columns:1fr}}
 .card{background:var(--card);border:1px solid var(--borda);border-radius:18px;padding:24px}
 .card h3{margin:10px 0 6px;font-size:1.12rem}.card p{margin:0;color:var(--muted)}
+.card{overflow:hidden}.card .capa{display:block;width:calc(100% + 48px);max-width:none;margin:-24px -24px 16px;height:170px;object-fit:cover}
+.foto-larga{width:100%;max-width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:18px;display:block}
 .ico{width:46px;height:46px;border-radius:12px;background:var(--azul2);display:grid;place-items:center;color:var(--azul)}.ico svg{width:24px;height:24px}
 .faixa{background:var(--azul);color:#fff}
 .faixa .sub{color:#B9CFDB}

@@ -93,8 +93,8 @@ const produtos = [
     categoria: "Artigos de Festa",
     link: "https://s.shopee.com.br/80EWj2fWSp",
     imagem: "https://cf.shopee.com.br/file/br-11134207-820m0-mvqfcosfh1c218",
-    preco: 21.99,
-    precoAntigo: 99.95,
+    preco: 79.98,
+    precoAntigo: 99.97,
     destaque: false,
     shopee: "640104920.46868561309"
   },

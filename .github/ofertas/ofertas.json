@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-11-26 09:13",
+ "geradoEm": "2026-11-26 13:18",
  "itens": [
   {
    "nome": "Secret Boom Box Metallic MBOOM Gloss Labial 5ml com Chaveiro Ursinho Colecionável Surpresa",
@@ -51,8 +51,12 @@
    "loja": "Mercado Livre",
    "precoAtual": 107.31,
    "conferencia": {
-    "status": "igual",
-    "preco": 107.31
+    "status": "baixou",
+    "preco": 91.21,
+    "precoAntigo": 147.0,
+    "imagem": "https://http2.mlstatic.com/D_NQ_NP_609209-MLA94364515810_102025-F.webp",
+    "aplicado": true,
+    "precoAnterior": 107.31
    },
    "alternativas": []
   },
@@ -71,14 +75,10 @@
    "nome": "Kit 50 ou 100 Bolas + Brinde Estrela Enfeite Árvore Natal Decoração",
    "link": "https://s.shopee.com.br/80EWj2fWSp",
    "loja": "Shopee",
-   "precoAtual": 21.99,
+   "precoAtual": 79.98,
    "conferencia": {
-    "status": "subiu",
-    "preco": 79.98,
-    "precoAntigo": 99.97,
-    "imagem": "https://cf.shopee.com.br/file/br-11134207-820m0-mvqfcosfh1c218",
-    "aplicado": true,
-    "precoAnterior": 21.99
+    "status": "igual",
+    "preco": 79.98
    },
    "alternativas": []
   }
@@ -86,9 +86,9 @@
  "avisos": [],
  "precosAtualizados": [
   {
-   "nome": "Kit 50 ou 100 Bolas + Brinde Estrela Enfeite Árvore Natal Decoração",
-   "de": 21.99,
-   "para": 79.98
+   "nome": "Principia Kit Limpeza E Hidratação Ch-01 + Ol-01 + Gl-02 Todo Tipo De Pele Dia/noite",
+   "de": 107.31,
+   "para": 91.21
   }
  ],
  "trocasAutomaticas": []

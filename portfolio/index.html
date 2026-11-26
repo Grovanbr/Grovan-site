@@ -103,6 +103,7 @@ a{color:inherit}
 .sem-foto{display:grid!important;place-items:center;background:linear-gradient(135deg,#0F3D2E,#2C6B4D)}
 .sem-foto span{font-family:var(--titulo);font-weight:800;font-size:2.4rem;color:var(--broto);letter-spacing:.02em}
 .card .info{padding:16px 18px 20px;display:grid;gap:4px}
+.fic{font-style:normal;font-weight:600;letter-spacing:0;text-transform:none;color:var(--fraco);background:rgba(255,255,255,.06);border:1px solid var(--borda);border-radius:99px;padding:1px 8px;margin-left:6px}
 .card .cat{color:var(--broto);font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
 .card h3{margin:0;font-family:var(--titulo);font-size:1.15rem}
 .card p{margin:0;color:var(--fraco);font-size:.93rem}
@@ -157,7 +158,7 @@ footer{border-top:1px solid var(--borda);padding-block:26px 34px;color:var(--fra
 <section class="todos wrap" id="todos">
   <span class="etq rev">Todos os trabalhos</span>
   <h2 class="rev">Escolha por tipo</h2>
-  <p class="sub rev">Os modelos de site e loja usam negócios fictícios. Os sistemas estão em uso de verdade.</p>
+  <p class="sub rev">Os modelos usam empresas fictícias, criadas só para mostrar o layout de cada tipo de negócio. Os sistemas estão em uso de verdade e aparecem com dados de exemplo.</p>
   <div class="filtros rev" id="filtros" role="group" aria-label="Filtrar trabalhos"></div>
   <div class="grade" id="grade"></div>
   <div class="fim rev"><div><h2>Gostou de algum?</h2><p>Diga qual modelo ou sistema chamou atenção e a gente adapta para o seu negócio.</p></div><a class="btn" href="../atendimento/">Pedir orçamento</a></div>
@@ -174,15 +175,16 @@ footer{border-top:1px solid var(--borda);padding-block:26px 34px;color:var(--fra
      ao passar o mouse (deixe [] se ainda não tiver)
    - destaque: true = aparece no efeito 3D lá em cima
    - video: link do YouTube (só para o tipo "Vídeos")
+   - ficticia: true = empresa inventada só para mostrar o layout
    ========================================================= */
 const TRABALHOS = [
-  { tipo:"Sites",    titulo:"Studio Bella Flor",      desc:"Site de uma página para salão de beleza e estética.",            fotos:["salao-1.webp","salao-2.webp","salao-3.webp"],       link:"../modelos/salao/",       destaque:true },
-  { tipo:"Lojas",    titulo:"Casa Aroma",              desc:"Loja virtual com vitrine, carrinho, Pix, cartão e frete.",       fotos:["loja-1.webp","loja-2.webp","loja-3.webp"],        link:"../modelos/loja/",        destaque:true },
-  { tipo:"Sistemas", titulo:"Raio-X Fiscal",           desc:"Programa que acha imposto pago a mais no Simples Nacional.",      fotos:["raio-x-1.webp","raio-x-2.webp","raio-x-3.webp"],      link:"",                        destaque:true },
-  { tipo:"Sites",    titulo:"Brasa & Cia",             desc:"Site de uma página para hamburgueria com cardápio e delivery.",  fotos:["restaurante-1.webp","restaurante-2.webp","restaurante-3.webp"], link:"../modelos/restaurante/", destaque:true },
-  { tipo:"Sites",    titulo:"Motor Certo Auto Center", desc:"Site de uma página para oficina mecânica.",                       fotos:["oficina-1.webp","oficina-2.webp","oficina-3.webp"],     link:"../modelos/oficina/",     destaque:true },
-  { tipo:"Sites",    titulo:"Clínica Vitalis",         desc:"Site de uma página para clínica e profissional liberal.",        fotos:["clinica-1.webp","clinica-2.webp","clinica-3.webp"],     link:"../modelos/clinica/",     destaque:false },
-  { tipo:"Sites",    titulo:"Antes e depois",          desc:"O mesmo site antes e depois do Kit Conserto e Cuido.",           fotos:["conserto-1.webp","conserto-2.webp"],    link:"../modelos/conserto/",    destaque:true },
+  { tipo:"Sites",    titulo:"Studio Bella Flor", ficticia:true,      desc:"Site de uma página para salão de beleza e estética.",            fotos:["salao-1.webp","salao-2.webp","salao-3.webp"],       link:"../modelos/salao/",       destaque:true },
+  { tipo:"Lojas",    titulo:"Casa Aroma", ficticia:true,              desc:"Loja virtual com vitrine, carrinho, Pix, cartão e frete.",       fotos:["loja-1.webp","loja-2.webp","loja-3.webp"],        link:"../modelos/loja/",        destaque:true },
+  { tipo:"Sistemas", titulo:"Raio-X Fiscal", ficticia:true,           desc:"Programa que acha imposto pago a mais no Simples Nacional.",      fotos:["raio-x-1.webp","raio-x-2.webp","raio-x-3.webp"],      link:"",                        destaque:true },
+  { tipo:"Sites",    titulo:"Brasa & Cia", ficticia:true,             desc:"Site de uma página para hamburgueria com cardápio e delivery.",  fotos:["restaurante-1.webp","restaurante-2.webp","restaurante-3.webp"], link:"../modelos/restaurante/", destaque:true },
+  { tipo:"Sites",    titulo:"Motor Certo Auto Center", ficticia:true, desc:"Site de uma página para oficina mecânica.",                       fotos:["oficina-1.webp","oficina-2.webp","oficina-3.webp"],     link:"../modelos/oficina/",     destaque:true },
+  { tipo:"Sites",    titulo:"Clínica Vitalis", ficticia:true,         desc:"Site de uma página para clínica e profissional liberal.",        fotos:["clinica-1.webp","clinica-2.webp","clinica-3.webp"],     link:"../modelos/clinica/",     destaque:false },
+  { tipo:"Sites",    titulo:"Antes e depois", ficticia:true,          desc:"O mesmo site antes e depois do Kit Conserto e Cuido.",           fotos:["conserto-1.webp","conserto-2.webp"],    link:"../modelos/conserto/",    destaque:true },
   { tipo:"Sistemas", titulo:"Ferramentas grátis",      desc:"19 calculadoras e consultas fiscais no site da Grovan.",         fotos:["ferramentas-1.webp"], link:"../calculadoras/",        destaque:false },
   { tipo:"Sistemas", titulo:"Atendimento com IA",      desc:"Orçamento online com assistente, proposta e pagamento.",         fotos:[],                 link:"../atendimento/",         destaque:false },
   { tipo:"Sistemas", titulo:"Robô de WhatsApp",        desc:"Busca empresas, faz a primeira mensagem e a IA atende.",         fotos:[],                 link:"",                        destaque:false },
@@ -238,7 +240,7 @@ function mostraLegenda(i) {
   const t = destaques[i], leg = $("#legenda");
   leg.style.opacity = 0;
   setTimeout(() => {
-    leg.innerHTML = `<span class="cat">${t.tipo}</span><h2>${t.titulo}</h2><p>${t.desc}</p><div class="acoes">${t.link ? `<a class="btn" href="${t.link}">Ver ao vivo</a>` : ""}<a class="btn-sec" href="${linkWhats(t)}" target="_blank" rel="noopener">Quero algo assim</a></div>`;
+    leg.innerHTML = `<span class="cat">${t.tipo}${t.ficticia ? " · empresa fictícia" : ""}</span><h2>${t.titulo}</h2><p>${t.desc}</p><div class="acoes">${t.link ? `<a class="btn" href="${t.link}">Ver ao vivo</a>` : ""}<a class="btn-sec" href="${linkWhats(t)}" target="_blank" rel="noopener">Quero algo assim</a></div>`;
     leg.style.opacity = 1;
   }, 150);
   document.querySelectorAll("#contador i").forEach((b, k) => b.classList.toggle("on", k === i));
@@ -277,7 +279,7 @@ function desenhaGrade(tipo) {
     const destino = t.link || linkWhats(t), fora = !t.link;
     return `<a class="card rev" href="${destino}" ${fora ? 'target="_blank" rel="noopener"' : ""}>
       <div class="img">${t.video ? `<div class="sem-foto"><span>▶</span></div>` : pilha(t)}</div>
-      <div class="info"><span class="cat">${t.tipo}</span><h3>${t.titulo}</h3><p>${t.desc}</p>
+      <div class="info"><span class="cat">${t.tipo}${t.ficticia ? ` <em class="fic">empresa fictícia</em>` : ""}</span><h3>${t.titulo}</h3><p>${t.desc}</p>
       <span class="ver">${t.link ? "Ver ao vivo →" : "Quero ver uma demonstração →"}</span></div></a>`;
   }).join("");
   observar();

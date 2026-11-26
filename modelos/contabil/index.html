@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Início · Horizonte Contábil · Modelo Grovan</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="Contabilidade digital para pequenas empresas. Site modelo da Grovan; empresa fictícia.">
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNDAgNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiByeD0iMTAiIGZpbGw9IiMwRTNBNTMiLz48cGF0aCBkPSJNOCAyNmExMiAxMiAwIDAgMSAyNCAweiIgZmlsbD0iI0YyNkIzQSIvPjxnIHN0cm9rZT0iI0YyNkIzQSIgc3Ryb2tlLXdpZHRoPSIyLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCI+PHBhdGggZD0iTTIwIDh2M00xMC41IDEybDIgMk0yOS41IDEybC0yIDIiLz48L2c+PHJlY3QgeD0iNiIgeT0iMjciIHdpZHRoPSIyOCIgaGVpZ2h0PSIyLjYiIHJ4PSIxLjMiIGZpbGw9IiNGN0YyRUEiLz48cmVjdCB4PSIxMSIgeT0iMzEuNSIgd2lkdGg9IjE4IiBoZWlnaHQ9IjIiIHJ4PSIxIiBmaWxsPSIjRjdGMkVBIiBvcGFjaXR5PSIuNiIvPjwvc3ZnPg==">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilo.css">
+<style>.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center;padding-block:64px 56px}
+@media(max-width:860px){.hero{grid-template-columns:1fr}}
+.painel{background:var(--azul);border-radius:26px;padding:26px;color:#fff;box-shadow:0 30px 70px rgba(14,58,83,.25)}
+.painel h3{margin:0 0 4px}.painel p{color:#B9CFDB;margin:0 0 16px;font-size:.93rem}
+.painel .lin{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #1C4A62;font-size:.95rem}
+.painel .lin b{color:#FFB08F}.painel .ok{color:#8BE3B4}
+.numeros{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}@media(max-width:760px){.numeros{grid-template-columns:1fr 1fr}}
+.numeros div{padding:18px;border-left:3px solid var(--coral)}.numeros b{display:block;font:600 2rem 'Fraunces',serif;color:#fff}
+.sim{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start}@media(max-width:860px){.sim{grid-template-columns:1fr}}
+.op{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 16px}.op button{font:600 14px 'Plus Jakarta Sans',sans-serif;background:var(--card);border:1.5px solid var(--borda);border-radius:99px;padding:9px 16px;cursor:pointer}
+.op button.on{background:var(--azul);color:#fff;border-color:var(--azul)}
+.res{background:var(--card);border:1px solid var(--borda);border-radius:20px;padding:24px}.res ol{padding-left:20px;margin:10px 0}.res .preco{font:600 2.2rem 'Fraunces',serif;color:var(--azul)}
+.planos{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}@media(max-width:860px){.planos{grid-template-columns:1fr}}
+.plano{background:var(--card);border:1px solid var(--borda);border-radius:22px;padding:26px;display:flex;flex-direction:column;gap:10px}
+.plano.dest{border:2px solid var(--coral);position:relative}.plano.dest::before{content:"Mais escolhido";position:absolute;top:-12px;left:24px;background:var(--coral);color:#fff;font-size:.78rem;font-weight:700;padding:3px 10px;border-radius:99px}
+.plano .v{font:600 2.3rem 'Fraunces',serif;color:var(--azul)}.plano ul{margin:0;padding-left:18px;color:var(--muted);flex:1}
+.troca{display:inline-flex;background:var(--card);border:1px solid var(--borda);border-radius:99px;padding:4px;margin-bottom:22px}
+.troca button{font:700 14px 'Plus Jakarta Sans',sans-serif;border:0;background:none;padding:9px 18px;border-radius:99px;cursor:pointer;color:var(--muted)}.troca button.on{background:var(--azul);color:#fff}
+.modelo{position:fixed;left:0;right:0;bottom:0;z-index:50;background:#0F3D2E;color:#F6F5F0;display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;padding:10px max(16px,env(safe-area-inset-left)) calc(10px + env(safe-area-inset-bottom));font:500 14px/1.3 system-ui,sans-serif;text-align:center}
+.modelo a{background:#B8E35A;color:#1F3A0E;text-decoration:none;font-weight:700;padding:8px 16px;border-radius:999px}
+.modelo a.v{color:#CFE0D6;text-decoration:underline;background:none;padding:0;font-weight:500}
+@media(max-width:560px){.modelo .longo{display:none}}</style>
+</head>
+<body>
+<header><div class="wrap topo">
+  <a class="marca" href=""><svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="10" fill="#0E3A53"/><path d="M8 26a12 12 0 0 1 24 0z" fill="#F26B3A"/><g stroke="#F26B3A" stroke-width="2.2" stroke-linecap="round"><path d="M20 8v3M10.5 12l2 2M29.5 12l-2 2"/></g><rect x="6" y="27" width="28" height="2.6" rx="1.3" fill="#F7F2EA"/><rect x="11" y="31.5" width="18" height="2" rx="1" fill="#F7F2EA" opacity=".6"/></svg><span><b>Horizonte Contábil</b><small>Contabilidade para pequenas empresas</small></span></a>
+  <nav class="menu" id="menu" aria-label="Menu"><a href="" class="on">Início</a><a href="servicos/" class="">Serviços</a><a href="sobre/" class="">Sobre</a><a href="blog/" class="">Blog</a><a href="contato/" class="">Contato</a></nav>
+  <a class="btn" href="contato/">Fale com um contador</a>
+  <button class="abrir" id="abrir" aria-label="Abrir menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+</div></header>
+<main>
+<div class="wrap hero">
+  <div><span class="etq">Contabilidade digital · atendimento humano</span>
+    <h1 class="titulo">Sua empresa em dia, sem papelada e sem susto no imposto</h1>
+    <p class="sub">Abertura, contabilidade mensal, folha e imposto de renda para MEI, microempresas e prestadores de serviço. Tudo pelo celular, com um contador que conhece o seu negócio.</p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:24px"><a class="btn" href="#simule">Simular minha mensalidade</a><a class="btn sec" href="servicos/">Ver serviços</a></div></div>
+  <div class="painel" aria-label="Exemplo do painel do cliente"><h3>Seu mês de outubro</h3><p>Exemplo do painel que o cliente acessa.</p>
+    <div class="lin"><span>Faturamento</span><b>R$ 38.400</b></div><div class="lin"><span>DAS do Simples</span><b>R$ 2.304</b></div>
+    <div class="lin"><span>Pró-labore e INSS</span><b>R$ 1.672</b></div><div class="lin"><span>Notas conferidas</span><span class="ok">142 de 142 ✓</span></div>
+    <div class="lin" style="border:0"><span>Guias do mês</span><span class="ok">enviadas no dia 5 ✓</span></div></div>
+</div>
+<section class="faixa"><div class="wrap"><div class="numeros"><div><b>1.200</b>empresas atendidas (exemplo)</div><div><b>Dia 5</b>guias no seu WhatsApp</div><div><b>2 h</b>tempo médio de resposta</div><div><b>100%</b>digital</div></div></div></section>
+<section id="simule"><div class="wrap sim">
+  <div><span class="etq">Simulador</span><h2 class="titulo">Quanto custa ter a Horizonte?</h2><p class="sub">Responda e veja o plano indicado e o valor.</p>
+    <p style="margin:18px 0 0;font-weight:700">Sua empresa é</p><div class="op" id="tipo"><button data-v="0">MEI</button><button data-v="1">Microempresa</button><button data-v="2">Pequena empresa</button></div>
+    <p style="margin:0;font-weight:700">Você trabalha com</p><div class="op" id="ativ"><button data-v="0">Serviços</button><button data-v="1">Comércio</button><button data-v="2">Indústria</button></div>
+    <p style="margin:0;font-weight:700">Funcionários</p><div class="op" id="func"><button data-v="0">Nenhum</button><button data-v="1">1 a 3</button><button data-v="2">4 ou mais</button></div></div>
+  <div class="res" id="res"><h3 style="margin:0">Responda as 3 perguntas</h3><p style="color:var(--muted)">O resultado aparece aqui.</p></div>
+</div></section>
+<section style="padding-top:0"><div class="wrap"><span class="etq">Planos</span><h2 class="titulo">Planos sem letra miúda</h2>
+  <div class="troca" id="troca"><button class="on" data-m="1">Mensal</button><button data-m="0.9">Anual (10% off)</button></div>
+  <div class="planos" id="planos"></div></div></section>
+<section style="padding-top:0"><div class="wrap"><span class="etq">Blog</span><h2 class="titulo">Para ler antes de decidir</h2><div class="grade3" style="margin-top:20px">
+  <a class="card" style="text-decoration:none" href="blog/quando-o-mei-precisa-virar-me/"><span class="etq">MEI e ME</span><h3>Quando o MEI precisa virar microempresa?</h3><p>Os 4 sinais de que está na hora de mudar e o que acontece com os impostos.</p><p style="margin-top:10px;font-size:.85rem">6 min de leitura</p></a><a class="card" style="text-decoration:none" href="blog/pro-labore-ou-distribuicao-de-lucros/"><span class="etq">Planejamento</span><h3>Pró-labore ou distribuição de lucros: qual é melhor?</h3><p>Entenda a diferença e como cada um pesa no seu bolso.</p><p style="margin-top:10px;font-size:.85rem">5 min de leitura</p></a><a class="card" style="text-decoration:none" href="blog/checklist-imposto-de-renda/"><span class="etq">Imposto de Renda</span><h3>Checklist do Imposto de Renda para quem tem empresa</h3><p>Os documentos que você precisa separar antes de março.</p><p style="margin-top:10px;font-size:.85rem">4 min de leitura</p></a>
+</div></div></section></main>
+<footer><div class="wrap"><div class="g">
+  <div><svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="10" fill="#0E3A53"/><path d="M8 26a12 12 0 0 1 24 0z" fill="#F26B3A"/><g stroke="#F26B3A" stroke-width="2.2" stroke-linecap="round"><path d="M20 8v3M10.5 12l2 2M29.5 12l-2 2"/></g><rect x="6" y="27" width="28" height="2.6" rx="1.3" fill="#F7F2EA"/><rect x="11" y="31.5" width="18" height="2" rx="1" fill="#F7F2EA" opacity=".6"/></svg><p style="margin:10px 0 0">Contabilidade digital para MEI, microempresas e prestadores de serviço.</p></div>
+  <div><h5>Páginas</h5><ul><li><a href="">Início</a></li><li><a href="servicos/">Serviços</a></li><li><a href="sobre/">Sobre</a></li><li><a href="blog/">Blog</a></li><li><a href="contato/">Contato</a></li></ul></div>
+  <div><h5>Serviços</h5><ul><li>Abertura de empresa</li><li>Contabilidade mensal</li><li>Folha de pagamento</li><li>Imposto de renda</li></ul></div>
+  <div><h5>Contato</h5><ul><li>Av. Exemplo, 1500, 8º andar</li><li>São Paulo · SP</li><li>contato@horizonte.exemplo</li></ul></div>
+</div><div class="copy"><span>© 2026 Horizonte Contábil</span><span>Empresa fictícia, criada como exemplo.</span></div></div></footer>
+<div class="modelo" role="note"><span>Site modelo da Grovan<span class="longo"> para escritório de contabilidade (site completo). Empresa, preços e endereço são fictícios</span>.</span><a href="https://wa.me/5511945426510?text=Ol%C3%A1%2C%20Grovan%21%20Vi%20o%20modelo%20%22Horizonte%20Cont%C3%A1bil%22%20%28escrit%C3%B3rio%20de%20contabilidade%20%28site%20completo%29%29%20no%20portf%C3%B3lio%20e%20quero%20um%20site%20assim." target="_blank" rel="noopener">Quero um assim</a><a class="v" href="../../portfolio/">Ver o portfólio</a></div>
+<script>{document.getElementById("abrir").onclick=()=>document.getElementById("menu").classList.toggle("aberto");const P=[["Essencial",189,["MEI ou serviços sem funcionário","Guias e declarações","Atendimento pelo WhatsApp"]],["Completo",349,["Micro e pequena empresa","Contabilidade e fiscal mensal","Folha de até 3 funcionários","Painel do cliente"]],["Premium",590,["Comércio ou indústria","Folha de até 10 funcionários","Planejamento tributário trimestral","Contador dedicado"]]];
+let mult=1;const brl=v=>v.toLocaleString("pt-BR",{style:"currency",currency:"BRL",maximumFractionDigits:0});
+function planos(){document.getElementById("planos").innerHTML=P.map((p,i)=>`<div class="plano ${i===1?"dest":""}"><h3 style="margin:0">${p[0]}</h3><span class="v">${brl(p[1]*mult)}<small style="font-size:1rem;color:var(--muted)">/mês</small></span><ul>${p[2].map(x=>`<li>${x}</li>`).join("")}</ul><a class="btn ${i===1?"":"azul"}" href="contato/">Quero o ${p[0]}</a></div>`).join("")}
+document.getElementById("troca").onclick=e=>{const b=e.target.closest("button");if(!b)return;mult=+b.dataset.m;document.querySelectorAll("#troca button").forEach(x=>x.classList.toggle("on",x===b));planos()};planos();
+const r={};["tipo","ativ","func"].forEach(id=>document.getElementById(id).onclick=e=>{const b=e.target.closest("button");if(!b)return;r[id]=+b.dataset.v;document.querySelectorAll(`#${id} button`).forEach(x=>x.classList.toggle("on",x===b));calc()});
+function calc(){if(Object.keys(r).length<3)return;const pt=r.tipo+r.ativ+r.func;const i=pt<=1?0:pt<=3?1:2;const p=P[i];
+document.getElementById("res").innerHTML=`<span class="etq">Plano indicado</span><h3 style="margin:4px 0">${p[0]}</h3><div class="preco">${brl(p[1])}<small style="font-size:1rem;color:var(--muted)">/mês</small></div><p style="color:var(--muted)">Como funciona a troca para a Horizonte:</p><ol><li>Você envia o contrato e os acessos.</li><li>Falamos com o contador atual por você.</li><li>Em até 30 dias está tudo com a gente.</li></ol><a class="btn" href="contato/">Falar com um contador</a>`}}</script>
+</body>
+</html>

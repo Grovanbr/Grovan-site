@@ -5,110 +5,180 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Studio Bella Flor · Modelo de site Grovan</title>
 <meta name="robots" content="noindex">
-<meta name="description" content="Modelo de site de uma página para salão de beleza e estética, feito pela Grovan. Negócio fictício.">
-<link rel="icon" href="../../img/grovan-perfil-icone.png">
+<meta name="description" content="Modelo de site para salão de beleza com agendamento online, feito pela Grovan. Empresa fictícia.">
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNDAgNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0iI0I1NDc2QSI+PGVsbGlwc2UgY3g9IjIwIiBjeT0iMTEiIHJ4PSI1LjUiIHJ5PSI4LjUiIHRyYW5zZm9ybT0icm90YXRlKDAgMjAgMjApIiBvcGFjaXR5PSIuODUiLz48ZWxsaXBzZSBjeD0iMjAiIGN5PSIxMSIgcng9IjUuNSIgcnk9IjguNSIgdHJhbnNmb3JtPSJyb3RhdGUoNzIgMjAgMjApIiBvcGFjaXR5PSIuODUiLz48ZWxsaXBzZSBjeD0iMjAiIGN5PSIxMSIgcng9IjUuNSIgcnk9IjguNSIgdHJhbnNmb3JtPSJyb3RhdGUoMTQ0IDIwIDIwKSIgb3BhY2l0eT0iLjg1Ii8+PGVsbGlwc2UgY3g9IjIwIiBjeT0iMTEiIHJ4PSI1LjUiIHJ5PSI4LjUiIHRyYW5zZm9ybT0icm90YXRlKDIxNiAyMCAyMCkiIG9wYWNpdHk9Ii44NSIvPjxlbGxpcHNlIGN4PSIyMCIgY3k9IjExIiByeD0iNS41IiByeT0iOC41IiB0cmFuc2Zvcm09InJvdGF0ZSgyODggMjAgMjApIiBvcGFjaXR5PSIuODUiLz48L2c+PGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iNC41IiBmaWxsPSIjRjJDMTRFIi8+PC9zdmc+">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#FFF8F5;--fg:#2B1D22;--muted:#7A6268;--acc:#B5476A;--acc2:#F3D9DF;--card:#FFFFFF;--borda:#F0E1E4;--dark:#2B1D22;--ft:'Playfair Display', Georgia, serif;--fb:'DM Sans', system-ui, sans-serif}
+:root{--bg:#FFF8F5;--fg:#2B1D22;--muted:#7A6268;--rosa:#B5476A;--rosa2:#F6DCE3;--ouro:#C9A25A;--card:#fff;--borda:#F0E1E4}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 var(--fb);padding-bottom:64px}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 'DM Sans',system-ui,sans-serif;padding-bottom:64px}
 a{color:inherit}
-.wrap{max-width:1120px;margin:0 auto;padding:0 max(20px,env(safe-area-inset-left))}
-header{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--borda)}
-.topo{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
-.marca{font-family:var(--ft);font-size:1.45rem;font-weight:700;text-decoration:none;letter-spacing:.01em}
-.marca small{display:block;font-family:var(--fb);font-size:.72rem;font-weight:500;color:var(--muted);letter-spacing:.04em;text-transform:uppercase}
-nav{display:flex;gap:22px;font-size:.95rem}nav a{text-decoration:none;color:var(--muted)}nav a:hover{color:var(--fg)}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:max(20px,env(safe-area-inset-left))}
+.serif{font-family:'Playfair Display',Georgia,serif}
+header{position:sticky;top:0;z-index:5;background:rgba(255,248,245,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--borda)}
+.topo{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:72px}
+.marca{display:flex;align-items:center;gap:10px;text-decoration:none}
+.marca svg{width:42px;height:42px}
+.marca b{font:700 1.35rem/1.1 'Playfair Display',serif;display:block}.marca small{color:var(--muted);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase}
+nav{display:flex;gap:24px}nav a{text-decoration:none;color:var(--muted)}nav a:hover{color:var(--fg)}
 @media(max-width:820px){nav{display:none}}
-.btn{display:inline-flex;align-items:center;gap:8px;background:var(--acc);color:#fff;text-decoration:none;font-weight:700;padding:13px 22px;border-radius:999px;border:0;font-family:var(--fb)}
-.btn svg{width:20px;height:20px}.btn:hover{filter:brightness(1.07)}
-.btn-sec{background:transparent;color:var(--fg);border:1.5px solid var(--borda)}
-.hero{padding-block:72px 56px;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
-@media(max-width:860px){.hero{grid-template-columns:1fr;padding-top:36px}}
-@media(max-width:560px){header .btn span{display:none}header .btn{padding:12px}.marca{font-size:1.2rem}.modelo .longo{display:none}}
-.hero h1{font-family:var(--ft);font-size:clamp(2.3rem,5.4vw,4rem);line-height:1.05;margin:0 0 18px;text-wrap:balance}
-.hero p{font-size:1.12rem;color:var(--muted);max-width:52ch;margin:0 0 26px}
-.acoes{display:flex;gap:12px;flex-wrap:wrap}
-.selos{list-style:none;padding:0;margin:28px 0 0;display:flex;flex-wrap:wrap;gap:8px 18px;font-size:.9rem;color:var(--muted)}
-.selos li::before{content:"✓";color:var(--acc);font-weight:700;margin-right:6px}
-.arte{position:relative;aspect-ratio:4/5;max-width:100%;border-radius:28px;overflow:hidden;background:linear-gradient(150deg,var(--acc) 0%,var(--acc2) 100%)}
-.arte::before,.arte::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.18)}
-.arte::before{width:70%;aspect-ratio:1;right:-15%;top:-10%}.arte::after{width:45%;aspect-ratio:1;left:-10%;bottom:-8%;background:rgba(0,0,0,.12)}
-.arte .tag{position:absolute;left:20px;bottom:20px;right:20px;background:var(--card);color:var(--fg);border-radius:18px;padding:16px 18px;display:flex;gap:12px;align-items:center;box-shadow:0 12px 30px rgba(0,0,0,.15)}
-.arte .tag svg{width:26px;height:26px;color:var(--acc);flex:none}.arte .tag b{display:block}.arte .tag small{color:var(--muted)}
-.arte.faixa{border-radius:6px;background:repeating-linear-gradient(135deg,var(--acc) 0 26px,var(--dark) 26px 52px)}
-.arte.quadrado{border-radius:12px}.arte.arco{border-radius:220px 220px 28px 28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--rosa);color:#fff;text-decoration:none;font-weight:700;padding:13px 24px;border-radius:999px;border:0;font:700 15px 'DM Sans',sans-serif;cursor:pointer}
+.btn.sec{background:transparent;color:var(--fg);border:1.5px solid var(--borda)}
+/* hero centralizado com pétalas */
+.hero{text-align:center;padding-block:80px 40px;position:relative;overflow:hidden}
+.hero .petala{position:absolute;border-radius:50% 0;background:var(--rosa2);opacity:.8}
+.hero .p1{width:220px;height:220px;left:-60px;top:40px;transform:rotate(20deg)}.hero .p2{width:160px;height:160px;right:-30px;top:120px;transform:rotate(-30deg);background:#F9E8D2}
+.hero .p3{width:90px;height:90px;right:18%;bottom:10px;transform:rotate(60deg)}
+.hero small{color:var(--rosa);font-weight:700;letter-spacing:.16em;text-transform:uppercase;font-size:.78rem;position:relative}
+.hero h1{font:600 clamp(2.4rem,6vw,4.4rem)/1.05 'Playfair Display',serif;margin:14px auto 16px;max-width:15ch;position:relative;text-wrap:balance}
+.hero h1 em{color:var(--rosa)}
+.hero p{color:var(--muted);max-width:52ch;margin:0 auto 26px;font-size:1.1rem;position:relative}
+.livres{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:26px;position:relative}
+.livres span{background:var(--card);border:1px solid var(--borda);border-radius:99px;padding:6px 14px;font-size:.9rem}
+.livres b{color:var(--rosa)}
 section{padding-block:64px}
-.sec-t{font-family:var(--ft);font-size:clamp(1.8rem,3.6vw,2.6rem);line-height:1.1;margin:0 0 8px}
-.sec-s{color:var(--muted);margin:0 0 30px;max-width:60ch}
-.grade{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
-.serv{background:var(--card);border:1px solid var(--borda);border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:6px}
-.serv h3{margin:0;font-size:1.12rem}.serv p{margin:0;color:var(--muted);font-size:.95rem;flex:1}
-.preco{font-weight:700;color:var(--acc);margin-top:8px}
-.sobre{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
-@media(max-width:820px){.sobre{grid-template-columns:1fr}}
-.sobre p{color:var(--muted);font-size:1.06rem}
-.galeria{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-@media(max-width:720px){.galeria{grid-template-columns:repeat(2,1fr)}}
-.foto{margin:0;aspect-ratio:1;border-radius:16px;position:relative;overflow:hidden;background:var(--acc2)}
-.foto.f0{background:linear-gradient(160deg,var(--acc),var(--acc2))}.foto.f1{background:radial-gradient(circle at 30% 30%,var(--acc2),var(--acc))}
-.foto.f2{background:linear-gradient(20deg,var(--dark),var(--acc))}.foto.f3{background:repeating-linear-gradient(90deg,var(--acc2) 0 18px,var(--card) 18px 36px)}
-.foto span{position:absolute;left:10px;bottom:10px;right:10px;font-size:.8rem;background:rgba(0,0,0,.55);color:#fff;padding:6px 10px;border-radius:10px}
-.depos{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
-.depo{margin:0;background:var(--card);border:1px solid var(--borda);border-radius:18px;padding:22px}
-.estrelas{display:flex;gap:2px;color:#F5A524}.estrelas svg{width:16px;height:16px}
-.depo p{margin:10px 0}.depo cite{font-style:normal;font-weight:700;color:var(--muted);font-size:.9rem}
-.contato{background:var(--dark);color:#fff;border-radius:28px;padding:44px clamp(22px,5vw,56px);display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:center}
-@media(max-width:820px){.contato{grid-template-columns:1fr}}
-.contato .sec-t{color:#fff}.contato p,.contato li{color:rgba(255,255,255,.78)}
-.info{list-style:none;padding:0;margin:0;display:grid;gap:14px}
-.info li{display:flex;gap:10px}.info svg{width:20px;height:20px;flex:none;color:var(--acc);margin-top:3px}
-.info ul{margin:0;padding:0;list-style:none}
-footer{padding-block:30px 40px;color:var(--muted);font-size:.88rem;text-align:center}
-.flutuante{position:fixed;right:18px;bottom:78px;width:56px;height:56px;border-radius:50%;background:#25D366;color:#fff;display:grid;place-items:center;box-shadow:0 8px 22px rgba(0,0,0,.25);z-index:6}
-.flutuante svg{width:30px;height:30px}
-.modelo{position:fixed;left:0;right:0;bottom:0;z-index:10;background:#0F3D2E;color:#F6F5F0;display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;padding:10px max(16px,env(safe-area-inset-left)) calc(10px + env(safe-area-inset-bottom));font:500 14px/1.3 system-ui,sans-serif;text-align:center}
+.t{font:600 clamp(1.9rem,4vw,2.7rem)/1.1 'Playfair Display',serif;margin:0 0 8px;text-align:center}
+.s{color:var(--muted);text-align:center;margin:0 auto 34px;max-width:56ch}
+/* AGENDAMENTO */
+.agenda{background:var(--card);border:1px solid var(--borda);border-radius:28px;padding:28px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:26px;box-shadow:0 20px 60px rgba(181,71,106,.08)}
+@media(max-width:880px){.agenda{grid-template-columns:1fr}}
+.passo h3{margin:0 0 12px;font-size:1rem;display:flex;align-items:center;gap:8px}
+.passo h3 i{font-style:normal;width:26px;height:26px;border-radius:50%;background:var(--rosa2);color:var(--rosa);display:grid;place-items:center;font-size:.85rem}
+.opcoes{display:grid;gap:8px}
+.opcoes button,.dias button,.horas button{font:500 15px 'DM Sans',sans-serif;background:var(--bg);border:1.5px solid var(--borda);border-radius:14px;padding:10px 12px;cursor:pointer;text-align:left;color:var(--fg)}
+.opcoes button span{float:right;color:var(--muted)}
+.dias{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.dias button{text-align:center;line-height:1.2}.dias small{display:block;color:var(--muted);font-size:.75rem}
+.horas{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}.horas button{text-align:center}
+.horas button:disabled{opacity:.35;text-decoration:line-through;cursor:default}
+button.on{border-color:var(--rosa)!important;background:var(--rosa2)!important;font-weight:700}
+.resumo{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;border-top:1px dashed var(--borda);padding-top:20px}
+.resumo p{margin:0;color:var(--muted)}.resumo b{color:var(--fg)}
+.aviso{display:none;grid-column:1/-1;background:#FFF1F4;border-radius:14px;padding:14px;font-size:.92rem}
+/* CARTA DE SERVIÇOS */
+.carta{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+@media(max-width:880px){.carta{grid-template-columns:1fr}}
+.carta h3{font:600 1.4rem 'Playfair Display',serif;margin:0 0 10px;border-bottom:2px solid var(--rosa2);padding-bottom:8px}
+.linha{display:flex;align-items:baseline;gap:8px;padding:7px 0}
+.linha span:nth-child(2){flex:1;border-bottom:1px dotted #D7C3C8;transform:translateY(-4px)}
+.linha b{white-space:nowrap}
+/* EQUIPE */
+.equipe{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:760px){.equipe{grid-template-columns:1fr}}
+.pessoa{text-align:center;background:var(--card);border:1px solid var(--borda);border-radius:24px;padding:26px}
+.av{width:96px;height:96px;border-radius:50%;margin:0 auto 12px;display:grid;place-items:center;font:600 1.8rem 'Playfair Display',serif;color:#fff}
+.pessoa h4{margin:0;font-size:1.1rem}.pessoa p{margin:4px 0 0;color:var(--muted);font-size:.92rem}
+/* GALERIA MOSAICO */
+.mosaico{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:150px;gap:12px}
+.mosaico div{border-radius:18px;position:relative;overflow:hidden}
+.mosaico div:nth-child(1){grid-row:span 2;background:linear-gradient(160deg,#B5476A,#F6DCE3)}
+.mosaico div:nth-child(2){background:linear-gradient(120deg,#C9A25A,#F9E8D2)}
+.mosaico div:nth-child(3){grid-row:span 2;background:radial-gradient(circle at 30% 30%,#F6DCE3,#8E2F50)}
+.mosaico div:nth-child(4){background:linear-gradient(200deg,#2B1D22,#B5476A)}
+.mosaico div:nth-child(5){grid-column:span 2;background:repeating-linear-gradient(90deg,#F6DCE3 0 20px,#fff 20px 40px)}
+.mosaico span{position:absolute;left:12px;bottom:12px;background:rgba(43,29,34,.6);color:#fff;font-size:.8rem;padding:4px 10px;border-radius:99px}
+@media(max-width:700px){.mosaico{grid-template-columns:repeat(2,1fr)}.mosaico div:nth-child(5){grid-column:span 2}}
+.depo{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}@media(max-width:820px){.depo{grid-template-columns:1fr}}
+.depo blockquote{margin:0;font:italic 600 1.15rem/1.4 'Playfair Display',serif;background:var(--card);border-radius:22px;padding:24px;border:1px solid var(--borda)}
+.depo cite{display:block;margin-top:10px;font:500 .9rem 'DM Sans',sans-serif;color:var(--muted);font-style:normal}
+footer{background:var(--fg);color:#F3E6E9;padding-block:46px 30px;margin-top:40px}
+footer .g{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:28px}@media(max-width:760px){footer .g{grid-template-columns:1fr}}
+footer h5{margin:0 0 8px;color:#fff;font-size:1rem}footer p,footer li{color:#CBB3BA;margin:0;font-size:.93rem}footer ul{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+footer svg{width:44px;height:44px}
+.copy{text-align:center;color:#9C848B;font-size:.82rem;margin-top:28px}
+.modelo{position:fixed;left:0;right:0;bottom:0;z-index:50;background:#0F3D2E;color:#F6F5F0;display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;padding:10px max(16px,env(safe-area-inset-left)) calc(10px + env(safe-area-inset-bottom));font:500 14px/1.3 system-ui,sans-serif;text-align:center}
 .modelo a{background:#B8E35A;color:#1F3A0E;text-decoration:none;font-weight:700;padding:8px 16px;border-radius:999px}
-.modelo .v{color:#CFE0D6;text-decoration:underline;background:none;padding:0}
+.modelo a.v{color:#CFE0D6;text-decoration:underline;background:none;padding:0;font-weight:500}
+@media(max-width:560px){.modelo .longo{display:none}}
 </style>
 </head>
 <body>
 <header><div class="wrap topo">
-  <a class="marca" href="#">Studio Bella Flor<small>Cabelo, unhas e estética</small></a>
-  <nav aria-label="Menu"><a href="#servicos">Serviços e valores</a><a href="#sobre">Sobre</a><a href="#depoimentos">Depoimentos</a><a href="#contato">Contato</a></nav>
-  <a class="btn" href="#contato"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.2-.7-2.7-1.1-4.4-3.8-4.6-4-.1-.2-1.1-1.4-1.1-2.7s.7-1.9.9-2.2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.8-1c.2-.3.4-.2.6-.1l2 .9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg><span>Agendar</span></a>
+  <a class="marca" href="#"><svg viewBox="0 0 40 40" aria-hidden="true"><g fill="#B5476A"><ellipse cx="20" cy="11" rx="5.5" ry="8.5" transform="rotate(0 20 20)" opacity=".85"/><ellipse cx="20" cy="11" rx="5.5" ry="8.5" transform="rotate(72 20 20)" opacity=".85"/><ellipse cx="20" cy="11" rx="5.5" ry="8.5" transform="rotate(144 20 20)" opacity=".85"/><ellipse cx="20" cy="11" rx="5.5" ry="8.5" transform="rotate(216 20 20)" opacity=".85"/><ellipse cx="20" cy="11" rx="5.5" ry="8.5" transform="rotate(288 20 20)" opacity=".85"/></g><circle cx="20" cy="20" r="4.5" fill="#F2C14E"/></svg><span><b>Bella Flor</b><small>Studio de beleza</small></span></a>
+  <nav aria-label="Menu"><a href="#agendar">Agendar</a><a href="#servicos">Serviços</a><a href="#equipe">Equipe</a><a href="#galeria">Galeria</a></nav>
+  <a class="btn" href="#agendar">Agendar</a>
 </div></header>
 <main>
-  <div class="wrap hero">
-    <div>
-      <h1>Você merece sair daqui se sentindo linda</h1>
-      <p>Corte, coloração, escova, manicure e estética facial com hora marcada e atendimento sem pressa.</p>
-      <div class="acoes"><a class="btn" href="#contato"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.2-.7-2.7-1.1-4.4-3.8-4.6-4-.1-.2-1.1-1.4-1.1-2.7s.7-1.9.9-2.2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.8-1c.2-.3.4-.2.6-.1l2 .9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>Agendar pelo WhatsApp</a><a class="btn btn-sec" href="#servicos">Ver serviços e valores</a></div>
-      <ul class="selos"><li>4,9 de 5 no Google</li><li>Mais de 8 anos no bairro</li><li>Produtos profissionais</li></ul>
-    </div>
-    <div class="arte circulo" role="img" aria-label="Imagem ilustrativa"><div class="tag"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg><div><b>4,9 de 5 no Google</b><small>Cabelo, unhas e estética</small></div></div></div>
+<div class="hero"><i class="petala p1"></i><i class="petala p2"></i><i class="petala p3"></i>
+  <div class="wrap">
+    <small>Cabelo · Unhas · Estética</small>
+    <h1>Você merece sair daqui se sentindo <em>linda</em></h1>
+    <p>Escolha o serviço, o dia e o horário aqui mesmo. A confirmação chega no seu WhatsApp.</p>
+    <a class="btn" href="#agendar">Escolher meu horário</a>
+    <div class="livres"><span>Hoje ainda tem: <b>14h</b></span><span><b>15h30</b></span><span><b>17h</b></span></div>
   </div>
-  <section id="servicos"><div class="wrap">
-    <h2 class="sec-t">Serviços e valores</h2><p class="sec-s">Valores de referência. Confirme pelo WhatsApp antes de vir.</p>
-    <div class="grade"><article class="serv"><h3>Corte feminino</h3><p>Lavagem, corte e finalização</p><span class="preco">a partir de R$ 70</span></article><article class="serv"><h3>Coloração</h3><p>Raiz ou global, com hidratação</p><span class="preco">a partir de R$ 150</span></article><article class="serv"><h3>Escova modelada</h3><p>Lisa ou com movimento</p><span class="preco">R$ 55</span></article><article class="serv"><h3>Manicure e pedicure</h3><p>Esmaltação comum ou em gel</p><span class="preco">a partir de R$ 45</span></article><article class="serv"><h3>Design de sobrancelha</h3><p>Com ou sem henna</p><span class="preco">R$ 40</span></article><article class="serv"><h3>Limpeza de pele</h3><p>Extração, máscara e hidratação</p><span class="preco">R$ 120</span></article></div>
-  </div></section>
-  <section id="sobre"><div class="wrap sobre">
-    <div><h2 class="sec-t">Atendimento de salão de bairro, cuidado de estúdio</h2><p>A Bella Flor nasceu para ser o lugar onde você é chamada pelo nome. Cada atendimento começa com uma conversa para entender o que você quer, e termina com dicas para manter o resultado em casa.</p><a class="btn" href="#contato"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.2-.7-2.7-1.1-4.4-3.8-4.6-4-.1-.2-1.1-1.4-1.1-2.7s.7-1.9.9-2.2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.8-1c.2-.3.4-.2.6-.1l2 .9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>Agendar pelo WhatsApp</a></div>
-    <div class="galeria" style="grid-template-columns:repeat(2,1fr)"><figure class="foto f0"><span>Antes e depois de coloração</span></figure><figure class="foto f1"><span>Unhas em gel</span></figure><figure class="foto f2"><span>Escova modelada</span></figure><figure class="foto f3"><span>Ambiente do studio</span></figure></div>
-  </div></section>
-  <section id="depoimentos"><div class="wrap">
-    <h2 class="sec-t">Quem vem, volta</h2><p class="sec-s">O que os clientes dizem.</p>
-    <div class="depos"><blockquote class="depo"><div class="estrelas"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg></div><p>“Fiz coloração e ficou exatamente como eu pedi. Atendimento super atencioso.”</p><cite>Ana P.</cite></blockquote><blockquote class="depo"><div class="estrelas"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg></div><p>“Marco tudo pelo WhatsApp, rápido e sempre no horário.”</p><cite>Juliana R.</cite></blockquote><blockquote class="depo"><div class="estrelas"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg></div><p>“Minha manicure de confiança há 3 anos.”</p><cite>Carla M.</cite></blockquote></div>
-  </div></section>
-  <section id="contato"><div class="wrap"><div class="contato">
-    <div><h2 class="sec-t">Fale com a gente</h2><p>Resposta rápida pelo WhatsApp, no horário de atendimento.</p><a class="btn" href="#contato"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.2-.7-2.7-1.1-4.4-3.8-4.6-4-.1-.2-1.1-1.4-1.1-2.7s.7-1.9.9-2.2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.8-1c.2-.3.4-.2.6-.1l2 .9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>Agendar pelo WhatsApp</a></div>
-    <ul class="info"><li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" d="M12 21s-7-6.2-7-11a7 7 0 1 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/></svg><span>Rua das Acácias, 120 · Vila Exemplo · São Paulo</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><ul><li>Terça a sexta: 9h às 19h</li><li>Sábado: 8h às 17h</li><li>Domingo e segunda: fechado</li></ul></li></ul>
-  </div></div></section>
+</div>
+
+<section id="agendar"><div class="wrap">
+  <h2 class="t">Agende em 3 toques</h2><p class="s">Sem ligação e sem espera. Você escolhe, a gente confirma.</p>
+  <div class="agenda">
+    <div class="passo"><h3><i>1</i>Serviço</h3><div class="opcoes" id="serv"></div></div>
+    <div class="passo"><h3><i>2</i>Dia</h3><div class="dias" id="dias"></div></div>
+    <div class="passo"><h3><i>3</i>Horário</h3><div class="horas" id="horas"></div></div>
+    <div class="resumo"><p id="resumo">Escolha um serviço, um dia e um horário.</p><button class="btn" id="confirmar" disabled>Confirmar pelo WhatsApp</button></div>
+    <div class="aviso" id="aviso"></div>
+  </div>
+</div></section>
+
+<section id="servicos" style="background:#FFF1F0"><div class="wrap">
+  <h2 class="t">Nossa carta de serviços</h2><p class="s">Valores de referência. O valor final depende do comprimento e do volume do cabelo.</p>
+  <div class="carta">
+    <div><h3>Cabelo</h3>
+      <div class="linha"><span>Corte feminino</span><span></span><b>R$ 70</b></div><div class="linha"><span>Escova modelada</span><span></span><b>R$ 55</b></div>
+      <div class="linha"><span>Coloração raiz</span><span></span><b>R$ 150</b></div><div class="linha"><span>Mechas</span><span></span><b>R$ 320</b></div><div class="linha"><span>Hidratação</span><span></span><b>R$ 80</b></div></div>
+    <div><h3>Unhas</h3>
+      <div class="linha"><span>Manicure</span><span></span><b>R$ 35</b></div><div class="linha"><span>Pedicure</span><span></span><b>R$ 40</b></div>
+      <div class="linha"><span>Esmaltação em gel</span><span></span><b>R$ 90</b></div><div class="linha"><span>Alongamento</span><span></span><b>R$ 180</b></div></div>
+    <div><h3>Estética</h3>
+      <div class="linha"><span>Design de sobrancelha</span><span></span><b>R$ 40</b></div><div class="linha"><span>Limpeza de pele</span><span></span><b>R$ 120</b></div>
+      <div class="linha"><span>Lash lifting</span><span></span><b>R$ 130</b></div><div class="linha"><span>Depilação (meia perna)</span><span></span><b>R$ 45</b></div></div>
+  </div>
+</div></section>
+
+<section id="equipe"><div class="wrap">
+  <h2 class="t">Quem cuida de você</h2><p class="s">Profissionais fixas, que lembram do seu nome e do seu último tom.</p>
+  <div class="equipe">
+    <div class="pessoa"><div class="av" style="background:#B5476A">MF</div><h4>Marina Flor</h4><p>Fundadora · coloração e mechas</p></div>
+    <div class="pessoa"><div class="av" style="background:#C9A25A">JS</div><h4>Jéssica Souza</h4><p>Unhas em gel e alongamento</p></div>
+    <div class="pessoa"><div class="av" style="background:#8E2F50">RL</div><h4>Renata Lima</h4><p>Estética facial e sobrancelhas</p></div>
+  </div>
+</div></section>
+
+<section id="galeria" style="padding-top:0"><div class="wrap">
+  <h2 class="t">Resultados</h2><p class="s">No site real, aqui entram as fotos do Instagram do salão.</p>
+  <div class="mosaico"><div><span>Mechas</span></div><div><span>Unhas em gel</span></div><div><span>Coloração</span></div><div><span>Escova</span></div><div><span>Nosso espaço</span></div></div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <h2 class="t">O que as clientes dizem</h2><p class="s">Depoimentos de exemplo.</p>
+  <div class="depo"><blockquote>“Ficou exatamente o tom que eu pedi.”<cite>Ana P.</cite></blockquote><blockquote>“Marco tudo pelo site, nunca mais esperei.”<cite>Juliana R.</cite></blockquote><blockquote>“Minha manicure de confiança há 3 anos.”<cite>Carla M.</cite></blockquote></div>
+</div></section>
 </main>
-<footer class="wrap">© 2026 Studio Bella Flor · Negócio fictício, criado como exemplo.</footer>
-<a class="flutuante" href="#contato" aria-label="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.2-.7-2.7-1.1-4.4-3.8-4.6-4-.1-.2-1.1-1.4-1.1-2.7s.7-1.9.9-2.2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.8-1c.2-.3.4-.2.6-.1l2 .9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg></a>
-<div class="modelo" role="note"><span>Site modelo da Grovan<span class="longo"> para salão de beleza e estética. Nomes, preços e endereço são fictícios</span>.</span>
-  <a href="https://wa.me/5511945426510?text=Ol%C3%A1%2C%20Grovan%21%20Vi%20o%20modelo%20de%20site%20%22Studio%20Bella%20Flor%22%20%28Sal%C3%A3o%20de%20beleza%20e%20est%C3%A9tica%29%20e%20quero%20um%20assim%20para%20o%20meu%20neg%C3%B3cio." target="_blank" rel="noopener">Quero um assim</a><a class="v" href="../../portfolio/">Ver o portfólio</a></div>
+<footer><div class="wrap"><div class="g">
+  <div><svg viewBox="0 0 40 40" aria-hidden="true"><g fill="#B5476A"><ellipse cx="20" cy="11" rx="5.5" ry="8.5" transform="rotate(0 20 20)" opacity=".85"/><ellipse cx="20" cy="11" rx="5.5" ry="8.5" transform="rotate(72 20 20)" opacity=".85"/><ellipse cx="20" cy="11" rx="5.5" ry="8.5" transform="rotate(144 20 20)" opacity=".85"/><ellipse cx="20" cy="11" rx="5.5" ry="8.5" transform="rotate(216 20 20)" opacity=".85"/><ellipse cx="20" cy="11" rx="5.5" ry="8.5" transform="rotate(288 20 20)" opacity=".85"/></g><circle cx="20" cy="20" r="4.5" fill="#F2C14E"/></svg><h5 style="margin-top:8px">Studio Bella Flor</h5><p>Cabelo, unhas e estética com hora marcada.</p></div>
+  <div><h5>Horários</h5><ul><li>Ter a sex: 9h às 19h</li><li>Sábado: 8h às 17h</li><li>Dom e seg: fechado</li></ul></div>
+  <div><h5>Onde estamos</h5><ul><li>Rua das Acácias, 120</li><li>Vila Exemplo · São Paulo</li><li>@bellaflor.studio</li></ul></div>
+</div><p class="copy">© 2026 Studio Bella Flor · Empresa fictícia, criada como exemplo.</p></div></footer>
+<div class="modelo" role="note"><span>Site modelo da Grovan<span class="longo"> para salão de beleza. Empresa, preços e endereço são fictícios</span>.</span><a href="https://wa.me/5511945426510?text=Ol%C3%A1%2C%20Grovan%21%20Vi%20o%20modelo%20%22Studio%20Bella%20Flor%22%20%28sal%C3%A3o%20de%20beleza%29%20no%20portf%C3%B3lio%20e%20quero%20um%20site%20assim." target="_blank" rel="noopener">Quero um assim</a><a class="v" href="../../portfolio/">Ver o portfólio</a></div>
+<script>
+{
+const S=[["Corte feminino",70,60],["Escova modelada",55,45],["Coloração raiz",150,120],["Manicure",35,40],["Esmaltação em gel",90,60],["Design de sobrancelha",40,30]];
+const $=q=>document.querySelector(q);let esc={};
+$("#serv").innerHTML=S.map((s,i)=>`<button data-i="${i}">${s[0]}<span>R$ ${s[1]}</span></button>`).join("");
+const hoje=new Date(),SEM=["dom","seg","ter","qua","qui","sex","sáb"];const dias=[];
+for(let d=0;dias.length<8;d++){const x=new Date(hoje);x.setDate(hoje.getDate()+d);if(x.getDay()!==0&&x.getDay()!==1)dias.push(x)}
+$("#dias").innerHTML=dias.map((x,i)=>`<button data-i="${i}"><small>${i===0&&x.toDateString()===hoje.toDateString()?"hoje":SEM[x.getDay()]}</small>${x.getDate()}/${x.getMonth()+1}</button>`).join("");
+const H=["9h","10h","11h","13h","14h","15h30","16h30","17h","18h"];
+function horas(){const ocup=new Set(H.filter((_,i)=>((esc.d||0)*7+i*3)%5===0));$("#horas").innerHTML=H.map(h=>`<button ${ocup.has(h)?"disabled":""} data-h="${h}">${h}</button>`).join("")}
+horas();
+function marca(box,btn){box.querySelectorAll("button").forEach(b=>b.classList.toggle("on",b===btn))}
+function resumo(){const ok=esc.s!=null&&esc.d!=null&&esc.h;$("#confirmar").disabled=!ok;
+ $("#resumo").innerHTML=ok?`<b>${S[esc.s][0]}</b> · ${dias[esc.d].toLocaleDateString("pt-BR",{weekday:"long",day:"numeric",month:"long"})} às <b>${esc.h}</b> · R$ ${S[esc.s][1]}`:"Escolha um serviço, um dia e um horário."}
+$("#serv").onclick=e=>{const b=e.target.closest("button");if(!b)return;esc.s=+b.dataset.i;marca($("#serv"),b);resumo()};
+$("#dias").onclick=e=>{const b=e.target.closest("button");if(!b)return;esc.d=+b.dataset.i;esc.h=null;marca($("#dias"),b);horas();resumo()};
+$("#horas").onclick=e=>{const b=e.target.closest("button");if(!b||b.disabled)return;esc.h=b.dataset.h;marca($("#horas"),b);resumo()};
+$("#confirmar").onclick=()=>{const a=$("#aviso");a.style.display="block";a.innerHTML=`<b>No site real</b>, este botão abre o WhatsApp do salão já com a mensagem: “Olá! Quero agendar ${S[esc.s][0]} em ${dias[esc.d].toLocaleDateString("pt-BR")} às ${esc.h}.” Este é um modelo, então nada foi enviado.`};
+}
+</script>
 </body>
 </html>

@@ -1371,30 +1371,34 @@ body, .cabecalho, .card, .produto, .oferta, .contato-item, .filtros, .plano, .pa
 /* ===================================================== */
 .botao-orcamento {
   position: fixed;
-  right: 20px;
+  right: 24px;
   bottom: 86px;
   z-index: 20;
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 12px 20px 12px 16px;
+  height: 46px;
+  min-width: 46px;
+  padding: 0 12px;
   border-radius: 999px;
   background: var(--broto);
   color: #1F3A0E;
   font-weight: 600;
+  font-size: 0.9rem;
   text-decoration: none;
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
-  transition: transform 0.2s, box-shadow 0.2s;
+  white-space: nowrap;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.2s, transform 0.2s;
 }
 
-.botao-orcamento:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.28);
+.botao-orcamento:hover,
+.botao-orcamento:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.26);
 }
 
 .botao-orcamento svg {
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
   flex-shrink: 0;
   fill: none;
   stroke: currentColor;
@@ -1403,26 +1407,34 @@ body, .cabecalho, .card, .produto, .oferta, .contato-item, .filtros, .plano, .pa
   stroke-linejoin: round;
 }
 
+/* Fica só o ícone; o texto aparece ao passar o mouse */
+.botao-orcamento-texto {
+  max-width: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-width 0.3s ease, opacity 0.2s, margin 0.3s;
+}
+
+.botao-orcamento:hover .botao-orcamento-texto,
+.botao-orcamento:focus-visible .botao-orcamento-texto {
+  max-width: 160px;
+  opacity: 1;
+  margin-left: 8px;
+}
+
 @media (max-width: 600px) {
   .botao-orcamento {
-    padding: 0;
-    width: 58px;
-    height: 58px;
+    right: 26px;
     bottom: 90px;
+    height: 46px;
+    width: 46px;
+    padding: 0;
     justify-content: center;
   }
 
-  .botao-orcamento-texto {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-  }
-
-  .botao-orcamento svg {
-    width: 28px;
-    height: 28px;
+  .botao-orcamento:hover .botao-orcamento-texto {
+    max-width: 0;
+    margin: 0;
   }
 }
 

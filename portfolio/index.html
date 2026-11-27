@@ -37,10 +37,11 @@ a{color:inherit}
 .topo{position:fixed;top:0;left:0;right:0;z-index:20;transition:background .3s}
 .topo.solido{background:rgba(8,23,15,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--borda)}
 .topo .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:70px}
-.topo img{height:30px;width:auto;display:block}
-.topo nav{display:flex;gap:22px;font-size:.95rem}
-.topo nav a{text-decoration:none;color:var(--fraco)}.topo nav a:hover,.topo nav a.on{color:var(--texto)}
-@media(max-width:720px){.topo nav a:not(.on):not(.btn){display:none}}
+.topo img{height:36px;width:auto;display:block}
+.topo nav{display:flex;align-items:center;flex-wrap:wrap;gap:8px 24px;font-size:1rem}
+.topo nav a{text-decoration:none;color:var(--fraco);font-weight:500;line-height:1.4;transition:color .2s}.topo nav a:hover{color:var(--texto)}.topo nav a.on{color:var(--texto);font-weight:600}
+@media(max-width:600px){.topo .wrap{flex-wrap:wrap;justify-content:center;gap:6px;padding-block:10px}.topo nav{justify-content:center;gap:4px 12px;font-size:14px}}
+@media(max-width:380px){.topo nav{gap:4px 10px;font-size:13px}}
 .btn{display:inline-flex;align-items:center;gap:8px;background:var(--broto);color:#1F3A0E !important;text-decoration:none;font-weight:700;padding:11px 20px;border-radius:999px}
 
 /* ---------- 1) ABERTURA com cartões flutuando ---------- */
@@ -129,7 +130,7 @@ footer{border-top:1px solid var(--borda);padding-block:26px 34px;color:var(--fra
 
 <header class="topo" id="topo"><div class="wrap">
   <a href="../"><img src="../img/grovan-logo-claro.png" alt="Grovan"></a>
-  <nav aria-label="Menu"><a href="../">Início</a><a href="../servicos/">Serviços</a><a class="on" href="./">Portfólio</a><a href="../calculadoras/">Ferramentas grátis</a><a class="btn" href="../atendimento/">Pedir orçamento</a></nav>
+  <nav aria-label="Menu"><a href="../">Início</a><a href="../servicos/">Serviços</a><a class="on" href="./">Portfólio</a><a href="../calculadoras/">Ferramentas grátis</a><a href="../sobre/">Sobre</a><a href="../contato/">Contato</a></nav>
 </div></header>
 
 <!-- 1) ABERTURA -->

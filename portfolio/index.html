@@ -52,13 +52,17 @@ a{color:inherit}
 .abertura h1 em{font-style:normal;color:var(--broto)}
 .abertura p{color:var(--fraco);max-width:56ch;margin:0 auto 28px;font-size:1.1rem}
 .flutuantes{position:absolute;inset:0;pointer-events:none;perspective:1200px}
-.flutuantes img{position:absolute;width:clamp(150px,22vw,300px);border-radius:14px;box-shadow:0 30px 60px rgba(0,0,0,.55);border:1px solid var(--borda);opacity:.55;transition:transform .2s ease-out}
-.flutuantes img:nth-child(1){left:3%;top:18%;--r:-12deg;animation:boia 7s ease-in-out infinite}
-.flutuantes img:nth-child(2){right:3%;top:14%;--r:10deg;animation:boia 8s ease-in-out -2s infinite}
-.flutuantes img:nth-child(3){left:8%;bottom:8%;--r:8deg;animation:boia 9s ease-in-out -4s infinite}
-.flutuantes img:nth-child(4){right:7%;bottom:6%;--r:-9deg;animation:boia 7.5s ease-in-out -1s infinite}
+.flutuantes a{position:absolute;width:clamp(150px,22vw,300px);pointer-events:auto;opacity:.55;transition:opacity .25s;cursor:pointer;border-radius:14px}
+.flutuantes a:hover,.flutuantes a:focus-visible{opacity:1;z-index:2}.flutuantes a:focus-visible{outline:2px solid var(--broto);outline-offset:4px}
+.flutuantes img{display:block;width:100%;border-radius:14px;box-shadow:0 30px 60px rgba(0,0,0,.55);border:1px solid var(--borda);transition:transform .2s ease-out}
+.flutuantes a:hover img{box-shadow:0 30px 70px rgba(0,0,0,.6),0 0 0 2px var(--broto)}
+.flutuantes a:nth-child(1){left:3%;top:18%;--r:-12deg;animation:boia 7s ease-in-out infinite}
+.flutuantes a:nth-child(2){right:3%;top:14%;--r:10deg;animation:boia 8s ease-in-out -2s infinite}
+.flutuantes a:nth-child(3){left:8%;bottom:8%;--r:8deg;animation:boia 9s ease-in-out -4s infinite}
+.flutuantes a:nth-child(4){right:7%;bottom:6%;--r:-9deg;animation:boia 7.5s ease-in-out -1s infinite}
+.abertura-txt{pointer-events:none}.abertura-txt a,.abertura-txt button{pointer-events:auto}
 @keyframes boia{0%,100%{translate:0 0;rotate:var(--r)}50%{translate:0 -18px;rotate:calc(var(--r) * .7)}}
-@media(max-width:760px){.flutuantes img{opacity:.22}}
+@media(max-width:760px){.flutuantes a{opacity:.22;pointer-events:none}}
 .desca{position:absolute;bottom:22px;left:50%;translate:-50% 0;color:var(--fraco);font-size:.85rem;display:grid;justify-items:center;gap:6px}
 .desca i{width:22px;height:36px;border:2px solid var(--fraco);border-radius:12px;position:relative}
 .desca i::after{content:"";position:absolute;left:50%;top:6px;width:4px;height:8px;border-radius:2px;background:var(--broto);translate:-50% 0;animation:rola 1.6s infinite}
@@ -119,11 +123,12 @@ footer{border-top:1px solid var(--borda);padding-block:26px 34px;color:var(--fra
 
 /* ---------- quem prefere menos movimento: sem 3D, tudo parado ---------- */
 @media (prefers-reduced-motion:reduce){
-  .flutuantes img,.desca i::after{animation:none}
+  .flutuantes a,.desca i::after{animation:none}
   .rev{opacity:1;transform:none}
   .palco{display:none}
 }
 [hidden]{display:none!important}
+.botao-whatsapp,.botao-orcamento{text-decoration:none} .botao-whatsapp { position: fixed; right: 20px; bottom: 20px; z-index: 20; display: flex; align-items: center; gap: 10px; padding: 14px 20px 14px 16px; border-radius: 999px; background: #25D366; color: #06301B; font-weight: 600; box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22); transition: transform 0.2s, box-shadow 0.2s; } .botao-whatsapp:hover { transform: translateY(-3px); box-shadow: 0 14px 32px rgba(0, 0, 0, 0.28); } .botao-whatsapp svg { width: 26px; height: 26px; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linejoin: round; } .botao-whatsapp .whats-fone { fill: currentColor; stroke: none; } @media (max-width: 600px) { .botao-whatsapp { padding: 0; width: 58px; height: 58px; justify-content: center; } .botao-whatsapp-texto { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); } .botao-whatsapp svg { width: 30px; height: 30px; } } .botao-orcamento { position: fixed; right: 20px; bottom: 86px; z-index: 20; display: flex; align-items: center; gap: 10px; padding: 12px 20px 12px 16px; border-radius: 999px; background: #B8E35A; color: #1F3A0E; font-weight: 600; text-decoration: none; box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22); transition: transform 0.2s, box-shadow 0.2s; } .botao-orcamento:hover { transform: translateY(-3px); box-shadow: 0 14px 32px rgba(0, 0, 0, 0.28); } .botao-orcamento svg { width: 24px; height: 24px; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; } @media (max-width: 600px) { .botao-orcamento { padding: 0; width: 58px; height: 58px; bottom: 90px; justify-content: center; } .botao-orcamento-texto { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); } .botao-orcamento svg { width: 28px; height: 28px; } } 
 </style>
 </head>
 <body>
@@ -135,10 +140,10 @@ footer{border-top:1px solid var(--borda);padding-block:26px 34px;color:var(--fra
 
 <!-- 1) ABERTURA -->
 <section class="abertura">
-  <div class="flutuantes" id="flutuantes" aria-hidden="true">
-    <img src="img/salao-1.webp" alt=""><img src="img/loja-1.webp" alt=""><img src="img/raio-x-2.webp" alt=""><img src="img/restaurante-1.webp" alt="">
+  <div class="flutuantes" id="flutuantes">
+    <a href="../modelos/salao/" aria-label="Abrir o modelo Studio Bella Flor"><img src="img/salao-1.webp" alt=""></a><a href="../modelos/loja/" aria-label="Abrir a loja modelo Casa Aroma"><img src="img/loja-1.webp" alt=""></a><a href="../modelos/contabil/" aria-label="Abrir o site completo Horizonte Contábil"><img src="img/contabil-1.webp" alt=""></a><a href="../modelos/restaurante/" aria-label="Abrir o modelo Brasa &amp; Cia"><img src="img/restaurante-1.webp" alt=""></a>
   </div>
-  <div class="wrap" style="position:relative">
+  <div class="wrap abertura-txt" style="position:relative">
     <span class="etq">Portfólio Grovan</span>
     <h1>Pronto para ver<br><em>funcionando</em>?</h1>
     <p>Sites, lojas virtuais e sistemas que já existem. Use como referência para o seu projeto ou escolha um modelo e saia na frente.</p>
@@ -166,6 +171,14 @@ footer{border-top:1px solid var(--borda);padding-block:26px 34px;color:var(--fra
 </section>
 <footer>© 2026 Grovan · 100% remoto, em todo o Brasil · <a href="../privacidade/">Privacidade</a></footer>
 
+  <a href="https://wa.me/5511945426510?text=Ol%C3%A1%2C%20vi%20o%20portf%C3%B3lio%20da%20Grovan!" target="_blank" rel="noopener" class="botao-whatsapp" aria-label="Fale com a Grovan no WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z"/><path class="whats-fone" d="M9.2 7.8c.3 0 .5 0 .7.5l.7 1.6c.1.3 0 .5-.1.7l-.5.6c-.1.2-.2.3 0 .6.5.9 1.3 1.7 2.2 2.2.3.2.5.1.6 0l.6-.7c.2-.2.4-.2.6-.1l1.6.8c.3.1.4.3.4.5 0 .9-.7 1.7-1.6 1.8-1 .1-2.4-.3-4-1.7-1.5-1.3-2.3-2.8-2.4-3.9-.1-1 .5-2 1.2-2.9z"/></svg>
+    <span class="botao-whatsapp-texto">Fale no WhatsApp</span>
+  </a>
+  <a href="../atendimento/" class="botao-orcamento" aria-label="Pedir orçamento">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1M9 11l2 2 4-4M9 17h6"/></svg>
+    <span class="botao-orcamento-texto">Pedir orçamento</span>
+  </a>
 <script>
 /* =========================================================
    TRABALHOS DO PORTFÓLIO

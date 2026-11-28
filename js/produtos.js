@@ -41,8 +41,8 @@ const produtos = [
     categoria: "Beleza",
     link: "https://meli.la/1uWXStd",
     imagem: "https://http2.mlstatic.com/D_NQ_NP_683755-MLB112552959736_062026-F.webp",
-    preco: 25.45,
-    precoAntigo: 42.84,
+    preco: 42.84,
+    precoAntigo: 42.89,
     destaque: true
   },
   {
@@ -83,7 +83,7 @@ const produtos = [
     categoria: "Beleza",
     link: "https://meli.la/2Mg6D1e",
     imagem: "https://http2.mlstatic.com/D_NQ_NP_756821-MLA86791313939_062025-F.webp",
-    preco: 14.45,
+    preco: 14.82,
     precoAntigo: 26.99,
     destaque: false
   },

@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-11-28 01:44",
+ "geradoEm": "2026-11-28 15:59",
  "itens": [
   {
    "nome": "Secret Boom Box Metallic MBOOM Gloss Labial 5ml com Chaveiro Ursinho Colecionável Surpresa",
@@ -18,8 +18,12 @@
    "loja": "Mercado Livre",
    "precoAtual": 25.45,
    "conferencia": {
-    "status": "igual",
-    "preco": 25.45
+    "status": "subiu",
+    "preco": 42.84,
+    "precoAntigo": 42.89,
+    "imagem": "https://http2.mlstatic.com/D_NQ_NP_683755-MLB112552959736_062026-F.webp",
+    "aplicado": true,
+    "precoAnterior": 25.45
    },
    "alternativas": []
   },
@@ -49,14 +53,10 @@
    "nome": "Principia Kit Limpeza E Hidratação Ch-01 + Ol-01 + Gl-02 Todo Tipo De Pele Dia/noite",
    "link": "https://meli.la/1ikSs3S",
    "loja": "Mercado Livre",
-   "precoAtual": 86.92,
+   "precoAtual": 107.31,
    "conferencia": {
-    "status": "subiu",
-    "preco": 107.31,
-    "precoAntigo": 147.0,
-    "imagem": "https://http2.mlstatic.com/D_NQ_NP_609209-MLA94364515810_102025-F.webp",
-    "aplicado": true,
-    "precoAnterior": 86.92
+    "status": "igual",
+    "preco": 107.31
    },
    "alternativas": []
   },
@@ -66,8 +66,12 @@
    "loja": "Mercado Livre",
    "precoAtual": 14.45,
    "conferencia": {
-    "status": "igual",
-    "preco": 14.45
+    "status": "subiu",
+    "preco": 14.82,
+    "precoAntigo": 26.99,
+    "imagem": "https://http2.mlstatic.com/D_NQ_NP_756821-MLA86791313939_062025-F.webp",
+    "aplicado": true,
+    "precoAnterior": 14.45
    },
    "alternativas": []
   },
@@ -86,9 +90,14 @@
  "avisos": [],
  "precosAtualizados": [
   {
-   "nome": "Principia Kit Limpeza E Hidratação Ch-01 + Ol-01 + Gl-02 Todo Tipo De Pele Dia/noite",
-   "de": 86.92,
-   "para": 107.31
+   "nome": "Escovas Para Maquiagem Multicolor Kit 8 Peças Pincel Macio Sortida",
+   "de": 25.45,
+   "para": 42.84
+  },
+  {
+   "nome": "NIVEA Loção Deo-Hidratante Soft Milk 400ml, Hidratação Profunda 72h, Hialurônico Puro, Corporal, Pele Seca",
+   "de": 14.45,
+   "para": 14.82
   }
  ],
  "trocasAutomaticas": []

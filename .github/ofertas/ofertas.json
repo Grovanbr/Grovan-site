@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-11-27 16:57",
+ "geradoEm": "2026-11-28 01:44",
  "itens": [
   {
    "nome": "Secret Boom Box Metallic MBOOM Gloss Labial 5ml com Chaveiro Ursinho Colecionável Surpresa",
@@ -49,14 +49,14 @@
    "nome": "Principia Kit Limpeza E Hidratação Ch-01 + Ol-01 + Gl-02 Todo Tipo De Pele Dia/noite",
    "link": "https://meli.la/1ikSs3S",
    "loja": "Mercado Livre",
-   "precoAtual": 107.31,
+   "precoAtual": 86.92,
    "conferencia": {
-    "status": "baixou",
-    "preco": 86.92,
+    "status": "subiu",
+    "preco": 107.31,
     "precoAntigo": 147.0,
     "imagem": "https://http2.mlstatic.com/D_NQ_NP_609209-MLA94364515810_102025-F.webp",
     "aplicado": true,
-    "precoAnterior": 107.31
+    "precoAnterior": 86.92
    },
    "alternativas": []
   },
@@ -64,14 +64,10 @@
    "nome": "NIVEA Loção Deo-Hidratante Soft Milk 400ml, Hidratação Profunda 72h, Hialurônico Puro, Corporal, Pele Seca",
    "link": "https://meli.la/2Mg6D1e",
    "loja": "Mercado Livre",
-   "precoAtual": 14.82,
+   "precoAtual": 14.45,
    "conferencia": {
-    "status": "baixou",
-    "preco": 14.45,
-    "precoAntigo": 26.99,
-    "imagem": "https://http2.mlstatic.com/D_NQ_NP_756821-MLA86791313939_062025-F.webp",
-    "aplicado": true,
-    "precoAnterior": 14.82
+    "status": "igual",
+    "preco": 14.45
    },
    "alternativas": []
   },
@@ -91,13 +87,8 @@
  "precosAtualizados": [
   {
    "nome": "Principia Kit Limpeza E Hidratação Ch-01 + Ol-01 + Gl-02 Todo Tipo De Pele Dia/noite",
-   "de": 107.31,
-   "para": 86.92
-  },
-  {
-   "nome": "NIVEA Loção Deo-Hidratante Soft Milk 400ml, Hidratação Profunda 72h, Hialurônico Puro, Corporal, Pele Seca",
-   "de": 14.82,
-   "para": 14.45
+   "de": 86.92,
+   "para": 107.31
   }
  ],
  "trocasAutomaticas": []
